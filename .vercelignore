@@ -10,6 +10,7 @@ __pycache__/
 start_app.bat
 .pe_runner/
 .ai_token_usage.json
+.local_users_db.json
 
 # Environment and Git
 .git

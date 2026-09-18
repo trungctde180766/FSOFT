@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "start": "node server.js",
     "build": "node -e \"console.log('ApexCore build completed successfully')\"",
-    "test": "node -c server.js app.js data.js api/_gemini.js api/run-code.js"
+    "test": "node -c server.js app.js data.js api/_gemini.js api/run-code.js api/_auth.js api/_db.js api/auth.js api/user.js api/admin.js"
   },
   "keywords": [
     "scjp",
@@ -24,5 +24,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "mongodb": "^7.6.0"
   }
 }

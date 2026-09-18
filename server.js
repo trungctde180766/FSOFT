@@ -189,17 +189,88 @@ function runJavaExecution({ code, driverCode, testCases }) {
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
+// Serverless Handlers for Local Node Server
+// ──────────────────────────────────────────────────────────────────────────────
+const authHandler = require('./api/auth');
+const userHandler = require('./api/user');
+const adminHandler = require('./api/admin');
+
+function adaptServerless(handler, req, res) {
+  if (!res.status) {
+    res.status = function(code) {
+      res.statusCode = code;
+      return res;
+    };
+  }
+  if (!res.json) {
+    res.json = function(data) {
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(data));
+      return res;
+    };
+  }
+  if (!res.send) {
+    res.send = function(data) {
+      if (typeof data === 'object') return res.json(data);
+      res.end(data);
+      return res;
+    };
+  }
+
+  const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  req.query = Object.fromEntries(parsedUrl.searchParams.entries());
+
+  if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', async () => {
+      try {
+        req.body = body ? JSON.parse(body) : {};
+      } catch (_) {
+        req.body = body;
+      }
+      try {
+        await handler(req, res);
+      } catch (e) {
+        console.error('Handler error:', e);
+        if (!res.writableEnded) {
+          res.status(500).json({ ok: false, message: e.message });
+        }
+      }
+    });
+  } else {
+    handler(req, res).catch(e => {
+      console.error('Handler error:', e);
+      if (!res.writableEnded) {
+        res.status(500).json({ ok: false, message: e.message });
+      }
+    });
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
 // HTTP Server
 // ──────────────────────────────────────────────────────────────────────────────
 const server = http.createServer((req, res) => {
   // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
     return res.end();
+  }
+
+  // ── Auth, User Data & Admin Endpoints ─────────────────────────────────────
+  if (req.url.startsWith('/api/auth')) {
+    return adaptServerless(authHandler, req, res);
+  }
+  if (req.url.startsWith('/api/user')) {
+    return adaptServerless(userHandler, req, res);
+  }
+  if (req.url.startsWith('/api/admin')) {
+    return adaptServerless(adminHandler, req, res);
   }
 
   // ── POST /api/run-code — Live Java 23 Runner ──────────────────────────────

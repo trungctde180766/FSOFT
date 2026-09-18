@@ -79,6 +79,21 @@
       <button class="theme-toggle-btn" id="themeToggleBtn" title="Đổi giao diện Sáng / Tối">
         <span class="theme-icon">🌙</span>
       </button>
+
+      <!-- User Auth Header Widget -->
+      <div class="user-auth-widget" id="userAuthWidget">
+        <button class="btn btn-sm btn-primary auth-open-btn" id="headerLoginBtn">
+          <span>🔑</span> Đăng Nhập
+        </button>
+        <div class="user-profile-badge hidden" id="headerUserProfileBadge" title="Nhấn để mở Hồ Sơ Cá Nhân">
+          <span class="user-avatar-icon" id="headerUserAvatar">👨‍💻</span>
+          <div class="user-info-text">
+            <span class="user-display-name" id="headerUserName">Học Viên</span>
+            <span class="user-role-tag" id="headerUserRole">Student</span>
+          </div>
+          <button class="btn-icon-logout" id="headerQuickLogoutBtn" title="Đăng xuất">⏻</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -124,6 +139,14 @@
       <button class="nav-tab" data-tab="analytics">
         <span class="tab-icon">📊</span> Analytics & Progress
         <span class="tab-badge" id="navAnalyticsBadge">Live</span>
+      </button>
+      <button class="nav-tab" data-tab="profile" id="navProfileTab">
+        <span class="tab-icon">👤</span> Cá Nhân
+        <span class="tab-badge" id="navProfileBadge">Hồ Sơ</span>
+      </button>
+      <button class="nav-tab hidden" data-tab="admin" id="navAdminTab">
+        <span class="tab-icon">👑</span> Quản Trị
+        <span class="tab-badge pulse-badge" id="navAdminBadge">Admin</span>
       </button>
     </div>
   </nav>
@@ -1716,8 +1739,304 @@
             </div>
           </div>
         </div>
+    </section>
+
+    <!-- ==================== TAB 11: USER PROFILE ==================== -->
+    <section class="tab-pane" id="pane-profile">
+      <div class="section-hero profile-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Hồ Sơ Cá Nhân & Dữ Liệu Đám Mây</div>
+          <h2 class="hero-title" id="profileHeroTitle">Hồ Sơ Học Viên</h2>
+          <p class="hero-desc">
+            Toàn bộ tiến độ học tập, bài giải PE, flashcard và điểm số của bạn được liên kết và đồng bộ an toàn theo tài khoản riêng biệt.
+          </p>
+        </div>
+        <div class="profile-cloud-sync-card">
+          <div class="sync-indicator">
+            <span class="sync-dot" id="profileSyncDot"></span>
+            <span class="sync-text" id="profileSyncStatusText">Chưa đăng nhập</span>
+          </div>
+          <div class="sync-time" id="profileSyncTimeText">Lưu trữ: Local Storage</div>
+          <button class="btn btn-sm btn-primary" id="profileManualSyncBtn" style="margin-top:0.5rem; width:100%;">
+            <span>🔄</span> Đồng Bộ Lên Đám Mây
+          </button>
+        </div>
+      </div>
+
+      <!-- Guest Notice (Shown if not logged in) -->
+      <div class="guest-notice-banner" id="profileGuestBanner">
+        <div class="guest-notice-icon">⚠️</div>
+        <div class="guest-notice-body">
+          <h4>Bạn đang sử dụng tài khoản Khách (Guest)</h4>
+          <p>Dữ liệu chỉ được lưu tạm thời trên trình duyệt này. Hãy đăng ký hoặc đăng nhập để lưu trữ tiến độ vĩnh viễn trên cơ sở dữ liệu MongoDB và truy cập từ bất kỳ thiết bị nào.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="guestBannerLoginBtn">🔑 Đăng Nhập / Tạo Tài Khoản</button>
+      </div>
+
+      <!-- Logged-in Profile Content -->
+      <div class="profile-layout" id="profileLayout">
+        <!-- Profile Identity Card -->
+        <div class="profile-card profile-id-card">
+          <div class="profile-avatar-wrapper">
+            <div class="profile-main-avatar" id="profileMainAvatar">👨‍💻</div>
+            <div class="profile-level-chip" id="profileLevelChip">Lv.1 Rookie</div>
+          </div>
+          <div class="profile-id-info">
+            <div class="profile-name-row">
+              <h3 class="profile-full-name" id="profileFullName">Học Viên ApexCore</h3>
+              <span class="badge-role" id="profileRoleBadge">Student</span>
+            </div>
+            <div class="profile-email-text" id="profileEmail">guest@apexcore.local</div>
+            <p class="profile-bio-quote" id="profileBioQuote">"Kiên trì mỗi ngày, vượt qua 56 ngày để trở thành Java Master!"</p>
+            <div class="profile-meta-row">
+              <span>📅 Gia nhập: <strong id="profileCreatedAt">--</strong></span>
+              <span>🎯 Mục tiêu: <strong id="profileTargetScoreDisplay">90/100</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Overview Grid -->
+        <div class="profile-stats-grid">
+          <div class="pstat-card">
+            <div class="pstat-icon">🗺️</div>
+            <div class="pstat-info">
+              <div class="pstat-val" id="pstatRoadmap">0/56</div>
+              <div class="pstat-lbl">Ngày Hoàn Thành</div>
+            </div>
+          </div>
+          <div class="pstat-card">
+            <div class="pstat-icon">⭐</div>
+            <div class="pstat-info">
+              <div class="pstat-val" id="pstatXP">0 XP</div>
+              <div class="pstat-lbl">Tổng Điểm XP</div>
+            </div>
+          </div>
+          <div class="pstat-card">
+            <div class="pstat-icon">🔥</div>
+            <div class="pstat-info">
+              <div class="pstat-val" id="pstatStreak">0 Ngày</div>
+              <div class="pstat-lbl">Chuỗi Học (Streak)</div>
+            </div>
+          </div>
+          <div class="pstat-card">
+            <div class="pstat-icon">💻</div>
+            <div class="pstat-info">
+              <div class="pstat-val" id="pstatPE">0/10</div>
+              <div class="pstat-lbl">Bài PE Đã Giải</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Rows: Edit Profile & Security -->
+        <div class="profile-forms-grid">
+          <!-- Edit Information Form -->
+          <div class="profile-card profile-form-card">
+            <div class="profile-card-header">
+              <h3>✏️ Chỉnh Sửa Thông Tin & Mục Tiêu</h3>
+            </div>
+            <form id="editProfileForm" class="custom-form">
+              <div class="form-group">
+                <label>Chọn Avatar Đại Diện:</label>
+                <div class="avatar-picker-grid" id="avatarPickerGrid">
+                  <button type="button" class="avatar-option active" data-avatar="👨‍💻">👨‍💻</button>
+                  <button type="button" class="avatar-option" data-avatar="👩‍💻">👩‍💻</button>
+                  <button type="button" class="avatar-option" data-avatar="⚡">⚡</button>
+                  <button type="button" class="avatar-option" data-avatar="🚀">🚀</button>
+                  <button type="button" class="avatar-option" data-avatar="☕">☕</button>
+                  <button type="button" class="avatar-option" data-avatar="🎯">🎯</button>
+                  <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
+                  <button type="button" class="avatar-option" data-avatar="🐯">🐯</button>
+                  <button type="button" class="avatar-option" data-avatar="🦅">🦅</button>
+                  <button type="button" class="avatar-option" data-avatar="🛡️">🛡️</button>
+                  <button type="button" class="avatar-option" data-avatar="🧠">🧠</button>
+                  <button type="button" class="avatar-option" data-avatar="👑">👑</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputProfileName">Họ và Tên:</label>
+                <input type="text" id="inputProfileName" class="form-input" placeholder="Ví dụ: Nguyễn Văn A" required>
+              </div>
+              <div class="form-group">
+                <label for="inputProfileBio">Châm ngôn học tập (Bio):</label>
+                <textarea id="inputProfileBio" class="form-input form-textarea" rows="2" placeholder="Mục tiêu của tôi trong đợt thi này..."></textarea>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="inputProfileExamDate">Ngày Thi Mục Tiêu:</label>
+                  <input type="date" id="inputProfileExamDate" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="inputProfileTargetScore">Điểm Số Mục Tiêu:</label>
+                  <select id="inputProfileTargetScore" class="form-input custom-select">
+                    <option value="80">Đạt 80% (Pass An Toàn)</option>
+                    <option value="90" selected>Đạt 90%+ (Khá - Giỏi)</option>
+                    <option value="95">Đạt 95%+ (Xuất Sắc)</option>
+                    <option value="100">Đạt 100/100 (Thủ Khoa)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="btnSaveProfile">💾 Lưu Thay Đổi Hồ Sơ</button>
+            </form>
+          </div>
+
+          <!-- Security & Session Card -->
+          <div class="profile-card profile-form-card">
+            <div class="profile-card-header">
+              <h3>🔒 Bảo Mật & Đổi Mật Khẩu</h3>
+            </div>
+            <form id="changePasswordForm" class="custom-form">
+              <div class="form-group">
+                <label for="inputCurrentPassword">Mật khẩu hiện tại:</label>
+                <input type="password" id="inputCurrentPassword" class="form-input" placeholder="••••••••" required>
+              </div>
+              <div class="form-group">
+                <label for="inputNewPassword">Mật khẩu mới (ít nhất 6 ký tự):</label>
+                <input type="password" id="inputNewPassword" class="form-input" placeholder="••••••••" required minlength="6">
+              </div>
+              <div class="form-group">
+                <label for="inputConfirmPassword">Xác nhận mật khẩu mới:</label>
+                <input type="password" id="inputConfirmPassword" class="form-input" placeholder="••••••••" required minlength="6">
+              </div>
+              <button type="submit" class="btn btn-outline" id="btnChangePassword">🔑 Cập Nhật Mật Khẩu</button>
+            </form>
+
+            <div class="profile-session-box" style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);">
+              <h4>🚪 Quản Lý Phiên Học Tập</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+                Đăng xuất sẽ xóa token khỏi trình duyệt này. Bạn có thể đăng nhập lại bất kỳ lúc nào để tiếp tục học.
+              </p>
+              <button class="btn btn-danger btn-sm" id="profileLogoutBtn">⏻ Đăng Xuất Tài Khoản</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- ==================== TAB 12: ADMIN DASHBOARD ==================== -->
+    <section class="tab-pane" id="pane-admin">
+      <div class="section-hero admin-hero">
+        <div class="hero-content">
+          <div class="hero-badge" style="background:rgba(239,68,68,0.2); color:#f87171; border-color:rgba(239,68,68,0.4);">
+            👑 Quản Trị Hệ Thống Toàn Quyền
+          </div>
+          <h2 class="hero-title">Bảng Điều Khiển Quản Trị ApexCore</h2>
+          <p class="hero-desc">
+            Giám sát danh sách người dùng, kiểm tra tiến độ học tập thực tế và xem chi tiết nhật ký bảo mật đăng nhập thời gian thực.
+          </p>
+        </div>
+        <div class="admin-top-actions">
+          <div class="db-badge" id="adminDbTypeBadge">🍃 MongoDB Atlas</div>
+          <button class="btn btn-sm btn-outline" id="adminRefreshBtn">🔄 Làm Mới Dữ Liệu</button>
+        </div>
+      </div>
+
+      <!-- 4 KPI Summary Cards -->
+      <div class="admin-kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(59,130,246,0.15); color:#60a5fa;">👥</div>
+          <div class="kpi-info">
+            <div class="kpi-val" id="adminKpiUsers">0</div>
+            <div class="kpi-lbl">Tổng Học Viên Đăng Ký</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(245,158,11,0.15); color:#fbbf24;">⚡</div>
+          <div class="kpi-info">
+            <div class="kpi-val" id="adminKpiXp">0</div>
+            <div class="kpi-lbl">Tổng Điểm XP Hệ Thống</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(16,185,129,0.15); color:#34d399;">🔑</div>
+          <div class="kpi-info">
+            <div class="kpi-val" id="adminKpiLogins">0</div>
+            <div class="kpi-lbl">Lượt Đăng Nhập Thành Công</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(168,85,247,0.15); color:#c084fc;">🎓</div>
+          <div class="kpi-info">
+            <div class="kpi-val" id="adminKpiCompletedDays">0</div>
+            <div class="kpi-lbl">Số Ngày Học Đã Hoàn Thành</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Sub-navigation Tabs -->
+      <div class="admin-sub-tabs">
+        <button class="admin-tab-btn active" data-admintab="users">👥 Quản Lý Học Viên (<span id="adminUserCountLabel">0</span>)</button>
+        <button class="admin-tab-btn" data-admintab="logs">🛡️ Nhật Ký Đăng Nhập & Bảo Mật (<span id="adminLogCountLabel">0</span>)</button>
+      </div>
+
+      <!-- Admin Tab View 1: User Management -->
+      <div class="admin-section" id="adminSecUsers">
+        <div class="admin-table-controls">
+          <div class="search-box">
+            <input type="text" id="adminUserSearchInput" class="form-input" placeholder="🔍 Tìm theo Tên hoặc Email học viên...">
+          </div>
+          <div class="filter-box">
+            <select id="adminUserRoleFilter" class="form-input custom-select">
+              <option value="all">Tất cả vai trò</option>
+              <option value="student">Học viên (Student)</option>
+              <option value="admin">Quản trị viên (Admin)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Học Viên</th>
+                <th>Vai Trò</th>
+                <th>Cấp Độ & XP</th>
+                <th>Tiến Độ 56 Ngày</th>
+                <th>PE Giải</th>
+                <th>Ngày Tham Gia</th>
+                <th>Đăng Nhập Cuối</th>
+                <th style="text-align:right;">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="adminUsersTbody">
+              <tr><td colspan="8" style="text-align:center; padding:2rem; color:var(--text-muted);">Đang tải dữ liệu học viên...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Admin Tab View 2: Security & Login Logs -->
+      <div class="admin-section" id="adminSecLogs" style="display:none;">
+        <div class="admin-table-controls">
+          <div class="filter-box">
+            <label style="font-size:0.85rem; color:var(--text-muted); margin-right:0.5rem;">Lọc trạng thái:</label>
+            <select id="adminLogStatusFilter" class="form-input custom-select">
+              <option value="all">Tất cả nhật ký</option>
+              <option value="SUCCESS">Thành công (SUCCESS)</option>
+              <option value="FAILED">Thất bại (FAILED)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Thời Gian</th>
+                <th>Người Dùng / Email</th>
+                <th>Trạng Thái</th>
+                <th>Hành Động</th>
+                <th>Thiết Bị / Trình Duyệt</th>
+                <th>Địa Chỉ IP</th>
+              </tr>
+            </thead>
+            <tbody id="adminLogsTbody">
+              <tr><td colspan="6" style="text-align:center; padding:2rem; color:var(--text-muted);">Đang tải nhật ký truy cập...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- ==================== SENIOR CHEAT SHEET MODAL ==================== -->
   <div class="modal-overlay" id="seniorCheatSheetModal" style="display: none;">
@@ -2009,6 +2328,93 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline" id="closeAuditExportModalFooterBtn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== AUTHENTICATION MODAL ==================== -->
+  <div class="modal-overlay" id="authModal" style="display: none;">
+    <div class="modal-card modal-auth">
+      <div class="modal-header auth-modal-header">
+        <div class="auth-brand-badge">
+          <span>⚡ ApexCore Auth</span>
+        </div>
+        <button class="modal-close-btn" id="closeAuthModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body auth-modal-body">
+        <!-- Auth Tab Switcher -->
+        <div class="auth-tabs">
+          <button class="auth-tab-btn active" id="tabBtnLogin" type="button">🔑 Đăng Nhập</button>
+          <button class="auth-tab-btn" id="tabBtnRegister" type="button">✨ Đăng Ký Mới</button>
+        </div>
+
+        <!-- Alert Notification Inside Modal -->
+        <div class="auth-alert hidden" id="authAlert"></div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="loginEmail">Địa chỉ Email:</label>
+            <div class="input-with-icon">
+              <span class="input-icon">✉️</span>
+              <input type="email" id="loginEmail" class="form-input" placeholder="ten_ban@gmail.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Mật khẩu:</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="btn-toggle-pwd" data-target="loginPassword">👁️</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block auth-submit-btn" id="loginSubmitBtn">
+            <span>Đăng Nhập Ngay</span>
+          </button>
+          <div class="auth-switch-hint">
+            Chưa có tài khoản? <a href="#" id="linkSwitchToRegister">Tạo tài khoản mới</a>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form hidden">
+          <div class="form-group">
+            <label for="regName">Họ và Tên Học Viên:</label>
+            <div class="input-with-icon">
+              <span class="input-icon">👤</span>
+              <input type="text" id="regName" class="form-input" placeholder="Ví dụ: Nguyễn Thanh Trung" required minlength="2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Địa chỉ Email:</label>
+            <div class="input-with-icon">
+              <span class="input-icon">✉️</span>
+              <input type="email" id="regEmail" class="form-input" placeholder="ten_ban@gmail.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Mật khẩu (tối thiểu 6 ký tự):</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="regPassword" class="form-input" placeholder="••••••••" required minlength="6" autocomplete="new-password">
+              <button type="button" class="btn-toggle-pwd" data-target="regPassword">👁️</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regConfirmPassword">Xác nhận mật khẩu:</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🛡️</span>
+              <input type="password" id="regConfirmPassword" class="form-input" placeholder="••••••••" required minlength="6" autocomplete="new-password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block auth-submit-btn" id="registerSubmitBtn">
+            <span>Đăng Ký Tài Khoản</span>
+          </button>
+          <div class="auth-switch-hint">
+            Đã có tài khoản? <a href="#" id="linkSwitchToLogin">Đăng nhập tại đây</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
