@@ -1,6 +1,6 @@
 {
   "name": "apexcore-study-system",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "8-Week Entry Test & Audit Mastery System for Java Core, SQL, Web, Spring and English",
   "main": "server.js",
   "scripts": {

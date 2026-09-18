@@ -3909,10 +3909,15 @@ ${userCode || '// (Chưa viết code)'}
         const resp = await fetch('/api/ai', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: fullPrompt, model: 'gemini-2.0-flash' })
+          body: JSON.stringify({ prompt: fullPrompt, model: 'gemini-3.6-flash' })
         });
-        const data = await resp.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không có phản hồi.';
+        const rawText = await resp.text();
+        let data = null;
+        try { data = JSON.parse(rawText); } catch (_) {}
+        if (!resp.ok) {
+          throw new Error(data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Lỗi máy chủ (${resp.status})`));
+        }
+        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Không có phản hồi từ AI.';
         appendAIMessage('assistant', text);
       } catch (err) {
         appendAIMessage('assistant', `❌ Lỗi kết nối AI: ${err.message}. Thử lại sau nhé!`);
@@ -4680,15 +4685,23 @@ Hãy phân tích chi tiết:
       body: JSON.stringify(payload)
     });
 
-    const data = await response.json();
+    const rawText = await response.text();
+    let data = null;
+    try {
+      data = JSON.parse(rawText);
+    } catch (_) {}
 
     if (!response.ok) {
-      const errMsg = data?.error?.message || `Server lỗi HTTP ${response.status}`;
+      const errMsg = data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Server lỗi HTTP ${response.status}`);
       throw new Error(errMsg);
     }
 
+    if (!data) {
+      throw new Error('Máy chủ phản hồi dữ liệu không đúng định dạng. Vui lòng thử lại.');
+    }
+
     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) throw new Error('AI không trả về nội dung. Thử lại.');
+    if (!text) throw new Error('AI không trả về nội dung. Vui lòng thử lại sau ít giây.');
     return text;
   }
 
@@ -5098,8 +5111,10 @@ Hãy viết một bài chẩn đoán tâm lý và kê toa rèn luyện cho bạn
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error?.message || `Lỗi HTTP ${res.status}`);
+      const rawText = await res.text();
+      let data = null;
+      try { data = JSON.parse(rawText); } catch (_) {}
+      if (!res.ok) throw new Error(data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Lỗi HTTP ${res.status}`));
 
       const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
       if (!reply) throw new Error('Không nhận được phản hồi từ AI');
@@ -5573,10 +5588,13 @@ Trả lời bằng tiếng Việt, format HTML đẹp với <ul>, <strong>, emoj
       const resp = await fetch('/api/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, model: 'gemini-2.0-flash' })
+        body: JSON.stringify({ prompt, model: 'gemini-3.6-flash' })
       });
-      const data = await resp.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không có phản hồi.';
+      const rawText = await resp.text();
+      let data = null;
+      try { data = JSON.parse(rawText); } catch (_) {}
+      if (!resp.ok) throw new Error(data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Lỗi HTTP ${resp.status}`));
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Không có phản hồi từ AI.';
       box.innerHTML = `<div class="notes-summary-result">${text.replace(/\n/g, '<br>')}</div>`;
     } catch(e) {
       box.innerHTML = `<div style="color:#ef4444">Lỗi: ${e.message}</div>`;
@@ -5811,10 +5829,13 @@ Trả lời bằng tiếng Việt, format HTML đẹp với sections rõ ràng, 
       const resp = await fetch('/api/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, model: 'gemini-2.0-flash' })
+        body: JSON.stringify({ prompt, model: 'gemini-3.6-flash' })
       });
-      const data = await resp.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      const rawText = await resp.text();
+      let data = null;
+      try { data = JSON.parse(rawText); } catch (_) {}
+      if (!resp.ok) throw new Error(data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Lỗi HTTP ${resp.status}`));
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (text) {
         const today = new Date().toLocaleDateString('vi-VN', { weekday: 'long', day: 'numeric', month: 'numeric' });
@@ -5986,10 +6007,13 @@ Format ngắn gọn, HTML đẹp, tối đa 250 từ.`;
       const resp = await fetch('/api/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, model: 'gemini-2.0-flash' })
+        body: JSON.stringify({ prompt, model: 'gemini-3.6-flash' })
       });
-      const data = await resp.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      const rawText = await resp.text();
+      let data = null;
+      try { data = JSON.parse(rawText); } catch (_) {}
+      if (!resp.ok) throw new Error(data?.error?.message || (rawText && rawText.length < 200 ? rawText : `Lỗi HTTP ${resp.status}`));
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (text) {
         resultEl.innerHTML = `
@@ -6367,10 +6391,12 @@ Yêu cầu:
         const resp = await fetch('/api/ai', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt, model: 'gemini-2.0-flash' })
+          body: JSON.stringify({ prompt, model: 'gemini-3.6-flash' })
         });
-        const data = await resp.json();
-        const q = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Hãy giải thích OOP là gì?';
+        const rawText = await resp.text();
+        let data = null;
+        try { data = JSON.parse(rawText); } catch (_) {}
+        const q = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Hãy giải thích OOP là gì?';
 
         // Remove thinking bubble
         document.getElementById('interviewMessages').lastChild?.remove();
@@ -6411,10 +6437,12 @@ Chỉ trả về JSON, không gì khác.`;
         const resp = await fetch('/api/ai', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: scorePrompt, model: 'gemini-2.0-flash' })
+          body: JSON.stringify({ prompt: scorePrompt, model: 'gemini-3.6-flash' })
         });
-        const data = await resp.json();
-        let text = data.candidates?.[0]?.content?.parts?.[0]?.text || '{"score":5,"comment":"Trả lời cơ bản","missing":""}';
+        const rawText = await resp.text();
+        let data = null;
+        try { data = JSON.parse(rawText); } catch (_) {}
+        let text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '{"score":5,"comment":"Trả lời cơ bản","missing":""}';
         text = text.replace(/```json|```/g, '').trim();
         let result;
         try { result = JSON.parse(text); } catch { result = { score: 5, comment: 'Đã ghi nhận câu trả lời', missing: '' }; }
@@ -6459,10 +6487,12 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
         const resp = await fetch('/api/ai', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: overallPrompt, model: 'gemini-2.0-flash' })
+          body: JSON.stringify({ prompt: overallPrompt, model: 'gemini-3.6-flash' })
         });
-        const data = await resp.json();
-        const feedback = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Hoàn thành phỏng vấn!';
+        const rawText = await resp.text();
+        let data = null;
+        try { data = JSON.parse(rawText); } catch (_) {}
+        const feedback = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Hoàn thành phỏng vấn!';
         document.getElementById('interviewFinalFeedback').textContent = feedback;
       } catch {
         document.getElementById('interviewFinalFeedback').textContent = 'Phỏng vấn hoàn thành! Xem lại điểm số và luyện thêm nhé.';

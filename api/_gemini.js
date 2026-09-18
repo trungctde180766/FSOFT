@@ -175,6 +175,13 @@ function httpsPost(hostname, apiPath, payload) {
   });
 }
 
+const CANDIDATE_MODELS = [
+  'gemini-3.6-flash',
+  'gemini-3.5-flash',
+  'gemini-flash-latest',
+  'gemini-3.1-flash-lite'
+];
+
 async function proxyGemini(payloadOrRaw) {
   let payload;
   if (typeof payloadOrRaw === 'string') {
@@ -187,58 +194,115 @@ async function proxyGemini(payloadOrRaw) {
     payload = JSON.parse(JSON.stringify(payloadOrRaw));
   }
 
-  const model = payload.model || 'gemini-2.5-flash';
+  const requestedModel = payload.model || 'gemini-3.6-flash';
   delete payload.model;
 
-  if (GEMINI_KEYS.length === 0) {
-    throw new Error('Không có Gemini API key nào được cấu hình. Vui lòng thiết lập biến môi trường GEMINI_API_KEYS.');
+  // Build model fallback list starting with requested model
+  const modelsToTry = [requestedModel];
+  for (const m of CANDIDATE_MODELS) {
+    if (!modelsToTry.includes(m)) modelsToTry.push(m);
   }
 
-  const maxAttempts = GEMINI_KEYS.length;
+  if (GEMINI_KEYS.length === 0) {
+    return {
+      status: 503,
+      body: JSON.stringify({
+        error: {
+          code: 503,
+          message: 'Chưa cấu hình Gemini API Key. Vui lòng thiết lập biến môi trường GEMINI_API_KEYS trên máy chủ hoặc file .env.',
+          status: 'UNAVAILABLE'
+        }
+      })
+    };
+  }
 
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const keyInfo = getNextAvailableKey();
-    if (!keyInfo) throw new Error('Không có API key nào khả dụng.');
+  let lastErrorMsg = 'Không thể kết nối máy chủ AI.';
+  let lastStatusCode = 503;
 
-    const { key, idx } = keyInfo;
-    const apiPath = `/v1beta/models/${model}:generateContent?key=${key}`;
+  for (const model of modelsToTry) {
+    const attemptsForModel = Math.min(GEMINI_KEYS.length, 3);
 
-    try {
-      const result = await httpsPost('generativelanguage.googleapis.com', apiPath, payload);
+    for (let attempt = 0; attempt < attemptsForModel; attempt++) {
+      const keyInfo = getNextAvailableKey();
+      if (!keyInfo) break;
 
-      if (result.statusCode === 200) {
-        recordKeySuccess(idx, result.body, model);
-        return { status: 200, body: result.body };
-      }
+      const { key, idx } = keyInfo;
+      const apiPath = `/v1beta/models/${model}:generateContent?key=${key}`;
 
-      let errMsg = `HTTP ${result.statusCode}`;
       try {
-        errMsg = JSON.parse(result.body)?.error?.message || errMsg;
-      } catch (_) {}
-      console.warn(`⚠ Key #${idx + 1} → ${result.statusCode}: ${errMsg.slice(0, 120)}`);
+        const result = await httpsPost('generativelanguage.googleapis.com', apiPath, payload);
 
-      if (result.statusCode === 429) {
-        coolDownKey(idx, 65);
-        continue;
-      }
-      if (result.statusCode === 400) {
-        coolDownKey(idx, 3600);
-        continue;
-      }
-      if (result.statusCode === 503 || result.statusCode === 500) {
-        coolDownKey(idx, 15);
-        continue;
-      }
+        // Guarantee body is always valid JSON
+        let safeBody = result.body;
+        let isJson = false;
+        try {
+          JSON.parse(safeBody);
+          isJson = true;
+        } catch (_) {
+          safeBody = JSON.stringify({
+            error: {
+              code: result.statusCode,
+              message: safeBody || `Google AI trả về mã lỗi HTTP ${result.statusCode}`,
+              status: 'UNAVAILABLE'
+            }
+          });
+        }
 
-      return { status: result.statusCode, body: result.body };
-    } catch (networkErr) {
-      console.warn(`⚠ Key #${idx + 1} network error: ${networkErr.message}`);
-      coolDownKey(idx, 10);
-      continue;
+        if (result.statusCode === 200 && isJson) {
+          recordKeySuccess(idx, result.body, model);
+          return { status: 200, body: result.body, activeModel: model };
+        }
+
+        let parsedError = null;
+        try { parsedError = JSON.parse(safeBody)?.error; } catch (_) {}
+        const errMsg = parsedError?.message || `HTTP ${result.statusCode}`;
+        lastErrorMsg = errMsg;
+        lastStatusCode = result.statusCode;
+
+        console.warn(`⚠ Model [${model}] Key #${idx + 1} → ${result.statusCode}: ${errMsg.slice(0, 120)}`);
+
+        // If 503 (Capacity/Overloaded) or 404 (Model not found/deprecated): break to try next model!
+        if (result.statusCode === 503 || result.statusCode === 404) {
+          coolDownKey(idx, 15);
+          break; // Try next fallback model immediately!
+        }
+
+        if (result.statusCode === 429) {
+          coolDownKey(idx, 45);
+          continue;
+        }
+
+        if (result.statusCode === 400) {
+          // If 400 is due to model name, try next model
+          if (errMsg.toLowerCase().includes('model')) {
+            break;
+          }
+          coolDownKey(idx, 600);
+          continue;
+        }
+
+        // Return other error directly as valid JSON
+        return { status: result.statusCode, body: safeBody };
+      } catch (networkErr) {
+        console.warn(`⚠ Model [${model}] Key #${idx + 1} network error: ${networkErr.message}`);
+        lastErrorMsg = networkErr.message;
+        coolDownKey(idx, 10);
+        continue;
+      }
     }
   }
 
-  throw new Error('Tất cả API keys đều đang bận hoặc quá hạn mức. Vui lòng thử lại sau vài giây.');
+  // All models and keys failed gracefully — return valid JSON
+  return {
+    status: lastStatusCode || 503,
+    body: JSON.stringify({
+      error: {
+        code: lastStatusCode || 503,
+        message: `Hệ thống AI đang bận hoặc quá tải (${lastErrorMsg}). Hệ thống đã tự động thử qua các API key và model dự phòng. Vui lòng bấm gửi lại sau vài giây!`,
+        status: 'UNAVAILABLE'
+      }
+    })
+  };
 }
 
 function getAiStatus() {
