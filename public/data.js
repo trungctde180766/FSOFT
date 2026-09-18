@@ -27,7 +27,7 @@ _globalScope.APP_DATA = {
             "Làm 10 câu trắc nghiệm Ch1"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -48,7 +48,7 @@ _globalScope.APP_DATA = {
             "Luyện 5 câu dịch Anh-Việt"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -67,7 +67,7 @@ _globalScope.APP_DATA = {
             "Code thử kế thừa protected ở khác package để hiểu rõ protected"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -87,7 +87,7 @@ _globalScope.APP_DATA = {
             "Làm 25 câu TestKing Ch2"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -111,7 +111,7 @@ _globalScope.APP_DATA = {
             "Làm 30 câu TestKing Ch3"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -130,7 +130,7 @@ _globalScope.APP_DATA = {
             "Luyện 5 câu dịch Comment Code"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -151,7 +151,7 @@ _globalScope.APP_DATA = {
           "targetHours": {
             "java": 2.5,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -178,7 +178,7 @@ _globalScope.APP_DATA = {
             "Làm bài tập switch case thiếu break"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -199,7 +199,7 @@ _globalScope.APP_DATA = {
             "Phân biệt catch (ChildException) trước hay ParentException trước"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -219,7 +219,7 @@ _globalScope.APP_DATA = {
             "Làm 20 câu Ch5 TestKing"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -238,7 +238,7 @@ _globalScope.APP_DATA = {
             "Tự vẽ sơ đồ polymorphic dispatch"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -257,7 +257,7 @@ _globalScope.APP_DATA = {
             "Thực hành các câu hỏi casting đối tượng"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -275,7 +275,7 @@ _globalScope.APP_DATA = {
             "Luyện 5 câu Comment Code"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -295,7 +295,7 @@ _globalScope.APP_DATA = {
           "targetHours": {
             "java": 2.5,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -323,7 +323,7 @@ _globalScope.APP_DATA = {
             "Làm 20 câu String trong TestKing"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -343,7 +343,7 @@ _globalScope.APP_DATA = {
             "Làm 20 câu Wrapper & Math"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -363,7 +363,7 @@ _globalScope.APP_DATA = {
             "Thực hành TreeSet và quy tắc phần tử phải implement Comparable"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -382,7 +382,7 @@ _globalScope.APP_DATA = {
             "Làm 30 câu TestKing Ch7"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -402,7 +402,7 @@ _globalScope.APP_DATA = {
             "Làm 20 câu TestKing Inner classes"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -423,7 +423,7 @@ _globalScope.APP_DATA = {
             "Làm 25 câu TestKing Threads"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.75,
             "testking": 0.75,
             "english": 0.5
@@ -443,7 +443,7 @@ _globalScope.APP_DATA = {
           "targetHours": {
             "java": 2.5,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -470,7 +470,7 @@ _globalScope.APP_DATA = {
             "Lập bảng phân biệt DELETE vs TRUNCATE vs DROP"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -489,7 +489,7 @@ _globalScope.APP_DATA = {
             "Tập trả lời phỏng vấn: WHERE khác HAVING điểm nào?"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -508,7 +508,7 @@ _globalScope.APP_DATA = {
             "Luyện 7 câu SQL phỏng vấn trong roadmap (INNER vs LEFT, DELETE vs TRUNCATE...)"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -528,7 +528,7 @@ _globalScope.APP_DATA = {
             "Hiểu rõ container tạo duy nhất 1 instance Servlet cho nhiều thread requests"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -548,7 +548,7 @@ _globalScope.APP_DATA = {
             "Giải thích cơ chế Cookie session JSESSIONID"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -568,7 +568,7 @@ _globalScope.APP_DATA = {
             "Vẽ sơ đồ flow Browser -> Servlet -> DAO -> DB -> JSP -> Browser"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -587,8 +587,8 @@ _globalScope.APP_DATA = {
           ],
           "targetHours": {
             "java": 1.5,
-            "other": 1.0,
-            "testking": 1.0,
+            "other": 1,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -613,9 +613,9 @@ _globalScope.APP_DATA = {
             "Ghi chú ít nhất 5 bẫy vào Error Notebook"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -630,9 +630,9 @@ _globalScope.APP_DATA = {
             "Review lại bảng Access modifiers"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -664,9 +664,9 @@ _globalScope.APP_DATA = {
             "Luyện tập code tracing các bài loop phức tạp"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -681,9 +681,9 @@ _globalScope.APP_DATA = {
             "Chú ý bẫy covariant return types và static method hiding"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -698,9 +698,9 @@ _globalScope.APP_DATA = {
             "Ghi chú các câu về equals/hashCode và TreeSet ordering"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -715,9 +715,9 @@ _globalScope.APP_DATA = {
             "Làm đề thi thử 20 câu tổng hợp (Java/SQL/Web)"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         }
@@ -745,7 +745,7 @@ _globalScope.APP_DATA = {
             "Code giao diện form đăng nhập đơn giản"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -765,7 +765,7 @@ _globalScope.APP_DATA = {
             "Luyện trả lời phỏng vấn: JS chạy ở đâu? DOM là gì? AJAX dùng làm gì? let khác var thế nào?"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -783,7 +783,7 @@ _globalScope.APP_DATA = {
             "Làm 10 câu flashcard FEE"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -804,7 +804,7 @@ _globalScope.APP_DATA = {
             "Vì sao Constructor Injection được khuyến nghị hơn Field Injection?"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -824,7 +824,7 @@ _globalScope.APP_DATA = {
             "Luyện tập trả lời các câu hỏi Audit về Spring"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
             "testking": 0.75,
             "english": 0.75
@@ -845,7 +845,7 @@ _globalScope.APP_DATA = {
           ],
           "targetHours": {
             "java": 1.5,
-            "other": 1.0,
+            "other": 1,
             "testking": 0.75,
             "english": 0.75
           }
@@ -861,8 +861,8 @@ _globalScope.APP_DATA = {
             "Nghe lại ghi âm và rà soát thuật ngữ tiếng Anh/tiếng Việt"
           ],
           "targetHours": {
-            "java": 1.0,
-            "other": 2.0,
+            "java": 1,
+            "other": 2,
             "testking": 0.5,
             "english": 0.5
           }
@@ -955,9 +955,9 @@ _globalScope.APP_DATA = {
             "Cam kết không sai lại lần 3"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 0.5,
-            "testking": 2.0,
+            "testking": 2,
             "english": 0.5
           }
         },
@@ -974,8 +974,8 @@ _globalScope.APP_DATA = {
           ],
           "targetHours": {
             "java": 1.5,
-            "other": 1.0,
-            "testking": 1.0,
+            "other": 1,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -990,9 +990,9 @@ _globalScope.APP_DATA = {
             "Nghe lại và sửa lỗi nói lan man"
           ],
           "targetHours": {
-            "java": 1.0,
+            "java": 1,
             "other": 1.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -1016,9 +1016,9 @@ _globalScope.APP_DATA = {
             "Làm nhanh 20 câu trắc nghiệm phản xạ"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -1033,9 +1033,9 @@ _globalScope.APP_DATA = {
             "Làm nhanh 20 câu trắc nghiệm"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -1050,9 +1050,9 @@ _globalScope.APP_DATA = {
             "Làm nhanh 20 câu trắc nghiệm"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -1067,9 +1067,9 @@ _globalScope.APP_DATA = {
             "Làm nhanh 20 câu trắc nghiệm"
           ],
           "targetHours": {
-            "java": 2.0,
+            "java": 2,
             "other": 0.5,
-            "testking": 1.0,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -1085,8 +1085,8 @@ _globalScope.APP_DATA = {
           ],
           "targetHours": {
             "java": 0.5,
-            "other": 2.0,
-            "testking": 1.0,
+            "other": 2,
+            "testking": 1,
             "english": 0.5
           }
         },
@@ -1102,9 +1102,9 @@ _globalScope.APP_DATA = {
           ],
           "targetHours": {
             "java": 0.5,
-            "other": 2.0,
+            "other": 2,
             "testking": 0.5,
-            "english": 1.0
+            "english": 1
           }
         },
         {
@@ -1119,9 +1119,9 @@ _globalScope.APP_DATA = {
             "Nghỉ ngơi, ngủ sớm, chuẩn bị tinh thần chiến thắng!"
           ],
           "targetHours": {
-            "java": 1.0,
-            "other": 1.0,
-            "testking": 1.0,
+            "java": 1,
+            "other": 1,
+            "testking": 1,
             "english": 0.5
           }
         }
@@ -3628,51 +3628,55 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Nhận diện kiểu dữ liệu và ép kiểu",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Primitive vs Reference types?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Primitive vs Reference types để tránh lỗi runtime."
+              "q": "Trong Java, các số nguyên như `100` và số thực như `3.14` khi viết trực tiếp (literal) có kiểu dữ liệu mặc định là gì?",
+              "ans": "Số nguyên mặc định là `int` (4 bytes). Số thực có dấu phẩy động mặc định là `double` (8 bytes)."
+            },
+            {
+              "q": "Khai báo `float f = 3.14;` có hợp lệ không? Tại sao?",
+              "ans": "Không hợp lệ, Compile Error: possible loss of precision. Vì `3.14` là kiểu `double`, không thể gán trực tiếp cho biến kiểu `float` (4 bytes) nếu không thêm hậu tố `F`/`f` hoặc ép kiểu `(float)3.14`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế Numeric Promotion trong biểu thức",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao phép cộng `byte b1 = 10; byte b2 = 20; byte b3 = b1 + b2;` lại bị lỗi biên dịch?",
+              "ans": "Trong Java, mọi toán tử nhị phân số học (+, -, *, /, %) áp dụng cho kiểu nhỏ hơn `int` (byte, short, char) đều tự động nâng kiểu (Numeric Promotion) lên `int`. Do đó `b1 + b2` trả về kết quả kiểu `int`. Gán `int` vào `byte` mà không ép kiểu tường minh sẽ bị lỗi biên dịch."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Phân tích luồng biến đổi dữ liệu",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nbyte b = 127;\nb++;\nSystem.out.println(b);\n```\nKết quả in ra màn hình là bao nhiêu? Giải thích cơ chế?",
+              "ans": "In ra: -128. Giải thích: Kiểu `byte` có 8-bit có dấu, giá trị từ -128 đến 127. Biểu diễn nhị phân của 127 là 01111111. Khi thực hiện `b++`, bit chuyển thành 10000000, đây là biểu diễn bù 2 của số -128 (hiện tượng tràn số nguyên Overflow)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy toán tử gộp vs toán tử thường",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau có biên dịch được không?\n```java\nshort s = 5;\ns += 10;\ns = s + 10;\n```",
+              "ans": "Lỗi tại dòng `s = s + 10;`. Dòng `s += 10;` biên dịch thành công vì toán tử gộp tự chèn ép kiểu: `s = (short)(s + 10)`. Trong khi đó `s + 10` biến thành `int`, gán vào `short` gây Compile Error."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Thử thách góc khuất kiểu dữ liệu",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Biểu thức `System.out.println(1.0 / 0.0);` và `System.out.println(1 / 0);` khác nhau thế nào?",
+              "ans": "`1 / 0` ném ra `java.lang.ArithmeticException: / by zero` (phép chia số nguyên). `1.0 / 0.0` tuân theo chuẩn IEEE 754 số thực dấu phẩy động và in ra chuỗi `Infinity` mà không ném ngoại lệ."
             }
           ]
         }
@@ -3705,9 +3709,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Primitive vs Reference types?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phân biệt cơ bản giữa Primitive types và Reference types trong bộ nhớ JVM?",
+          "a": "Primitive types (byte, short, int, long, float, double, char, boolean) lưu giá trị trực tiếp trên Stack (hoặc trong object nếu là field). Reference types lưu địa chỉ tham chiếu trỏ tới vùng nhớ đối tượng trên Heap.",
+          "trap": "Mảng của kiểu primitive (như int[]) bản thân nó là một Object trên Heap, không phải primitive!"
+        },
+        {
+          "q": "Cơ chế truyền tham số trong Java là Pass-by-Value hay Pass-by-Reference?",
+          "a": "Java là 100% Pass-by-Value. Với primitive, truyền bản sao giá trị. Với object, truyền bản sao của con trỏ tham chiếu (copy of reference value) chứ không phải bản thân con trỏ gốc.",
+          "trap": "Thay đổi thuộc tính của object trong hàm sẽ ảnh hưởng bên ngoài, nhưng gán `obj = new Object()` bên trong hàm hoàn toàn không đổi con trỏ bên ngoài!"
+        },
+        {
+          "q": "Khai báo `int[] a, b[];` thì `a` và `b` có kiểu dữ liệu là gì?",
+          "a": "`a` là mảng 1 chiều (`int[]`), còn `b` là mảng 2 chiều (`int[][]`) do cặp ngoặc `[]` đặt sau tên biến `b`.",
+          "trap": "Đề thi TestKing rất hay bẫy cú pháp khai báo mảng nhiều biến trên cùng 1 dòng."
         }
       ],
       "dailyEnglish": [
@@ -3853,51 +3867,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phạm vi truy cập Class và Package",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Access Modifiers: public, protected, default (package-private), private?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Access Modifiers: public, protected, default (package-private), private để tránh lỗi runtime."
+              "q": "Một top-level class (class cấp cao nhất, không phải inner class) trong Java có thể khai báo với những access modifier nào?",
+              "ans": "Chỉ có 2 mức: `public` hoặc `default` (package-private). Không được dùng `private` hoặc `protected` cho top-level class."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Nguyên tắc package và import",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nếu import `import java.util.*;` và `import java.sql.*;`, khi khai báo `Date d = new Date();` thì compiler xử lý thế nào?",
+              "ans": "Bị Compile Error: `reference to Date is ambiguous`. Cả `java.util.Date` và `java.sql.Date` đều khớp, lập trình viên buộc phải chỉ định tên đầy đủ gói (fully-qualified name) hoặc import đích danh một class."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace quyền truy cập package-private",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho 2 file trong 2 package khác nhau:\n```java\npackage pkgA;\npublic class A { void msg() { System.out.println(\"A\"); } }\n\npackage pkgB;\nimport pkgA.A;\npublic class B { public static void main(String[] args) { new A().msg(); } }\n```\nKết quả khi biên dịch là gì?",
+              "ans": "Compile Error tại file B: Phương thức `msg()` trong class A có phạm vi `default` (package-private), chỉ truy cập được trong cùng package `pkgA`. Class B nằm ở package `pkgB` nên không thể gọi `msg()`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy thứ tự khai báo trong file Java",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Một source file `.java` có thể chứa tối đa bao nhiêu `public` class và thứ tự bắt buộc của `package`, `import`, `class` là gì?",
+              "ans": "Chỉ được chứa tối đa 1 `public` class (và tên file phải trùng tên class này). Thứ tự bắt buộc: 1) `package` (nếu có) -> 2) `import` (nếu có) -> 3) `class / interface` definition."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Static import conflict",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi dùng `import static java.lang.Math.PI;` và trong chính class đó khai báo `public static final double PI = 3.14;`, khi gọi `System.out.println(PI);` giá trị nào được ưu tiên?",
+              "ans": "Giá trị biến `PI` khai báo trực tiếp trong class hiện tại được ưu tiên (shadowing) và in ra 3.14. Static import chỉ đóng vai trò dự phòng nếu không tìm thấy biến cùng tên trong scope hiện tại."
             }
           ]
         }
@@ -3918,9 +3932,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Access Modifiers: public, protected, default (package-private), private?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Bốn cấp độ truy cập (Access Modifiers) trong Java theo thứ tự thu hẹp dần?",
+          "a": "public (mọi nơi) > protected (cùng package + lớp con khác package qua kế thừa) > default/package-private (chỉ trong cùng package) > private (chỉ trong cùng class).",
+          "trap": "Lớp con ở package khác chỉ truy cập được member `protected` thông qua con trỏ kế thừa `this`, không truy cập được qua con trỏ đối tượng cha `new Parent().protectedMember`!"
+        },
+        {
+          "q": "Top-level class (class cấp cao nhất trong file .java) có thể dùng modifier nào?",
+          "a": "Chỉ được dùng 2 access modifier: `public` hoặc `default` (không ghi gì). Tuyệt đối không được dùng `private` hoặc `protected` cho top-level class.",
+          "trap": "Trong 1 file .java chỉ được phép có tối đa 1 public class trùng tên file, nhưng có thể có nhiều default class."
+        },
+        {
+          "q": "Thứ tự các thành phần hợp lệ trong một file mã nguồn Java (.java)?",
+          "a": "Thứ tự bắt buộc: 1. `package` declaration (tối đa 1) -> 2. `import` statements -> 3. `class` / `interface` declarations.",
+          "trap": "Package và import sai thứ tự sẽ bị Compile Error ngay dòng đầu tiên."
         }
       ],
       "dailyEnglish": [
@@ -4067,51 +4091,55 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Non-access Modifiers",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Non-access modifiers: static, final, abstract, strictfp, native?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Non-access modifiers: static, final, abstract, strictfp, native để tránh lỗi runtime."
+              "q": "Biến trong interface mặc định có những modifier ngầm định nào?",
+              "ans": "Luôn luôn là `public static final` dù có ghi hay không."
+            },
+            {
+              "q": "Từ khóa `transient` dùng để làm gì trong Java?",
+              "ans": "Đánh dấu biến instance không được tuần tự hóa (serialized). Khi object được ghi ra file/mạng qua `ObjectOutputStream`, giá trị của biến `transient` sẽ bị bỏ qua và nhận giá trị mặc định lúc deserialize."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Tính mâu thuẫn giữa các Modifiers",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao một method không thể đồng thời là `abstract` và `static`?",
+              "ans": "Phương thức `abstract` không có thân hàm và bắt buộc lớp con phải override thông qua cơ chế đa hình runtime. Trong khi đó phương thức `static` thuộc về class, liên kết tại thời điểm compile (static binding) và không thể override. Do đó kết hợp `abstract static` là mâu thuẫn cú pháp."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace giá trị biến static và final",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Counter {\n    static int count = 0;\n    final int id;\n    Counter() { id = ++count; }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Counter c1 = new Counter();\n        Counter c2 = new Counter();\n        System.out.println(c1.id + \" \" + c2.id + \" \" + Counter.count);\n    }\n}\n```\nKết quả in ra màn hình là gì?",
+              "ans": "In ra: `1 2 2`. Giải thích: `count` là biến `static` dùng chung trên vùng nhớ Metaspace/Heap. `c1` tạo ra tăng `count` lên 1 và gán `c1.id = 1`. `c2` tạo ra tăng `count` lên 2 và gán `c2.id = 2`. Biến `Counter.count` lúc này bằng 2."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy gán lại biến final reference",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau có hợp lệ không?\n```java\nfinal StringBuilder sb = new StringBuilder(\"Java\");\nsb.append(\" 8\");\nsb = new StringBuilder(\"Python\");\n```",
+              "ans": "Dòng `sb.append(\" 8\");` hoàn toàn hợp lệ vì nội dung object bên trong Heap thay đổi. Dòng `sb = new StringBuilder(\"Python\");` gây Compile Error: `cannot assign a value to final variable sb` (từ khóa final cấm trỏ tham chiếu sang object khác)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Blank final variable initialization",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Một biến `final int x;` không khởi tạo tại nơi khai báo (blank final) thì BẮT BUỘC phải được gán giá trị ở những nơi nào?",
+              "ans": "Nếu là biến instance: Bắt buộc phải được gán duy nhất 1 lần trong Instance Initialization Block hoặc trong TẤT CẢ các constructor của class. Nếu là biến `static final`: Bắt buộc phải gán trong Static Initialization Block."
             }
           ]
         }
@@ -4132,9 +4160,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Non-access modifiers: static, final, abstract, strictfp, native?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Ý nghĩa của từ khóa `final` khi áp dụng cho Class, Method và Variable?",
+          "a": "- Final class: Không thể bị kế thừa (vd: String, Integer).\n- Final method: Không thể bị Override bởi lớp con.\n- Final variable: Hằng số, chỉ gán giá trị được đúng 1 lần.",
+          "trap": "Biến tham chiếu final (`final List list = new ArrayList()`) chỉ cấm gán con trỏ sang object khác, nhưng nội dung bên trong object vẫn thay đổi được bình thường (`list.add(\"A\")` hợp lệ)!"
+        },
+        {
+          "q": "Những modifier nào TUYỆT ĐỐI KHÔNG ĐƯỢC đi cùng với `abstract`?",
+          "a": "`abstract` KHÔNG THỂ đi cùng: `final` (mâu thuẫn kế thừa), `private` (lớp con không thấy để override), `static` (static thuộc về class, không có đa hình runtime), `native` hoặc `synchronized`.",
+          "trap": "Đề thi hay gài `public abstract final void doWork();` -> Compile Error ngay lập tức."
+        },
+        {
+          "q": "Static block được thực thi vào thời điểm nào trong vòng đời ứng dụng?",
+          "a": "Static block thực thi duy nhất 1 lần khi Class được nạp (loaded) vào bộ nhớ JVM bởi ClassLoader, trước khi bất kỳ constructor nào hoặc instance block nào chạy.",
+          "trap": "Tạo 100 instance thì static block vẫn chỉ chạy duy nhất 1 lần đầu tiên."
         }
       ],
       "dailyEnglish": [
@@ -4278,51 +4316,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Toán tử và độ ưu tiên",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Operator Precedence & Associativity?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Operator Precedence & Associativity để tránh lỗi runtime."
+              "q": "Toán tử `==` khi áp dụng cho hai biến kiểu tham chiếu (Object reference) so sánh điều gì?",
+              "ans": "So sánh địa chỉ ô nhớ (identity reference): Trả về `true` nếu cả hai biến cùng trỏ tới chính xác cùng một đối tượng trên Heap."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Ngắn mạch (Short-circuit) vs Non-short-circuit",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Toán tử `&&` khác toán tử `&` như thế nào khi áp dụng cho biểu thức boolean?",
+              "ans": "`&&` là toán tử ngắn mạch (short-circuit): Nếu vế trái là `false`, vế phải sẽ KHÔNG được thực thi. Toán tử `&` luôn luôn đánh giá và thực thi cả hai vế bất kể vế trái là gì."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace biểu thức tiền tố và hậu tố",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint a = 3;\nint b = a++ + ++a * a--;\nSystem.out.println(\"a=\" + a + \", b=\" + b);\n```\nKết quả in ra màn hình là gì?",
+              "ans": "In ra: `a=4, b=28`. Giải thích:\n1) `a++` lấy giá trị 3, sau đó `a` tăng lên 4.\n2) `++a` tăng `a` lên 5 và lấy giá trị 5.\n3) `a--` lấy giá trị 5, sau đó `a` giảm xuống 4.\n4) Nhân trước cộng sau: `5 * 5 = 25`.\n5) `b = 3 + 25 = 28`.\n6) Giá trị cuối cùng của `a` là 4."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy short-circuit không thực thi vế phải",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nint x = 10;\nif (x > 5 || ++x > 10) {\n    System.out.println(x);\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 10 (không phải 11!). Do `x > 5` (10 > 5) là `true`, toán tử `||` ngắn mạch dừng ngay lập tức, biểu thức `++x > 10` không bao giờ được thực thi, do đó `x` vẫn giữ nguyên giá trị 10."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Toán tử dịch bit unsigned >>>",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Biểu thức `-1 >>> 24` trong Java cho kết quả là bao nhiêu?",
+              "ans": "In ra: 255. Giải thích: `-1` trong biểu diễn nhị phân 32-bit là toàn bit 1 (`0xFFFFFFFF`). Phép dịch phải không dấu `>>> 24` đẩy 24 bit sang phải và chèn 24 bit 0 từ bên trái, kết quả còn lại 8 bit 1 cuối (`0x000000FF`), tương đương giá trị 255."
             }
           ]
         }
@@ -4343,9 +4381,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Operator Precedence & Associativity?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Sự khác biệt giữa toán tử ngắn mạch (`&&`, `||`) và toán tử bitwise (`&`, `|`) khi dùng với boolean?",
+          "a": "- `&&` và `||` có tính Short-Circuit: Nếu vế trái đã quyết định kết quả (false với `&&`, true với `||`), vế phải sẽ KHÔNG ĐƯỢC TÍNH TOÁN.\n- `&` và `|` luôn luôn bắt buộc tính toán cả hai vế.",
+          "trap": "Bẫy đề thi: `if (x > 5 && ++y > 2)` nếu `x <= 5` thì `y` không tăng giá trị, gây sai lệch kết quả tracing."
+        },
+        {
+          "q": "Toán tử gán kết hợp (`+=`, `-=`, `*=`) có điểm gì đặc biệt so với phép gán thông thường?",
+          "a": "Toán tử gán kết hợp tự động ép kiểu ngầm định (implicit cast). Ví dụ: `byte b = 10; b += 5;` tương đương `b = (byte)(b + 5);` nên compile được; trong khi `b = b + 5;` bị Compile Error do 5 là int.",
+          "trap": "Nhầm tưởng `b += 5` và `b = b + 5` hoàn toàn giống nhau."
+        },
+        {
+          "q": "Độ ưu tiên giữa toán tử tiền tố (`++x`) và hậu tố (`x++`) trong một biểu thức phức tạp?",
+          "a": "`++x` tăng giá trị ngay trước khi lấy giá trị vào biểu thức; `x++` lấy giá trị hiện tại vào biểu thức trước rồi mới tăng biến sau.",
+          "trap": "Biểu thức `int x = 1; x = x++;` kết quả `x` vẫn là 1 vì giá trị cũ (1) được gán đè lại sau khi tăng!"
         }
       ],
       "dailyEnglish": [
@@ -4426,8 +4474,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "40 câu TestKing Ch1-3 mục tiêu đạt bao nhiêu điểm?",
-          "a": "Tối thiểu 32/40 (80%) để qua bài."
+          "q": "Trong biểu thức `byte b = 10; b += 5;`, tại sao `b += 5` hợp lệ còn `b = b + 5` bị lỗi biên dịch?",
+          "a": "Toán tử gộp `+=` tự động chèn ép kiểu ngầm định: `b = (byte)(b + 5)`. Trong khi `b + 5` thực hiện numeric promotion biến thành `int`, gán lại cho `byte` sẽ gây Compile Error do mất dữ liệu."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -4452,18 +4500,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_6_1",
-          "level": "Easy",
-          "question": "40 câu TestKing Ch1-3 mục tiêu đạt bao nhiêu điểm?",
-          "code": "public class Ch1to3Review {\n    public static void main(String[] args) {\n        byte b = 10;\n        b += 5; // OK (tự ép kiểu)\n        // b = b + 5; // COMPILE ERROR!\n        System.out.println(\"b = \" + b);\n    }\n}",
+          "id": "ct_d6_1",
+          "level": "Hard",
+          "question": "Dự đoán kết quả in ra của đoạn code TestKing tổng hợp cú pháp sau:",
+          "code": "public class TestKingTrap1 {\n    public static void main(String[] args) {\n        int x = 5;\n        boolean b1 = true;\n        boolean b2 = false;\n        if ((x == 4) && !b2)\n            System.out.print(\"1 \");\n        System.out.print(\"2 \");\n        if ((b2 = true) && b1)\n            System.out.print(\"3 \");\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "2 3 ",
+            "1 2 3 ",
+            "2 ",
+            "Compile Error tại dòng (b2 = true)"
           ],
           "correctIndex": 0,
-          "explanation": "Tối thiểu 32/40 (80%) để qua bài."
+          "explanation": "1. `(x == 4)` là false, toán tử ngắn mạch `&&` dừng lại, câu lệnh `System.out.print(\"1 \");` bị bỏ qua.\n2. Do không có dấu ngoặc nhọn `{}`, chỉ câu lệnh in '1 ' thuộc if. Câu lệnh in `2 ` nằm ngoài if nên luôn luôn được thực thi!\n3. Biểu thức `(b2 = true)` là phép GÁN (assignment) gán b2 thành true và trả về true. `true && b1` là true nên in tiếp `3 `.\nKết quả in ra: `2 3 `."
         }
       ],
       "examTraps": [
@@ -4487,51 +4535,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tổng hợp bẫy cú pháp Ch1-3",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tổng hợp bẫy cú pháp Ch1, Ch2, Ch3?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tổng hợp bẫy cú pháp Ch1, Ch2, Ch3 để tránh lỗi runtime."
+              "q": "Trong các định danh sau, định danh nào KHÔNG hợp lệ: `_myVar`, `$value`, `2ndCount`, `int`?",
+              "ans": "`2ndCount` (bắt đầu bằng chữ số) và `int` (trùng từ khóa dành riêng của Java)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế gán giá trị mặc định",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Khi khai báo `boolean[] flags = new boolean[3];`, các phần tử có giá trị là gì?",
+              "ans": "Mọi phần tử mảng boolean được khởi tạo mặc định là `false`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace bẫy ép kiểu biến cục bộ",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint x = 100;\nbyte b = (byte) x;\nx = b + 10;\nSystem.out.println(x);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 110. Giải thích: `b` ép kiểu từ 100 vẫn giữ nguyên 100 (vì 100 nằm trong khoảng -128..127 của byte). Phép cộng `b + 10` sinh ra `int` giá trị 110, gán hợp lệ cho biến `int x`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy biến cục bộ chưa khởi tạo",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau có lỗi gì?\n```java\nint x;\nif (args.length > 0) {\n    x = 10;\n}\nSystem.out.println(x);\n```",
+              "ans": "Compile Error: `variable x might not have been initialized`. Trình biên dịch nhận thấy khối if có thể không được thỏa mãn nếu không truyền đối số, dẫn tới `x` chưa được khởi tạo trước khi in."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Chuyển đổi kiểu dữ liệu char và int",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Biểu thức `char c = 'A'; int i = c + 1; System.out.println((char)i);` in ra gì?",
+              "ans": "In ra: `'B'`. Mã ASCII của 'A' là 65. `c + 1` thực hiện numeric promotion thành `int` giá trị 66. Ép kiểu `(char)66` trả về ký tự tương ứng là 'B'."
             }
           ]
         }
@@ -4564,9 +4612,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tổng hợp bẫy cú pháp Ch1, Ch2, Ch3?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Số nguyên bắt đầu bằng số 0 (vd `012`, `08`) trong Java có quy tắc gì?",
+          "a": "Số bắt đầu bằng `0` là hệ Bát phân (Octal, cơ số 8), chỉ chấp nhận các chữ số từ `0` đến `7`. `012` = 1*8 + 2 = 10 thập phân. Khai báo `08` hoặc `09` bị Compile Error ngay!",
+          "trap": "Chữ số 8 và 9 trong số nguyên bắt đầu bằng 0 là bẫy kinh điển số 1 của TestKing."
+        },
+        {
+          "q": "Tại sao `float f = 3.14;` bị lỗi biên dịch và cách sửa chuẩn?",
+          "a": "Số thực có dấu chấm thập phân mặc định là kiểu `double` (64-bit). Gán `double` sang `float` (32-bit) là Narrowing conversion nên lỗi. Sửa bằng cách thêm hậu tố `F`/`f`: `float f = 3.14f;` hoặc ép kiểu `(float)3.14`.",
+          "trap": "Rất nhiều người nhầm số thập phân mặc định là float."
+        },
+        {
+          "q": "Biến local trong method có được tự động gán giá trị mặc định (default value) không?",
+          "a": "KHÔNG. Biến cục bộ (local variable) không có giá trị mặc định. Nếu cố tình đọc/sử dụng khi chưa được khởi tạo giá trị, trình biên dịch sẽ báo lỗi Compile Error.",
+          "trap": "Chỉ có instance variable (biến trong object) và static variable mới nhận default value (0, false, null)."
         }
       ],
       "dailyEnglish": [
@@ -4645,8 +4703,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Đã điền đầy đủ bảng Access Modifiers Matrix vào Sổ Lỗi chưa?",
-          "a": "Bắt buộc phải thuộc lòng 4 mức public, protected, default, private."
+          "q": "Một class con ở package khác có thể truy cập thành viên `protected` của class cha thông qua tham chiếu của class cha (`Parent p = new Parent(); p.field`) được không?",
+          "a": "Không! Class con chỉ có thể truy cập thành viên `protected` thông qua tính kế thừa (`this.field` hoặc `super.field`), hoặc thông qua tham chiếu của chính class con đó (`Child c = new Child(); c.field`)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -4698,51 +4756,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Ma trận Access Modifiers",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Ôn tập toàn diện Ch1, Ch2, Ch3?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Ôn tập toàn diện Ch1, Ch2, Ch3 để tránh lỗi runtime."
+              "q": "Thứ tự từ chặt chẽ nhất đến mở rộng nhất của 4 mức Access Modifiers trong Java là gì?",
+              "ans": "`private` -> `default (package-private)` -> `protected` -> `public`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế truy cập protected ngoài package",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Class con ở package khác có thể gọi phương thức `protected` của class cha bằng cách nào?",
+              "ans": "Chỉ thông qua quan hệ kế thừa (dùng `this.method()` hoặc `super.method()`), không thể truy cập thông qua tham chiếu của instance lớp cha (`new Parent().method()`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace toán tử điều kiện ba ngôi lồng nhau",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint x = 5;\nint y = 10;\nint z = (x > 3) ? (y < 8 ? 1 : 2) : 3;\nSystem.out.println(z);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 2. Giải thích: `x > 3` (5 > 3) là `true`, đánh giá nhánh thứ nhất: `(y < 8 ? 1 : 2)`. Vì `y < 8` (10 < 8) là `false`, kết quả nhánh này là 2. Biến `z` nhận giá trị 2."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy gán trong biểu thức điều kiện",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nboolean b = false;\nif (b = true) {\n    System.out.println(\"TRUE\");\n} else {\n    System.out.println(\"FALSE\");\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `TRUE`. Đây là bẫy toán tử gán `=` thay vì so sánh `==`. Biểu thức `b = true` gán `true` cho `b` và đồng thời trả về giá trị `true`, làm cho khối if được thỏa mãn!"
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Toán tử XOR ^ trên bit và boolean",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Kết quả của `true ^ false` và `5 ^ 3` là bao nhiêu?",
+              "ans": "`true ^ false` = `true` (XOR logic: trả về true khi 2 toán hạng khác nhau). `5 ^ 3` = `6` (XOR bitwise: 0101 ^ 0011 = 0110, tương đương số 6)."
             }
           ]
         }
@@ -4775,9 +4833,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Ôn tập toàn diện Ch1, Ch2, Ch3?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc mở rộng kiểu (Widening primitive conversion) tự động trong Java theo thứ tự nào?",
+          "a": "`byte` -> `short` -> `int` -> `long` -> `float` -> `double`. Riêng `char` (không dấu, 0..65535) có thể mở rộng sang `int`, nhưng không thể gán tự động từ `byte` sang `char`.",
+          "trap": "Gán `byte b = 1; char c = b;` là Compile Error vì byte có dấu còn char không dấu!"
+        },
+        {
+          "q": "Array Covariance (tính đồng biến của mảng) là gì và tiềm ẩn lỗi gì ở runtime?",
+          "a": "Nếu `Sub` kế thừa `Super`, thì `Sub[]` là kiểu con của `Super[]`. Cho phép gán `Object[] arr = new String[3];`. Tuy nhiên, nếu cố tình gán `arr[0] = 123;` thì lúc chạy sẽ ném `ArrayStoreException`.",
+          "trap": "Biên dịch không báo lỗi nhưng chạy sẽ ném ArrayStoreException."
+        },
+        {
+          "q": "Hậu tố `L`, `F`, `D` trong literal số có phân biệt hoa thường không?",
+          "a": "Không phân biệt hoa thường (`100l` hay `100L`, `3.14f` hay `3.14F`). Tuy nhiên khuyến nghị dùng chữ hoa `L` để tránh nhầm chữ `l` với số `1`.",
+          "trap": "TestKing hay in `100l` khiến thí sinh nhìn nhầm thành `1001`."
         }
       ],
       "dailyEnglish": [
@@ -4919,51 +4987,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Cấu trúc điều khiển luồng",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: if / else (bẫy else treo)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của if / else (bẫy else treo) để tránh lỗi runtime."
+              "q": "Câu lệnh `switch` trong Java (trước Java 12) hỗ trợ những kiểu dữ liệu nào?",
+              "ans": "`byte`, `short`, `char`, `int`, các wrapper class tương ứng (`Byte`, `Short`, `Character`, `Integer`), `String` (từ Java 7), và `enum`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Nguyên lý fall-through trong switch-case",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Hiện tượng fall-through xảy ra khi nào trong câu lệnh `switch`?",
+              "ans": "Khi một khối `case` khớp điều kiện nhưng không có câu lệnh `break;`, luồng điều khiển sẽ tiếp tục rơi xuống và thực thi toàn bộ các câu lệnh của các `case` tiếp theo (kể cả `default`) bất kể điều kiện có khớp hay không."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace switch case không có break",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint day = 2;\nswitch (day) {\n    case 1: System.out.print(\"1\");\n    case 2: System.out.print(\"2\");\n    case 3: System.out.print(\"3\");\n    default: System.out.print(\"D\");\n}\n```\nKết quả in ra màn hình là gì?",
+              "ans": "In ra: `23D`. Khớp `case 2`, in ra '2'. Do không có `break`, tiếp tục thực thi `case 3` in ra '3', tiếp tục fall-through sang `default` in ra 'D'."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy hằng số hằng định case",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau có biên dịch được không?\n```java\nint x = 10;\nint y = 5;\nswitch(x) {\n    case y: System.out.println(\"Match\");\n}\n```",
+              "ans": "Compile Error: `constant expression required`. Giá trị trong biểu thức `case` bắt buộc phải là hằng số lúc compile (compile-time constant, ví dụ literal hoặc biến `final` đã được khởi tạo)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Labeled break trong vòng lặp lồng nhau",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cho đoạn code sau:\n```java\nouter: for(int i=0; i<3; i++) {\n    for(int j=0; j<3; j++) {\n        if(i == 1 && j == 1) break outer;\n        System.out.print(\"\" + i + j + \" \");\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `00 01 02 10 `. Khi `i=1` và `j=1`, lệnh `break outer;` lập tức thoát khỏi cả vòng lặp ngoài cùng, chấm dứt hoàn toàn chương trình."
             }
           ]
         }
@@ -4984,9 +5052,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của if / else (bẫy else treo)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Những kiểu dữ liệu nào ĐƯỢC PHÉP và KHÔNG ĐƯỢC PHÉP dùng trong biểu thức `switch`?",
+          "a": "- ĐƯỢC PHÉP: `byte`, `short`, `char`, `int`, các wrapper tương ứng (`Byte`, `Short`, `Character`, `Integer`), `enum` và `String` (từ Java 7).\n- CẤM TUYỆT ĐỐI: `boolean`, `long`, `float`, `double`.",
+          "trap": "Đề thi hay cho `switch(longVar)` hoặc `switch(doubleVar)` -> Compile Error ngay lập tức!"
+        },
+        {
+          "q": "Điều kiện bắt buộc đối với các nhãn `case` trong câu lệnh `switch`?",
+          "a": "Giá trị sau `case` phải là Hằng số thời điểm biên dịch (Compile-time Constant Expression) tương thích kiểu với biểu thức switch. Không được dùng biến thường (non-final) và không được trùng lặp giá trị case.",
+          "trap": "Dùng biến `int x = 1; case x:` bị lỗi nếu `x` không có từ khóa `final`!"
+        },
+        {
+          "q": "Hiện tượng 'Fall-through' trong `switch-case` xảy ra khi nào?",
+          "a": "Khi một case khớp điều kiện nhưng không có lệnh `break`, luồng thực thi sẽ tiếp tục chạy thẳng xuống TẤT CẢ các case tiếp theo (bất kể điều kiện case có khớp hay không) cho đến khi gặp `break` hoặc hết switch.",
+          "trap": "Bẫy tính toán output khi cố tình bỏ quên từ khóa `break`."
         }
       ],
       "dailyEnglish": [
@@ -5131,51 +5209,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Cây phân cấp Ngoại lệ",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Exception hierarchy: Throwable -> Error vs Exception (Checked vs Unchecked)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Exception hierarchy: Throwable -> Error vs Exception (Checked vs Unchecked) để tránh lỗi runtime."
+              "q": "Lớp gốc của tất cả các ngoại lệ và lỗi trong Java là gì? Nêu 2 nhánh con trực tiếp của nó.",
+              "ans": "Lớp gốc là `java.lang.Throwable`. Hai nhánh con trực tiếp là `java.lang.Exception` (có thể bắt và xử lý) và `java.lang.Error` (lỗi hệ thống nghiêm trọng của JVM, không nên bắt)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Checked Exception vs Unchecked Exception",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Sự khác biệt cốt lõi giữa Checked Exception và Unchecked Exception là gì?",
+              "ans": "Checked Exception (kế thừa `Exception` nhưng không kế thừa `RuntimeException`): Bắt buộc phải xử lý bằng `try-catch` hoặc khai báo `throws` ở chữ ký phương thức (trình biên dịch bắt buộc kiểm tra). Unchecked Exception (kế thừa `RuntimeException` hoặc `Error`): Không bắt buộc khai báo hay xử lý lúc biên dịch."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace thứ tự các khối catch",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\ntry {\n    String s = null;\n    System.out.println(s.length());\n} catch (NullPointerException e) {\n    System.out.print(\"NPE \");\n} catch (RuntimeException e) {\n    System.out.print(\"RE \");\n} finally {\n    System.out.print(\"FIN\");\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `NPE FIN`. Phép gọi `s.length()` ném `NullPointerException`. Khối `catch (NullPointerException e)` khớp đầu tiên nên được thực thi, sau đó khối `finally` luôn được chạy."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Unreachable Catch Block",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau bị lỗi gì khi biên dịch?\n```java\ntry {\n    throw new IOException();\n} catch (Exception e) {\n    System.out.println(\"Exp\");\n} catch (IOException e) {\n    System.out.println(\"IO\");\n}\n```",
+              "ans": "Compile Error: `unreachable catch block for IOException. It is already handled by the catch block for Exception`. Khối catch ngoại lệ cha (`Exception`) không được đặt trước ngoại lệ con (`IOException`)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Multi-catch syntax và tính bất biến",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Trong cú pháp multi-catch `catch (IOException | SQLException e)`, biến `e` có đặc điểm gì đặc biệt?",
+              "ans": "Biến tham chiếu `e` trong cú pháp multi-catch ngầm định là `final`. Mọi hành động gán lại `e = new IOException();` bên trong khối catch sẽ gây lỗi Compile Error."
             }
           ]
         }
@@ -5196,9 +5274,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Exception hierarchy: Throwable -> Error vs Exception (Checked vs Unchecked)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phân biệt Checked Exception và Unchecked Exception trong cây thừa kế `Throwable`?",
+          "a": "- Checked Exception (kế thừa `Exception` trừ `RuntimeException`): Bắt buộc phải try-catch hoặc khai báo `throws` ở signature (vd: `IOException`, `SQLException`).\n- Unchecked Exception (kế thừa `RuntimeException` hoặc `Error`): Không bắt buộc xử lý (vd: `NullPointerException`, `ArrayIndexOutOfBoundsException`).",
+          "trap": "Cố tình `catch(IOException)` khi trong khối try không hề có dòng code nào có khả năng ném IOException sẽ bị Compile Error!"
+        },
+        {
+          "q": "Khối `finally` có LUÔN LUÔN được thực thi không? Có trường hợp ngoại lệ nào không?",
+          "a": "Khối `finally` luôn chạy kể cả khi có exception hay có lệnh `return` trong try/catch. Trường hợp DUY NHẤT finally không chạy là gọi `System.exit(0)` hoặc máy ảo JVM bị crash/mất nguồn.",
+          "trap": "Nếu cả `try` và `finally` đều có lệnh `return`, giá trị return trong khối `finally` sẽ ghi đè và là giá trị trả về cuối cùng!"
+        },
+        {
+          "q": "Thứ tự bắt các khối `catch` khi có quan hệ cha-con?",
+          "a": "Phải bắt ngoại lệ con (subclass) trước, ngoại lệ cha (superclass) sau. Nếu đặt `catch(Exception e)` trước `catch(IOException e)` thì catch của con sẽ bị unreachable code -> Compile Error.",
+          "trap": "Đề thi hay đảo ngược vị trí catch Exception lên đầu để lừa thí sinh."
         }
       ],
       "dailyEnglish": [
@@ -5349,51 +5437,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Cơ chế hoạt động của finally",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Encapsulation (getter/setter, data hiding)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Encapsulation (getter/setter, data hiding) để tránh lỗi runtime."
+              "q": "Có trường hợp nào mà khối `finally` KHÔNG được thực thi không?",
+              "ans": "Có! Khi hàm `System.exit(0)` được gọi trong khối try/catch, hoặc khi JVM bị crash đột ngột (ví dụ OutOfMemoryError phần cứng, ngắt nguồn điện OS)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Return overwrite trong khối finally",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao không nên đặt lệnh `return` hoặc ném ngoại lệ trong khối `finally`?",
+              "ans": "Vì câu lệnh `return` hoặc `throw` trong `finally` sẽ triệt tiêu và ghi đè hoàn toàn (overwrite/swallow) giá trị trả về hoặc ngoại lệ đang được xử lý ở khối `try` hoặc `catch`, dẫn đến mất dấu vết lỗi và sai lệch logic chương trình."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace luồng return với finally",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\npublic static int test() {\n    int x = 10;\n    try {\n        return x;\n    } finally {\n        x = 20;\n    }\n}\n```\nKhi gọi hàm `test()`, giá trị trả về là bao nhiêu?",
+              "ans": "Trả về: 10! Giải thích: Khi gặp `return x;` trong `try`, giá trị của `x` (10) được sao chép và lưu vào một ô nhớ tạm trên Stack (return slot). Sau đó khối `finally` chạy gán `x = 20` (chỉ làm thay đổi biến cục bộ `x`), không làm thay đổi giá trị trong return slot. Do đó hàm vẫn trả về 10."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy return ghi đè trong finally",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\npublic static int test() {\n    try {\n        return 1;\n    } finally {\n        return 2;\n    }\n}\n```\nHàm trả về bao nhiêu?",
+              "ans": "Trả về 2! Khi khối `finally` có lệnh `return 2;` tường minh, nó ghi đè trực tiếp lên giá trị `1` trước đó của khối try."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Try-with-resources và Suppressed Exceptions",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Trong cú pháp try-with-resources (Java 7+), các tài nguyên được đóng theo thứ tự nào so với thứ tự khai báo?",
+              "ans": "Các tài nguyên được tự động đóng (`close()`) theo THỨ TỰ NGƯỢC LẠI (LIFO - Last-In, First-Out) so với thứ tự khai báo trong dấu ngoặc tròn `try(...)`."
             }
           ]
         }
@@ -5414,9 +5502,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Encapsulation (getter/setter, data hiding)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc gọi Constructor cha (`super()`) trong Constructor con?",
+          "a": "`super()` hoặc `this()` PHẢI là câu lệnh đầu tiên trong constructor con. Không được gọi cả hai trong cùng 1 constructor. Nếu lập trình viên không tự viết, compiler sẽ tự động chèn `super()` không tham số vào dòng đầu tiên.",
+          "trap": "Nếu class cha khai báo constructor có tham số và KHÔNG có constructor mặc định, lớp con không tự gọi `super(args)` sẽ bị Compile Error ngay!"
+        },
+        {
+          "q": "Nguyên lý đóng gói (Encapsulation) chuẩn trong Java được thiết kế như thế nào?",
+          "a": "Khai báo các thuộc tính (fields) là `private` để giấu dữ liệu bên trong, và cung cấp các phương thức `public` getter / setter để kiểm soát việc đọc/ghi và xác thực dữ liệu hợp lệ.",
+          "trap": "Getter trả về con trỏ Mutable Object (như `Date` hoặc mảng) cần clone để tránh lộ tham chiếu trực tiếp ra ngoài."
+        },
+        {
+          "q": "Constructor có được kế thừa (inherited) sang lớp con không?",
+          "a": "KHÔNG. Lớp con không kế thừa constructor của lớp cha, nó chỉ có thể gọi (invoke) constructor của lớp cha thông qua từ khóa `super(...)`.",
+          "trap": "Nhiều người lầm tưởng constructor cũng được kế thừa như method thông thường."
         }
       ],
       "dailyEnglish": [
@@ -5558,51 +5656,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Nguyên lý kế thừa và ghi đè phương thức",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Polymorphism: Compile-time type vs Runtime object type?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Polymorphism: Compile-time type vs Runtime object type để tránh lỗi runtime."
+              "q": "Khi ghi đè (override) một phương thức, phạm vi truy cập của phương thức ở class con có được hẹp hơn class cha không?",
+              "ans": "Không! Phương thức ở class con BẮT BUỘC phải có phạm vi truy cập BẰNG HOẶC RỘNG HƠN phương thức ở class cha (vd: cha là `protected` thì con phải là `protected` hoặc `public`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Quy tắc Covariant Return Type",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Covariant Return Type trong Java là gì?",
+              "ans": "Từ Java 5, phương thức override ở class con được phép có kiểu trả về là một lớp con (sub-type) của kiểu trả về ở class cha (ví dụ cha trả về `Number`, con được phép override trả về `Integer`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Đa hình Runtime (Dynamic Binding)",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Parent {\n    void show() { System.out.print(\"P \"); }\n}\nclass Child extends Parent {\n    void show() { System.out.print(\"C \"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Parent obj = new Child();\n        obj.show();\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `C `. Do `obj` thực tế trỏ tới đối tượng `Child` trên Heap, cơ chế Dynamic Binding (đa hình lúc runtime) sẽ gọi phương thức được ghi đè tại class `Child`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy che giấu phương thức static (Method Hiding)",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nclass A { static void m() { System.out.print(\"A \"); } }\nclass B extends A { static void m() { System.out.print(\"B \"); } }\npublic class Test {\n    public static void main(String[] args) {\n        A obj = new B();\n        obj.m();\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `A `. Phương thức `static` KHÔNG tham gia vào đa hình runtime, mà áp dụng cơ chế Method Hiding (liên kết tĩnh lúc compile - Static Binding dựa trên kiểu tham chiếu `A`)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Bẫy biến instance không đa hình (Variable Shadowing)",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cho đoạn code sau:\n```java\nclass Parent { int x = 10; }\nclass Child extends Parent { int x = 20; }\npublic class Test {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        System.out.println(p.x);\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 10. Các trường biến (fields) trong Java KHÔNG có tính đa hình! Việc truy cập biến luôn được quyết định bởi kiểu của tham chiếu (`Parent`) tại thời điểm biên dịch."
             }
           ]
         }
@@ -5623,9 +5721,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Polymorphism: Compile-time type vs Runtime object type?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Sự khác biệt cốt lõi giữa Overloading (Nạp chồng) và Overriding (Ghi đè)?",
+          "a": "- Overloading: Cùng tên trong cùng class, KHÁC danh sách tham số, quyết định ở Compile-time.\n- Overriding: Cùng tên và cùng tham số ở lớp con, quyết định ở Runtime dựa vào đối tượng thực tế trên Heap.",
+          "trap": "Thay đổi kiểu trả về nhưng giữ nguyên tham số KHÔNG PHẢI là overloading mà bị Compile Error!"
+        },
+        {
+          "q": "Quy tắc Covariant Return Type trong Method Overriding từ Java 5?",
+          "a": "Phương thức ghi đè ở lớp con có thể trả về kiểu con của kiểu trả về ở lớp cha. Ví dụ: Cha trả về `Object`, con có thể trả về `String`. Nhưng áp dụng cho kiểu tham chiếu, không áp dụng cho primitive.",
+          "trap": "Cha trả về `double`, con đổi sang `int` là Compile Error (primitive không có tính covariant)!"
+        },
+        {
+          "q": "Các ràng buộc về Access Modifier và Exception khi Override phương thức?",
+          "a": "- Access Modifier ở con phải RỘNG HƠN hoặc BẰNG cha (vd: protected -> public hoặc protected; không được đổi sang private).\n- Con KHÔNG ĐƯỢC ném Checked Exception mới hoặc rộng hơn cha (nhưng có thể ném ít hơn hoặc ném Unchecked Exception tùy ý).",
+          "trap": "Cha không throws gì cả, con throws Exception -> Compile Error ngay!"
         }
       ],
       "dailyEnglish": [
@@ -5732,18 +5840,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_12_1",
-          "level": "Easy",
-          "question": "Biểu thức `null instanceof Object` trả về gì?",
-          "code": "Animal a = new Animal();\n// Dog d = (Dog) a; // Biên dịch được nhưng ném ClassCastException lúc runtime!\n\nAnimal a2 = new Dog();\nif (a2 instanceof Dog) {\n    Dog d2 = (Dog) a2; // An toàn tuyệt đối!\n}",
+          "id": "ct_d12_1",
+          "level": "Hard",
+          "question": "Dự đoán kết quả in ra của đoạn code kế thừa và che khuất biến sau:",
+          "code": "class Base {\n    int num = 10;\n    void show() { System.out.print(num + \" \"); }\n}\nclass Sub extends Base {\n    int num = 20;\n    void show() { System.out.print(num + \" \"); }\n}\npublic class PolymorphTest {\n    public static void main(String[] args) {\n        Base b = new Sub();\n        System.out.print(b.num + \" \");\n        b.show();\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "10 20 ",
+            "20 20 ",
+            "10 10 ",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "false"
+          "explanation": "1. Trong Java, thuộc tính (field) KHÔNG có tính đa hình (Polymorphism). Truy cập `b.num` được quyết định ở thời điểm biên dịch dựa vào kiểu tham chiếu `Base`, do đó in ra `10`.\n2. Phương thức `b.show()` có tính đa hình runtime, tại thời điểm chạy nó gọi phương thức đã được override của đối tượng thực tế `Sub`, do đó in ra `20`.\nKết quả in ra: `10 20 `."
         }
       ],
       "examTraps": [
@@ -5775,51 +5883,55 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Constructor và từ khóa this/super",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Variable Shadowing & Method Hiding (static method)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Variable Shadowing & Method Hiding (static method) để tránh lỗi runtime."
+              "q": "Lời gọi `this()` hoặc `super()` nếu xuất hiện trong constructor thì bắt buộc phải nằm ở vị trí nào?",
+              "ans": "Bắt buộc phải nằm ở DÒNG ĐẦU TIÊN của constructor."
+            },
+            {
+              "q": "Một constructor có thể gọi đồng thời cả `this()` và `super()` không?",
+              "ans": "Không thể, vì cả hai đều bắt buộc phải nằm ở dòng đầu tiên của constructor, dẫn đến xung đột cú pháp."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Thứ tự khởi tạo đối tượng trong JVM",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Trình bày thứ tự khởi tạo của JVM khi một đối tượng lớp con được tạo mới (`new Child()`).",
+              "ans": "1) Static variables & Static init blocks của cha rồi đến con (chạy 1 lần duy nhất khi nạp class). 2) Instance variables & Instance init blocks của cha -> Constructor cha. 3) Instance variables & Instance init blocks của con -> Constructor con."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace thứ tự thực thi Constructor và Init Blocks",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Parent {\n    static { System.out.print(\"S1 \"); }\n    {\n        System.out.print(\"I1 \");\n    }\n    Parent() { System.out.print(\"C1 \"); }\n}\nclass Child extends Parent {\n    static { System.out.print(\"S2 \"); }\n    {\n        System.out.print(\"I2 \");\n    }\n    Child() { System.out.print(\"C2 \"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new Child();\n    }\n}\n```\nKết quả in ra màn hình là gì?",
+              "ans": "In ra: `S1 S2 I1 C1 I2 C2`. Thứ tự:\n1) Khối static cha `S1` -> static con `S2`.\n2) Khối instance cha `I1` -> Constructor cha `C1`.\n3) Khối instance con `I2` -> Constructor con `C2`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy thiếu constructor mặc định ở class cha",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Class con bị Compile Error khi class cha khai báo `Parent(String name) {}` mà không có constructor rỗng, tại sao?",
+              "ans": "Khi class cha tự định nghĩa một constructor có tham số, Java sẽ KHÔNG tự sinh constructor mặc định không tham số nữa. Class con nếu không gọi tường minh `super(\"name\")` sẽ ngầm định gọi `super()`, dẫn tới Compile Error: `implicit super constructor Parent() is undefined`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Gọi overridable method trong constructor",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao việc gọi một phương thức có thể bị override từ bên trong constructor của class cha lại được xem là cấm kỵ (antipattern) trong Java?",
+              "ans": "Vì khi constructor cha chạy, đối tượng con CHƯA được khởi tạo (các trường của lớp con vẫn đang mang giá trị mặc định 0/null). Nếu phương thức bị con override truy cập vào các trường này, nó sẽ đọc phải dữ liệu rác hoặc gây NullPointerException."
             }
           ]
         }
@@ -5840,9 +5952,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Variable Shadowing & Method Hiding (static method)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Hiện tượng Method Hiding (Ẩn phương thức) xảy ra khi nào?",
+          "a": "Khi lớp con khai báo phương thức `static` có cùng signature với phương thức `static` của lớp cha. Phương thức static KHÔNG THỂ bị Override, chỉ bị Hide. Quyết định gọi hàm static nào dựa vào kiểu con trỏ ở Compile-time!",
+          "trap": "Cha có method `static`, con khai báo lại method đó nhưng bỏ chữ `static` (hoặc ngược lại) sẽ bị Compile Error."
+        },
+        {
+          "q": "Biểu thức `null instanceof AnyClass` trả về kết quả gì?",
+          "a": "Luôn luôn trả về `false`, không bao giờ ném ngoại lệ NullPointerException.",
+          "trap": "Bẫy câu hỏi trắc nghiệm hay hỏi `null instanceof Object` -> Đáp án đúng là false!"
+        },
+        {
+          "q": "Variable Shadowing (Che khuất biến) trong quan hệ kế thừa hoạt động ra sao?",
+          "a": "Khi lớp con khai báo biến trùng tên với lớp cha, biến của cha bị che khuất. Truy cập biến luôn luôn giải quyết theo kiểu của biến tham chiếu (Reference type) tại Compile-time, hoàn toàn KHÔNG có tính đa hình runtime!",
+          "trap": "`Parent p = new Child(); System.out.println(p.x);` luôn in ra giá trị biến `x` của Parent!"
         }
       ],
       "dailyEnglish": [
@@ -5921,8 +6043,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu điểm số TestKing Ch1-5 là bao nhiêu?",
-          "a": "Trên 85% đúng."
+          "q": "Cú pháp `(Dog) animal` khi `animal` thực tế đang trỏ tới một `Cat` object sẽ xảy ra hiện tượng gì ở thời điểm compile và runtime?",
+          "a": "Compile thành công (vì Dog và Animal có quan hệ kế thừa IS-A), nhưng lúc Runtime sẽ ném `java.lang.ClassCastException` vì Cat không thể ép kiểu sang Dog."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -5947,18 +6069,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_13_1",
-          "level": "Easy",
-          "question": "Mục tiêu điểm số TestKing Ch1-5 là bao nhiêu?",
-          "code": "// Đề luyện 50 câu TestKing tổng hợp",
+          "id": "ct_d13_1",
+          "level": "Hard",
+          "question": "Đoạn code ép kiểu đa hình sau cho kết quả gì?",
+          "code": "class Animal { }\nclass Dog extends Animal { }\nclass Cat extends Animal { }\npublic class CastTest {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        Dog d = (Dog) a;\n        System.out.print(\"Pass1 \");\n        try {\n            Cat c = (Cat) a;\n            System.out.print(\"Pass2 \");\n        } catch (ClassCastException e) {\n            System.out.print(\"CatchCCE \");\n        }\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Pass1 CatchCCE ",
+            "Pass1 Pass2 ",
+            "Compile Error tại dòng (Cat) a",
+            "Chỉ in Pass1 rồi crash"
           ],
           "correctIndex": 0,
-          "explanation": "Trên 85% đúng."
+          "explanation": "1. `a` tham chiếu đến đối tượng `Dog` trên Heap. Ép kiểu `(Dog) a` hoàn toàn hợp lệ, in ra `Pass1 `.\n2. Cố tình ép `(Cat) a` hợp lệ khi compile (vì Cat và Animal có quan hệ kế thừa), nhưng ở Runtime JVM kiểm tra thấy đối tượng thực tế là Dog chứ không phải Cat, nên ném ngoại lệ `ClassCastException`.\n3. Khối catch bắt được ngoại lệ và in ra `CatchCCE `."
         }
       ],
       "examTraps": [
@@ -5974,51 +6096,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Ép kiểu đối tượng (Casting)",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tổng hợp kiến thức nền tảng từ Ch1 đến Ch5?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tổng hợp kiến thức nền tảng từ Ch1 đến Ch5 để tránh lỗi runtime."
+              "q": "Upcasting (ép kiểu lên cha) và Downcasting (ép kiểu xuống con) trường hợp nào yêu cầu toán tử ép kiểu tường minh `(SubClass)`?",
+              "ans": "Downcasting bắt buộc phải có toán tử ép kiểu tường minh `(SubClass)`. Upcasting diễn ra tự động và an toàn (implicit)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Toán tử instanceof và ClassCastException",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Toán tử `instanceof` kiểm tra điều gì và `null instanceof Object` trả về kết quả gì?",
+              "ans": "`instanceof` kiểm tra xem đối tượng thực tế trên Heap có quan hệ IS-A với kiểu dữ liệu được chỉ định hay không. Biểu thức `null instanceof AnyClass` luôn trả về `false` mà không ném lỗi."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Downcasting hợp lệ vs không hợp lệ",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Animal {}\nclass Dog extends Animal {}\npublic class Test {\n    public static void main(String[] args) {\n        Animal a = new Animal();\n        Dog d = (Dog) a;\n    }\n}\n```\nĐoạn code này biên dịch và chạy như thế nào?",
+              "ans": "Biên dịch thành công (vì Animal và Dog có quan hệ kế thừa), nhưng khi chạy (Runtime) sẽ ném ngoại lệ: `java.lang.ClassCastException` vì đối tượng thực tế trên Heap là `Animal`, không thể ép kiểu thành `Dog`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy ép kiểu giữa hai class không cùng nhánh",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nString s = \"Hello\";\nInteger i = (Integer) s;\n```\nĐoạn code này lỗi lúc nào?",
+              "ans": "Lỗi Compile Error: `inconvertible types: java.lang.String cannot be converted to java.lang.Integer`. Hai class hoàn toàn độc lập không có quan hệ kế thừa IS-A với nhau thì trình biên dịch cấm ngay từ lúc compile."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Pattern matching for instanceof (Java 14+)",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cú pháp `if (obj instanceof String s)` giúp loại bỏ dòng code nào so với Java truyền thống?",
+              "ans": "Loại bỏ dòng ép kiểu tường minh `String s = (String) obj;`. Biến `s` được khai báo và tự động gán ngay trong điều kiện if nếu khớp kiểu."
             }
           ]
         }
@@ -6051,9 +6173,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tổng hợp kiến thức nền tảng từ Ch1 đến Ch5?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Khi nào JVM ném `ClassCastException` ở Runtime?",
+          "a": "Khi ta ép kiểu con trỏ tham chiếu sang một kiểu class mà đối tượng thực tế trên Heap không có quan hệ kế thừa (không phải là instance của class đó).",
+          "trap": "`Animal a = new Dog(); Cat c = (Cat) a;` biên dịch qua nhưng chạy ném ClassCastException vì đối tượng thật là Dog."
+        },
+        {
+          "q": "Constructor có được khai báo từ khóa `static`, `final`, hoặc `abstract` không?",
+          "a": "KHÔNG ĐƯỢC. Constructor không thể là static (vì nó tạo instance), không thể là final hay abstract (vì nó không được kế thừa để override).",
+          "trap": "Thấy constructor có `void` thì nó biến thành method thông thường, không còn là constructor nữa!"
+        },
+        {
+          "q": "Một interface có thể kế thừa (extends) nhiều interface khác cùng lúc không?",
+          "a": "CÓ. Trong Java, một interface có thể `extends` cùng lúc nhiều interface khác (`interface C extends A, B`). Chỉ có class là đơn kế thừa class khác.",
+          "trap": "Nhiều người nhớ máy móc 'Java không có đa kế thừa' mà quên mất Interface hỗ trợ đa kế thừa interface!"
         }
       ],
       "dailyEnglish": [
@@ -6131,8 +6263,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Làm bài thi thử trong bao nhiêu phút?",
-          "a": "Bấm giờ đúng 30 phút."
+          "q": "Trong khối `try-catch-finally`, nếu khối `try` có `return 10;` còn khối `finally` có `return 20;`, giá trị thực tế phương thức trả về là bao nhiêu?",
+          "a": "Trả về 20! Lệnh `return` trong khối `finally` sẽ ghi đè hoàn toàn (overwrite) giá trị trả về trước đó của khối `try`."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -6157,18 +6289,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_14_1",
-          "level": "Easy",
-          "question": "Làm bài thi thử trong bao nhiêu phút?",
-          "code": "// Mở Tab Quiz trên Web App để thi thử Mock Exam 20 câu",
+          "id": "ct_d14_1",
+          "level": "Hard",
+          "question": "Kết quả in ra của khối xử lý ngoại lệ và finally lồng nhau sau là gì?",
+          "code": "public class ExceptionTrace {\n    public static int compute() {\n        try {\n            int x = 10 / 0;\n            return 1;\n        } catch (ArithmeticException e) {\n            return 2;\n        } finally {\n            return 3;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.println(compute());\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "3",
+            "2",
+            "1",
+            "Ném ArithmeticException ra ngoài"
           ],
           "correctIndex": 0,
-          "explanation": "Bấm giờ đúng 30 phút."
+          "explanation": "1. `10 / 0` ném `ArithmeticException`, nhảy vào khối `catch`.\n2. Khối catch chuẩn bị trả về `2`.\n3. Tuy nhiên, khối `finally` LUÔN LUÔN được thực thi trước khi phương thức kết thúc. Trong finally có lệnh `return 3;`, lệnh return này sẽ ghi đè và nuốt chửng hoàn toàn lệnh return trước đó!\n4. Kết quả in ra là: 3."
         }
       ],
       "examTraps": [
@@ -6184,51 +6316,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tổng hợp Đa hình và Ngoại lệ",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Kiểm tra đánh giá mốc 2 tuần?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Kiểm tra đánh giá mốc 2 tuần để tránh lỗi runtime."
+              "q": "Một phương thức ở class con khi override có được ném thêm ngoại lệ loại `RuntimeException` mới không?",
+              "ans": "Hoàn toàn được phép! Quy tắc giới hạn checked exception khi override chỉ áp dụng cho Checked Exception, không áp dụng cho Unchecked Exception (`RuntimeException`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Đa hình tham số (Method Overloading) vs Overriding",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Việc lựa chọn phương thức nào trong Overloading được quyết định ở thời điểm nào: Compile-time hay Runtime?",
+              "ans": "Được quyết định ở thời điểm Biên dịch (Compile-time) dựa trên kiểu khai báo của các tham số (Static Polymorphism)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Overloading với kiểu tham số null",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\npublic class Test {\n    public static void print(Object o) { System.out.print(\"Object \"); }\n    public static void print(String s) { System.out.print(\"String \"); }\n    public static void main(String[] args) {\n        print(null);\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `String `. Khi có nhiều phương thức nạp chồng chấp nhận giá trị `null`, Java sẽ ưu tiên gọi phương thức có kiểu tham số cụ thể nhất (most specific type). Vì `String` là lớp con của `Object`, `print(String)` được chọn."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Overloading ambiguous khi có 2 nhánh ngang hàng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu trong ví dụ trên có thêm hàm `public static void print(Integer i)`, thì khi gọi `print(null)` kết quả là gì?",
+              "ans": "Compile Error: `reference to print is ambiguous`. Cả `String` và `Integer` đều là lớp con của `Object` nhưng ngang hàng nhau, compiler không thể xác định kiểu nào cụ thể hơn."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Thứ tự ưu tiên khi binding phương thức nạp chồng",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi truyền một giá trị `int 5` vào phương thức, thứ tự ưu tiên lựa chọn phiên bản nạp chồng của compiler là gì giữa: Widening (`long`), Autoboxing (`Integer`), Varargs (`int...`)?",
+              "ans": "Thứ tự ưu tiên chuẩn của Java: 1) Exact match -> 2) Widening (nới rộng kiểu nguyên thủy: `long`) -> 3) Autoboxing (`Integer`) -> 4) Varargs (`int...`)."
             }
           ]
         }
@@ -6261,9 +6393,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Kiểm tra đánh giá mốc 2 tuần?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Một interface có thể chứa biến có modifier nào?",
+          "a": "Mọi biến khai báo trong interface mặc định và bắt buộc luôn là `public static final` (hằng số), dù có ghi từ khóa hay không. Không thể khai báo biến private, protected hay non-final.",
+          "trap": "Cố tình viết `int x;` trong interface mà không gán giá trị sẽ bị lỗi Compile Error vì hằng số bắt buộc khởi tạo."
+        },
+        {
+          "q": "Default method trong interface (từ Java 8) có mục đích gì?",
+          "a": "Cho phép bổ sung phương thức mới có sẵn thân hàm (`default void foo() { ... }`) vào interface mà không làm gãy (break) mã nguồn của các class cũ đã implement interface đó.",
+          "trap": "Nếu class implement 2 interface có cùng default method thì bắt buộc phải override lại để giải quyết xung đột (Diamond problem)."
+        },
+        {
+          "q": "Lớp trừu tượng (Abstract Class) có bắt buộc phải chứa abstract method không?",
+          "a": "KHÔNG. Abstract class có thể có 0 abstract method nào, hoặc có thể chứa toàn bộ concrete method có thân hàm đầy đủ. Nhưng hễ có ít nhất 1 abstract method thì class bắt buộc phải khai báo là `abstract`.",
+          "trap": "Khai báo class thường (non-abstract) chứa 1 abstract method sẽ bị Compile Error ngay."
         }
       ],
       "dailyEnglish": [
@@ -6399,51 +6541,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tính bất biến của String",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: String immutability & String Constant Pool?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của String immutability & String Constant Pool để tránh lỗi runtime."
+              "q": "Tính bất biến (Immutability) của String trong Java có nghĩa là gì?",
+              "ans": "Một khi đối tượng String được tạo ra trên Heap, trạng thái và nội dung chuỗi ký tự của nó không thể bị sửa đổi. Mọi thao tác như `concat()`, `replace()`, `substring()` đều tạo ra một đối tượng String mới."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "String Constant Pool và hàm intern()",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Hàm `s.intern()` hoạt động như thế nào trong JVM?",
+              "ans": "Khi gọi `intern()`, JVM sẽ kiểm tra trong String Constant Pool: Nếu đã tồn tại chuỗi có nội dung bằng `s` (theo `equals()`), nó trả về tham chiếu đến chuỗi trong Pool. Nếu chưa có, chuỗi `s` sẽ được thêm vào Pool và trả về tham chiếu đó."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace tham chiếu String Pool vs Heap",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nString s1 = \"Java\";\nString s2 = new String(\"Java\");\nString s3 = s2.intern();\nSystem.out.println((s1 == s2) + \" \" + (s1 == s3));\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `false true`. `s1` trỏ vào Pool, `s2` trỏ vào Heap mới tạo nên `s1 == s2` là false. `s2.intern()` trả về tham chiếu của đối tượng trong Pool (chính là `s1`), nên `s1 == s3` là true."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy nối chuỗi bằng toán tử + với biến",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nString s1 = \"Hello World\";\nString s2 = \"Hello \" + \"World\";\nString h = \"Hello \";\nString s3 = h + \"World\";\nSystem.out.println((s1 == s2) + \" \" + (s1 == s3));\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `true false`. `s2` nối 2 hằng số (constants) được compiler tối ưu tại compile-time thành `\"Hello World\"` và trỏ vào Pool (trùng `s1`). `s3` nối với biến `h` nên được tính tại runtime thông qua `StringBuilder`, tạo object mới trên Heap ngoài Pool."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "StringBuilder capacity growth",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi `StringBuilder` bị vượt quá dung lượng hiện tại, dung lượng mới (capacity) được mở rộng theo công thức nào?",
+              "ans": "Công thức mở rộng chuẩn của JVM: `newCapacity = (oldCapacity * 2) + 2`. Nếu dung lượng mới vẫn không đủ chứa chuỗi mới, nó sẽ nhận độ dài của chuỗi mới cần lưu."
             }
           ]
         }
@@ -6464,9 +6606,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của String immutability & String Constant Pool?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tính chất bất biến (Immutability) của `String` hoạt động như thế nào?",
+          "a": "Khi đối tượng String được tạo ra, nội dung chuỗi ký tự bên trong mảng `char[]`/`byte[]` không thể thay đổi. Mọi phương thức như `concat()`, `replace()`, `toLowerCase()` đều tạo ra một đối tượng String MỚI trên Heap.",
+          "trap": "Gọi `s.concat(\"abc\");` mà không gán lại `s = s.concat(\"abc\");` thì biến `s` ban đầu hoàn toàn giữ nguyên giá trị!"
+        },
+        {
+          "q": "Sự khác biệt giữa `String s = \"abc\";` và `String s = new String(\"abc\");`?",
+          "a": "- `\"abc\"`: Tìm trong String Constant Pool, nếu có thì tái sử dụng tham chiếu, nếu chưa có thì tạo mới trong Pool.\n- `new String(\"abc\")`: Luôn luôn tạo một đối tượng mới hoàn toàn trên vùng nhớ thông thường của Heap (và tạo thêm 1 bản trong Pool nếu Pool chưa có).",
+          "trap": "`s1 == s2` với chuỗi literal là `true`, nhưng so sánh chuỗi tạo bằng `new` là `false` vì khác địa chỉ bộ nhớ!"
+        },
+        {
+          "q": "So sánh hiệu năng và tính an toàn đa luồng giữa `StringBuilder` và `StringBuffer`?",
+          "a": "- `StringBuilder`: Không đồng bộ (non-synchronized), hiệu năng nhanh nhất, dùng cho đơn luồng.\n- `StringBuffer`: Có đồng bộ (`synchronized` trên các method), an toàn đa luồng (thread-safe), nhưng chậm hơn do chi phí khóa monitor.",
+          "trap": "Cả 2 class này đều là Mutable, phương thức `.append()` thay đổi trực tiếp trên đối tượng mà không tạo mới."
         }
       ],
       "dailyEnglish": [
@@ -6617,51 +6769,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Wrapper Classes và Integer Cache",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Wrapper classes: Integer, Double, Boolean...?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Wrapper classes: Integer, Double, Boolean... để tránh lỗi runtime."
+              "q": "Khoảng giá trị mặc định được lưu trong Integer Cache của Java là từ bao nhiêu đến bao nhiêu?",
+              "ans": "Từ `-128` đến `127`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Autoboxing và Unboxing pitfalls",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao đoạn code `Integer i = null; int x = i;` lại gây ra NullPointerException lúc Runtime?",
+              "ans": "Dòng `int x = i;` kích hoạt cơ chế Unboxing, compiler tự động sinh ra mã byte-code: `int x = i.intValue();`. Do tham chiếu `i` đang là `null`, việc gọi phương thức `intValue()` trên tham chiếu null ném ra `NullPointerException`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace toán tử == trên Wrapper Integer",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nInteger a = 100, b = 100;\nInteger c = 200, d = 200;\nSystem.out.println((a == b) + \" \" + (c == d));\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `true false`. `100` nằm trong khoảng Integer Cache (-128 đến 127) nên `a` và `b` cùng trỏ tới 1 object được cache sẵn. `200` nằm ngoài cache, JVM phải `new Integer(200)` hai lần tạo 2 object riêng biệt trên Heap, nên `c == d` trả về false."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy equals() giữa hai Wrapper khác kiểu",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Biểu thức `new Long(10).equals(new Integer(10))` trả về kết quả gì?",
+              "ans": "Trả về `false`! Hàm `equals()` của tất cả các Wrapper class đều kiểm tra kiểu dữ liệu đầu tiên bằng `instanceof`. Khác kiểu thì lập tức trả về false, không bao giờ tự động ép kiểu so sánh giá trị số."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tùy biến kích thước Integer Cache",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Làm thế nào để thay đổi giới hạn trên của Integer Cache trong máy ảo JVM khi khởi động ứng dụng?",
+              "ans": "Sử dụng tham số dòng lệnh JVM option: `-XX:AutoBoxCacheMax=<size>` (ví dụ `-XX:AutoBoxCacheMax=1000`)."
             }
           ]
         }
@@ -6682,9 +6834,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Wrapper classes: Integer, Double, Boolean...?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Cơ chế Integer Cache trong Java hoạt động trong khoảng giá trị nào?",
+          "a": "JVM lưu cache các đối tượng `Integer` có giá trị từ `-128` đến `127`. Trong khoảng này, phép gán autoboxing (`Integer a = 100; Integer b = 100;`) sẽ trỏ cùng 1 đối tượng trong cache (`a == b` trả về `true`). Ngoài khoảng này (vd 200), `a == b` là `false`.",
+          "trap": "Luôn luôn dùng `.equals()` để so sánh giá trị Wrapper objects, tuyệt đối không dùng `==`!"
+        },
+        {
+          "q": "Điều gì xảy ra khi Unboxing một biến Wrapper có giá trị `null`?",
+          "a": "JVM sẽ ném ngoại lệ `NullPointerException` (NPE) tại runtime. Ví dụ: `Integer i = null; int x = i;` -> ném NPE vì gọi ngầm định `i.intValue()` trên con trỏ null.",
+          "trap": "Đề thi hay ẩn phép unboxing trong toán tử 3 ngôi hoặc phép tính số học gây crash runtime."
+        },
+        {
+          "q": "Sự khác biệt giữa `Integer.parseInt(\"123\")` và `Integer.valueOf(\"123\")`?",
+          "a": "- `parseInt()` trả về kiểu nguyên thủy `int` (primitive).\n- `valueOf()` trả về đối tượng `Integer` (Wrapper object) và có tận dụng Integer Cache.",
+          "trap": "Cả 2 hàm đều ném `NumberFormatException` nếu chuỗi truyền vào không đúng định dạng số hợp lệ."
         }
       ],
       "dailyEnglish": [
@@ -6792,18 +6954,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_17_1",
-          "level": "Easy",
-          "question": "Set nào vừa loại bỏ trùng lặp vừa bảo toàn thứ tự chèn?",
-          "code": "List<String> list = new ArrayList<>();\nlist.add(\"A\"); list.add(\"A\"); // Hợp lệ (cho phép trùng)\n\nSet<String> set = new HashSet<>();\nset.add(\"A\"); set.add(\"A\"); // set.size() vẫn bằng 1 (loại trùng)",
+          "id": "ct_d17_1",
+          "level": "Medium",
+          "question": "Đoạn code thao tác với List sau in ra kết quả gì?",
+          "code": "import java.util.*;\npublic class ListTrap {\n    public static void main(String[] args) {\n        List<Integer> list = new ArrayList<>();\n        list.add(1);\n        list.add(2);\n        list.add(3);\n        list.remove(1);\n        System.out.println(list);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "[1, 3]",
+            "[2, 3]",
+            "[1, 2]",
+            "Compile Error do ambiguous method remove"
           ],
           "correctIndex": 0,
-          "explanation": "LinkedHashSet"
+          "explanation": "Class `List` có 2 phương thức `remove()` bị overload: `remove(int index)` và `remove(Object o)`. Khi truyền số nguyên nguyên thủy `1`, Java ưu tiên gọi `remove(int index)` xóa phần tử tại chỉ số 1 (chính là số 2). Danh sách còn lại: `[1, 3]`. Nếu muốn xóa số 1, phải viết `list.remove(Integer.valueOf(1))`."
         }
       ],
       "examTraps": [
@@ -6835,51 +6997,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Đặc tính của List và Set",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Collection hierarchy: Collection vs Collections (utility)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Collection hierarchy: Collection vs Collections (utility) để tránh lỗi runtime."
+              "q": "Sự khác biệt cốt lõi về lưu trữ dữ liệu giữa `List` và `Set` là gì?",
+              "ans": "`List` duy trì thứ tự chèn (ordered by index) và CHO PHÉP phần tử trùng lặp. `Set` KHÔNG cho phép phần tử trùng lặp (duplication disallowed)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "ArrayList vs LinkedList",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Khi nào nên dùng `ArrayList` và khi nào nên dùng `LinkedList`?",
+              "ans": "Dùng `ArrayList` khi thao tác chủ yếu là tìm kiếm và truy xuất ngẫu nhiên theo chỉ số index (`O(1)`). Dùng `LinkedList` khi thường xuyên thêm/xóa phần tử ở đầu danh sách hoặc giữa chừng (`O(1)` nếu đã có node pointer, tránh được việc sao chép mảng)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace sắp xếp TreeSet và Comparable",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nSet<String> set = new TreeSet<>();\nset.add(\"Banana\");\nset.add(\"Apple\");\nset.add(\"Banana\");\nSystem.out.println(set);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `[Apple, Banana]`. `TreeSet` tự động sắp xếp các phần tử theo thứ tự tự nhiên (tăng dần bảng chữ cái với String) và tự động loại bỏ phần tử trùng lặp 'Banana'."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy TreeSet chứa phần tử không implements Comparable",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau xảy ra lỗi gì lúc chạy?\n```java\nclass Person { String name; Person(String n) { name = n; } }\nSet<Person> set = new TreeSet<>();\nset.add(new Person(\"Alice\"));\n```",
+              "ans": "Ném ngoại lệ `java.lang.ClassCastException: Person cannot be cast to java.lang.Comparable` khi chạy hàm `add()`. `TreeSet` bắt buộc các phần tử phải implements interface `Comparable` hoặc cung cấp một `Comparator` khi khởi tạo Set."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "CopyOnWriteArrayList trong môi trường đa luồng",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao duyệt qua một `ArrayList` thông thường trong khi một luồng khác gọi `add()` lại ném `ConcurrentModificationException`, và giải pháp trong package `java.util.concurrent` là gì?",
+              "ans": "Do cơ chế fail-fast kiểm tra `modCount`. Giải pháp là sử dụng `CopyOnWriteArrayList` (mỗi thao tác ghi sẽ clone một mảng mới, các luồng đọc không bị block và không bao giờ ném `ConcurrentModificationException`)."
             }
           ]
         }
@@ -6900,9 +7062,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Collection hierarchy: Collection vs Collections (utility)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "So sánh cấu trúc dữ liệu và độ phức tạp của `ArrayList` vs `LinkedList`?",
+          "a": "- `ArrayList`: Dùng mảng động (`Object[]`), truy xuất ngẫu nhiên theo index cực nhanh O(1), nhưng chèn/xóa ở giữa mảng chậm O(n) do phải dời mảng.\n- `LinkedList`: Dùng danh sách liên kết đôi (Doubly-linked list), chèn/xóa đầu/cuối nhanh O(1), nhưng truy xuất index chậm O(n) vì phải duyệt tuần tự.",
+          "trap": "Truy cập phần tử thường xuyên bằng get(i) thì ArrayList luôn tối ưu hơn nhiều so với LinkedList."
+        },
+        {
+          "q": "Đặc điểm khác biệt giữa 3 implementation của Set: `HashSet`, `LinkedHashSet`, `TreeSet`?",
+          "a": "- `HashSet`: Dùng bảng băm, không đảm bảo thứ tự các phần tử, cho phép 1 phần tử `null`.\n- `LinkedHashSet`: Dùng bảng băm kết hợp linked list, bảo toàn THỨ TỰ CHÈN (insertion-order).\n- `TreeSet`: Dùng cây đỏ-đen, tự động sắp xếp phần tử theo THỨ TỰ TỰ NHIÊN hoặc Comparator, KHÔNG CHO PHÉP `null`.",
+          "trap": "Thêm `null` vào `TreeSet` sẽ bị ném ngay ngoại lệ `NullPointerException`!"
+        },
+        {
+          "q": "Sự khác biệt giữa `Collection` (interface) và `Collections` (class)?",
+          "a": "`Collection` là root interface cấp cao trong Java Collections Framework. `Collections` là một Utility Class (chứa toàn các phương thức `static` như `sort()`, `reverse()`, `binarySearch()`, `unmodifiableList()`).",
+          "trap": "Đề thi hỏi interface nào có method sort() -> Đáp án là List (từ Java 8), không phải Collection!"
         }
       ],
       "dailyEnglish": [
@@ -7037,51 +7209,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Hợp đồng equals() và hashCode()",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Map interface: HashMap, Hashtable, TreeMap, LinkedHashMap (Map KHÔNG kế thừa Collection)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Map interface: HashMap, Hashtable, TreeMap, LinkedHashMap (Map KHÔNG kế thừa Collection) để tránh lỗi runtime."
+              "q": "Hợp đồng (Contract) bắt buộc giữa phương thức `equals()` và `hashCode()` quy định điều gì?",
+              "ans": "Nếu hai đối tượng bằng nhau theo `equals()` (`a.equals(b) == true`), thì BẮT BUỘC mã băm `hashCode()` của chúng phải bằng nhau (`a.hashCode() == b.hashCode()`). Ngược lại, nếu hashCode bằng nhau thì equals CHƯA CHẮC đã bằng nhau (đụng độ băm)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cấu trúc bên trong của HashMap",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Từ Java 8, cấu trúc dữ liệu bên trong một bucket của `HashMap` thay đổi như thế nào khi số lượng phần tử vượt quá ngưỡng 8?",
+              "ans": "Khi số phần tử trong 1 bucket vượt quá ngưỡng `TREEIFY_THRESHOLD = 8` (và tổng dung lượng mảng bucket >= 64), danh sách liên kết đơn (LinkedList, tìm kiếm `O(n)`) sẽ được chuyển đổi thành Cây Đỏ-Đen (Red-Black Tree, tìm kiếm `O(log n)`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace hành vi HashMap khi không override hashCode",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Key {\n    int id;\n    Key(int id) { this.id = id; }\n    public boolean equals(Object o) { return ((Key)o).id == this.id; }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Map<Key, String> map = new HashMap<>();\n        map.put(new Key(1), \"One\");\n        System.out.println(map.get(new Key(1)));\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `null`! Do class `Key` chỉ override `equals()` mà KHÔNG override `hashCode()`, hai đối tượng `new Key(1)` có 2 mã hashCode ngẫu nhiên khác nhau từ `Object.hashCode()`, rơi vào 2 bucket khác nhau nên hàm `get()` không tìm thấy phần tử."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy thay đổi trường dữ liệu sau khi put vào Map",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu một đối tượng được dùng làm Key trong HashMap bị sửa đổi một trường tham gia tính `hashCode()`, chuyện gì xảy ra khi gọi `map.get(key)`?",
+              "ans": "Sẽ trả về `null` (mất dấu đối tượng / memory leak). Do hashCode mới bị thay đổi, HashMap sẽ tìm ở bucket mới thay vì bucket ban đầu chứa đối tượng."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "ConcurrentHashMap vs Collections.synchronizedMap",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao `ConcurrentHashMap` lại có hiệu năng đọc/ghi đa luồng vượt trội hơn hẳn so với `Collections.synchronizedMap`?",
+              "ans": "`synchronizedMap` khóa toàn bộ Map (table-level lock) cho mọi thao tác. `ConcurrentHashMap` (Java 8) sử dụng kỹ thuật Lock Striping kết hợp CAS (Compare-And-Swap) và chỉ đồng bộ hóa trên từng Node đầu bucket (`synchronized(node)`), cho phép nhiều luồng đọc/ghi đồng thời trên các bucket khác nhau."
             }
           ]
         }
@@ -7102,9 +7274,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Map interface: HashMap, Hashtable, TreeMap, LinkedHashMap (Map KHÔNG kế thừa Collection)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc hợp đồng (Contract) bắt buộc giữa `equals()` và `hashCode()`?",
+          "a": "1. Nếu `a.equals(b) == true` thì BẮT BUỘC `a.hashCode() == b.hashCode()`.\n2. Nếu `a.hashCode() == b.hashCode()` thì `a.equals(b)` có thể true hoặc false (hiện tượng Hash Collision).\n3. Do đó, hễ override `equals()` thì BẮT BUỘC phải override `hashCode()`!",
+          "trap": "Nếu override equals mà quên override hashCode, khi lưu object vào `HashMap` hay `HashSet` sẽ không tìm lại được (get ra null)!"
+        },
+        {
+          "q": "So sánh `HashMap` và `Hashtable`?",
+          "a": "- `HashMap`: Không đồng bộ (non-thread-safe), nhanh hơn, cho phép 1 key `null` và nhiều value `null`.\n- `Hashtable`: Cổ điển, mọi method đều có `synchronized` (chậm), KHÔNG CHO PHÉP key null hoặc value null (ném NPE ngay).",
+          "trap": "Put null key vào Hashtable -> ném NullPointerException ngay lập tức!"
+        },
+        {
+          "q": "Map có phải là một Collection (có implements Collection interface) không?",
+          "a": "KHÔNG. `Map` là một cấu trúc Key-Value độc lập hoàn toàn, không kế thừa interface `Collection`. Muốn duyệt Map phải thông qua `map.keySet()`, `map.values()`, hoặc `map.entrySet()`.",
+          "trap": "Đề thi hay hỏi interface nào sau đây kế thừa Collection: List, Set, Queue, Map -> Map là đáp án SAI!"
         }
       ],
       "dailyEnglish": [
@@ -7212,18 +7394,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_19_1",
-          "level": "Easy",
-          "question": "Cú pháp tạo Member Inner Class từ bên ngoài là gì?",
-          "code": "class Outer {\n    private int x = 10;\n    class Inner {\n        void show() { System.out.println(x); } // Truy cập private x\n    }\n}\n\nOuter.Inner in = new Outer().new Inner();\nin.show(); // In ra 10",
+          "id": "ct_d19_1",
+          "level": "Hard",
+          "question": "Dự đoán kết quả của Inner class truy cập biến ngoài sau:",
+          "code": "public class OuterTrap {\n    private int x = 10;\n    class Inner {\n        private int x = 20;\n        void print() {\n            int x = 30;\n            System.out.println(x + OuterTrap.this.x);\n        }\n    }\n    public static void main(String[] args) {\n        new OuterTrap().new Inner().print();\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "40",
+            "50",
+            "30",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "new Outer().new Inner()"
+          "explanation": "1. Biến `x` bên trong method `print()` là biến cục bộ có giá trị là `30`.\n2. Cú pháp `OuterTrap.this.x` tường minh truy cập biến instance `x` của lớp ngoài cùng (Outer), có giá trị là `10`.\n3. Phép cộng: `30 + 10 = 40`."
         }
       ],
       "examTraps": [
@@ -7255,51 +7437,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phân loại Inner Classes",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Regular Inner Class (non-static)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Regular Inner Class (non-static) để tránh lỗi runtime."
+              "q": "Kể tên 4 loại nested class trong Java.",
+              "ans": "1) Member Inner Class, 2) Static Nested Class, 3) Method-Local Inner Class, 4) Anonymous Inner Class."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Truy cập biến Outer Class",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao Method-Local Inner Class chỉ có thể truy cập biến cục bộ của phương thức khi biến đó là `final` hoặc `effectively final`?",
+              "ans": "Vì vòng đời của biến cục bộ kết thúc khi hàm kết thúc (giải phóng trên Stack), trong khi đối tượng inner class có thể sống lâu hơn trên Heap. Java sao chép bản copy của biến vào inner class; việc bắt buộc `final` đảm bảo giá trị hai bên luôn đồng nhất."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace cú pháp khởi tạo Inner Class",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Outer {\n    int x = 10;\n    class Inner {\n        int x = 20;\n        void print() { System.out.println(Outer.this.x + \" \" + this.x); }\n    }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Outer.Inner in = new Outer().new Inner();\n        in.print();\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `10 20`. `Outer.this.x` tham chiếu tường minh tới biến `x` của đối tượng lớp ngoài (10), còn `this.x` tham chiếu tới biến `x` của đối tượng lớp trong (20)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy khởi tạo Static Nested Class",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Để khởi tạo đối tượng của `static class Nested` nằm trong `class Outer`, cú pháp nào là đúng: `new Outer().new Nested()` hay `new Outer.Nested()`?",
+              "ans": "Cú pháp đúng là `new Outer.Nested()`. Static Nested Class không phụ thuộc vào bất kỳ instance nào của lớp ngoài, do đó không dùng cú pháp `outerInstance.new`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Anonymous Inner Class và đa kế thừa",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Một Anonymous Inner Class có thể vừa `extends` một class vừa `implements` một interface không?",
+              "ans": "Không thể! Anonymous Inner Class chỉ có thể kế thừa từ ĐÚNG MỘT class HOẶC thực thi ĐÚNG MỘT interface tại thời điểm khởi tạo."
             }
           ]
         }
@@ -7320,9 +7502,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Regular Inner Class (non-static)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Cách tạo một instance của Member Inner Class (non-static) từ bên ngoài lớp cha?",
+          "a": "Bắt buộc phải có một instance của Outer class trước: `Outer out = new Outer(); Outer.Inner in = out.new Inner();` hoặc viết gọn `new Outer().new Inner();`.",
+          "trap": "Không thể gọi trực tiếp `new Outer.Inner()` nếu Inner không có từ khóa `static`!"
+        },
+        {
+          "q": "Static Nested Class có điểm gì khác biệt so với Regular Inner Class?",
+          "a": "Static Nested Class không gắn liền với một instance cụ thể nào của Outer, có thể khởi tạo trực tiếp: `new Outer.StaticNested();`. Nó chỉ có thể truy cập các thành viên `static` của Outer, không truy cập được biến instance của Outer.",
+          "trap": "Static Nested Class không ngầm giữ tham chiếu đến outer object, giúp tránh memory leak."
+        },
+        {
+          "q": "Local Inner Class (trong method) có thể truy cập các biến local của method với điều kiện gì?",
+          "a": "Các biến local trong method được inner class truy cập BẮT BUỘC phải là `final` hoặc có tính chất Effectively Final (không bị gán lại giá trị sau khi khởi tạo).",
+          "trap": "Nếu biến local bị thay đổi giá trị ở dòng code phía sau, compiler sẽ báo lỗi ngay tại chỗ inner class sử dụng nó."
         }
       ],
       "dailyEnglish": [
@@ -7431,18 +7623,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_20_1",
-          "level": "Easy",
-          "question": "Phương thức wait() thuộc class nào?",
-          "code": "Thread t = new Thread(() -> {\n    System.out.println(Thread.currentThread().getName());\n});\nt.run();   // In ra: main (chạy tuần tự)\nt.start(); // In ra: Thread-0 (chạy bất đồng bộ trên luồng mới)",
+          "id": "ct_d20_1",
+          "level": "Medium",
+          "question": "Chương trình đa luồng sau in ra kết quả gì?",
+          "code": "public class ThreadTrace {\n    public static void main(String[] args) {\n        Thread t = new Thread(() -> {\n            System.out.print(\"A \");\n        });\n        t.run();\n        System.out.print(\"B \");\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "A B ",
+            "B A ",
+            "Thứ tự không xác định tùy CPU",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "java.lang.Object"
+          "explanation": "Rất nhiều người bị bẫy ở đây! Gọi `t.run()` KHÔNG hề tạo ra luồng mới, nó chỉ là một lệnh gọi phương thức bình thường chạy trên luồng Main hiện tại. Do đó code chạy tuần tự 100%: in 'A ' trước rồi in 'B ' sau -> Chắc chắn in: `A B `."
         }
       ],
       "examTraps": [
@@ -7474,51 +7666,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vòng đời của Thread và Monitor",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Thread vs Runnable: start() vs run()?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Thread vs Runnable: start() vs run() để tránh lỗi runtime."
+              "q": "Kể tên các trạng thái trong vòng đời của Thread (`Thread.State`) trong Java.",
+              "ans": "`NEW`, `RUNNABLE`, `BLOCKED`, `WAITING`, `TIMED_WAITING`, `TERMINATED`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế wait(), notify() và IllegalMonitorStateException",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao phương thức `wait()` và `notify()` thuộc về class `Object` chứ không phải class `Thread`, và tại sao phải gọi chúng trong khối `synchronized`?",
+              "ans": "Vì monitor lock gắn liền với từng đối tượng (Object-level lock) trong Java. Luồng gọi `wait()` phải nắm giữ monitor lock của đối tượng đó trước; nếu gọi ngoài khối `synchronized`, JVM lập tức ném ngoại lệ `java.lang.IllegalMonitorStateException`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace luồng start() vs run()",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nThread t = new Thread(() -> System.out.print(\"Thread \"));\nt.run();\nSystem.out.print(\"Main \");\n```\nĐoạn code này có tạo thread mới trong OS không và thứ tự in là gì?",
+              "ans": "Không tạo thread mới! Gọi `t.run()` chỉ đơn thuần gọi một phương thức thông thường ngay trên `main` thread, nên in ra tuần tự: `Thread Main `."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy gọi start() hai lần trên một Thread",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Điều gì xảy ra khi gọi `t.start(); t.start();` trên cùng một Thread object?",
+              "ans": "Lần gọi thứ 2 sẽ ném ra ngoại lệ `java.lang.IllegalThreadStateException` lúc runtime vì thread không thể khởi động lại khi đã rời khỏi trạng thái `NEW`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Deadlock và thứ tự giành khóa",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Nguyên nhân cốt lõi gây ra hiện tượng Deadlock (khóa chết) giữa 2 luồng và cách phòng ngừa chuẩn nhất là gì?",
+              "ans": "Nguyên nhân: Hai hay nhiều luồng chờ đợi tài nguyên khóa lẫn nhau theo vòng tròn (Circular Wait, ví dụ luồng 1 giữ khóa A chờ khóa B, luồng 2 giữ khóa B chờ khóa A). Cách phòng ngừa: Luôn tuân thủ một thứ tự giành khóa nhất quán (Lock Ordering) trên toàn bộ hệ thống (ví dụ mọi luồng đều phải lấy khóa A trước rồi mới được lấy khóa B)."
             }
           ]
         }
@@ -7539,9 +7731,19 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Thread vs Runnable: start() vs run()?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Khác biệt cốt lõi giữa gọi `thread.start()` và gọi `thread.run()`?",
+          "a": "- `start()`: Yêu cầu JVM cấp phát Call Stack mới và tạo một luồng hệ điều hành riêng biệt để chạy phương thức `run()` bất đồng bộ.\n- `run()`: Chỉ là một phương thức bình thường, chạy tuần tự trên CHÍNH LUỒNG HIỆN TẠI (Main thread), không hề tạo ra luồng mới.",
+          "trap": "Gọi `t.run()` thì chương trình vẫn chạy tuần tự đơn luồng, không có tính đa luồng!"
+        },
+        {
+          "q": "Một Thread sau khi đã chạy xong (`DEAD` / `TERMINATED`) có thể gọi lại `t.start()` lần 2 không?",
+          "a": "KHÔNG THỂ. Khi một thread đã ở trạng thái TERMINATED hoặc đã start rồi, gọi lại `start()` sẽ ném ngay ngoại lệ `IllegalThreadStateException`.",
+          "trap": "TestKing rất hay bẫy câu hỏi gọi `t.start()` 2 lần liên tiếp trên cùng 1 biến thread."
+        },
+        {
+          "q": "Các phương thức `wait()`, `notify()`, `notifyAll()` thuộc class nào và gọi ở đâu?",
+          "a": "Chúng thuộc class `java.lang.Object` (không phải class Thread). Chúng BẮT BUỘC phải được gọi bên trong khối hoặc phương thức có từ khóa `synchronized` đang giữ monitor của object đó, nếu không sẽ ném `IllegalMonitorStateException`.",
+          "trap": "Nhầm tưởng wait/notify thuộc về class Thread giống như sleep/join."
         }
       ],
       "dailyEnglish": [
@@ -7620,8 +7822,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Chương nào bạn làm sai nhiều nhất?",
-          "a": "Mở tab Flashcards lọc chương đó để cày lại."
+          "q": "Hai luồng cùng gọi `t1.join()` và `t2.join()` có nghĩa là gì?",
+          "a": "Luồng hiện tại (ví dụ main thread) sẽ bị block và chuyển sang trạng thái WAITING cho đến khi thread `t1` và `t2` hoàn thành xong công việc mới chạy tiếp."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -7673,51 +7875,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tổng hợp Đa luồng và Bộ nhớ",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Đánh giá toàn bộ 9 chương Java Core?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Đánh giá toàn bộ 9 chương Java Core để tránh lỗi runtime."
+              "q": "Từ khóa `volatile` đảm bảo được điều gì và KHÔNG đảm bảo được điều gì trong đa luồng?",
+              "ans": "Đảm bảo tính hiển thị (Visibility) và ngăn chặn sắp xếp lại lệnh (reordering). KHÔNG đảm bảo tính nguyên tử (Atomicity) cho các thao tác phức hợp như `count++`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Đồng bộ hóa phương thức static vs non-static",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Một luồng đang chạy phương thức `synchronized static void m1()` và một luồng khác gọi `synchronized void m2()` trên cùng một instance có bị chặn (block) nhau không?",
+              "ans": "Không bị chặn! `m1()` khóa trên đối tượng `Class` (`MyClass.class`), trong khi `m2()` khóa trên đối tượng thể hiện `this` (`instance lock`). Hai monitor lock này hoàn toàn độc lập nhau."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Thread.join()",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nThread t = new Thread(() -> {\n    try { Thread.sleep(100); } catch (Exception e) {}\n    System.out.print(\"T \");\n});\nt.start();\nt.join();\nSystem.out.print(\"M \");\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `T M `. Nhờ có lệnh `t.join()`, luồng `main` sẽ tạm dừng và đợi cho đến khi luồng `t` kết thúc hoàn toàn rồi mới in ra 'M'."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy sleep() không giải phóng monitor lock",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Phương thức `Thread.sleep()` khác phương thức `Object.wait()` ở điểm mấu chốt nào liên quan đến Lock?",
+              "ans": "`wait()` sẽ giải phóng (release) monitor lock để các luồng khác có cơ hội thực thi. `Thread.sleep()` tạm dừng thời gian nhưng VẪN GIỮ NGUYÊN (holds) mọi monitor lock mà nó đang sở hữu!"
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "ThreadLocal và nguy cơ rò rỉ bộ nhớ trong ThreadPool",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao khi sử dụng `ThreadLocal` với ThreadPool (ví dụ Tomcat worker threads) bắt buộc phải gọi `threadLocal.remove()` trong khối `finally`?",
+              "ans": "Vì worker thread trong pool được tái sử dụng liên tục (không bị hủy). Nếu không gọi `remove()`, dữ liệu của request cũ sẽ tồn tại mãi mãi trong `ThreadLocalMap` của thread đó, dẫn tới rò rỉ dữ liệu giữa các người dùng và tràn bộ nhớ Metaspace/Heap."
             }
           ]
         }
@@ -7750,9 +7952,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Đánh giá toàn bộ 9 chương Java Core?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Mục tiêu bài thi Mock Exam #1 Java Core",
+          "a": "Đánh giá toàn diện 9 chương Java Core với 40 câu hỏi trắc nghiệm chuẩn format FSOFT Entry Test. Yêu cầu đạt tối thiểu 75% để đủ điều kiện pass vòng lý thuyết.",
+          "trap": "Quản lý thời gian dưới 60s/câu."
         }
       ],
       "dailyEnglish": [
@@ -7902,51 +8104,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phân loại ngôn ngữ SQL",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: SELECT, WHERE, ORDER BY (ASC/DESC)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của SELECT, WHERE, ORDER BY (ASC/DESC) để tránh lỗi runtime."
+              "q": "Phân biệt các nhóm lệnh SQL: DDL, DML, DCL, TCL.",
+              "ans": "DDL (Data Definition): `CREATE`, `ALTER`, `DROP`, `TRUNCATE`. DML (Data Manipulation): `SELECT`, `INSERT`, `UPDATE`, `DELETE`. DCL (Control): `GRANT`, `REVOKE`. TCL (Transaction): `COMMIT`, `ROLLBACK`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "DELETE vs TRUNCATE vs DROP",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "So sánh `DELETE` và `TRUNCATE` về tốc độ và khả năng rollback.",
+              "ans": "`DELETE` là lệnh DML, xóa từng dòng có ghi transaction log chi tiết, hỗ trợ mệnh đề `WHERE` và có thể `ROLLBACK`. `TRUNCATE` là lệnh DDL, giải phóng toàn bộ trang dữ liệu (deallocate data pages), tốc độ cực nhanh, reset identity counter, không có `WHERE` và trong nhiều hệ thống không thể rollback độc lập."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace câu lệnh UPDATE có điều kiện",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho bảng `Employees` có cột `salary`: 100, 200, 300. Chạy câu lệnh:\n```sql\nUPDATE Employees SET salary = salary * 2 WHERE salary < 250;\n```\nCác giá trị trong bảng sau khi update là gì?",
+              "ans": "Các giá trị là: `200, 400, 300`. Hai dòng có lương 100 và 200 thỏa điều kiện < 250 nên được nhân 2 (thành 200 và 400). Dòng lương 300 giữ nguyên."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy so sánh với giá trị NULL trong SQL",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Câu truy vấn `SELECT * FROM Users WHERE age = NULL;` có trả về các bản ghi có `age` là NULL không?",
+              "ans": "Không bao giờ! Trong chuẩn SQL, so sánh với `NULL` qua dấu bằng `=` luôn trả về `UNKNOWN` (coi như false). Cú pháp đúng bắt buộc phải dùng toán tử `IS NULL`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Ràng buộc toàn vẹn ON DELETE CASCADE",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Ràng buộc khóa ngoại `ON DELETE CASCADE` có tác động gì khi một bản ghi ở bảng cha bị xóa?",
+              "ans": "Hệ quản trị CSDL sẽ tự động xóa toàn bộ các bản ghi con ở bảng con có liên kết tham chiếu tới bản ghi cha đó, tránh lỗi Orphan records (dữ liệu mồ côi)."
             }
           ]
         }
@@ -7967,9 +8169,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của SELECT, WHERE, ORDER BY (ASC/DESC)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Sự khác biệt giữa lệnh DELETE và TRUNCATE trong SQL?",
+          "a": "DELETE là lệnh DML, xóa từng dòng có thể dùng WHERE, có thể ROLLBACK được và không reset IDENTITY. TRUNCATE là lệnh DDL, xóa toàn bộ dữ liệu cực nhanh, không có WHERE, tự động COMMIT (không thể rollback) và reset lại cột IDENTITY về 1.",
+          "trap": "TRUNCATE không kích hoạt trigger DELETE."
         }
       ],
       "dailyEnglish": [
@@ -8076,18 +8278,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_23_1",
-          "level": "Easy",
-          "question": "Mệnh đề nào lọc trước khi gom nhóm?",
-          "code": "SELECT department_id, COUNT(*), AVG(salary)\nFROM Employees\nWHERE status = 'ACTIVE'      -- Lọc trước khi gom nhóm\nGROUP BY department_id\nHAVING COUNT(*) >= 5         -- Lọc nhóm sau khi gom nhóm\nORDER BY AVG(salary) DESC;",
+          "id": "ct_d23_1",
+          "level": "Medium",
+          "question": "Câu truy vấn SQL tính lương trung bình sau có lỗi gì không?",
+          "code": "-- Bảng Employees(DeptID int, Salary decimal)\nSELECT DeptID, AVG(Salary)\nFROM Employees\nWHERE AVG(Salary) > 1000\nGROUP BY DeptID;",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Lỗi cú pháp vì dùng hàm tổng hợp AVG trong mệnh đề WHERE",
+            "Chạy bình thường và trả về các phòng ban có lương > 1000",
+            "Lỗi cú pháp do thiếu ORDER BY",
+            "Lỗi do GROUP BY phải đứng trước WHERE"
           ],
           "correctIndex": 0,
-          "explanation": "WHERE"
+          "explanation": "Trong SQL, hàm tổng hợp (Aggregate functions như COUNT, SUM, AVG, MIN, MAX) KHÔNG ĐƯỢC PHÉP xuất hiện trong mệnh đề `WHERE` vì WHERE lọc dữ liệu trước khi nhóm. Muốn lọc theo hàm tổng hợp, bắt buộc phải dùng mệnh đề `HAVING AVG(Salary) > 1000` đặt sau `GROUP BY`."
         }
       ],
       "examTraps": [
@@ -8119,51 +8321,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Thứ tự thực thi mệnh đề trong SQL",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Aggregate functions: COUNT(*), COUNT(col), SUM, AVG, MIN, MAX?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Aggregate functions: COUNT(*), COUNT(col), SUM, AVG, MIN, MAX để tránh lỗi runtime."
+              "q": "Nêu thứ tự thực thi logic của một câu lệnh SQL từ đầu đến cuối.",
+              "ans": "1) `FROM` -> 2) `ON` -> 3) `JOIN` -> 4) `WHERE` -> 5) `GROUP BY` -> 6) `WITH CUBE/ROLLUP` -> 7) `HAVING` -> 8) `SELECT` -> 9) `DISTINCT` -> 10) `ORDER BY` -> 11) `TOP / LIMIT / OFFSET`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "WHERE vs HAVING",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao không thể viết `WHERE COUNT(*) > 5`?",
+              "ans": "Vì mệnh đề `WHERE` được thực thi TRƯỚC khi phép gom nhóm `GROUP BY` diễn ra, tại thời điểm đó dữ liệu chưa được tổng hợp nên không thể áp dụng các hàm aggregate. Muốn lọc theo hàm tổng hợp bắt buộc phải đặt trong mệnh đề `HAVING`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace câu lệnh GROUP BY và HAVING",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho bảng `Sales(dept, amount)` chứa:\n('IT', 100), ('IT', 200), ('HR', 150), ('HR', 50)\nChạy câu lệnh:\n```sql\nSELECT dept, SUM(amount) FROM Sales GROUP BY dept HAVING SUM(amount) > 250;\n```\nKết quả trả về dòng nào?",
+              "ans": "Trả về duy nhất 1 dòng: `IT | 300`. Nhóm 'IT' có tổng 100+200=300 (> 250 nên thỏa điều kiện HAVING). Nhóm 'HR' có tổng 150+50=200 (không thỏa > 250 nên bị loại)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy COUNT(*) vs COUNT(column_name)",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Một cột `bonus` có 3 dòng: 100, NULL, 200. Kết quả của `COUNT(*)` và `COUNT(bonus)` là bao nhiêu?",
+              "ans": "`COUNT(*)` = 3 (đếm toàn bộ số dòng dữ liệu). `COUNT(bonus)` = 2 (hàm COUNT đếm theo tên cột sẽ tự động bỏ qua các giá trị `NULL`)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tối ưu câu truy vấn subquery với EXISTS vs IN",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao `WHERE EXISTS` thường tối ưu hơn `WHERE IN` khi danh sách con chứa nhiều dữ liệu hoặc có chứa giá trị `NULL`?",
+              "ans": "`EXISTS` hoạt động theo cơ chế boolean short-circuit: Dừng quét ngay khi tìm thấy bản ghi đầu tiên khớp điều kiện, và không bị lỗi trả về rỗng khi tập kết quả chứa `NULL` như toán tử `NOT IN`."
             }
           ]
         }
@@ -8184,9 +8386,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Aggregate functions: COUNT(*), COUNT(col), SUM, AVG, MIN, MAX?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phân biệt mệnh đề WHERE và HAVING trong câu lệnh SQL có GROUP BY?",
+          "a": "WHERE lọc các bản ghi đơn lẻ TRƯỚC KHI gom nhóm (không dùng được hàm tổng hợp như COUNT, SUM). HAVING lọc các nhóm kết quả SAU KHI gom nhóm dựa trên kết quả của hàm tổng hợp (vd: HAVING COUNT(*) > 5).",
+          "trap": "Dùng hàm SUM, AVG trong WHERE sẽ bị lỗi cú pháp ngay lập tức!"
         }
       ],
       "dailyEnglish": [
@@ -8293,18 +8495,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_24_1",
-          "level": "Easy",
-          "question": "Khi bảng bên phải không có dữ liệu khớp trong LEFT JOIN, cột của nó nhận giá trị gì?",
-          "code": "-- Tìm khách hàng CHƯA TỪNG mua hàng:\nSELECT c.id, c.name\nFROM Customers c\nLEFT JOIN Orders o ON c.id = o.customer_id\nWHERE o.id IS NULL;",
+          "id": "ct_d24_1",
+          "level": "Hard",
+          "question": "Cho 2 bảng Customers(ID, Name) và Orders(ID, CustID). Câu truy vấn sau trả về gì?",
+          "code": "SELECT C.Name, O.ID AS OrderID\nFROM Customers C\nLEFT JOIN Orders O ON C.ID = O.CustID\nWHERE O.ID IS NULL;",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Danh sách tất cả khách hàng CHƯA TỪNG đặt đơn hàng nào",
+            "Danh sách tất cả khách hàng đã có ít nhất 1 đơn hàng",
+            "Bị lỗi cú pháp tại dòng WHERE O.ID IS NULL",
+            "Trả về bảng rỗng vì LEFT JOIN không bao giờ có NULL"
           ],
           "correctIndex": 0,
-          "explanation": "NULL"
+          "explanation": "Đây là kỹ thuật kinh điển trong SQL: `LEFT JOIN ... WHERE right_table.key IS NULL` dùng để tìm các phần tử thuộc bảng A mà hoàn toàn không có liên kết tương ứng trong bảng B (khách hàng chưa từng phát sinh đơn hàng)."
         }
       ],
       "examTraps": [
@@ -8336,51 +8538,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Các loại SQL JOIN",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: INNER JOIN vs LEFT JOIN vs RIGHT JOIN vs FULL OUTER JOIN?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của INNER JOIN vs LEFT JOIN vs RIGHT JOIN vs FULL OUTER JOIN để tránh lỗi runtime."
+              "q": "Phân biệt kết quả giữa `INNER JOIN` và `LEFT JOIN`.",
+              "ans": "`INNER JOIN` chỉ trả về những bản ghi có giá trị khớp ở cả 2 bảng. `LEFT JOIN` trả về TẤT CẢ các bản ghi của bảng bên trái; các cột của bảng bên phải nếu không khớp sẽ nhận giá trị `NULL`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "CROSS JOIN và Tích Descartes",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nếu bảng A có 5 dòng và bảng B có 10 dòng, câu lệnh `SELECT * FROM A CROSS JOIN B;` trả về bao nhiêu dòng?",
+              "ans": "Trả về 50 dòng (5 * 10 = 50, tích Descartes giữa 2 tập hợp)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace câu lệnh LEFT JOIN với WHERE điều kiện lọc NULL",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho 2 bảng:\n`Customers(id, name)`: (1, 'A'), (2, 'B')\n`Orders(id, cust_id)`: (101, 1)\nChạy câu lệnh:\n```sql\nSELECT c.name FROM Customers c LEFT JOIN Orders o ON c.id = o.cust_id WHERE o.id IS NULL;\n```\nKết quả trả về là gì?",
+              "ans": "Trả về: `'B'`. Khách hàng 1 có đơn hàng (o.id = 101). Khách hàng 2 không có đơn hàng nên cột `o.id` là `NULL`, thỏa điều kiện `WHERE o.id IS NULL`. Đây là kỹ thuật chuẩn để tìm các bản ghi không có quan hệ con."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy đặt điều kiện ở ON vs WHERE trong LEFT JOIN",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Trong `LEFT JOIN`, điều kiện lọc `o.status = 'ACTIVE'` đặt ở mệnh đề `ON` khác gì đặt ở mệnh đề `WHERE`?",
+              "ans": "Đặt ở `ON`: Vẫn giữ lại toàn bộ các dòng của bảng bên trái (chỉ bảng bên phải không thỏa sẽ thành NULL). Đặt ở `WHERE`: Sẽ lọc bỏ hoàn toàn các dòng có `NULL` của bảng bên phải, vô tình biến câu lệnh thành `INNER JOIN`!"
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Self Join để truy vấn cấu trúc phân cấp",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Viết cú pháp truy vấn Self Join để lấy tên nhân viên cùng tên người quản lý của họ từ bảng `Employee(id, name, manager_id)`.",
+              "ans": "`SELECT e.name AS Employee, m.name AS Manager FROM Employee e LEFT JOIN Employee m ON e.manager_id = m.id;`"
             }
           ]
         }
@@ -8401,9 +8603,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của INNER JOIN vs LEFT JOIN vs RIGHT JOIN vs FULL OUTER JOIN?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Khi dùng LEFT JOIN, các cột của bảng bên phải không có dữ liệu khớp sẽ nhận giá trị gì?",
+          "a": "Nhận giá trị NULL. Để lọc ra những bản ghi chỉ có ở bảng bên trái mà không có ở bảng bên phải, ta dùng điều kiện `WHERE right_table.id IS NULL`.",
+          "trap": "So sánh với NULL trong SQL phải dùng `IS NULL`, dùng `= NULL` luôn trả về False/Unknown!"
         }
       ],
       "dailyEnglish": [
@@ -8511,18 +8713,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_25_1",
-          "level": "Easy",
-          "question": "Phương thức init() chạy mấy lần?",
-          "code": "@WebServlet(\"/hello\")\npublic class HelloServlet extends HttpServlet {\n    public void init() { /* Chạy 1 lần duy nhất */ }\n    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {\n        resp.getWriter().println(\"Hello World\");\n    }\n    public void destroy() { /* Chạy 1 lần duy nhất */ }\n}",
+          "id": "ct_d25_1",
+          "level": "Medium",
+          "question": "Đoạn mã Servlet sau có nguy cơ tiềm ẩn lỗi gì?",
+          "code": "public class CounterServlet extends HttpServlet {\n    private int count = 0; // Instance variable\n    protected void doGet(HttpServletRequest req, HttpServletResponse res) \n            throws IOException {\n        count++;\n        res.getWriter().print(\"Count: \" + count);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Lỗi Race Condition (tranh chấp đa luồng) khi nhiều request truy cập đồng thời",
+            "Compile Error vì Servlet không được khai báo field",
+            "Mỗi request đều in ra Count: 1 vì mỗi request tạo 1 Servlet mới",
+            "Lỗi NullPointerException"
           ],
           "correctIndex": 0,
-          "explanation": "Duy nhất 1 lần."
+          "explanation": "Servlet Container (như Tomcat) mặc định chỉ tạo DUY NHẤT 1 instance của Servlet (Singleton) phục vụ cho tất cả người dùng, mỗi request chạy trên một luồng (thread) riêng. Khai báo biến đếm `private int count;` là instance field sẽ bị các luồng cùng đọc/ghi đồng thời mà không đồng bộ, gây ra hiện tượng Race Condition làm sai lệch kết quả!"
         }
       ],
       "examTraps": [
@@ -8554,51 +8756,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vòng đời của Servlet",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Servlet Lifecycle: init(), service() -> doGet()/doPost(), destroy()?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Servlet Lifecycle: init(), service() -> doGet()/doPost(), destroy() để tránh lỗi runtime."
+              "q": "Kể tên 3 phương thức cốt lõi trong vòng đời (Lifecycle) của Servlet theo đúng thứ tự.",
+              "ans": "1) `init()` (chạy 1 lần duy nhất khi servlet được nạp) -> 2) `service()` (chạy mỗi khi có request tới) -> 3) `destroy()` (chạy 1 lần duy nhất khi ứng dụng undeploy hoặc server shutdown)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Đa luồng trong Servlet",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Servlet Container (như Tomcat) quản lý số lượng thể hiện (instance) của một Servlet như thế nào khi có nhiều request đồng thời?",
+              "ans": "Servlet Container mặc định chỉ tạo DUY NHẤT 1 instance (Singleton pattern) cho mỗi cấu hình Servlet. Mỗi request đến được xử lý trên một luồng (thread) riêng biệt cùng gọi phương thức `service()` trên instance duy nhất đó."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace bẫy rò rỉ luồng trên biến instance của Servlet",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code trong Servlet:\n```java\npublic class CounterServlet extends HttpServlet {\n    private int count = 0;\n    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {\n        count++;\n        System.out.print(count + \" \");\n    }\n}\n```\nBiến `count` có an toàn trong môi trường đa luồng không? Tại sao?",
+              "ans": "KHÔNG an toàn (Thread-unsafe)! Vì chỉ có 1 instance duy nhất của Servlet được chia sẻ cho mọi thread, biến instance `count` sẽ bị tranh chấp dữ liệu (Race Condition). Cần tránh dùng biến instance có trạng thái thay đổi trong Servlet."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy cấu hình load-on-startup",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Thuộc tính `load-on-startup = 1` trong cấu hình Servlet có tác dụng gì?",
+              "ans": "Chỉ thị cho Servlet Container khởi tạo Servlet và gọi hàm `init()` ngay khi ứng dụng web khởi động (server boot), thay vì đợi đến khi có request đầu tiên gửi đến."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Filter chain và thứ tự thực thi",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Trong cấu hình `Filter`, câu lệnh `chain.doFilter(request, response);` đóng vai trò gì?",
+              "ans": "Chuyển tiếp request và response đến Filter tiếp theo trong chuỗi, hoặc đến Servlet đích nếu là Filter cuối cùng. Mọi code viết sau dòng `chain.doFilter` sẽ được thực thi trên chiều ngược lại khi response trả về client."
             }
           ]
         }
@@ -8619,9 +8821,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Servlet Lifecycle: init(), service() -> doGet()/doPost(), destroy()?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Vòng đời (Lifecycle) của một Servlet trong Servlet Container diễn ra như thế nào?",
+          "a": "1. Nạp class & gọi `init()` duy nhất 1 lần khi servlet được tải.\n2. Mỗi request đến, container tạo 1 thread mới và gọi `service()` (từ đó điều phối sang `doGet()` hoặc `doPost()`).\n3. Khi server tắt hoặc reload app, gọi `destroy()` duy nhất 1 lần để giải phóng tài nguyên.",
+          "trap": "Servlet là Singleton trong Container, không khai báo biến trạng thái người dùng trong instance variable!"
         }
       ],
       "dailyEnglish": [
@@ -8772,51 +8974,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Các phạm vi (Scopes) trong Web Java",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: 4 Scopes: page, request, session, application (ServletContext)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của 4 Scopes: page, request, session, application (ServletContext) để tránh lỗi runtime."
+              "q": "Kể tên 4 phạm vi lưu trữ dữ liệu (Scopes) trong ứng dụng web Java từ hẹp nhất đến rộng nhất.",
+              "ans": "`Page Scope` -> `Request Scope` (`HttpServletRequest`) -> `Session Scope` (`HttpSession`) -> `Application Scope` (`ServletContext`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế quản lý Session và JSESSIONID",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Làm thế nào Server nhận diện được các request liên tiếp đến từ cùng một người dùng?",
+              "ans": "Khi Session được tạo, Server sinh ra một mã định danh duy nhất `JSESSIONID` và gửi về Client qua Cookie. Ở các request sau, trình duyệt tự động gửi lại Cookie này; nếu client tắt cookie, server sử dụng kỹ thuật URL Rewriting (`encodeURL`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace truy xuất dữ liệu từ Session",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nHttpSession session = req.getSession(false);\nif (session != null) {\n    System.out.println(\"Exists\");\n} else {\n    System.out.println(\"Null\");\n}\n```\nTham số `false` trong `req.getSession(false)` có ý nghĩa gì?",
+              "ans": "Nếu đã tồn tại session cho client này thì trả về session đó; nếu CHƯA CÓ thì trả về `null` (không tự ý tạo session mới). Nếu không truyền tham số hoặc truyền `true`, một session mới sẽ tự động được tạo nếu chưa tồn tại."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy lưu trữ object không Serializable vào Session",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Tại sao các đối tượng lưu vào `HttpSession` được khuyến nghị bắt buộc phải implements interface `java.io.Serializable`?",
+              "ans": "Để Servlet Container có thể tuần tự hóa (Serialize) session ra ổ đĩa khi server khởi động lại (Session Persistence) hoặc chuyển session qua các máy chủ khác trong cụm server (Clustering / Load Balancing)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Cấu hình Session Timeout",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cấu hình `<session-timeout>30</session-timeout>` trong file `web.xml` được tính theo đơn vị thời gian nào?",
+              "ans": "Được tính theo đơn vị PHÚT (30 phút). Trong khi hàm `session.setMaxInactiveInterval(1800)` trong code Java lại tính theo đơn vị GIÂY (1800 giây = 30 phút)."
             }
           ]
         }
@@ -8837,9 +9039,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của 4 Scopes: page, request, session, application (ServletContext)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phân biệt 4 phạm vi lưu trữ (Scopes) trong ứng dụng Java Web Servlet/JSP?",
+          "a": "- page: Chỉ tồn tại trong trang JSP hiện tại.\n- request: Tồn tại trong 1 chu kỳ HTTP Request-Response (chia sẻ qua forward).\n- session: Tồn tại qua nhiều request của cùng 1 người dùng (dựa vào JSESSIONID).\n- application (ServletContext): Toàn bộ ứng dụng, chia sẻ cho TẤT CẢ người dùng.",
+          "trap": "Lưu dữ liệu riêng của người dùng vào ServletContext sẽ làm lộ thông tin sang người dùng khác!"
         }
       ],
       "dailyEnglish": [
@@ -8947,18 +9149,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_27_1",
-          "level": "Easy",
-          "question": "Phương thức nào giữ nguyên dữ liệu request.setAttribute?",
-          "code": "// Forward (Server-side)\nrequest.getRequestDispatcher(\"home.jsp\").forward(request, response);\n\n// Redirect (Client-side)\nresponse.sendRedirect(\"login.jsp\");",
+          "id": "ct_d27_1",
+          "level": "Medium",
+          "question": "Đoạn code chuyển hướng trang sau có đặc điểm gì?",
+          "code": "// Servlet 1\nrequest.setAttribute(\"user\", \"Trung\");\nRequestDispatcher rd = request.getRequestDispatcher(\"page2.jsp\");\nrd.forward(request, response);",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "page2.jsp lấy được attribute 'user' và URL trình duyệt không thay đổi",
+            "URL trình duyệt đổi sang page2.jsp",
+            "Attribute 'user' bị mất khi sang page2.jsp",
+            "Ném IllegalStateException ngay dòng forward"
           ],
           "correctIndex": 0,
-          "explanation": "RequestDispatcher.forward()"
+          "explanation": "`RequestDispatcher.forward()` là cơ chế điều phối nội bộ phía Server. Trình duyệt không biết có sự chuyển trang nên URL trên thanh địa chỉ giữ nguyên, và đối tượng `request` được chuyển tiếp sang trang đích nên `request.getAttribute(\"user\")` đọc được bình thường."
         }
       ],
       "examTraps": [
@@ -8982,51 +9184,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Forward vs Redirect & PreparedStatement",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: RequestDispatcher.forward() vs HttpServletResponse.sendRedirect()?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của RequestDispatcher.forward() vs HttpServletResponse.sendRedirect() để tránh lỗi runtime."
+              "q": "Phân biệt `RequestDispatcher.forward()` và `HttpServletResponse.sendRedirect()`.",
+              "ans": "`forward()`: Diễn ra hoàn toàn phía Server, URL trên trình duyệt không đổi, giữ nguyên dữ liệu trong Request scope (1 round-trip). `sendRedirect()`: Server trả mã 302 về trình duyệt yêu cầu client gửi request mới, URL bị đổi, mất dữ liệu request cũ (2 round-trips)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "PreparedStatement chống SQL Injection",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao `PreparedStatement` ngăn chặn được tấn công SQL Injection?",
+              "ans": "Vì khung câu lệnh SQL được biên dịch trước (pre-compiled) trong database engine. Mọi giá trị tham số truyền vào qua hàm `setXxx()` đều được CSDL xem thuần túy là dữ liệu thô (literal data), không thể làm thay đổi cấu trúc cú pháp của lệnh SQL."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace index tham số trong PreparedStatement",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nString sql = \"INSERT INTO Users(name, age) VALUES(?, ?)\";\nPreparedStatement ps = conn.prepareStatement(sql);\nps.setString(1, \"Alice\");\nps.setInt(2, 25);\n```\nChỉ số tham số (parameter index) trong JDBC bắt đầu từ số mấy?",
+              "ans": "Bắt đầu từ số `1` (1-indexed), không phải 0 như mảng Java! Nếu truyền `ps.setString(0, ...)` sẽ gây ra ngoại lệ `SQLException: Parameter index out of range`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy đóng Connection sau khi dùng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Chuyện gì xảy ra nếu lập trình viên không đóng `Connection` và `ResultSet` trong khối `finally` hoặc không dùng `try-with-resources`?",
+              "ans": "Sẽ gây ra lỗi rò rỉ kết nối (Connection Leak), cạn kiệt Connection Pool của ứng dụng và khiến máy chủ ngừng tiếp nhận thêm các request CSDL mới."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Quản lý Transaction thủ công trong JDBC",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Để quản lý Transaction thủ công trong JDBC, bước đầu tiên phải làm gì trên đối tượng `Connection`?",
+              "ans": "Bắt buộc phải gọi `conn.setAutoCommit(false);` để tắt chế độ tự động commit, sau đó dùng `conn.commit();` khi thành công và `conn.rollback();` trong khối catch nếu xảy ra lỗi."
             }
           ]
         }
@@ -9059,9 +9261,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của RequestDispatcher.forward() vs HttpServletResponse.sendRedirect()?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "So sánh cơ chế hoạt động của `RequestDispatcher.forward()` và `HttpServletResponse.sendRedirect()`?",
+          "a": "- `forward()`: Chuyển tiếp ở phía Server, URL trên trình duyệt GIỮ NGUYÊN, dữ liệu trong `request.setAttribute` được bảo toàn.\n- `sendRedirect()`: Trả về HTTP 302 cho Client để Browser tự gửi Request GET MỚI sang URL mới, URL trên thanh địa chỉ THAY ĐỔI, request attribute cũ bị mất.",
+          "trap": "Sau forward dữ liệu form vẫn còn, sau redirect là một request hoàn toàn mới!"
         }
       ],
       "dailyEnglish": [
@@ -9139,8 +9341,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu đạt được hôm nay:",
-          "a": "Tối thiểu 18/25 câu đúng."
+          "q": "Trong JDBC, tại sao `PreparedStatement` lại chống được lỗi SQL Injection so với `Statement` thông thường?",
+          "a": "Vì PreparedStatement biên dịch trước (pre-compile) khung câu lệnh SQL trong DB engine. Mọi giá trị truyền qua dấu hỏi `?` đều được xem là tham số dữ liệu (literal value), không thể làm thay đổi cấu trúc cú pháp của lệnh SQL."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -9192,51 +9394,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tổng hợp Web & Database",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Thi thử format chuẩn Entry Test?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Thi thử format chuẩn Entry Test để tránh lỗi runtime."
+              "q": "Mã trạng thái HTTP 200, 302, 404, 500 biểu thị ý nghĩa gì?",
+              "ans": "200: OK (Thành công); 302: Found (Chuyển hướng Redirect); 404: Not Found (Không tìm thấy tài nguyên phía Client); 500: Internal Server Error (Lỗi logic crash phía Server)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Nguyên lý ACID trong CSDL",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nêu ý nghĩa của 4 chữ cái trong thuộc tính ACID của hệ quản trị CSDL.",
+              "ans": "A (Atomicity): Tính nguyên tử - Tất cả hoặc không gì cả. C (Consistency): Tính nhất quán - Dữ liệu luôn đúng ràng buộc. I (Isolation): Tính cô lập - Các giao dịch không ảnh hưởng lẫn nhau. D (Durability): Tính bền vững - Dữ liệu đã commit sẽ tồn tại vĩnh viễn dù mất điện."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Transaction Rollback",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nconn.setAutoCommit(false);\nstmt.executeUpdate(\"INSERT INTO Accounts VALUES(1, 100)\");\nSavepoint sp = conn.setSavepoint();\nstmt.executeUpdate(\"INSERT INTO Accounts VALUES(2, 200)\");\nconn.rollback(sp);\nconn.commit();\n```\nSau khi chạy, bảng `Accounts` có bao nhiêu bản ghi?",
+              "ans": "Có duy nhất 1 bản ghi (Account 1)! Lệnh `rollback(sp)` đã hoàn tác bản ghi 2 về mốc Savepoint, sau đó lệnh `commit()` lưu lại toàn bộ các thao tác trước mốc Savepoint đó."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy forward sau khi response đã committed",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu Servlet đã gọi `response.getWriter().flush()` rồi sau đó mới gọi `dispatcher.forward(req, resp)`, ngoại lệ nào sẽ xảy ra?",
+              "ans": "Ném ngoại lệ `java.lang.IllegalStateException: Cannot forward after response has been committed`. Một khi header và nội dung phản hồi đã được gửi về client, không thể thực hiện forward nữa."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Transaction Isolation Levels và hiện tượng Phantom Read",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Hiện tượng Phantom Read (dòng dữ liệu ma) là gì và mức cô lập nào ngăn chặn được nó?",
+              "ans": "Phantom Read xảy ra khi giao dịch 1 truy vấn một tập bản ghi theo điều kiện, giao dịch 2 chèn thêm bản ghi mới thỏa điều kiện đó và commit, giao dịch 1 đọc lại thấy xuất hiện thêm bản ghi mới. Mức cô lập `SERIALIZABLE` ngăn chặn được hiện tượng này."
             }
           ]
         }
@@ -9269,9 +9471,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Thi thử format chuẩn Entry Test?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Lợi ích vượt trội của `PreparedStatement` so với `Statement` thông thường trong JDBC?",
+          "a": "1. Chống tấn công SQL Injection nhờ cơ chế tách biệt câu lệnh SQL và tham số qua Placeholder `?`.\n2. Tăng tốc độ thực thi nhờ Database biên dịch sẵn (Pre-compiled) kế hoạch thực thi cho các lần gọi lặp lại.",
+          "trap": "Nối chuỗi câu lệnh SQL với Statement thông thường là lỗ hổng bảo mật nghiêm trọng số 1!"
         }
       ],
       "dailyEnglish": [
@@ -9349,8 +9551,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Biến local variable kiểu `int x;` nếu không gán giá trị mà đem in ra màn hình thì JVM xử lý thế nào?",
+          "a": "Bị Compile Error: `variable x might not have been initialized`. Biến cục bộ nằm trên Stack không được JVM gán giá trị mặc định."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -9402,51 +9604,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Bẫy từ khóa và kiểu nguyên thủy TestKing Ch1",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Language Fundamentals, Operators, Arrays?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Language Fundamentals, Operators, Arrays để tránh lỗi runtime."
+              "q": "Trong các định danh: `goto`, `const`, `default`, `assert`, từ nào là từ khóa hợp lệ trong Java hiện đại?",
+              "ans": "Tất cả đều là từ khóa! Trong đó `goto` và `const` là các từ khóa dành riêng (reserved keywords) không dùng trong cú pháp, `default` và `assert` là từ khóa có chức năng."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Tràn số nguyên khi cast",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao `int i = 130; byte b = (byte) i;` lại cho giá trị `b = -126`?",
+              "ans": "130 trong nhị phân 32-bit là `00000000 00000000 00000000 10000010`. Khi ép kiểu sang `byte` (8-bit), nó cắt lấy 8 bit cuối: `10000010`. Bit đầu là 1 biểu thị số âm, lấy bù hai ta được giá trị là `-126`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace mảng đa chiều không đồng đều (Jagged Array)",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint[][] arr = new int[2][];\narr[0] = new int[]{1, 2};\narr[1] = new int[]{3, 4, 5};\nSystem.out.println(arr[1].length + \" \" + arr[0][1]);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `3 2`. Java hỗ trợ mảng lởm chởm (ragged/jagged array): `arr[1]` có 3 phần tử nên `length` là 3. `arr[0][1]` truy cập phần tử thứ hai của mảng thứ nhất có giá trị 2."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy khai báo mảng sai cú pháp",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Câu lệnh nào sau đây bị lỗi biên dịch: `int[] a;`, `int a[];`, `int[5] a;`?",
+              "ans": "`int[5] a;` bị lỗi Compile Error! Trong Java, kích thước mảng không bao giờ được đặt ở phần khai báo biến kiểu dữ liệu."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Dấu gạch dưới trong số thực và số nguyên (Java 7+)",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khai báo `int x = 1_000_000;` và `int y = _100;` câu nào bị lỗi biên dịch?",
+              "ans": "`int y = _100;` bị lỗi biên dịch vì coi `_100` là một tên biến không xác định. Dấu gạch dưới `_` chỉ được đặt GIỮA các chữ số, không được đặt ở đầu, ở cuối hoặc cạnh dấu chấm số thập phân."
             }
           ]
         }
@@ -9479,9 +9681,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Language Fundamentals, Operators, Arrays?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc đặt tên Identifier (tên biến, hàm, class) hợp lệ trong Java?",
+          "a": "Identifier có thể chứa chữ cái, chữ số, dấu gạch dưới `_` và ký tự `$`. TUYỆT ĐỐI KHÔNG ĐƯỢC bắt đầu bằng chữ số, không chứa dấu gạch ngang `-`, không chứa dấu cách và không được trùng với các từ khóa (keywords) của Java.",
+          "trap": "`int $1_value;` là hợp lệ, nhưng `int 1_value;` hoặc `int my-var;` là Compile Error!"
         }
       ],
       "dailyEnglish": [
@@ -9558,8 +9760,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Có thể khai báo phương thức `abstract` đi kèm với từ khóa `static` hoặc `final` hoặc `private` không?",
+          "a": "Không bao giờ! `abstract` bắt buộc phải override, trong khi `static`, `final`, `private` đều cấm/không cho phép override -> Compile Error ngay lập tức."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -9611,51 +9813,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Khai báo class và gói",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Declarations, Access modifiers, Abstract classes, Interfaces?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Declarations, Access modifiers, Abstract classes, Interfaces để tránh lỗi runtime."
+              "q": "Một file Java có thể không có khai báo package nào không? Khi đó nó thuộc package nào?",
+              "ans": "Hoàn toàn được! Khi đó file thuộc về default package (unnamed package). Các class trong default package không thể được import bởi các class nằm trong package có tên."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Xung đột modifier",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao không thể kết hợp `abstract` với `private` trong khai báo method?",
+              "ans": "Vì `abstract` bắt buộc lớp con phải nhìn thấy để ghi đè (override), trong khi `private` cấm hoàn toàn lớp con nhìn thấy và kế thừa. Đây là mâu thuẫn trực tiếp về thiết kế."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace phạm vi truy cập thuộc tính kế thừa",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Base { protected int val = 42; }\nclass Sub extends Base {\n    void printVal() { System.out.println(val); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new Sub().printVal();\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 42. Biến `protected` được kế thừa trực tiếp vào class con `Sub`, nên phương thức `printVal()` truy cập trực tiếp `val` một cách hợp lệ."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy khởi tạo biến static final không hợp lệ",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Có thể gán giá trị cho biến `static final int MAX;` bên trong một constructor không?",
+              "ans": "KHÔNG! Biến `static final` thuộc về class, trong khi constructor chạy khi tạo từng đối tượng (instance). Biến `static final` chỉ có thể gán giá trị tại nơi khai báo hoặc trong khối Static Initialization Block."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Static method trong Interface từ Java 8",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cho interface `A { static void f() {} }` và `class B implements A {}`. Câu lệnh `B.f();` có hợp lệ không?",
+              "ans": "Không hợp lệ! Phương thức `static` trong Interface KHÔNG được kế thừa sang class thực thi. Cú pháp duy nhất để gọi là thông qua tên Interface: `A.f();`."
             }
           ]
         }
@@ -9688,9 +9890,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Declarations, Access modifiers, Abstract classes, Interfaces?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Một class có thể vừa kế thừa một Abstract Class vừa implement Interface được không?",
+          "a": "ĐƯỢC. Cú pháp: `class Child extends ParentAbstract implements InterfaceA, InterfaceB`. Thứ tự bắt buộc từ khóa `extends` phải đứng trước từ khóa `implements`.",
+          "trap": "Đảo ngược `implements A extends B` sẽ bị Compile Error ngay."
         }
       ],
       "dailyEnglish": [
@@ -9767,8 +9969,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Biểu thức `boolean b = (false && (x++ > 0));` có làm tăng giá trị của `x` không? Tại sao?",
+          "a": "Không tăng! Toán tử logic ngắn mạch `&&` (short-circuit) dừng ngay khi gặp vế trái là `false`, biểu thức vế phải không hề được đánh giá."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -9820,51 +10022,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Độ ưu tiên toán tử",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Phân loại 8 mục: 1. Syntax trap, 2. Compile error, 3. Runtime exception, 4. OOP trap, 5. String trap, 6. Collection trap, 7. Thread trap, 8. Operator trap?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Phân loại 8 mục: 1. Syntax trap, 2. Compile error, 3. Runtime exception, 4. OOP trap, 5. String trap, 6. Collection trap, 7. Thread trap, 8. Operator trap để tránh lỗi runtime."
+              "q": "Toán tử nào có độ ưu tiên cao nhất: nhân chia `* /`, gán `=`, hay toán tử hậu tố `expr++`?",
+              "ans": "Toán tử hậu tố `expr++` có độ ưu tiên cao nhất, sau đó đến nhân chia `* /`, và thấp nhất là toán tử gán `=`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Side effect trong toán tử logic ngắn mạch",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Biểu thức `boolean res = (true || (++x > 0));` có làm biến `x` thay đổi không?",
+              "ans": "Không làm thay đổi biến `x`! Vì toán tử `||` thấy vế trái là `true` nên dừng đánh giá ngay lập tức (ngắn mạch)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace toán tử kết hợp tăng giảm và phép gán",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint x = 5;\nx = x++;\nSystem.out.println(x);\n```\nKết quả in ra là gì? Tại sao?",
+              "ans": "In ra: 5 (không phải 6!). Giải thích: Biểu thức `x++` lấy giá trị cũ (5) nạp vào stack, sau đó `x` tăng lên 6 trong bộ nhớ. Tiếp theo phép gán `=` gán giá trị trên stack (5) đè lại vào `x`, khiến `x` quay trở lại 5."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy nối chuỗi với phép cộng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nSystem.out.println(1 + 2 + \"3\" + 4 + 5);\n```\nKết quả in ra màn hình là gì?",
+              "ans": "In ra: `\"3345\"`. Đánh giá từ trái sang phải: `1 + 2 = 3` (số), sau đó `3 + \"3\" = \"33\"` (chuỗi), tiếp tục `\"33\" + 4 = \"334\"`, `\"334\" + 5 = \"3345\"`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Toán tử ba ngôi trả về kiểu khác nhau",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Biểu thức `Object obj = true ? new Integer(1) : new Double(2.0); System.out.println(obj);` in ra gì?",
+              "ans": "In ra: `1.0`! Do toán tử ba ngôi yêu cầu một kiểu dữ liệu chung tương thích giữa 2 nhánh, `Integer` sẽ được nâng kiểu (numeric promotion) thành `Double`, khiến giá trị 1 bị ép thành 1.0."
             }
           ]
         }
@@ -9897,9 +10099,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Phân loại 8 mục: 1. Syntax trap, 2. Compile error, 3. Runtime exception, 4. OOP trap, 5. String trap, 6. Collection trap, 7. Thread trap, 8. Operator trap?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tám nhóm lỗi kinh điển cần phân loại trong Sổ tay lỗi Java (Error Notebook)?",
+          "a": "1. Syntax trap (dấu chấm phẩy, octal)\n2. Compile error (casting, uninitialized variable)\n3. Runtime exception (NPE, ClassCast, IndexOutOfBounds)\n4. OOP trap (overriding rules, hiding)\n5. String pool trap (== vs equals)\n6. Collection trap (equals/hashCode, Comparator)\n7. Thread concurrency (deadlock, wait/notify)\n8. Arithmetic/Promotion trap (overflow, byte math).",
+          "trap": "Khi làm sai, ghi lại chính xác dòng code và bản chất cơ chế máy ảo JVM."
         }
       ],
       "dailyEnglish": [
@@ -9976,8 +10178,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Nếu khối `catch(Exception e)` đặt trước khối `catch(IOException e)` thì trình biên dịch Java sẽ báo gì?",
+          "a": "Compile Error: `unreachable catch block for IOException. It is already handled by the catch block for Exception` (Luật: Exception con phải bắt trước Exception cha)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -10029,51 +10231,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Cấu trúc điều khiển và Exception",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Flow control, Loops, Exceptions try-catch-finally?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Flow control, Loops, Exceptions try-catch-finally để tránh lỗi runtime."
+              "q": "Vòng lặp `do-while` có đặc điểm gì khác biệt so với vòng lặp `while`?",
+              "ans": "Vòng lặp `do-while` luôn thực thi khối lệnh ít nhất MỘT LẦN trước khi kiểm tra điều kiện lặp."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Rethrow Exception và chữ ký phương thức",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nếu một phương thức bắt một Checked Exception rồi ném lại nó bằng `throw e;`, phương thức đó phải làm gì ở phần khai báo?",
+              "ans": "Bắt buộc phải khai báo `throws` loại Exception đó ở chữ ký của phương thức (signature)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace switch case có câu lệnh return",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\npublic static int calc(int n) {\n    switch(n) {\n        case 1: return 10;\n        case 2: n += 5;\n        case 3: return n * 2;\n        default: return 0;\n    }\n}\n```\nKhi gọi `calc(2)`, giá trị trả về là bao nhiêu?",
+              "ans": "Trả về: 14! Khớp `case 2`, `n` tăng thành `2 + 5 = 7`. Do không có `break` hay `return` ở case 2, nó fall-through xuống `case 3` và thực thi `return n * 2`, tức `7 * 2 = 14`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy ném ngoại lệ trong khối catch",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\ntry {\n    throw new RuntimeException(\"A\");\n} catch (Exception e) {\n    throw new RuntimeException(\"B\");\n} finally {\n    System.out.print(\"F \");\n}\n```\nChương trình in ra gì trước khi ném ngoại lệ?",
+              "ans": "In ra `F ` trước khi ngoại lệ \"B\" làm dừng chương trình! Khối `finally` luôn luôn được chạy trước khi ngoại lệ từ khối `catch` được truyền tiếp lên tầng trên."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Unchecked Exception trong chữ ký interface",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Nếu interface khai báo `void m();` không có throws, lớp con implements có được phép ném `ArithmeticException` không?",
+              "ans": "Hoàn toàn được phép! `ArithmeticException` là một `RuntimeException` (Unchecked Exception), có thể được ném ra ở bất kỳ phương thức nào mà không cần khai báo throws trong interface."
             }
           ]
         }
@@ -10106,9 +10308,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Flow control, Loops, Exceptions try-catch-finally?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Vòng lặp `do-while` có điểm gì đặc biệt so với `while` và `for`?",
+          "a": "Vòng lặp `do-while` luôn luôn thực thi khối lệnh bên trong ít nhất 1 lần trước khi kiểm tra điều kiện lặp ở cuối. Cú pháp bắt buộc phải có dấu chấm phẩy sau điều kiện: `do { ... } while (condition);`.",
+          "trap": "Quên dấu chấm phẩy `;` sau `while(...)` trong vòng lặp do-while sẽ bị Compile Error!"
         }
       ],
       "dailyEnglish": [
@@ -10185,8 +10387,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Phương thức private của class cha có thể bị override bởi class con không?",
+          "a": "Không! Phương thức `private` không được kế thừa. Phương thức trùng tên ở class con chỉ là một phương thức mới hoàn toàn (không có quan hệ polymorphism/override)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -10238,51 +10440,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Quy tắc đa hình trong TestKing Ch5",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: OOP, Inheritance, Polymorphism, Overriding?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của OOP, Inheritance, Polymorphism, Overriding để tránh lỗi runtime."
+              "q": "Một interface có thể kế thừa (extends) nhiều interface khác cùng lúc được không?",
+              "ans": "Được phép! Java hỗ trợ đa kế thừa giữa các Interface (`interface C extends A, B`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Tính đóng gói và JavaBeans standard",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tiêu chuẩn đặt tên getter cho thuộc tính kiểu `boolean` là gì?",
+              "ans": "Bắt đầu bằng tiền tố `is` (ví dụ `isActive()`, `isEnabled()`), thay vì dùng `get`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace đa hình đa tầng (Multi-level Polymorphism)",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass A { void m() { System.out.print(\"A\"); } }\nclass B extends A { void m() { System.out.print(\"B\"); } }\nclass C extends B { void m() { System.out.print(\"C\"); } }\npublic class Test {\n    public static void main(String[] args) {\n        A obj = new C();\n        obj.m();\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `C`. Đối tượng thực tế trên Heap được tạo từ `new C()`, nên dù gán cho tham chiếu kiểu `A`, cơ chế Virtual Method Invocation sẽ gọi phương thức `m()` ở lớp cụ thể nhất là `C`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy gọi super.super trong Java",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Trong class con `C` kế thừa `B`, có thể dùng cú pháp `super.super.m()` để gọi phương thức của class ông nội `A` được không?",
+              "ans": "Không thể! Cú pháp `super.super` là không hợp lệ trong Java để đảm bảo tính đóng gói (Encapsulation)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Đa hình với biến static trong kế thừa",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cho `class Parent { static int x = 1; }` và `class Child extends Parent { static int x = 2; }`. Biểu thức `Parent p = new Child(); System.out.println(p.x);` in ra gì?",
+              "ans": "In ra: 1. Biến static không có tính đa hình, được truy cập dựa trên kiểu của tham chiếu (`Parent`) tại thời điểm biên dịch."
             }
           ]
         }
@@ -10315,9 +10517,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của OOP, Inheritance, Polymorphism, Overriding?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phương thức có từ khóa `private` ở lớp cha có thể bị Override ở lớp con không?",
+          "a": "KHÔNG THỂ. Lớp con không nhìn thấy phương thức private của cha nên không thể Override. Nếu con khai báo một method trùng tên thì đó chỉ là một phương thức MỚI hoàn toàn của con, không có liên hệ đa hình với cha.",
+          "trap": "Gắn `@Override` lên method đó ở con sẽ bị trình biên dịch báo lỗi ngay!"
         }
       ],
       "dailyEnglish": [
@@ -10394,8 +10596,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Hai chuỗi `String s1 = \"Java\";` và `String s2 = new String(\"Java\");` thì `s1 == s2` và `s1.equals(s2)` trả về kết quả gì?",
+          "a": "`s1 == s2` trả về `false` (s1 nằm trong String Pool, s2 là object độc lập trên Heap). `s1.equals(s2)` trả về `true` (so sánh nội dung chuỗi ký tự)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -10447,51 +10649,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Bẫy Collections & Generics trong TestKing Ch6",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: String, Wrapper, Math, Collections, Generics?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của String, Wrapper, Math, Collections, Generics để tránh lỗi runtime."
+              "q": "Phần tử thêm vào `HashSet` bắt buộc phải thỏa mãn điều kiện gì để không bị trùng lặp?",
+              "ans": "Class của phần tử đó bắt buộc phải override đúng và tương thích cả hai phương thức `equals()` và `hashCode()`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Type Erasure trong Generics",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Hiện tượng Type Erasure trong Java Generics là gì?",
+              "ans": "Java compiler chỉ kiểm tra an toàn kiểu của Generics ở thời điểm biên dịch. Khi chuyển thành mã byte-code, thông tin kiểu cụ thể (`<String>`, `<Integer>`) bị xóa sạch và thay bằng `Object` (hoặc bounded type) kèm ép kiểu ngầm định để tương thích ngược với các phiên bản Java cũ."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Collections.sort() với Comparator",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nList<Integer> list = Arrays.asList(3, 1, 2);\nCollections.sort(list, (a, b) -> b - a);\nSystem.out.println(list);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `[3, 2, 1]`. Biểu thức lambda `b - a` đảo ngược thứ tự so sánh tự nhiên, sắp xếp danh sách theo thứ tự giảm dần."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Arrays.asList() trả về List cố định",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code `List<String> list = Arrays.asList(\"A\", \"B\"); list.add(\"C\");` ném ra ngoại lệ gì lúc runtime?",
+              "ans": "Ném `java.lang.UnsupportedOperationException`! `Arrays.asList()` trả về một `List` có kích thước cố định bọc quanh mảng gốc, không hỗ trợ thao tác thêm hoặc xóa phần tử (`add`, `remove`)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Bounded Wildcards: PECS rule",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Nguyên tắc PECS (Producer Extends, Consumer Super) trong Java Generics áp dụng như thế nào?",
+              "ans": "Dùng `? extends T` khi tập hợp đóng vai trò Producer (chỉ đọc dữ liệu ra). Dùng `? super T` khi tập hợp đóng vai trò Consumer (chỉ ghi dữ liệu vào)."
             }
           ]
         }
@@ -10524,9 +10726,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của String, Wrapper, Math, Collections, Generics?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "So sánh hai interface sắp xếp: `Comparable` và `Comparator`?",
+          "a": "- `Comparable` (trong `java.lang`): Định nghĩa thứ tự sắp xếp TỰ NHIÊN cho chính đối tượng, override method `compareTo(T o)`.\n- `Comparator` (trong `java.util`): Định nghĩa thứ tự sắp xếp TÙY CHỌN từ bên ngoài, override method `compare(T o1, T o2)`.",
+          "trap": "TreeSet hoặc Collections.sort() bắt buộc object phải implement Comparable nếu không truyền Comparator."
         }
       ],
       "dailyEnglish": [
@@ -10603,8 +10805,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Hôm nay cần hoàn thành bao nhiêu câu TestKing?",
-          "a": "40 - 50 câu không nhìn đáp án."
+          "q": "Gọi phương thức `t.run()` thay vì `t.start()` trên một Thread object thì điều gì sẽ xảy ra?",
+          "a": "Không có luồng mới nào được tạo ra! Phương thức `run()` chỉ chạy tuần tự như một hàm Java bình thường ngay trên luồng gọi nó (ví dụ main thread)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -10656,51 +10858,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Bẫy đa luồng TestKing Ch7",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Inner Classes & Threads, Hoàn tất vòng 1 TestKing 294 câu?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Inner Classes & Threads, Hoàn tất vòng 1 TestKing 294 câu để tránh lỗi runtime."
+              "q": "Phương thức nào sau đây giải phóng monitor lock: `Thread.sleep(1000)` hay `Object.wait()`?",
+              "ans": "`Object.wait()` giải phóng lock. `Thread.sleep()` không giải phóng lock."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Từ khóa synchronized trên method",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Khối lệnh `synchronized(this) { ... }` và khai báo `public synchronized void m() { ... }` có monitor lock giống nhau không?",
+              "ans": "Hoàn toàn giống nhau! Cả hai đều giành khóa monitor lock trên chính đối tượng thể hiện `this`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace AtomicInteger increment",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nAtomicInteger ai = new AtomicInteger(10);\nai.compareAndSet(10, 20);\nai.compareAndSet(10, 30);\nSystem.out.println(ai.get());\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 20. Lệnh đầu tiên kiểm tra thấy giá trị đang là 10 nên cập nhật thành 20 (trả về true). Lệnh thứ hai kiểm tra thấy giá trị hiện tại là 20 (không phải 10) nên không thực hiện cập nhật (trả về false). Giá trị cuối cùng là 20."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Thread.yield()",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Gọi phương thức `Thread.yield()` có đảm bảo luồng khác sẽ được thực thi ngay lập tức không?",
+              "ans": "Không đảm bảo! `yield()` chỉ là một lời gợi ý cho bộ lập lịch của hệ điều hành (Thread Scheduler) rằng luồng hiện tại sẵn sàng nhường CPU. Bộ lập lịch có thể bỏ qua gợi ý này."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "ReentrantLock vs synchronized",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Kể tên 2 tính năng vượt trội của `ReentrantLock` so với khối `synchronized` truyền thống.",
+              "ans": "1) Khả năng thử lấy khóa không bị chặn vô hạn thông qua `tryLock(timeout)`. 2) Hỗ trợ khóa công bằng (Fairness Lock: luồng chờ lâu nhất được ưu tiên lấy khóa trước)."
             }
           ]
         }
@@ -10733,9 +10935,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Inner Classes & Threads, Hoàn tất vòng 1 TestKing 294 câu?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Phương thức `Thread.sleep(ms)` và `Object.wait()` khác nhau như thế nào về việc giữ Khóa (Lock Monitor)?",
+          "a": "- `Thread.sleep()`: Tạm dừng luồng nhưng VẪN TIẾP TỤC GIỮ KHÓA (không giải phóng lock), khiến các thread khác chờ lock không vào được.\n- `Object.wait()`: Tạm dừng luồng và GIẢI PHÓNG TOÀN BỘ KHÓA đang giữ, nhường quyền cho các thread khác chạy.",
+          "trap": "Đây là câu hỏi vấn đáp lý thuyết đa luồng được hỏi nhiều nhất trong các kỳ thi entry test."
         }
       ],
       "dailyEnglish": [
@@ -10878,51 +11080,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "HTML5 Semantic & CSS Box Model",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: HTML Semantic tags (form, input, table, div, span)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của HTML Semantic tags (form, input, table, div, span) để tránh lỗi runtime."
+              "q": "Liệt kê 4 lớp của CSS Box Model từ trong ra ngoài cùng.",
+              "ans": "1) `Content` (Nội dung) -> 2) `Padding` (Đệm trong) -> 3) `Border` (Viền) -> 4) `Margin` (Lề ngoài)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "box-sizing: border-box",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Thuộc tính `box-sizing: border-box` giúp giải quyết vấn đề gì khi tính toán kích thước phần tử?",
+              "ans": "Nó bao gồm cả `padding` và `border` vào trong chiều rộng (`width`) và chiều cao (`height`) đã khai báo, ngăn chặn phần tử bị phình to ra ngoài kích thước mong muốn khi thêm padding."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace kích thước thực tế của phần tử CSS",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Một phần tử có CSS: `width: 200px; padding: 20px; border: 5px solid black; box-sizing: content-box;`. Tổng chiều rộng thực tế hiển thị trên màn hình là bao nhiêu px?",
+              "ans": "Tổng chiều rộng là: `250px`. Với `content-box`: Chiều rộng = width (200) + padding-left (20) + padding-right (20) + border-left (5) + border-right (5) = 250px."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Margin Collapse trong CSS",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Khi hai khối xếp chồng nhau theo chiều dọc, khối trên có `margin-bottom: 30px;` và khối dưới có `margin-top: 20px;`, khoảng cách thực tế giữa hai khối là bao nhiêu?",
+              "ans": "Khoảng cách thực tế là: `30px`! Hiện tượng Margin Collapse (gộp lề) làm cho lề dọc không cộng dồn mà lấy giá trị lớn nhất trong hai lề."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Thẻ semantic HTML5 cho SEO",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao nên dùng thẻ `<main>`, `<article>`, `<nav>`, `<header>` thay vì lạm dụng thẻ `<div>`?",
+              "ans": "Cung cấp ý nghĩa cấu trúc ngữ nghĩa (semantic) cho trình đọc màn hình (accessibility) và bot tìm kiếm (SEO), giúp tối ưu hóa khả năng lập chỉ mục trang web."
             }
           ]
         }
@@ -10955,9 +11157,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của HTML Semantic tags (form, input, table, div, span)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Thuộc tính `box-sizing: border-box` trong CSS có tác dụng gì?",
+          "a": "Giúp tính toán kích thước phần tử chuẩn xác: chiều rộng (`width`) bao gồm toàn bộ phần nội dung (content) + padding + viền (border). Padding và border sẽ không làm nở to thêm chiều rộng ngoài mong muốn của phần tử.",
+          "trap": "Mặc định `content-box` sẽ cộng dồn padding và border khiến layout bị tràn vỡ."
         }
       ],
       "dailyEnglish": [
@@ -11099,51 +11301,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phạm vi biến trong JavaScript",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: var vs let vs const (hoisting, block scope)?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của var vs let vs const (hoisting, block scope) để tránh lỗi runtime."
+              "q": "Phân biệt phạm vi (scope) của `var`, `let` và `const` trong JavaScript.",
+              "ans": "`var` có phạm vi theo hàm (Function Scope). `let` và `const` có phạm vi theo khối lệnh (Block Scope `{}`). `const` cấm gán lại tham chiếu sau khi khởi tạo."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Hoisting và Temporal Dead Zone (TDZ)",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Temporal Dead Zone (TDZ) là gì khi khai báo biến bằng `let` và `const`?",
+              "ans": "Biến `let` và `const` vẫn được hoisted nhưng không được khởi tạo giá trị mặc định. Vùng không gian từ đầu khối lệnh cho đến dòng thực tế khai báo biến được gọi là TDZ; truy cập biến trong vùng này sẽ ném lỗi `ReferenceError`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Closure trong vòng lặp JavaScript",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```javascript\nfor (var i = 0; i < 3; i++) {\n    setTimeout(() => console.log(i), 0);\n}\n```\nKết quả in ra console là gì?",
+              "ans": "In ra: `3, 3, 3`. Do biến `i` khai báo bằng `var` có function scope dùng chung cho cả vòng lặp. Khi các callback của `setTimeout` được lấy từ Task Queue ra thực thi, vòng lặp đã kết thúc và `i` đã bằng 3. (Nếu dùng `let`, mỗi lần lặp tạo 1 lexical scope riêng và in ra `0, 1, 2`)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy so sánh == vs === trong JS",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Biểu thức `'0' == 0` và `'0' === 0` trong JavaScript trả về kết quả gì?",
+              "ans": "`'0' == 0` trả về `true` (toán tử so sánh lỏng lẻo tự động ép kiểu chuỗi thành số). `'0' === 0` trả về `false` (toán tử so sánh nghiêm ngặt kiểm tra cả kiểu dữ liệu và giá trị)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Từ khóa this trong Arrow Function",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Từ khóa `this` trong Arrow Function khác gì so với Regular Function thông thường?",
+              "ans": "Arrow Function KHÔNG có ngữ cảnh `this` riêng! Nó kế thừa giá trị `this` từ phạm vi cha bao quanh tại thời điểm định nghĩa (Lexical `this`), và không thể bị thay đổi bởi `call()`, `apply()`, hay `bind()`."
             }
           ]
         }
@@ -11176,9 +11378,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của var vs let vs const (hoisting, block scope)?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Sự khác biệt giữa `var`, `let`, và `const` trong JavaScript ES6?",
+          "a": "- `var`: Có phạm vi hàm (function scope), bị Hoisting lên đầu với giá trị `undefined`.\n- `let`: Có phạm vi khối (block scope `{}`), nằm trong Temporal Dead Zone, không cho phép khai báo lại.\n- `const`: Giống let nhưng bắt buộc gán giá trị khởi tạo và không thể gán lại tham chiếu mới.",
+          "trap": "Dùng const với object/array vẫn có thể thay đổi thuộc tính bên trong (`obj.name = 'abc'`)."
         }
       ],
       "dailyEnglish": [
@@ -11283,18 +11485,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_38_1",
+          "id": "ct_d38_1",
           "level": "Easy",
-          "question": "Một hàng .row trong Bootstrap chia làm bao nhiêu cột?",
-          "code": "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8\">Cột chiếm 8/12 phần</div>\n        <div class=\"col-md-4\">Cột chiếm 4/12 phần</div>\n    </div>\n</div>",
+          "question": "Trong Bootstrap Grid, một hàng `.row` được chia thành bao nhiêu cột chuẩn?",
+          "code": "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4\">A</div>\n    <div class=\"col-md-8\">B</div>\n  </div>\n</div>",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "12 cột (4 + 8 = 12 chiếm trọn vẹn 1 hàng)",
+            "10 cột",
+            "16 cột",
+            "24 cột"
           ],
           "correctIndex": 0,
-          "explanation": "12 cột."
+          "explanation": "Hệ thống lưới (Grid System) của Bootstrap chia màn hình thành 12 cột. Ở đây `col-md-4` chiếm 4/12 (1/3 độ rộng) và `col-md-8` chiếm 8/12 (2/3 độ rộng), cộng lại vừa đủ 12 cột tạo nên một hàng hoàn chỉnh."
         }
       ],
       "examTraps": [
@@ -11318,51 +11520,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Hệ thống lưới Bootstrap",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: jQuery: $ selector, event methods (.click(), .change()), DOM traversal, .val(), .ajax()?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của jQuery: $ selector, event methods (.click(), .change()), DOM traversal, .val(), .ajax() để tránh lỗi runtime."
+              "q": "Hệ thống Grid của Bootstrap 5 chia một hàng (`.row`) thành bao nhiêu cột ảo?",
+              "ans": "Được chia thành chính xác `12 cột`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Breakpoints trong Responsive Design",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Các tiền tố breakpoint chuẩn của Bootstrap: `sm`, `md`, `lg`, `xl` áp dụng theo nguyên tắc Mobile-first như thế nào?",
+              "ans": "Bootstrap áp dụng Mobile-first với `min-width`: Các style khai báo cho `col-md-6` sẽ áp dụng từ màn hình kích thước medium (>= 768px) trở lên, trừ khi bị ghi đè bởi breakpoint lớn hơn (ví dụ `col-lg-4`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace căn chỉnh Flexbox",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn CSS:\n```css\n.container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n```\nCác phần tử con bên trong container sẽ được căn chỉnh như thế nào?",
+              "ans": "Được căn chính giữa cả theo trục chính ngang (Horizontal center qua `justify-content`) và trục phụ dọc (Vertical center qua `align-items`)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy lồng hàng và cột trong Bootstrap",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Trong Bootstrap, phần tử con trực tiếp của một thẻ có class `.row` BẮT BUỘC phải là gì?",
+              "ans": "Bắt buộc phải là các cột (`.col` hoặc `.col-*`). Không được đặt nội dung trực tiếp vào `.row` mà không qua `.col` vì sẽ làm hỏng hệ thống lề âm (negative margins) của Bootstrap."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Media Queries thuần",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Viết cú pháp media query CSS thuần để đổi màu nền thành đen khi chiều rộng màn hình tối đa là 768px.",
+              "ans": "`@media (max-width: 768px) { body { background-color: black; } }`"
             }
           ]
         }
@@ -11395,9 +11597,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của jQuery: $ selector, event methods (.click(), .change()), DOM traversal, .val(), .ajax()?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Hệ thống lưới (Grid System) 12 cột của Bootstrap hoạt động theo nguyên tắc nào?",
+          "a": "Mỗi hàng được bọc trong một thẻ `.row`, và tổng số cột (`col-*`) của các phần tử con trực tiếp trong 1 hàng luôn cộng lại tối đa là 12. Nếu vượt quá 12, phần tử thừa sẽ tự động rớt xuống dòng tiếp theo.",
+          "trap": "Phải luôn đặt `.col-*` trực tiếp bên trong `.row`, không đặt margin ngang tùy tiện lên row."
         }
       ],
       "dailyEnglish": [
@@ -11505,18 +11707,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_39_1",
-          "level": "Easy",
-          "question": "Scope mặc định của một Spring Bean là gì?",
-          "code": "@Service\npublic class UserService {\n    private final UserDAO userDAO;\n    \n    @Autowired // Constructor Injection\n    public UserService(UserDAO userDAO) {\n        this.userDAO = userDAO;\n    }\n}",
+          "id": "ct_d39_1",
+          "level": "Medium",
+          "question": "Trong Spring Framework, Scope mặc định của một Bean là gì và có ý nghĩa gì?",
+          "code": "@Component\npublic class UserService {\n    // Scope mặc định là gì?\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "singleton (chỉ tạo duy nhất 1 instance trong toàn bộ Spring IoC Container)",
+            "prototype (tạo instance mới mỗi lần được inject)",
+            "request (mỗi HTTP request 1 instance)",
+            "session (mỗi user session 1 instance)"
           ],
           "correctIndex": 0,
-          "explanation": "singleton"
+          "explanation": "Trong Spring, scope mặc định của mọi Bean là `singleton`. Spring Container chỉ khởi tạo duy nhất một thể hiện của class đó và tái sử dụng (chia sẻ) ở tất cả các vị trí được tiêm phụ thuộc (@Autowired)."
         }
       ],
       "examTraps": [
@@ -11548,51 +11750,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Nguyên lý IoC và DI",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Inversion of Control (IoC) & Dependency Injection (DI) là gì??",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Inversion of Control (IoC) & Dependency Injection (DI) là gì? để tránh lỗi runtime."
+              "q": "Inversion of Control (IoC) và Dependency Injection (DI) trong Spring Framework là gì?",
+              "ans": "IoC là nguyên lý đảo ngược quyền kiểm soát vòng đời và khởi tạo đối tượng từ lập trình viên sang framework (Spring Container). DI là mẫu thiết kế cụ thể thực hiện IoC: Container sẽ 'tiêm' (inject) các phụ thuộc cần thiết vào đối tượng thông qua constructor, setter, hoặc field."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Các Bean Scopes trong Spring",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Phân biệt hai scope phổ biến nhất của Spring Bean: `singleton` và `prototype`.",
+              "ans": "`singleton` (mặc định): Spring Container chỉ tạo duy nhất một thể hiện của Bean trong toàn bộ vòng đời ứng dụng. `prototype`: Mỗi lần gọi `getBean()` hoặc có yêu cầu tiêm phụ thuộc, Spring Container sẽ tạo một thể hiện hoàn toàn mới."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Constructor Injection với Spring",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau trong Spring Boot:\n```java\n@Service\npublic class OrderService {\n    private final PaymentService paymentService;\n    public OrderService(PaymentService paymentService) {\n        this.paymentService = paymentService;\n    }\n}\n```\nTại sao không cần viết annotation `@Autowired` trên constructor mà Spring vẫn tự tiêm được bean?",
+              "ans": "Từ Spring 4.3 trở đi, nếu một Spring Bean chỉ có DUY NHẤT một constructor thì Spring sẽ ngầm định coi constructor đó được đánh dấu `@Autowired` và tự động tiêm các dependencies vào tham số mà không cần khai báo tường minh."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Circular Dependency (Phụ thuộc vòng tròn)",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Khi `ClassA` yêu cầu tiêm `ClassB` qua constructor và `ClassB` cũng yêu cầu tiêm `ClassA` qua constructor, Spring Boot khi khởi động sẽ báo lỗi gì?",
+              "ans": "Ném ngoại lệ `BeanCurrentlyInCreationException: Requested bean is currently in creation: Is there an unresolvable circular reference?` làm sập ứng dụng."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Vòng đời Spring Bean Lifecycle",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Kể tên thứ tự các bước trong vòng đời của Spring Bean: `@PostConstruct`, Constructor, Setter Injection.",
+              "ans": "1) Constructor -> 2) Setter/Field Dependency Injection -> 3) `@PostConstruct` method."
             }
           ]
         }
@@ -11613,9 +11815,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Inversion of Control (IoC) & Dependency Injection (DI) là gì??",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Khái niệm Inversion of Control (IoC) và Dependency Injection (DI) trong Spring?",
+          "a": "- IoC (Đảo ngược điều khiển): Chuyển giao quyền khởi tạo, cấu hình và quản lý vòng đời của đối tượng từ code thủ công sang cho Spring Framework (IoC Container).\n- DI (Tiêm phụ thuộc): Cơ chế mà Spring Container tự động đưa (inject) các bean phụ thuộc vào đối tượng thông qua Constructor, Setter hoặc Field.",
+          "trap": "Khuyến nghị dùng Constructor Injection để code dễ unit test và đảm bảo tính bất biến (immutable)."
         }
       ],
       "dailyEnglish": [
@@ -11766,51 +11968,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Kiến trúc Spring MVC",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Spring MVC Flow: DispatcherServlet -> HandlerMapping -> Controller -> ViewResolver?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Spring MVC Flow: DispatcherServlet -> HandlerMapping -> Controller -> ViewResolver để tránh lỗi runtime."
+              "q": "Thành phần nào đóng vai trò là Front Controller tiếp nhận mọi request đầu vào trong Spring MVC?",
+              "ans": "`DispatcherServlet`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "ViewResolver và luồng xử lý request",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nêu vai trò của `ViewResolver` trong kiến trúc Spring MVC truyền thống.",
+              "ans": "Nhận chuỗi logic view name trả về từ Controller (ví dụ \"home\"), kết hợp với prefix và suffix để xác định file hiển thị vật lý (ví dụ `/WEB-INF/views/home.jsp`) và chuyển giao dữ liệu Model vào đó."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace @RequestParam vs @PathVariable",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho endpoint:\n```java\n@GetMapping(\"/users/{id}\")\npublic String getUser(@PathVariable(\"id\") int id, @RequestParam(\"detail\") boolean detail) { ... }\n```\nRequest URL nào sau đây là hợp lệ: `/users/5?detail=true` hay `/users?id=5&detail=true`?",
+              "ans": "URL hợp lệ là `/users/5?detail=true`. Giá trị `5` được trích xuất từ URI path (`@PathVariable`), còn `detail=true` được trích xuất từ query parameter (`@RequestParam`)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy @RestController vs @Controller",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Sự khác biệt giữa `@RestController` và `@Controller` là gì?",
+              "ans": "`@RestController` là tổ hợp của `@Controller` và `@ResponseBody`. Mọi phương thức trong `@RestController` mặc định serialize dữ liệu trực tiếp thành JSON/XML trả về cho client thay vì tìm kiếm view template."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "ControllerAdvice và Global Exception Handling",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Annotation nào được sử dụng để bắt và xử lý ngoại lệ tập trung cho toàn bộ các Controller trong ứng dụng Spring?",
+              "ans": "`@RestControllerAdvice` (hoặc `@ControllerAdvice`) kết hợp với các phương thức được đánh dấu `@ExceptionHandler`."
             }
           ]
         }
@@ -11831,9 +12033,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Spring MVC Flow: DispatcherServlet -> HandlerMapping -> Controller -> ViewResolver?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Các thành phần chính tham gia xử lý Request trong mô hình Spring MVC?",
+          "a": "1. `DispatcherServlet`: Tiếp nhận HTTP request.\n2. `HandlerMapping`: Tìm Controller phù hợp.\n3. `Controller`: Xử lý nghiệp vụ và trả về Model & ViewName.\n4. `ViewResolver`: Phân giải ViewName thành trang giao diện HTML/JSP thực tế.",
+          "trap": "Với RESTful API, dùng `@RestController` để bỏ qua ViewResolver và trả thẳng JSON ra body."
         }
       ],
       "dailyEnglish": [
@@ -11941,18 +12143,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_41_1",
-          "level": "Easy",
-          "question": "Functional Interface có bao nhiêu abstract method?",
-          "code": "List<String> names = List.of(\"An\", \"Binh\", \"Cuong\");\nList<String> filtered = names.stream()\n    .filter(name -> name.startsWith(\"A\"))\n    .map(String::toUpperCase)\n    .collect(Collectors.toList());\n\nrecord Student(int id, String name) {} // Record Java 17",
+          "id": "ct_d41_1",
+          "level": "Medium",
+          "question": "Biểu thức Stream API sau của Java 8 in ra kết quả gì?",
+          "code": "import java.util.*;\nimport java.util.stream.*;\npublic class StreamTrace {\n    public static void main(String[] args) {\n        List<String> list = Arrays.asList(\"apple\", \"banana\", \"avocado\", \"cherry\");\n        long count = list.stream()\n                         .filter(s -> s.startsWith(\"a\"))\n                         .count();\n        System.out.println(count);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "2",
+            "3",
+            "1",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "Chính xác 1 abstract method."
+          "explanation": "Phương thức `filter()` lọc các chuỗi bắt đầu bằng chữ 'a', bao gồm 'apple' và 'avocado' (tổng cộng 2 phần tử). Phương thức kết thúc (terminal operation) `.count()` đếm số phần tử thỏa mãn điều kiện và trả về `2`."
         }
       ],
       "examTraps": [
@@ -11984,51 +12186,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Functional Interface trong Java 8",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Java 8: Lambda expressions, Functional Interfaces (@FunctionalInterface), Stream API (filter, map, collect), Optional class?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Java 8: Lambda expressions, Functional Interfaces (@FunctionalInterface), Stream API (filter, map, collect), Optional class để tránh lỗi runtime."
+              "q": "Định nghĩa chuẩn của một Functional Interface là gì?",
+              "ans": "Là một interface chứa CHÍNH XÁC DUY NHẤT một abstract method (Single Abstract Method - SAM). Có thể chứa thêm bất kỳ số lượng default methods hoặc static methods nào."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cú pháp Method Reference",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Biểu thức lambda `s -> System.out.println(s)` tương đương với Method Reference nào?",
+              "ans": "Tương đương: `System.out::println`."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Predicate chaining",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nPredicate<Integer> isEven = n -> n % 2 == 0;\nPredicate<Integer> isPositive = n -> n > 0;\nboolean res = isEven.and(isPositive).test(-4);\nSystem.out.println(res);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `false`. `-4` là số chẵn (`isEven` trả về true), nhưng `-4 > 0` là sai (`isPositive` trả về false). Phép kết hợp `.and()` đòi hỏi cả 2 điều kiện phải đúng."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy biến effectively final trong Lambda",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Đoạn code sau có biên dịch được không?\n```java\nint count = 0;\nRunnable r = () -> System.out.println(count);\ncount++;\n```",
+              "ans": "Compile Error: `local variables referenced from a lambda expression must be final or effectively final`. Khi `count++` được gọi, biến `count` không còn là effectively final nữa nên không thể sử dụng bên trong lambda."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Default method conflict (Diamond Problem trong Interface)",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi một class implements cả hai interface A và B đều có default method `default void hello()`, class đó bắt buộc phải làm gì để giải quyết xung đột?",
+              "ans": "Class đó BẮT BUỘC phải override phương thức `hello()`, có thể tự viết lại thân hàm hoặc gọi tường minh phương thức của một trong hai interface theo cú pháp `A.super.hello();`."
             }
           ]
         }
@@ -12049,9 +12251,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Java 8: Lambda expressions, Functional Interfaces (@FunctionalInterface), Stream API (filter, map, collect), Optional class?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Khái niệm Functional Interface và biểu thức Lambda trong Java 8?",
+          "a": "Functional Interface là interface chỉ có DUY NHẤT một phương thức trừu tượng (Single Abstract Method - SAM), có thể đánh dấu bằng `@FunctionalInterface`. Lambda expression cung cấp cú pháp ngắn gọn `(params) -> body` để implement trực tiếp interface này.",
+          "trap": "Default method và static method không tính vào số lượng abstract method của Functional Interface."
         }
       ],
       "dailyEnglish": [
@@ -12129,8 +12331,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Đã bấm ghi âm và nghe lại giọng nói của mình chưa?",
-          "a": "Bắt buộc phải nghe lại để sửa ngắc ngứ!"
+          "q": "Trong Java 8 Stream, phương thức `Stream.map()` khác `Stream.flatMap()` như thế nào?",
+          "a": "`map()` biến đổi từng phần tử 1-1 thành một giá trị mới (`Function<T, R>`); `flatMap()` làm phẳng (flattening) các Stream lồng nhau (`Function<T, Stream<R>>`) thành một Stream đơn duy nhất."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -12182,51 +12384,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Stream API: Intermediate vs Terminal",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Mô phỏng phỏng vấn vấn đáp 1-1 với 10 câu hỏi cốt lõi?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Mô phỏng phỏng vấn vấn đáp 1-1 với 10 câu hỏi cốt lõi để tránh lỗi runtime."
+              "q": "Trong Stream API, thao tác Intermediate khác thao tác Terminal ở điểm căn bản nào?",
+              "ans": "Intermediate operation (như `filter()`, `map()`, `sorted()`): Trả về một Stream mới và hoạt động theo cơ chế Lazy evaluation (chưa thực thi tính toán ngay). Terminal operation (như `collect()`, `forEach()`, `count()`): Kích hoạt toàn bộ luồng xử lý tính toán và đóng Stream lại."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Optional class chống NPE",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao không nên truyền `Optional` làm tham số đầu vào của phương thức hoặc dùng làm trường của Entity?",
+              "ans": "Vì `Optional` được thiết kế thuần túy làm kiểu trả về của phương thức để biểu thị khả năng không có giá trị mà không gây NPE. `Optional` không implements `Serializable`, sẽ gây lỗi nếu dùng trong Entity hoặc lưu Session."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Stream pipeline",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nList<String> list = Arrays.asList(\"ant\", \"bear\", \"cat\", \"dog\");\nlong count = list.stream()\n                 .filter(s -> s.length() == 3)\n                 .map(String::toUpperCase)\n                 .count();\nSystem.out.println(count);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 3. Các từ có độ dài bằng 3 là \"ant\", \"cat\", \"dog\" (tổng cộng 3 phần tử thỏa điều kiện filter)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy tái sử dụng Stream đã đóng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nStream<String> stream = Stream.of(\"A\", \"B\");\nstream.forEach(System.out::print);\nstream.forEach(System.out::print);\n```\nChương trình xảy ra lỗi gì ở dòng thứ 3?",
+              "ans": "Ném ngoại lệ `java.lang.IllegalStateException: stream has already been operated upon or closed`. Một Stream một khi đã thực thi Terminal operation (`forEach`) thì không thể tái sử dụng lần thứ hai."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "flatMap vs map trong Stream",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Cho `List<List<Integer>> list = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));`. Viết đoạn code Stream để chuyển thành một danh sách phẳng `[1, 2, 3, 4]`.",
+              "ans": "`List<Integer> flatList = list.stream().flatMap(Collection::stream).collect(Collectors.toList());`"
             }
           ]
         }
@@ -12259,9 +12461,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Mô phỏng phỏng vấn vấn đáp 1-1 với 10 câu hỏi cốt lõi?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Cách trả lời câu hỏi phỏng vấn Audit: 'Tại sao String trong Java lại được thiết kế bất biến (Immutable)?'?",
+          "a": "Trả lời theo 4 luận điểm Senior: 1. Cho phép cơ chế String Constant Pool tiết kiệm bộ nhớ.\n2. An toàn đa luồng (Thread-safe) tuyệt đối mà không cần đồng bộ.\n3. An toàn bảo mật (Security) khi dùng String làm tham số kết nối DB, mạng, classloader.\n4. Tối ưu hiệu năng khi dùng làm Key trong HashMap (hashCode được cache sẵn).",
+          "trap": "Nêu đủ 4 lý do này sẽ đạt điểm tuyệt đối 10/10 ở vòng phỏng vấn 1-1."
         }
       ],
       "dailyEnglish": [
@@ -12338,8 +12540,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu thời gian mỗi câu:",
-          "a": "Dưới 45-60 giây."
+          "q": "Giá trị của biểu thức `10 + 20 + \"FSOFT\" + 30 + 40` trong Java là gì?",
+          "a": "`\"30FSOFT3040\"`. Đánh giá từ trái qua phải: `10 + 20 = 30` (số), `30 + \"FSOFT\" = \"30FSOFT\"` (chuỗi), sau đó các phép `+` tiếp theo đều là nối chuỗi."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -12364,18 +12566,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_43_1",
-          "level": "Easy",
-          "question": "Mục tiêu thời gian mỗi câu:",
-          "code": "// Luyện tốc độ cao 50 câu/ngày",
+          "id": "ct_d43_1",
+          "level": "Hard",
+          "question": "Dự đoán kết quả của đoạn code kiểm tra bẫy toán tử và phép chia số nguyên sau:",
+          "code": "public class FastOpTrace {\n    public static void main(String[] args) {\n        int a = 5;\n        int b = 2;\n        double result = a / b;\n        System.out.println(result);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "2.0",
+            "2.5",
+            "2",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "Dưới 45-60 giây."
+          "explanation": "`a` và `b` đều là kiểu `int`. Phép chia `a / b` là phép chia số nguyên (Integer Division): `5 / 2 = 2` (phần thập phân bị cắt bỏ). Sau đó giá trị `2` mới được gán cho biến `double result`, được ép kiểu mở rộng thành `2.0`! Muốn ra 2.5 phải viết `(double)a / b`."
         }
       ],
       "examTraps": [
@@ -12391,51 +12593,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phản xạ tốc độ cao: Primitive & Modifiers",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tốc độ & phản xạ: mục tiêu < 60s/câu, không nhìn đáp án?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tốc độ & phản xạ: mục tiêu < 60s/câu, không nhìn đáp án để tránh lỗi runtime."
+              "q": "Phạm vi giá trị của kiểu `short` trong Java là bao nhiêu?",
+              "ans": "Từ `-32,768` đến `32,767` (16-bit signed integer)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Toán tử dịch bit có dấu >> vs không dấu >>>",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Phép dịch bit `>>` khác `>>>` như thế nào khi áp dụng cho số âm?",
+              "ans": "`>>` (dịch có dấu) bảo toàn bit dấu bằng cách chèn bit 1 vào bên trái. `>>>` (dịch không dấu) luôn luôn chèn bit 0 vào bên trái bất kể số ban đầu âm hay dương."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace biểu thức logic phức hợp",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint x = 1, y = 1;\nif (x++ > 1 && ++y > 1) {\n    x++;\n}\nSystem.out.println(x + \" \" + y);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `2 1`. `x++ > 1` (1 > 1) là sai, sau đó `x` tăng lên 2. Do vế trái là false, toán tử `&&` dừng lại và KHÔNG thực thi `++y > 1`. Do đó `y` vẫn giữ nguyên giá trị 1."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy từ khóa strictfp",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Từ khóa `strictfp` trong Java có tác dụng gì?",
+              "ans": "Đảm bảo các phép tính toán số thực dấu phẩy động (`float`, `double`) cho ra kết quả hoàn toàn giống nhau trên mọi nền tảng phần cứng và kiến trúc CPU theo chuẩn IEEE 754."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tối ưu hóa bitwise flags",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Làm thế nào để kiểm tra xem một số nguyên `n` có phải là lũy thừa của 2 (`2^k`) hay không bằng toán tử bitwise trong `O(1)`?",
+              "ans": "Biểu thức: `(n > 0) && ((n & (n - 1)) == 0)`."
             }
           ]
         }
@@ -12468,9 +12670,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tốc độ & phản xạ: mục tiêu < 60s/câu, không nhìn đáp án?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Chiến thuật làm bài trắc nghiệm TestKing tốc độ cao (< 45s/câu)?",
+          "a": "1. Đọc ngay câu hỏi ở dòng cuối cùng trước để biết đề hỏi gì (in ra kết quả gì hay có Compile Error).\n2. Quét nhanh các bẫy cú pháp (Octal 08, ép kiểu byte, switch float, uninitialized local).\n3. Nếu thấy code hợp lệ, mới bắt đầu trace luồng thực thi.",
+          "trap": "Không đọc code từ trên xuống dưới một cách mù quáng, rất mất thời gian."
         }
       ],
       "dailyEnglish": [
@@ -12547,8 +12749,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu thời gian mỗi câu:",
-          "a": "Dưới 45-60 giây."
+          "q": "Trong Java, một phương thức override có được phép khai báo ném ra Checked Exception rộng hơn phương thức ở class cha không?",
+          "a": "Không! Phương thức con chỉ được ném cùng loại Checked Exception, Exception con, hoặc không ném ngoại lệ nào. Ném rộng hơn sẽ bị Compile Error."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -12573,18 +12775,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_44_1",
-          "level": "Easy",
-          "question": "Mục tiêu thời gian mỗi câu:",
-          "code": "// Luyện tốc độ cao 50 câu/ngày",
+          "id": "ct_d44_1",
+          "level": "Hard",
+          "question": "Đoạn code bẫy switch sau in ra kết quả gì?",
+          "code": "public class SwitchFallthrough {\n    public static void main(String[] args) {\n        int k = 2;\n        switch (k) {\n            case 1: System.out.print(\"1 \");\n            case 2: System.out.print(\"2 \");\n            case 3: System.out.print(\"3 \");\n            default: System.out.print(\"D \");\n        }\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "2 3 D ",
+            "2 ",
+            "2 3 ",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "Dưới 45-60 giây."
+          "explanation": "Biến `k = 2` khớp với `case 2:`, in ra `2 `. Do không có lệnh `break`, chương trình rơi tự do (fall-through) thực thi tiếp `case 3:` in `3 `, rồi tiếp tục rơi xuống `default:` in `D `. Kết quả in ra là: `2 3 D `."
         }
       ],
       "examTraps": [
@@ -12600,51 +12802,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phản xạ tốc độ cao: Đa hình và Kế thừa",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tập trung vào câu hỏi Exception & Flow control?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tập trung vào câu hỏi Exception & Flow control để tránh lỗi runtime."
+              "q": "Một class con có thể giảm phạm vi của ngoại lệ Checked Exception khi override không?",
+              "ans": "Có! Class con có thể ném loại ngoại lệ hẹp hơn (subclass) hoặc không ném ngoại lệ nào cả."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Dynamic Binding và con trỏ vtable",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Cơ chế nào bên trong máy ảo JVM giúp xác định đúng phương thức cần thực thi khi gọi đa hình `parentRef.method()`?",
+              "ans": "JVM sử dụng bảng con trỏ phương thức ảo (Virtual Method Table - `vtable`). Khi gọi phương thức, JVM tra cứu địa chỉ hàm trong vtable của đối tượng thực tế trên Heap tại thời điểm runtime."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace gọi phương thức bị override từ constructor cha",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Base {\n    Base() { print(); }\n    void print() { System.out.print(\"Base \"); }\n}\nclass Derived extends Base {\n    int num = 100;\n    void print() { System.out.print(num + \" \"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new Derived();\n    }\n}\n```\nKết quả in ra là gì? Tại sao?",
+              "ans": "In ra: `0 `. Khi `new Derived()` chạy, constructor `Base()` được gọi trước. `Base()` gọi phương thức `print()`, do cơ chế đa hình runtime nó kích hoạt `Derived.print()`. Tuy nhiên tại thời điểm này trường `num` của Derived chưa được khởi tạo nên mang giá trị mặc định là 0!"
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy instanceof với null",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho khai báo `String str = null; boolean b = str instanceof String;`. Giá trị của `b` là gì?",
+              "ans": "`b = false`. Toán tử `instanceof` luôn trả về `false` nếu toán hạng bên trái là `null`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tránh nạp class đệ quy trong static init",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Nếu trong khối `static { ... }` của class A tạo một đối tượng của class B, và khối static của class B cũng tạo đối tượng của class A, điều gì sẽ xảy ra trong JVM?",
+              "ans": "Xảy ra hiện tượng deadlock giữa các luồng nạp class của JVM hoặc ném ngoại lệ `java.lang.ExceptionInInitializerError`."
             }
           ]
         }
@@ -12677,9 +12879,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tập trung vào câu hỏi Exception & Flow control?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Dấu hiệu nhận biết nhanh một câu hỏi có đáp án là Compile Error trong TestKing?",
+          "a": "1. Sai Access Modifier (private/protected ở top class, hạ quyền khi override).\n2. Gán kiểu lớn cho kiểu nhỏ không ép kiểu (`int` vào `byte`, `double` vào `float`).\n3. Dùng biến local chưa khởi tạo.\n4. Sai cấu trúc switch (kiểu double, duplicate case).\n5. Câu lệnh unreachable sau return.",
+          "trap": "Quét thấy 1 trong các lỗi này là chọn ngay Compile Error không cần đọc tiếp."
         }
       ],
       "dailyEnglish": [
@@ -12756,8 +12958,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu thời gian mỗi câu:",
-          "a": "Dưới 45-60 giây."
+          "q": "Tại sao khi ghi đè `equals()` ta bắt buộc phải ghi đè cả `hashCode()`?",
+          "a": "Để duy trì hợp đồng (Contract): Hai object bằng nhau theo `equals()` thì BẮT BUỘC phải có cùng `hashCode()`. Nếu vi phạm, các Collections dựa trên băm như HashSet, HashMap sẽ không tìm thấy hoặc lưu trùng lặp object."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -12782,18 +12984,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_45_1",
-          "level": "Easy",
-          "question": "Mục tiêu thời gian mỗi câu:",
-          "code": "// Luyện tốc độ cao 50 câu/ngày",
+          "id": "ct_d45_1",
+          "level": "Hard",
+          "question": "Đoạn code sau in ra gì khi gọi phương thức đa hình kết hợp biến tĩnh?",
+          "code": "class Parent {\n    static void print() { System.out.print(\"P \"); }\n}\nclass Child extends Parent {\n    static void print() { System.out.print(\"C \"); }\n}\npublic class StaticPolymorph {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        p.print();\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
+            "P ",
+            "C ",
             "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Runtime Exception"
           ],
           "correctIndex": 0,
-          "explanation": "Dưới 45-60 giây."
+          "explanation": "Phương thức tĩnh (`static`) KHÔNG có tính đa hình runtime, nó thuộc về Class và bị ẩn (hiding). Khi gọi `p.print()`, trình biên dịch sử dụng kiểu khai báo của biến `p` (là `Parent`) để liên kết phương thức tại compile-time. Do đó phương thức `print()` của `Parent` được gọi, in ra `P `."
         }
       ],
       "examTraps": [
@@ -12809,51 +13011,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phản xạ tốc độ cao: Collections & Concurrency",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tập trung vào câu hỏi OOP Polymorphism & Inheritance?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tập trung vào câu hỏi OOP Polymorphism & Inheritance để tránh lỗi runtime."
+              "q": "Cấu trúc dữ liệu nào trong Java cài đặt hàng đợi hai đầu (Double-ended Queue)?",
+              "ans": "`ArrayDeque` hoặc `LinkedList`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Compare-And-Swap (CAS)",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Cơ chế CAS (Compare-And-Swap) được sử dụng trong các lớp `AtomicInteger`, `AtomicReference` hoạt động như thế nào?",
+              "ans": "Là chỉ thị phần cứng CPU nguyên tử (atomic): Nó so sánh giá trị hiện tại của biến ở ô nhớ với giá trị kỳ vọng (expected value); nếu khớp thì hoán đổi sang giá trị mới (new value), nếu không khớp thì thử lại (spin loop) mà không cần khóa luồng (Lock-free)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Iterator remove vs List remove",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nList<String> list = new ArrayList<>(Arrays.asList(\"A\", \"B\", \"C\"));\nfor (Iterator<String> it = list.iterator(); it.hasNext(); ) {\n    String s = it.next();\n    if (\"B\".equals(s)) it.remove();\n}\nSystem.out.println(list.size());\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 2. Gọi `it.remove()` là cách an toàn duy nhất để xóa phần tử khi đang duyệt danh sách, nó tự động cập nhật biến `expectedModCount` nên không gây ra `ConcurrentModificationException`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy TreeSet sắp xếp phần tử bị thay đổi thuộc tính",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu sửa đổi thuộc tính sắp xếp của một đối tượng đã được thêm vào `TreeSet`, đối tượng đó có tự động đổi chỗ không?",
+              "ans": "Không tự động đổi chỗ! `TreeSet` chỉ xác định vị trí tại thời điểm gọi `add()`. Việc sửa đổi dữ liệu sau đó sẽ làm hỏng cấu trúc cây nhị phân (broken binary tree invariants)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "ThreadPoolExecutor RejectedExecutionHandler",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi hàng đợi `BlockingQueue` đã đầy và số lượng thread trong ThreadPool đã chạm ngưỡng `maxPoolSize`, chính sách từ chối mặc định là gì?",
+              "ans": "`AbortPolicy` (ném ngoại lệ `RejectedExecutionException`). Các chính sách khác: `CallerRunsPolicy`, `DiscardPolicy`, `DiscardOldestPolicy`."
             }
           ]
         }
@@ -12886,9 +13088,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tập trung vào câu hỏi OOP Polymorphism & Inheritance?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc nhẩm nhanh đa hình method vs trường (field) khi gọi `Parent p = new Child()`?",
+          "a": "- Gọi method: Chạy phương thức đã được override của `Child` (Runtime polymorphism).\n- Truy cập field (biến): Lấy giá trị biến khai báo trong `Parent` (Compile-time binding).",
+          "trap": "Biến không bao giờ có tính đa hình, chỉ có instance method mới có đa hình!"
         }
       ],
       "dailyEnglish": [
@@ -12965,8 +13167,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Mục tiêu thời gian mỗi câu:",
-          "a": "Dưới 45-60 giây."
+          "q": "Trạng thái nào của Thread xảy ra khi thread đang chờ giải phóng khóa Lock trong khối `synchronized`?",
+          "a": "Trạng thái `BLOCKED` (chờ monitor lock để vào hoặc tái nhập khối synchronized)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -12991,18 +13193,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_46_1",
-          "level": "Easy",
-          "question": "Mục tiêu thời gian mỗi câu:",
-          "code": "// Luyện tốc độ cao 50 câu/ngày",
+          "id": "ct_d46_1",
+          "level": "Hard",
+          "question": "Đoạn code sau sử dụng TreeSet cho kết quả gì?",
+          "code": "import java.util.*;\npublic class TreeSetTrap {\n    public static void main(String[] args) {\n        Set<String> set = new TreeSet<>();\n        set.add(\"Orange\");\n        set.add(\"Apple\");\n        set.add(\"Banana\");\n        for (String s : set) System.out.print(s + \" \");\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Apple Banana Orange ",
+            "Orange Apple Banana ",
+            "Banana Apple Orange ",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "Dưới 45-60 giây."
+          "explanation": "`TreeSet` tự động sắp xếp các phần tử theo thứ tự tự nhiên (Natural ordering - từ điển alphabet theo bảng mã Unicode). Do đó các từ được sắp xếp lại theo thứ tự A -> B -> O: `Apple Banana Orange `."
         }
       ],
       "examTraps": [
@@ -13018,51 +13220,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Phản xạ tốc độ cao: Tổng hợp Ch8-9",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tập trung vào Collections, Threads & Inner classes?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tập trung vào Collections, Threads & Inner classes để tránh lỗi runtime."
+              "q": "Gói mở rộng nào trong Java cung cấp các lớp định dạng ngày giờ mới bất biến (Immutable) từ Java 8?",
+              "ans": "Gói `java.time` (với các lớp `LocalDate`, `LocalTime`, `LocalDateTime`, `Instant`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Java NIO vs IO truyền thống",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Sự khác biệt cốt lõi giữa Java IO và Java NIO là gì?",
+              "ans": "Java IO truyền thống hoạt động theo hướng dòng dữ liệu (Stream-oriented) và chặn luồng (Blocking IO). Java NIO hoạt động theo hướng bộ đệm (Buffer-oriented), kênh kết nối (Channel) và không chặn luồng (Non-blocking IO với Selector)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace java.time.Period",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nLocalDate date = LocalDate.of(2026, 1, 1);\nPeriod period = Period.ofDays(10);\ndate.plus(period);\nSystem.out.println(date.getDayOfMonth());\n```\nKết quả in ra là gì?",
+              "ans": "In ra: 1 (không phải 11!). Do `LocalDate` là đối tượng BẤT BIẾN (immutable). Hàm `date.plus(period)` trả về một đối tượng mới nhưng không được gán lại vào biến `date`, nên `date` ban đầu không thay đổi."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy khởi tạo LocalDate",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Có thể khởi tạo đối tượng bằng `new LocalDate(2026, 1, 1)` được không?",
+              "ans": "Không thể! Constructor của `LocalDate` là `private`. Bắt buộc phải khởi tạo thông qua factory method tĩnh: `LocalDate.of(...)` hoặc `LocalDate.parse(...)`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "DateTimeFormatter thread-safety",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao nên dùng `DateTimeFormatter` thay vì `SimpleDateFormat` trong môi trường đa luồng?",
+              "ans": "`SimpleDateFormat` là thread-unsafe (gây sai lệch ngày khi nhiều luồng cùng gọi). `DateTimeFormatter` từ Java 8 là immutable và thread-safe 100%."
             }
           ]
         }
@@ -13095,9 +13297,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tập trung vào Collections, Threads & Inner classes?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Cấu trúc dữ liệu nào trong Java Collections đảm bảo vừa không trùng lặp vừa duy trì thứ tự chèn?",
+          "a": "`LinkedHashSet`. Nó kết hợp giữa bảng băm (đảm bảo tính duy nhất của phần tử O(1)) và danh sách liên kết đôi (duy trì thứ tự các phần tử khi được chèn vào).",
+          "trap": "HashSet không giữ thứ tự, TreeSet thì tự sắp xếp tăng dần."
         }
       ],
       "dailyEnglish": [
@@ -13174,8 +13376,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Đã xóa được bao nhiêu câu khỏi danh sách câu sai?",
-          "a": "Mục tiêu xóa sạch 100%."
+          "q": "Trong Spring Boot, annotation `@Autowired` tiêm dependency theo kiểu nào được khuyến nghị tốt nhất: Field Injection hay Constructor Injection?",
+          "a": "Constructor Injection! Vì đảm bảo tính bất biến (immutability với `final`), ngăn chặn NullPointerException, dễ dàng viết Unit Test mà không cần Spring context."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -13200,18 +13402,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_47_1",
-          "level": "Easy",
-          "question": "Đã xóa được bao nhiêu câu khỏi danh sách câu sai?",
-          "code": "// Rà soát lại Error Book trên Web App",
+          "id": "ct_d47_1",
+          "level": "Hard",
+          "question": "Dự đoán kết quả in ra của đoạn code nối chuỗi sau:",
+          "code": "public class StringConcatTrap {\n    public static void main(String[] args) {\n        System.out.println(1 + 2 + \"3\" + 4 + 5);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "3345",
+            "12345",
+            "339",
+            "15"
           ],
           "correctIndex": 0,
-          "explanation": "Mục tiêu xóa sạch 100%."
+          "explanation": "Toán tử `+` có độ ưu tiên từ trái sang phải: \n1. `1 + 2` là phép cộng số học giữa 2 số nguyên -> cho kết quả `3`.\n2. `3 + \"3\"` gặp chuỗi nên chuyển sang phép nối chuỗi -> thành `\"33\"`.\n3. `\"33\" + 4` tiếp tục nối chuỗi -> thành `\"334\"`.\n4. `\"334\" + 5` tiếp tục nối chuỗi -> thành `\"3345\"`."
         }
       ],
       "examTraps": [
@@ -13227,51 +13429,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Chiến thuật xử lý câu hỏi hóc búa",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Lọc toàn bộ những câu đã sai ở vòng 1 hoặc vòng 2?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Lọc toàn bộ những câu đã sai ở vòng 1 hoặc vòng 2 để tránh lỗi runtime."
+              "q": "Phương pháp loại trừ hiệu quả nhất khi làm bài thi trắc nghiệm Java là gì?",
+              "ans": "1) Quét lỗi Compile Error trước (modifier xung đột, import trùng, chưa khởi tạo biến local). 2) Quét lỗi Runtime (ClassCastException, NullPointerException). 3) Kiểm tra giá trị logic."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Phân tích bẫy đề thi FSOFT Entry Test",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Ba dạng câu hỏi chiếm tỷ lệ mất điểm cao nhất trong kỳ thi Entry Test là gì?",
+              "ans": "1) Phép gán và toán tử tăng giảm (`x = x++`). 2) Kế thừa và thứ tự khởi tạo static/instance blocks. 3) Cơ chế String Constant Pool vs Heap."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace bài toán tổng hợp phân cấp kế thừa",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass Alpha {\n    String getType() { return \"alpha\"; }\n}\nclass Beta extends Alpha {\n    String getType() { return \"beta\"; }\n}\npublic class Gamma extends Beta {\n    String getType() { return \"gamma\"; }\n    public static void main(String[] args) {\n        Alpha g1 = new Beta();\n        Beta g2 = new Gamma();\n        System.out.println(g1.getType() + \" \" + g2.getType());\n    }\n}\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `beta gamma`. Vì cả 2 biến đều gọi phương thức ảo (virtual method), phương thức thực thi tương ứng với đối tượng thực tế tạo trên Heap: `new Beta()` gọi `Beta.getType()` trả về \"beta\", `new Gamma()` gọi `Gamma.getType()` trả về \"gamma\"."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy package-private trong kế thừa khác gói",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu class cha khai báo `void doStuff() {}` (default) và class con ở gói khác khai báo `public void doStuff() {}`, đây có phải là override không?",
+              "ans": "KHÔNG phải là override! Do class con ở package khác không nhìn thấy phương thức default của cha, nên phương thức trong class con là một phương thức hoàn toàn mới (không có tính đa hình runtime liên kết với cha)."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tối ưu bộ nhớ với Flyweight Pattern",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tính năng nào của Java Core áp dụng trực tiếp mẫu thiết kế Flyweight Pattern?",
+              "ans": "String Constant Pool và Integer Cache (-128 đến 127) giúp tái sử dụng các đối tượng bất biến để tiết kiệm bộ nhớ Heap."
             }
           ]
         }
@@ -13304,9 +13506,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Lọc toàn bộ những câu đã sai ở vòng 1 hoặc vòng 2?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Nguyên nhân phổ biến nhất khiến học viên làm sai câu hỏi Exception trong đề thi?",
+          "a": "Không nắm vững quy tắc `finally` vẫn luôn chạy khi có `return` trong `try`, và giá trị return trong `finally` sẽ ghi đè giá trị return trước đó. Một nguyên nhân khác là bỏ sót ngoại lệ runtime trong biểu thức ép kiểu.",
+          "trap": "Vẽ call-stack ngắn ra nháp khi làm bài tracing exception phức tạp."
         }
       ],
       "dailyEnglish": [
@@ -13384,8 +13586,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Điểm số đạt được hôm nay:",
-          "a": "Ghi nhận kết quả vào lịch sử thi."
+          "q": "Sự khác biệt căn bản giữa `Session` và `Cookie` trong lập trình Web Java là gì?",
+          "a": "`Cookie` lưu dữ liệu phía Client (trình duyệt), dễ bị chỉnh sửa; `Session` lưu dữ liệu an toàn phía Server, Client chỉ giữ `JSESSIONID` định danh thông qua Cookie hoặc URL rewriting."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -13437,51 +13639,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Chiến thuật thi 60 câu trắc nghiệm",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Đề thi tổng hợp đầy đủ như thi thật?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Đề thi tổng hợp đầy đủ như thi thật để tránh lỗi runtime."
+              "q": "Tốc độ làm bài chuẩn cho 60 câu hỏi Entry Test trong 45 phút là bao nhiêu giây mỗi câu?",
+              "ans": "Trung bình `45 giây` mỗi câu. Dành 30 giây cho câu lý thuyết nhớ và 60-75 giây cho câu trace code."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Quản lý tâm lý thi cử và đánh dấu câu cờ (Flag)",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nguyên tắc xử lý khi gặp một câu hỏi trace code quá dài và phức tạp là gì?",
+              "ans": "Đánh dấu cờ (Flag/Bookmark) và chọn tạm một phương án khả dĩ nhất, sau đó chuyển ngay sang câu tiếp theo. Quay lại giải quyết ở cuối giờ khi đã chắc chắn điểm ở các câu dễ."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace câu hỏi trắc nghiệm kinh điển TestKing",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nint mask = 0;\nint count = 0;\nif ((5 > 7) || (++count > 0)) mask = mask | 1;\nif ((5 > 7) && (++count > 0)) mask = mask | 2;\nSystem.out.println(mask + \" \" + count);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `1 1`. Câu if thứ nhất: `5 > 7` là false, toán tử `||` tiếp tục thực thi `++count > 0` (count tăng lên 1, biểu thức true) -> `mask = 0 | 1 = 1`. Câu if thứ hai: `5 > 7` là false, toán tử `&&` ngắn mạch dừng ngay lập tức (không chạy `++count`) -> count vẫn là 1. Kết quả in ra `1 1`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy dấu ngoặc nhọn trong câu lệnh if-else",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Cho đoạn code sau:\n```java\nif (false)\n    if (true)\n        System.out.print(\"A\");\nelse\n    System.out.print(\"B\");\n```\nKết quả in ra là gì?",
+              "ans": "Không in ra gì cả! Theo quy tắc Dangling Else, từ khóa `else` luôn gắn liền với câu lệnh `if` gần nhất phía trước nó (`if (true)`). Do `if (false)` ở ngoài cùng là false, toàn bộ khối bên trong bị bỏ qua."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Đạt mốc 90%+ Entry Test",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Điểm cốt lõi giúp các ứng viên xuất sắc đạt trên 90% điểm Entry Test là gì?",
+              "ans": "Sự cẩn trọng tuyệt đối với các chi tiết cú pháp nhỏ: Chữ hoa chữ thường, dấu chấm phẩy sau vòng lặp (`while(true);`), tên file trùng tên class, và các từ khóa đối lập."
             }
           ]
         }
@@ -13514,9 +13716,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Đề thi tổng hợp đầy đủ như thi thật?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Quy tắc phân bổ thời gian khi làm bài thi Full Mock Entry Test (40 câu / 45 phút)?",
+          "a": "1. Vòng 1 (25 phút): Làm hết các câu nhận biết cú pháp và câu ngắn, câu nào dài hoặc tracing phức tạp tạm thời đánh dấu lại.\n2. Vòng 2 (15 phút): Quay lại giải quyết các câu tracing phức tạp.\n3. Vòng 3 (5 phút): Kiểm tra lại toàn bộ và không để trống bất kỳ câu nào.",
+          "trap": "Không bao giờ được dừng lại quá 2 phút ở bất kỳ câu hỏi nào."
         }
       ],
       "dailyEnglish": [
@@ -13593,8 +13795,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Thời gian trả lời mỗi câu lý tưởng là:",
-          "a": "60 đến 90 giây."
+          "q": "Trong Java memory model, Garbage Collector thu hồi vùng nhớ nào: Stack hay Heap?",
+          "a": "Chỉ thu hồi trên Heap! Vùng nhớ Stack tự động giải phóng khi frame của phương thức kết thúc (pop khỏi call stack)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -13619,18 +13821,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_49_1",
-          "level": "Easy",
-          "question": "Thời gian trả lời mỗi câu lý tưởng là:",
-          "code": "// Luyện nói to và ghi âm trên Tab Audit",
+          "id": "ct_d49_1",
+          "level": "Medium",
+          "question": "Trong phỏng vấn kỹ thuật FPT, cấu trúc trả lời một câu hỏi lý thuyết Java chuẩn (STAR / Technical Depth) gồm mấy phần?",
+          "code": "// Quy chuẩn trả lời câu hỏi Audit 1-1:\n// 1. Khái niệm cốt lõi (1 câu súc tích)\n// 2. Cơ chế hoạt động trong JVM (Memory/Stack/Heap)\n// 3. Ví dụ thực tế & cạm bẫy hay gặp\n// 4. Lời khuyên Best Practice",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Nêu trực diện bản chất -> Cơ chế JVM -> Cạm bẫy -> Best Practice",
+            "Chỉ cần đọc thuộc lòng định nghĩa trên slide",
+            "Chỉ cần viết code không cần giải thích",
+            "Nói càng dài càng tốt không cần trọng tâm"
           ],
           "correctIndex": 0,
-          "explanation": "60 đến 90 giây."
+          "explanation": "Senior Reviewer tại FPT luôn đánh giá cao ứng viên trả lời gãy gọn theo 4 tầng: Định nghĩa bản chất -> Cơ chế bộ nhớ JVM phía sau -> Cạm bẫy/Lỗi phổ biến -> Cách áp dụng Best Practice trong dự án thực tế."
         }
       ],
       "examTraps": [
@@ -13646,51 +13848,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Kiến trúc JVM",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Phỏng vấn thử lần 2 với các câu hỏi khó?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Phỏng vấn thử lần 2 với các câu hỏi khó để tránh lỗi runtime."
+              "q": "Trình bày các phân vùng bộ nhớ chính trong JVM Runtime Data Area.",
+              "ans": "1) `Method Area / Metaspace` (lưu bytecode, metadata class, static variables). 2) `Heap` (lưu mọi Objects). 3) `Java Threads Stack` (lưu Stack Frames, local variables). 4) `PC Register` (lưu địa chỉ lệnh byte-code đang thực thi). 5) `Native Method Stack`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Nguyên lý hoạt động của Garbage Collector",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Trình bày thuật toán Tracing GC (Mark and Sweep) trong Java.",
+              "ans": "Bắt đầu từ tập hợp các `GC Roots` (các tham chiếu trên Stack, biến static, JNI pointers), GC duyệt theo đồ thị tham chiếu và đánh dấu (Mark) các đối tượng còn sống. Ở pha Sweep, GC thu hồi vùng nhớ của tất cả các đối tượng không được đánh dấu."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace điều kiện đối tượng đủ điều kiện GC",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\npublic class Test {\n    Test ref;\n    public static void main(String[] args) {\n        Test t1 = new Test();\n        Test t2 = new Test();\n        t1.ref = t2;\n        t2.ref = t1;\n        t1 = null;\n        t2 = null;\n        // Điểm X\n    }\n}\n```\nTại điểm X, hai đối tượng có bị thu gom rác (GC) không? Giải thích hiện tượng Island of Isolation.",
+              "ans": "CÓ! Hai đối tượng đều đủ điều kiện thu gom rác. Mặc dù `t1` và `t2` tham chiếu chéo lẫn nhau (Circular Reference), nhưng không còn bất kỳ đường dẫn tham chiếu nào nối từ `GC Roots` đến chúng (Island of Isolation), nên GC vẫn thu hồi bình thường."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy gọi System.gc()",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Gọi lệnh `System.gc()` có đảm bảo rác sẽ được dọn dẹp ngay lập tức không?",
+              "ans": "Không đảm bảo! `System.gc()` chỉ gửi lời đề nghị (suggestion) tới JVM, việc khi nào thực thi và thu hồi bao nhiêu hoàn toàn do bộ thu gom rác của JVM quyết định."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Các thế hệ bộ nhớ Heap: Young vs Old Gen",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Tại sao Heap lại chia thành Eden, Survivor (S0/S1), và Tenured (Old Gen)?",
+              "ans": "Dựa trên giả thuyết Generational Hypothesis: Phần lớn các đối tượng chết rất nhanh ngay sau khi tạo ra. Việc phân chia giúp thực hiện Minor GC cực nhanh trên Young Generation mà không cần quét toàn bộ Old Gen."
             }
           ]
         }
@@ -13723,9 +13925,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Phỏng vấn thử lần 2 với các câu hỏi khó?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Cách trả lời câu hỏi phỏng vấn Audit: 'Phân biệt Interface và Abstract Class trong Java 8+'?",
+          "a": "- Abstract Class đại diện cho quan hệ bản chất 'IS-A' (là một), có constructor, có thể lưu trữ trạng thái instance fields, đơn kế thừa.\n- Interface đại diện cho quan hệ khả năng 'CAN-DO' (có thể làm), không có constructor, biến chỉ là public static final, hỗ trợ đa kế thừa.",
+          "trap": "Từ Java 8 interface có default/static method nhưng vẫn không thể thay thế hoàn toàn abstract class."
         }
       ],
       "dailyEnglish": [
@@ -13802,8 +14004,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Xem lại toàn bộ flashcard Ch1-Ch3."
+          "q": "Trong Java 8, `Optional.ofNullable(null).orElse(\"Default\")` và `Optional.ofNullable(null).orElseGet(() -> \"Default\")` khác nhau ở điểm nào?",
+          "a": "`orElse()` luôn thực thi biểu thức tham số truyền vào bất kể Optional có rỗng hay không; `orElseGet()` dùng Supplier lazy evaluation, chỉ thực thi khi Optional thực sự rỗng (tối ưu hiệu năng)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -13828,18 +14030,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_50_1",
-          "level": "Easy",
-          "question": "Kiểm tra lại:",
-          "code": "// Rà soát Ch1-Ch3",
+          "id": "ct_d50_1",
+          "level": "Hard",
+          "question": "Đoạn code rà soát kiến thức Ch1-3 sau in ra kết quả gì?",
+          "code": "public class Ch13Review {\n    public static void main(String[] args) {\n        byte a = 127;\n        a++;\n        System.out.println(a);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
+            "-128",
+            "128",
             "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "OverflowException"
           ],
           "correctIndex": 0,
-          "explanation": "Xem lại toàn bộ flashcard Ch1-Ch3."
+          "explanation": "Kiểu `byte` có kích thước 8-bit có dấu, giá trị tối đa là `127` (nhị phân `01111111`). Khi thực hiện `a++`, xảy ra hiện tượng tràn số (integer overflow), bit dấu chuyển thành `1` (`10000000`), chính là giá trị nhỏ nhất `-128`. Java không ném exception khi tràn số nguyên nguyên thủy!"
         }
       ],
       "examTraps": [
@@ -13855,51 +14057,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Collections Internals",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Primitives, Modifiers, Operators traps?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Primitives, Modifiers, Operators traps để tránh lỗi runtime."
+              "q": "Load Factor mặc định của `HashMap` là bao nhiêu và nó có ý nghĩa gì?",
+              "ans": "Load Factor mặc định là `0.75`. Khi số lượng phần tử vượt quá `capacity * 0.75` (Threshold), mảng bucket sẽ tự động tăng kích thước gấp đôi (Rehashing)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cơ chế tính chỉ số Bucket trong HashMap",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "HashMap dùng công thức nào để ánh xạ `hashCode()` vào vị trí index trong mảng bucket?",
+              "ans": "Công thức: `index = (n - 1) & hash`, trong đó `n` là độ dài mảng bucket (luôn là lũy thừa của 2). Phép toán bitwise AND này tương đương với phép chia lấy dư `% n` nhưng có tốc độ thực thi cực nhanh trên CPU."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace va chạm băm (Hash Collision)",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nclass BadKey {\n    public int hashCode() { return 1; }\n    public boolean equals(Object o) { return this == o; }\n}\nMap<BadKey, String> map = new HashMap<>();\nmap.put(new BadKey(), \"A\");\nmap.put(new BadKey(), \"B\");\nSystem.out.println(map.size());\n```\nHashMap hoạt động như thế nào và kích thước in ra là bao nhiêu?",
+              "ans": "In ra: 2. Hai đối tượng đều rơi vào cùng một bucket index (vì hashCode đều là 1). Nhưng khi kiểm tra `equals()`, chúng là 2 đối tượng khác nhau (`this == o` trả về false), nên HashMap lưu chúng thành một danh sách liên kết trong cùng bucket đó."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy thay đổi Key khi đang nằm trong HashSet",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Nếu một đối tượng thêm vào `HashSet`, sau đó bị thay đổi thuộc tính ảnh hưởng đến `hashCode()`, phương thức `set.contains(obj)` sẽ trả về gì?",
+              "ans": "Trả về `false`! Đối tượng vẫn tồn tại trong Set nhưng không thể tìm thấy, gây ra rò rỉ bộ nhớ nghiêm trọng."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "LinkedHashMap LRU Cache",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Làm thế nào để biến `LinkedHashMap` thành một bộ nhớ đệm LRU (Least Recently Used) Cache tự động đẩy phần tử cũ nhất ra ngoài?",
+              "ans": "Khởi tạo với `accessOrder = true` và override phương thức `removeEldestEntry(Map.Entry eldest) { return size() > MAX_ENTRIES; }`."
             }
           ]
         }
@@ -13932,9 +14134,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Primitives, Modifiers, Operators traps?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 bẫy cú pháp kinh điển nhất trong Java Core Chương 1 - 3?",
+          "a": "1. Bát phân chứa chữ số 8 hoặc 9 (`int x = 08;`).\n2. Phép toán số học trên byte tự động nâng lên int (`b1 + b2` trả về int).\n3. Ép kiểu tham chiếu không hợp lệ ném ClassCastException.",
+          "trap": "Xem kỹ từng ký tự literal trong mã nguồn đề thi."
         }
       ],
       "dailyEnglish": [
@@ -14011,8 +14213,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Xem lại toàn bộ flashcard Ch4-Ch5."
+          "q": "Từ khóa `volatile` trong Java giải quyết vấn đề gì trong đa luồng?",
+          "a": "Đảm bảo tính hiển thị (Visibility): Mọi thao tác đọc/ghi biến `volatile` đều tương tác trực tiếp với bộ nhớ chính (Main Memory), không lưu trong CPU Cache, ngăn chặn hiện tượng stale data giữa các CPU cores."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -14037,18 +14239,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_51_1",
-          "level": "Easy",
-          "question": "Kiểm tra lại:",
-          "code": "// Rà soát Ch4-Ch5",
+          "id": "ct_d51_1",
+          "level": "Hard",
+          "question": "Đoạn code rà soát Ch4-5 về Exception và Constructor sau in ra gì?",
+          "code": "class Parent {\n    Parent() { System.out.print(\"P \"); }\n}\nclass Child extends Parent {\n    Child() {\n        this(\"C \");\n        System.out.print(\"D \");\n    }\n    Child(String s) {\n        System.out.print(s);\n    }\n}\npublic class ConsTrace {\n    public static void main(String[] args) {\n        new Child();\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "P C D ",
+            "C D P ",
+            "P D C ",
+            "Compile Error"
           ],
           "correctIndex": 0,
-          "explanation": "Xem lại toàn bộ flashcard Ch4-Ch5."
+          "explanation": "1. `new Child()` gọi constructor không tham số `Child()`.\n2. Dòng đầu là `this(\"C \")`, gọi sang `Child(String s)`.\n3. Trong `Child(String s)`, compiler tự động chèn `super()` ở dòng đầu tiên, nên constructor `Parent()` chạy trước, in ra `P `.\n4. Sau đó `Child(String s)` in ra `C `.\n5. Trở về `Child()`, dòng tiếp theo in `D `.\nKết quả in ra: `P C D `."
         }
       ],
       "examTraps": [
@@ -14064,51 +14266,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Concurrency Internals",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Flow control, Exceptions bẫy return finally, OOP rules?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Flow control, Exceptions bẫy return finally, OOP rules để tránh lỗi runtime."
+              "q": "Khái niệm Thread Pool là gì và lợi ích cốt lõi của nó?",
+              "ans": "Thread Pool là tập hợp các worker threads được khởi tạo sẵn và quản lý tập trung. Lợi ích: Tái sử dụng thread, tránh chi phí cấp phát và hủy thread của hệ điều hành, giới hạn số thread đồng thời để chống quá tải CPU và tràn bộ nhớ."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Khác biệt giữa Callable và Runnable",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "So sánh `Callable<V>` và `Runnable` trong Java Concurrency.",
+              "ans": "`Runnable` có phương thức `run()` trả về `void` và không thể ném Checked Exception. `Callable<V>` có phương thức `call()` trả về kết quả kiểu `V` thông qua `Future<V>` và được phép ném Checked Exception."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Future.get() chặn luồng",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nExecutorService exec = Executors.newSingleThreadExecutor();\nFuture<String> future = exec.submit(() -> {\n    Thread.sleep(100);\n    return \"Done\";\n});\nSystem.out.print(\"Waiting \");\nSystem.out.println(future.get());\nexec.shutdown();\n```\nKết quả in ra và hành vi của hàm `future.get()` là gì?",
+              "ans": "In ra: `Waiting Done`. Lệnh `future.get()` là thao tác đồng bộ chặn luồng (blocking): Luồng `main` sẽ bị treo và chờ cho đến khi tác vụ chạy xong trong thread pool và trả về chuỗi \"Done\"."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy CountDownLatch không thể tái sử dụng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Sự khác biệt cốt lõi giữa `CountDownLatch` và `CyclicBarrier` là gì?",
+              "ans": "`CountDownLatch` chỉ đếm lùi về 0 một lần duy nhất và KHÔNG THỂ tái sử dụng lại. `CyclicBarrier` có thể tái sử dụng (reset) nhiều lần sau khi các thread đã gặp nhau tại điểm hẹn."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Xử lý ABA Problem với AtomicStampedReference",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Vấn đề ABA Problem trong thuật toán Lock-free là gì và Java giải quyết bằng cách nào?",
+              "ans": "ABA xảy ra khi giá trị ban đầu là A, bị thread khác đổi thành B rồi đổi lại thành A; thread ban đầu kiểm tra thấy vẫn là A nên tưởng như chưa hề có thay đổi. Java giải quyết bằng `AtomicStampedReference` (lưu kèm một con số phiên bản/timestamp nguyên tử)."
             }
           ]
         }
@@ -14141,9 +14343,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Flow control, Exceptions bẫy return finally, OOP rules?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 bẫy luồng thực thi và ngoại lệ trong Java Core Chương 4 - 5?",
+          "a": "1. Lệnh return trong khối finally ghi đè return của try.\n2. Thứ tự bắt catch: Bắt exception cha trước exception con gây Compile Error.\n3. Hàm tạo lớp con ngầm gọi `super()` không tham số của lớp cha.",
+          "trap": "Kiểm tra xem lớp cha có constructor mặc định không trước khi trace lớp con."
         }
       ],
       "dailyEnglish": [
@@ -14220,8 +14422,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Xem lại toàn bộ flashcard Ch6-Ch7."
+          "q": "Mệnh đề `HAVING` khác mệnh đề `WHERE` trong câu lệnh SQL ở điểm cốt lõi nào?",
+          "a": "`WHERE` lọc dữ liệu của từng dòng trước khi gom nhóm (không dùng được hàm tổng hợp aggregate); `HAVING` lọc các nhóm dữ liệu sau khi `GROUP BY` đã hoàn thành (dùng được COUNT, SUM, AVG,...)."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -14246,18 +14448,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_52_1",
-          "level": "Easy",
-          "question": "Kiểm tra lại:",
-          "code": "// Rà soát Ch6-Ch7",
+          "id": "ct_d52_1",
+          "level": "Hard",
+          "question": "Đoạn code rà soát Ch6-7 về String Pool và Map sau in ra kết quả gì?",
+          "code": "import java.util.*;\npublic class Ch67Review {\n    public static void main(String[] args) {\n        String s1 = \"Java\";\n        String s2 = new String(\"Java\");\n        Map<String, Integer> map = new HashMap<>();\n        map.put(s1, 10);\n        map.put(s2, 20);\n        System.out.println(map.size() + \" \" + (s1 == s2));\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "1 false",
+            "2 false",
+            "1 true",
+            "2 true"
           ],
           "correctIndex": 0,
-          "explanation": "Xem lại toàn bộ flashcard Ch6-Ch7."
+          "explanation": "1. `s1` ở String Pool, `s2` ở Heap thông thường, nên `s1 == s2` so sánh địa chỉ tham chiếu trả về `false`.\n2. Tuy nhiên, `HashMap` so sánh key bằng `equals()` và `hashCode()`. Do `s1.equals(s2) == true` và có cùng hashCode, key `s2` ghi đè giá trị của `s1`. Kích thước map chỉ là `1`.\nKết quả in ra: `1 false`."
         }
       ],
       "examTraps": [
@@ -14273,51 +14475,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Database Indexing & Tuning",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: String Pool, equals vs ==, Collections, Map?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của String Pool, equals vs ==, Collections, Map để tránh lỗi runtime."
+              "q": "Cấu trúc dữ liệu phổ biến nhất được các hệ quản trị CSDL sử dụng để tạo Index là gì?",
+              "ans": "Cây `B-Tree` (hoặc biến thể `B+ Tree`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Clustered Index vs Non-Clustered Index",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Sự khác biệt giữa Clustered Index và Non-Clustered Index là gì?",
+              "ans": "Clustered Index: Xác định thứ tự lưu trữ vật lý thực tế của các dòng dữ liệu trên đĩa cứng; mỗi bảng chỉ có DUY NHẤT 1 Clustered Index (thường là Primary Key). Non-Clustered Index: Cấu trúc riêng biệt chứa giá trị của cột được đánh index kèm con trỏ trỏ tới dòng dữ liệu thực tế; một bảng có thể có nhiều Non-Clustered Index."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace câu lệnh làm vô hiệu hóa Index",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho cột `created_at` đã được đánh Index. Câu truy vấn nào sau đây TẬN DỤNG được Index:\n1) `WHERE YEAR(created_at) = 2026;`\n2) `WHERE created_at >= '2026-01-01' AND created_at < '2027-01-01';`?",
+              "ans": "Câu 2 tận dụng được Index! Câu 1 áp dụng hàm `YEAR()` lên cột khiến CSDL không thể dùng B-Tree để tìm kiếm nhị phân mà phải quét toàn bộ bảng (Table Scan / Index Scan)."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy chi phí khi đánh quá nhiều Index",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Tại sao không nên tạo Index trên mọi cột của một bảng trong CSDL?",
+              "ans": "Mặc dù Index tăng tốc độ truy vấn `SELECT`, nhưng nó làm chậm đáng kể các thao tác ghi dữ liệu (`INSERT`, `UPDATE`, `DELETE`) vì CSDL phải cập nhật lại toàn bộ cây chỉ mục B-Tree tương ứng, đồng thời gây tốn dung lượng ổ đĩa."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Giải thích câu lệnh EXPLAIN PLAN trong SQL",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi đọc kết quả câu lệnh `EXPLAIN` trong MySQL/Postgres, chỉ số `type` nào biểu thị hiệu năng tối ưu nhất và tệ nhất?",
+              "ans": "Tối ưu nhất: `const` / `eq_ref` (truy xuất trực tiếp theo khóa chính/duy nhất). Tệ nhất: `ALL` (Full Table Scan - quét sạch toàn bộ bảng)."
             }
           ]
         }
@@ -14350,9 +14552,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của String Pool, equals vs ==, Collections, Map?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 bẫy chuỗi và tập hợp trong Java Core Chương 6 - 7?",
+          "a": "1. Dùng toán tử `==` so sánh String hoặc Wrapper objects thay vì `.equals()`.\n2. Không override đồng thời cả `equals()` và `hashCode()` khi lưu vào HashMap/HashSet.\n3. Thêm phần tử `null` vào `TreeSet` gây NullPointerException.",
+          "trap": "Nhớ kỹ khoảng cache của Integer (-128 đến 127)."
         }
       ],
       "dailyEnglish": [
@@ -14429,8 +14631,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Xem lại toàn bộ flashcard Ch8-Ch9."
+          "q": "Trong kiến trúc Spring MVC, đối tượng nào quyết định gọi Controller nào dựa trên URL của Request?",
+          "a": "`HandlerMapping` phân tích URL và metadata của request để tìm kiếm và trả về HandlerExecutionChain chứa Controller tương ứng cho DispatcherServlet."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -14455,18 +14657,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_53_1",
-          "level": "Easy",
-          "question": "Kiểm tra lại:",
-          "code": "// Rà soát Ch8-Ch9",
+          "id": "ct_d53_1",
+          "level": "Hard",
+          "question": "Đoạn code rà soát Ch8-9 về Anonymous Class và Thread sau in ra gì?",
+          "code": "public class Ch89Review {\n    public static void main(String[] args) {\n        final StringBuilder sb = new StringBuilder(\"A\");\n        Runnable r = new Runnable() {\n            public void run() {\n                sb.append(\"B\");\n            }\n        };\n        r.run();\n        System.out.println(sb);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "AB",
+            "A",
+            "Compile Error vì StringBuilder bị final",
+            "Compile Error vì không gọi start"
           ],
           "correctIndex": 0,
-          "explanation": "Xem lại toàn bộ flashcard Ch8-Ch9."
+          "explanation": "1. Biến `sb` là `final`, cho phép Anonymous Inner Class truy cập an toàn.\n2. Từ khóa `final` chỉ cấm gán lại con trỏ `sb = new StringBuilder()`, không cấm thay đổi trạng thái bên trong đối tượng (`sb.append(\"B\")` hoàn toàn hợp lệ).\n3. `r.run()` chạy phương thức tuần tự, nối 'B' vào. Kết quả in ra: `AB`."
         }
       ],
       "examTraps": [
@@ -14482,51 +14684,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Spring Internals & Transaction",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Inner classes, Thread states, synchronized?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Inner classes, Thread states, synchronized để tránh lỗi runtime."
+              "q": "Annotation `@Transactional` trong Spring hoạt động dựa trên kỹ thuật cốt lõi nào?",
+              "ans": "Dựa trên Spring AOP (Aspect-Oriented Programming) và Dynamic Proxy (JDK Dynamic Proxy hoặc CGLIB Proxy)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Self-invocation pitfall trong @Transactional",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Tại sao một phương thức không có `@Transactional` gọi một phương thức khác CÙNG CLASS có `@Transactional` thì Transaction lại KHÔNG hoạt động?",
+              "ans": "Vì lời gọi nội bộ (`this.method()`) không đi qua Spring Proxy. Do đó Spring AOP không thể chặn (intercept) lời gọi để mở transaction hay commit/rollback."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace rollbackOn mặc định của Spring @Transactional",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Nếu một phương thức có `@Transactional` ném ngoại lệ `IOException` (Checked Exception) thì Spring có tự động rollback Transaction không?",
+              "ans": "Mặc định là KHÔNG rollback! Spring `@Transactional` mặc định chỉ tự động rollback khi gặp `RuntimeException` (Unchecked Exception) hoặc `Error`. Muốn rollback với Checked Exception phải khai báo: `@Transactional(rollbackFor = Exception.class)`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Transaction Propagation: REQUIRES_NEW",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Propagation `REQUIRES_NEW` khác gì so với `REQUIRED` (mặc định)?",
+              "ans": "`REQUIRED`: Sử dụng transaction hiện tại nếu có, nếu chưa thì tạo mới. `REQUIRES_NEW`: Luôn luôn tạm dừng (suspend) transaction hiện tại và tạo một transaction độc lập hoàn toàn mới; lỗi ở transaction mới có thể rollback độc lập với transaction cũ."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "CGLIB Proxy vs JDK Dynamic Proxy",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi nào Spring sử dụng JDK Dynamic Proxy và khi nào sử dụng CGLIB Proxy?",
+              "ans": "JDK Dynamic Proxy được dùng khi target class thực thi ít nhất một Interface (tạo proxy implements interface đó). CGLIB được dùng khi target class không thực thi interface nào (tạo class con kế thừa target class thông qua sinh byte-code động)."
             }
           ]
         }
@@ -14559,9 +14761,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Inner classes, Thread states, synchronized?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 bẫy Inner Class và Đa luồng trong Java Core Chương 8 - 9?",
+          "a": "1. Member inner class bắt buộc phải tạo từ một instance của outer class (`new Outer().new Inner()`).\n2. Gọi `t.run()` thay vì `t.start()` không tạo luồng mới.\n3. Gọi `wait()` ngoài khối synchronized ném IllegalMonitorStateException.",
+          "trap": "Static nested class không truy cập được biến non-static của outer class."
         }
       ],
       "dailyEnglish": [
@@ -14638,8 +14840,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Làm 15 câu SQL + 15 câu Web."
+          "q": "Functional Interface `Predicate<T>`, `Consumer<T>`, `Supplier<T>`, `Function<T, R>` nhận vào và trả về kiểu gì?",
+          "a": "`Predicate<T>`: nhận T -> trả về boolean; `Consumer<T>`: nhận T -> không trả về (void); `Supplier<T>`: không nhận tham số -> trả về T; `Function<T, R>`: nhận T -> trả về R."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -14664,18 +14866,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_54_1",
-          "level": "Easy",
-          "question": "Kiểm tra lại:",
-          "code": "// Rà soát SQL & Web",
+          "id": "ct_d54_1",
+          "level": "Medium",
+          "question": "Câu lệnh SQL rà soát về xử lý NULL sau trả về kết quả là bao nhiêu dòng?",
+          "code": "-- Bảng Users có 3 dòng: (1, 'An'), (2, NULL), (3, 'Binh')\nSELECT COUNT(*), COUNT(Name)\nFROM Users;",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "COUNT(*) = 3, COUNT(Name) = 2",
+            "COUNT(*) = 3, COUNT(Name) = 3",
+            "COUNT(*) = 2, COUNT(Name) = 2",
+            "Lỗi truy vấn do có giá trị NULL"
           ],
           "correctIndex": 0,
-          "explanation": "Làm 15 câu SQL + 15 câu Web."
+          "explanation": "`COUNT(*)` đếm tổng số dòng vật lý trong bảng, bất kể cột có null hay không, nên trả về `3`. Còn `COUNT(column_name)` chỉ đếm những dòng có giá trị KHÁC NULL, dòng thứ 2 có Name là NULL nên bị bỏ qua, trả về `2`."
         }
       ],
       "examTraps": [
@@ -14691,51 +14893,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Vấn đáp Audit 1-1: Java 8+ Advanced",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: SQL JOINs, GROUP BY/HAVING, Servlet lifecycle, Scopes, Forward vs Redirect?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của SQL JOINs, GROUP BY/HAVING, Servlet lifecycle, Scopes, Forward vs Redirect để tránh lỗi runtime."
+              "q": "Phương thức `reduce()` trong Stream API dùng để làm gì?",
+              "ans": "Tổng hợp các phần tử của Stream thành một giá trị đơn duy nhất (ví dụ tính tổng, tìm max/min, nối chuỗi) dựa trên một hàm kết hợp nhị phân (`BinaryOperator`)."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Cạm bẫy của Parallel Stream",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Khi nào KHÔNG NÊN sử dụng `parallelStream()` trong Java 8?",
+              "ans": "Khi: 1) Tập dữ liệu nhỏ (chi phí chia nhỏ và gom luồng vượt quá lợi ích). 2) Tác vụ có chia sẻ trạng thái có thể sửa đổi (Thread-unsafe). 3) Tác vụ bị nghẽn I/O (chặn các luồng trong chung `ForkJoinPool.commonPool()`)."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace Collectors.groupingBy()",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nList<String> words = Arrays.asList(\"apple\", \"banana\", \"apricot\");\nMap<Character, Long> result = words.stream()\n    .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));\nSystem.out.println(result);\n```\nKết quả in ra là gì?",
+              "ans": "In ra: `{a=2, b=1}`. Các từ bắt đầu bằng chữ 'a' có 2 từ (\"apple\", \"apricot\"), bắt đầu bằng chữ 'b' có 1 từ (\"banana\")."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy Optional.get() mà không kiểm tra",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Gọi trực tiếp `optional.get()` khi đối tượng đang rỗng sẽ ném ra ngoại lệ gì?",
+              "ans": "Ném ngoại lệ `java.util.NoSuchElementException: No value present`."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "CompletableFuture kết hợp nhiều tác vụ bất đồng bộ",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Hàm nào trong `CompletableFuture` được dùng để ghép nối hai tác vụ phụ thuộc lẫn nhau (kết quả tác vụ 1 là đầu vào tác vụ 2)?",
+              "ans": "`thenCompose()` (tương đương với `flatMap` của Monad)."
             }
           ]
         }
@@ -14768,9 +14970,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của SQL JOINs, GROUP BY/HAVING, Servlet lifecycle, Scopes, Forward vs Redirect?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 bẫy SQL và Servlet trong phần Web Backend?",
+          "a": "1. So sánh với NULL bằng toán tử `=` thay vì `IS NULL`.\n2. Biến instance trong Servlet bị chia sẻ đa luồng gây tranh chấp dữ liệu (Race condition).\n3. Nhầm lẫn forward (giữ nguyên request, URL không đổi) với sendRedirect (tạo request mới, URL đổi).",
+          "trap": "Luôn dùng PreparedStatement để chống SQL Injection."
         }
       ],
       "dailyEnglish": [
@@ -14847,8 +15049,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Kiểm tra lại:",
-          "a": "Duyệt qua danh sách 79 câu Comment Code."
+          "q": "Quy tắc đặt tên biến và phương thức trong Java theo chuẩn Clean Code của Oracle/FSOFT là gì?",
+          "a": "Sử dụng camelCase bắt đầu bằng chữ thường (vd: `calculateSalary()`, `totalAmount`), tên phải có nghĩa mô tả hành động (động từ cho phương thức, danh từ cho biến), không viết tắt khó hiểu."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -14900,51 +15102,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Comment Code IT English & Code Review",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Box model, JS let/const, Spring IoC/DI, 79 câu Comment Code?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Box model, JS let/const, Spring IoC/DI, 79 câu Comment Code để tránh lỗi runtime."
+              "q": "Các tag Javadoc chuẩn nhất để tài liệu hóa tham số, giá trị trả về và ngoại lệ là gì?",
+              "ans": "`@param <name> <description>`, `@return <description>`, `@throws <ExceptionClass> <condition>`."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Tiêu chuẩn trả lời phỏng vấn kỹ thuật bằng tiếng Anh",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Cấu trúc trả lời câu hỏi phỏng vấn chuẩn STAR là gì?",
+              "ans": "S (Situation): Bối cảnh dự án. T (Task): Nhiệm vụ cụ thể. A (Action): Hành động kỹ thuật đã thực hiện. R (Result): Kết quả đạt được bằng số liệu cụ thể."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace và refactor code smell",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Đoạn code sau vi phạm nguyên tắc Clean Code nào:\n```java\npublic void process(int flag, Object data) {\n    if (flag == 1) { /* 100 dòng code xử lý user */ }\n    else if (flag == 2) { /* 100 dòng code xử lý order */ }\n}\n```",
+              "ans": "Vi phạm Single Responsibility Principle (SRP): Phương thức làm quá nhiều việc khác nhau dựa trên tham số cờ `flag` (Flag Argument code smell). Cần tách thành 2 phương thức độc lập: `processUser()` và `processOrder()`."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy nuốt ngoại lệ (Swallowed Exception)",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Tại sao viết `catch (Exception e) {}` (khối catch rỗng) bị coi là lỗi nghiêm trọng nhất trong review code?",
+              "ans": "Vì nó che giấu hoàn toàn lỗi phát sinh, khiến hệ thống hoạt động sai lệch trong im lặng mà không để lại bất kỳ log nào, vô hiệu hóa khả năng điều tra sự cố trong môi trường Production."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Bảo vệ giải pháp kiến trúc trước Senior Tech Lead",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Khi Tech Lead phản biện: 'Tại sao bạn chọn giải pháp dùng Cache Redis thay vì tối ưu câu query SQL?', bạn trả lời thế nào?",
+              "ans": "'Tối ưu câu query và index là bước bắt buộc đầu tiên. Tuy nhiên, với dữ liệu có tỷ lệ đọc vượt trội (95% Read / 5% Write) và ít thay đổi, việc sử dụng Redis in-memory cache giúp giảm trực tiếp tải I/O lên Database chính, đưa độ trễ phản hồi xuống dưới 5ms và đảm bảo hệ thống mở rộng chịu tải cao.'"
             }
           ]
         }
@@ -14977,9 +15179,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Box model, JS let/const, Spring IoC/DI, 79 câu Comment Code?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tổng kết 3 điểm mấu chốt phần Frontend, Spring và Comment Code IT?",
+          "a": "1. `box-sizing: border-box` giúp kiểm soát chính xác kích thước layout.\n2. `@Autowired` tự động inject phụ thuộc theo kiểu dữ liệu (by Type).\n3. Comment Code FPT dịch chính xác theo thuật ngữ chuyên ngành, không dịch thô từ sang từ.",
+          "trap": "Dịch comment code chú ý các từ khóa: Validate, Check exist, Retrieve, Execute."
         }
       ],
       "dailyEnglish": [
@@ -15057,8 +15259,8 @@ _globalScope.APP_DATA = {
       ],
       "quickQuiz": [
         {
-          "q": "Bạn đã sẵn sàng chưa?",
-          "a": "SẴN SÀNG 100%!"
+          "q": "Khi phỏng vấn Audit 1-1, nếu được hỏi: 'Sự khác biệt giữa abstract class và interface từ Java 8 trở đi là gì?', bạn trả lời thế nào?",
+          "a": "Abstract class đại diện cho bản chất danh tính (IS-A), có state (instance variable), có constructor và hỗ trợ mọi access modifier; Interface đại diện cho năng lực (CAN-DO), từ Java 8 có default/static method và Java 9 có private method, nhưng biến luôn là `public static final` và không có state riêng hay constructor."
         }
       ],
       "estimatedTime": "3h 00m",
@@ -15083,18 +15285,18 @@ _globalScope.APP_DATA = {
       ],
       "codeTracing": [
         {
-          "id": "ct_56_1",
-          "level": "Easy",
-          "question": "Bạn đã sẵn sàng chưa?",
-          "code": "// Chúc bạn thi tốt và đạt kết quả cao nhất!",
+          "id": "ct_d56_1",
+          "level": "Hard",
+          "question": "Câu hỏi tổng duyệt cuối cùng: Đoạn code Java Core tổng hợp sau in ra kết quả gì?",
+          "code": "public class GrandFinale {\n    public static void main(String[] args) {\n        int count = 0;\n        for (int i = 0; i < 3; i++) {\n            switch (i) {\n                case 0: count += 1; break;\n                case 1: count += 2;\n                case 2: count += 3; break;\n            }\n        }\n        System.out.println(\"Final Score: \" + count);\n    }\n}",
           "options": [
-            "Đúng theo dự đoán",
-            "Compile Error",
-            "Runtime Exception",
-            "Khác"
+            "Final Score: 9",
+            "Final Score: 6",
+            "Final Score: 12",
+            "Final Score: 7"
           ],
           "correctIndex": 0,
-          "explanation": "SẴN SÀNG 100%!"
+          "explanation": "1. Lần lặp i = 0: khớp case 0, count += 1 = 1, break switch.\n2. Lần lặp i = 1: khớp case 1, count += 2 = 3. Không có break, rơi tự do sang case 2, count += 3 = 6, break switch.\n3. Lần lặp i = 2: khớp case 2, count += 3 = 9, break switch.\nTổng kết in ra: `Final Score: 9`."
         }
       ],
       "examTraps": [
@@ -15110,51 +15312,51 @@ _globalScope.APP_DATA = {
       "practiceExercises": [
         {
           "level": "Level 1: Recall",
-          "desc": "Ghi nhớ định nghĩa và quy tắc cốt lõi",
+          "desc": "Tổng kết toàn diện Entry Test & Audit",
           "questions": [
             {
-              "q": "Phân tích nguyên lý hoạt động và các cạm bẫy thường gặp trong: Tổng kết lộ trình 8 tuần?",
-              "ans": "Nắm chắc cú pháp chuẩn, cơ chế phân bổ bộ nhớ (Stack/Heap) và các trường hợp biên của Tổng kết lộ trình 8 tuần để tránh lỗi runtime."
+              "q": "Ba tiêu chí cốt lõi người chấm thi Audit của FSOFT đánh giá ứng viên là gì?",
+              "ans": "1) Nắm chắc bản chất gốc của ngôn ngữ (Java Core mechanics). 2) Khả năng giải thích rành mạch, tự tin, không ấp úng. 3) Tư duy Clean Code và thái độ học hỏi cầu tiến."
             }
           ]
         },
         {
           "level": "Level 2: Understanding",
-          "desc": "Hiểu bản chất cơ chế hoạt động",
+          "desc": "Chiến thuật trả lời khi gặp câu hỏi không biết chắc",
           "questions": [
             {
-              "q": "Tại sao Java lại thiết kế cơ chế này như vậy?",
-              "ans": "Đảm bảo tính an toàn bộ nhớ và tính đa nền tảng (Write Once, Run Anywhere)."
+              "q": "Nếu trong buổi phỏng vấn 1-1 gặp một câu hỏi chưa từng gặp, bạn ứng xử như thế nào?",
+              "ans": "Thành thật thừa nhận chưa có cơ hội thực chiến sâu về điểm này, nhưng chủ động phân tích hướng tiếp cận logic dựa trên các nguyên lý cốt lõi đã biết (ví dụ từ thiết kế JVM hoặc mô hình mạng), thể hiện rõ tư duy giải quyết vấn đề."
             }
           ]
         },
         {
           "level": "Level 3: Code Tracing",
-          "desc": "Dự đoán luồng thực thi của code",
+          "desc": "Trace bài toán kinh điển phỏng vấn FSOFT",
           "questions": [
             {
-              "q": "Khi chạy đoạn code trên, thứ tự thực thi là gì?",
-              "ans": "Thực thi tuần tự theo dòng điều khiển."
+              "q": "Cho đoạn code sau:\n```java\nString s1 = \"abc\";\nStringBuffer sb = new StringBuffer(\"abc\");\nSystem.out.println(s1.equals(sb));\n```\nKết quả in ra là gì? Tại sao?",
+              "ans": "In ra: `false`! Hàm `s1.equals(sb)` của class `String` kiểm tra `instanceof String` đầu tiên. Vì `StringBuffer` không phải là `String`, nó lập tức trả về `false` mà không so sánh chuỗi ký tự."
             }
           ]
         },
         {
           "level": "Level 4: Exam Trap",
-          "desc": "Nhận diện bẫy đề thi Entry Test",
+          "desc": "Bẫy lạm dụng Singleton trong đa luồng",
           "questions": [
             {
-              "q": "Đề thi hay gài cạm bẫy ở điểm nào trong phần này?",
-              "ans": "Thường gài vào ép kiểu ngầm định hoặc phạm vi truy cập."
+              "q": "Tại sao mẫu Double-Checked Locking khi tạo Singleton bắt buộc biến `instance` phải có từ khóa `volatile`?",
+              "ans": "Để ngăn chặn hiện tượng sắp xếp lại lệnh của CPU/Compiler (Instruction Reordering). Không có `volatile`, luồng khác có thể đọc thấy tham chiếu `instance` khác null nhưng đối tượng bên trong thực tế chưa khởi tạo xong."
             }
           ]
         },
         {
           "level": "Level 5: Challenge",
-          "desc": "Thử thách tổng hợp nâng cao",
+          "desc": "Tuyên ngôn hoàn thành xuất sắc lộ trình",
           "questions": [
             {
-              "q": "Tối ưu và xử lý trường hợp ngoại lệ phát sinh:",
-              "ans": "Áp dụng cấu trúc try-catch hoặc xử lý logic chặt chẽ."
+              "q": "Bạn đã sẵn sàng bước vào kỳ thi Entry Test và phỏng vấn Audit của FSOFT với tâm thế như thế nào?",
+              "ans": "Sẵn sàng 100% với nền tảng kiến trúc vững chắc, nắm rõ mọi bẫy đề thi từ lý thuyết JVM đến dòng chảy mã nguồn thực tế, tự tin vượt qua mọi bài kiểm tra với kết quả xuất sắc!"
             }
           ]
         }
@@ -15187,9 +15389,9 @@ _globalScope.APP_DATA = {
       ],
       "dailyFlashcards": [
         {
-          "q": "Định nghĩa cốt lõi của Tổng kết lộ trình 8 tuần?",
-          "a": "Xem lại mục tiêu và lý thuyết trọng tâm của ngày học.",
-          "trap": "Đừng nhầm với các khái niệm tương tự trong C++."
+          "q": "Tâm thế và lời khuyên quan trọng nhất của một Senior trước khi bước vào phòng thi?",
+          "a": "Tự tin, bình tĩnh, đọc kỹ đề bài và tuyệt đối không vội vàng phán đoán cảm tính. Kiểm tra lỗi biên dịch trước khi trace kết quả. Quản lý thời gian kỷ luật và tin tưởng vào lộ trình 56 ngày ôn luyện bài bản!",
+          "trap": "Bạn đã được trang bị đầy đủ kiến thức và bẫy thi, hãy tự tin giành điểm tối đa!"
         }
       ],
       "dailyEnglish": [

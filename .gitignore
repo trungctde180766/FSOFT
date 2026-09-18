@@ -8,6 +8,7 @@
 .ai_token_usage.json
 .pe_runner/
 .local_users_db.json
+scratch/
 
 # Dependencies
 node_modules/
