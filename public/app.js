@@ -6,6 +6,12 @@
 (function () {
   'use strict';
 
+  // Defensive SSR/Node.js safeguard: Exit cleanly if evaluated in Node environment
+  if (typeof window === 'undefined') {
+    if (typeof module !== 'undefined' && module.exports) module.exports = {};
+    return;
+  }
+
   // ==================== STORAGE & STATE ====================
   const STORAGE_KEYS = {
     THEME: 'apex_theme',
@@ -29,7 +35,7 @@
     CURRENT_USER: 'apex_current_user'
   };
 
-  const appData = window.APP_DATA || {
+  const appData = (typeof window !== 'undefined' && window.APP_DATA) || {
     roadmap: [],
     flashcards: [],
     quizzes: [],

@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "rewrites": [
     { "source": "/api/auth/:action*", "destination": "/api/auth?action=:action*" },
     { "source": "/api/user/:action*", "destination": "/api/user?action=:action*" },

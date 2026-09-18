@@ -345,7 +345,11 @@ const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
 
-  const safePath = path.normalize(path.join(BASE_DIR, reqPath));
+  let safePath = path.normalize(path.join(BASE_DIR, 'public', reqPath));
+  if (!fs.existsSync(safePath) || !fs.statSync(safePath).isFile()) {
+    safePath = path.normalize(path.join(BASE_DIR, reqPath));
+  }
+
   if (!safePath.startsWith(BASE_DIR)) {
     res.writeHead(403);
     return res.end('Forbidden');

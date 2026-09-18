@@ -7,6 +7,7 @@ __pycache__/
 *.pyc
 
 # Local runners and scripts
+server.js
 start_app.bat
 .pe_runner/
 .ai_token_usage.json

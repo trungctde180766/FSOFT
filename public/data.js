@@ -1,4 +1,5 @@
-window.APP_DATA = {
+var _globalScope = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : {});
+_globalScope.APP_DATA = {
   "roadmap": [
     {
       "week": 1,
