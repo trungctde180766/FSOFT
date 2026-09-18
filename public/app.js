@@ -50,7 +50,7 @@
     theme: localStorage.getItem(STORAGE_KEYS.THEME) || 'dark',
     authToken: localStorage.getItem('apex_auth_token') || null,
     currentUser: JSON.parse(localStorage.getItem('apex_current_user') || 'null'),
-    isLoggedIn: false,
+    isLoggedIn: !!(localStorage.getItem('apex_auth_token') && localStorage.getItem('apex_current_user')),
     roadmapProgress: JSON.parse(localStorage.getItem(STORAGE_KEYS.ROADMAP_PROGRESS) || '{}'),
     roadmapNotes: JSON.parse(localStorage.getItem(STORAGE_KEYS.ROADMAP_NOTES) || '{}'),
     flashcardRatings: JSON.parse(localStorage.getItem(STORAGE_KEYS.FLASHCARD_RATINGS) || '{}'),
@@ -230,6 +230,17 @@
   }
 
   function switchTab(tabKey) {
+    if (!state.isLoggedIn || !state.authToken) {
+      const modal = document.getElementById('authModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        const closeBtn = document.getElementById('closeAuthModalBtn');
+        if (closeBtn) closeBtn.style.display = 'none';
+      }
+      showToast('🔒 Bắt buộc đăng nhập hoặc đăng ký để truy cập hệ thống học tập!', 'warning');
+      return;
+    }
+
     if (tabKey === 'admin') {
       const isAdmin = state.isLoggedIn && state.currentUser && state.currentUser.role === 'admin';
       if (!isAdmin) {
@@ -6774,15 +6785,24 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
     const linkToReg = document.getElementById('linkSwitchToRegister');
     const linkToLog = document.getElementById('linkSwitchToLogin');
 
-    function openModal(mode = 'login') {
+    function openModal(mode = 'login', forced = false) {
       if (!modal) return;
       modal.style.display = 'flex';
       setAuthTab(mode);
       clearAlert();
+
+      const isForced = forced || (!state.isLoggedIn || !state.authToken);
+      if (closeBtn) {
+        closeBtn.style.display = isForced ? 'none' : 'block';
+      }
     }
 
     function closeModal() {
       if (!modal) return;
+      if (!state.isLoggedIn || !state.authToken) {
+        showAlert('⚠️ Bắt buộc phải đăng nhập hoặc đăng ký tài khoản để vào hệ thống!', 'error');
+        return;
+      }
       modal.style.display = 'none';
       clearAlert();
     }
@@ -6841,10 +6861,16 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
     if (linkToReg) linkToReg.addEventListener('click', (e) => { e.preventDefault(); setAuthTab('register'); });
     if (linkToLog) linkToLog.addEventListener('click', (e) => { e.preventDefault(); setAuthTab('login'); });
 
-    // Close on clicking backdrop
+    // Close on clicking backdrop (chặn đóng nếu chưa đăng nhập)
     if (modal) {
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+        if (e.target === modal) {
+          if (!state.isLoggedIn || !state.authToken) {
+            showAlert('⚠️ Vui lòng đăng nhập hoặc tạo tài khoản để sử dụng hệ thống.', 'error');
+            return;
+          }
+          closeModal();
+        }
       });
     }
 
@@ -6913,19 +6939,20 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
       });
     }
 
-    // Handle Register Form Submit
+    // Handle Register Form Submit (Chỉ cần Email & Mật khẩu)
     if (registerForm) {
       registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         clearAlert();
-        const name = document.getElementById('regName').value.trim();
         const email = document.getElementById('regEmail').value.trim();
         const password = document.getElementById('regPassword').value;
-        const confirmPassword = document.getElementById('regConfirmPassword').value;
         const submitBtn = document.getElementById('registerSubmitBtn');
 
-        if (password !== confirmPassword) {
-          return showAlert('Mật khẩu xác nhận không khớp.');
+        if (!email || !email.includes('@') || !email.includes('.')) {
+          return showAlert('Vui lòng nhập địa chỉ email hợp lệ.');
+        }
+        if (!password || password.length < 6) {
+          return showAlert('Mật khẩu tối thiểu 6 ký tự.');
         }
 
         const origBtnText = submitBtn.innerHTML;
@@ -6936,7 +6963,7 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
           const res = await fetch('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, password })
+            body: JSON.stringify({ email, password })
           });
 
           const data = await res.json();
@@ -6993,6 +7020,7 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
         });
     } else {
       updateHeaderAuthUI();
+      openModal('login', true);
     }
   }
 
@@ -7013,6 +7041,22 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
 
     if (showNotification) {
       showToast('👋 Đã đăng xuất thành công khỏi tài khoản.', 'info');
+    }
+
+    // Force login modal to lock screen immediately
+    const modal = document.getElementById('authModal');
+    if (modal) {
+      modal.style.display = 'flex';
+      const closeBtn = document.getElementById('closeAuthModalBtn');
+      if (closeBtn) closeBtn.style.display = 'none';
+      const tabLogin = document.getElementById('tabBtnLogin');
+      const tabRegister = document.getElementById('tabBtnRegister');
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      tabLogin?.classList.add('active');
+      tabRegister?.classList.remove('active');
+      loginForm?.classList.remove('hidden');
+      registerForm?.classList.add('hidden');
     }
   }
 

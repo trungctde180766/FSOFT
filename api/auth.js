@@ -38,11 +38,9 @@ module.exports = async function handler(req, res) {
 
   // ── POST /api/auth/register ───────────────────────────────────────────────
   if (req.method === 'POST' && (action === 'register' || url.includes('/register'))) {
-    const { name, email, password } = body;
+    const { email, password } = body;
+    let name = (body.name || '').trim();
 
-    if (!name || name.trim().length < 2) {
-      return res.status(400).json({ ok: false, message: 'Tên phải có ít nhất 2 ký tự.' });
-    }
     if (!email || !email.includes('@') || !email.includes('.')) {
       return res.status(400).json({ ok: false, message: 'Địa chỉ email không hợp lệ.' });
     }
@@ -51,6 +49,9 @@ module.exports = async function handler(req, res) {
     }
 
     const cleanEmail = email.toLowerCase().trim();
+    if (!name) {
+      name = cleanEmail.split('@')[0];
+    }
     const existing = await db.users.findOne({ email: cleanEmail });
     if (existing) {
       return res.status(409).json({ ok: false, message: 'Email này đã được đăng ký. Vui lòng đăng nhập.' });
