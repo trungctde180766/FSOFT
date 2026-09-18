@@ -399,4 +399,8 @@ process.on('unhandledRejection', reason => {
   console.error('Unhandled Rejection:', reason);
 });
 
-startServer(PORT);
+if (require.main === module) {
+  startServer(PORT);
+}
+
+module.exports = server;
