@@ -1,0 +1,53 @@
+name: ApexCore CI/CD Automation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate_and_test:
+    name: Code Quality & Serverless Verification
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x, 20.x ]
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline || npm install
+
+      - name: 🛡️ Security Audit (Secret Leak Prevention)
+        run: |
+          if [ -f ".env" ]; then
+            echo "❌ CRITICAL: .env file detected in git tree!"
+            exit 1
+          fi
+          echo "✅ Security check passed: No .env committed."
+
+      - name: 🧪 Execute syntax & API tests
+        run: npm test
+
+      - name: 🏗️ Verify build
+        run: npm run build
+
+  deploy_report:
+    name: Production Deployment Status
+    needs: validate_and_test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Deployment Report
+        run: |
+          echo "🎉 CI tests passed successfully!"
+          echo "⚡ Vercel automatically deploys the latest main branch."

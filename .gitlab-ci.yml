@@ -1,0 +1,79 @@
+# ==============================================================================
+# GitLab CI/CD Pipeline for ApexCore (FSOFT Entry Test Mastery)
+# ==============================================================================
+stages:
+  - lint_security
+  - test
+  - build
+  - deploy_notify
+
+variables:
+  NODE_ENV: "test"
+
+# Cache node_modules between jobs to accelerate pipeline execution
+cache:
+  key:
+    files:
+      - package.json
+  paths:
+    - node_modules/
+    - .npm/
+
+default:
+  image: node:20-alpine
+  before_script:
+    - npm ci --prefer-offline --no-audit || npm install --prefer-offline --no-audit
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. Security & Integrity Audit
+# ──────────────────────────────────────────────────────────────────────────────
+security_audit:
+  stage: lint_security
+  script:
+    - echo "🛡️ Checking repository for accidental secret leaks..."
+    - |
+      if [ -f ".env" ]; then
+        echo "❌ CRITICAL: .env file found in repository! Failing pipeline to protect secrets."
+        exit 1
+      fi
+    - |
+      if [ -f ".local_users_db.json" ]; then
+        echo "❌ CRITICAL: .local_users_db.json found in repository!"
+        exit 1
+      fi
+    - echo "✅ No sensitive credential files leaked."
+    - echo "🔍 Validating all data JSON schemas..."
+    - node -e "const fs = require('fs'); ['data/audit_questions.json', 'data/daily_lessons.json', 'data/flashcards.json', 'data/pe_questions.json', 'data/quizzes.json', 'data/traps.json'].forEach(f => { try { JSON.parse(fs.readFileSync(f, 'utf-8')); console.log('✓ Valid JSON: ' + f); } catch(e) { console.error('✗ Invalid JSON in ' + f + ': ' + e.message); process.exit(1); } });"
+    - echo "✅ All JSON database files are 100% syntactically valid."
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 2. Automated Testing Suite
+# ──────────────────────────────────────────────────────────────────────────────
+unit_and_syntax_tests:
+  stage: test
+  script:
+    - echo "🧪 Running automated syntax and regression tests across all APIs & engine..."
+    - npm test
+    - echo "✅ All serverless API endpoints and client scripts compiled successfully."
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 3. Production Build Validation
+# ──────────────────────────────────────────────────────────────────────────────
+production_build:
+  stage: build
+  script:
+    - echo "🏗️ Validating production bundle..."
+    - npm run build
+    - echo "✅ Production build checks completed with 0 errors."
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 4. Deployment Notification
+# ──────────────────────────────────────────────────────────────────────────────
+vercel_deploy_status:
+  stage: deploy_notify
+  only:
+    - main
+  script:
+    - echo "🚀 Commit successfully verified!"
+    - echo "⚡ Vercel GitLab integration automatically triggered deployment for branch [main]."
+    - echo "🌐 Live production target: https://fsoft.vercel.app"
