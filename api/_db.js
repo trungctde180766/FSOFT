@@ -2,6 +2,35 @@ const fs = require('fs');
 const path = require('path');
 const { MongoClient, ObjectId } = require('mongodb');
 
+// Ensure local .env is loaded if process.env values are missing
+(function loadLocalEnv() {
+  const envPaths = [
+    path.join(process.cwd(), '.env'),
+    path.join(__dirname, '..', '.env'),
+    path.join(__dirname, '.env')
+  ];
+  for (const envPath of envPaths) {
+    if (fs.existsSync(envPath)) {
+      try {
+        const lines = fs.readFileSync(envPath, 'utf-8').split(/\r?\n/);
+        for (let line of lines) {
+          line = line.trim();
+          if (!line || line.startsWith('#')) continue;
+          const eqIdx = line.indexOf('=');
+          if (eqIdx !== -1) {
+            const key = line.slice(0, eqIdx).trim();
+            const val = line.slice(eqIdx + 1).trim().replace(/^['"]|['"]$/g, '');
+            if (!process.env[key]) {
+              process.env[key] = val;
+            }
+          }
+        }
+        break;
+      } catch (_) {}
+    }
+  }
+})();
+
 const MONGODB_URI = process.env.MONGODB_URI;
 const DB_NAME = process.env.MONGODB_DB_NAME || 'apexcore_db';
 
