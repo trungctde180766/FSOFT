@@ -6811,13 +6811,25 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
       if (mode === 'login') {
         tabLogin?.classList.add('active');
         tabRegister?.classList.remove('active');
-        loginForm?.classList.remove('hidden');
-        registerForm?.classList.add('hidden');
+        if (loginForm) {
+          loginForm.style.display = 'block';
+          loginForm.classList.remove('hidden');
+        }
+        if (registerForm) {
+          registerForm.style.display = 'none';
+          registerForm.classList.add('hidden');
+        }
       } else {
         tabRegister?.classList.add('active');
         tabLogin?.classList.remove('active');
-        registerForm?.classList.remove('hidden');
-        loginForm?.classList.add('hidden');
+        if (registerForm) {
+          registerForm.style.display = 'block';
+          registerForm.classList.remove('hidden');
+        }
+        if (loginForm) {
+          loginForm.style.display = 'none';
+          loginForm.classList.add('hidden');
+        }
       }
       clearAlert();
     }

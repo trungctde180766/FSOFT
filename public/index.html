@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3.3">
+  <link rel="stylesheet" href="style.css?v=3.5">
 </head>
 <body>
   <!-- Background glow effects -->
@@ -2347,18 +2347,18 @@
     </div>
   </div>
 
-  <!-- ==================== AUTHENTICATION MODAL ==================== -->
+  <!-- ==================== COMPACT ULTRA-SLEEK AUTHENTICATION MODAL ==================== -->
   <div class="modal-overlay" id="authModal" style="display: none;">
     <div class="modal-card modal-auth">
-      <div class="modal-header auth-modal-header">
-        <div class="auth-brand-badge">
-          <span>⚡ ApexCore Auth</span>
-        </div>
-        <button class="modal-close-btn" id="closeAuthModalBtn">&times;</button>
+      <div class="auth-card-top">
+        <div class="auth-icon-circle">⚡</div>
+        <h3 class="auth-title">ApexCore Study</h3>
+        <p class="auth-subtitle">Hệ thống luyện thi cấp tốc Java Core & Entry Test</p>
+        <button class="modal-close-btn" id="closeAuthModalBtn" style="display:none;">&times;</button>
       </div>
 
       <div class="modal-body auth-modal-body">
-        <!-- Auth Tab Switcher -->
+        <!-- Auth Segmented Switcher -->
         <div class="auth-tabs">
           <button class="auth-tab-btn active" id="tabBtnLogin" type="button">🔑 Đăng Nhập</button>
           <button class="auth-tab-btn" id="tabBtnRegister" type="button">✨ Đăng Ký Mới</button>
@@ -2369,51 +2369,51 @@
 
         <!-- Login Form -->
         <form id="loginForm" class="auth-form">
-          <div class="form-group">
-            <label for="loginEmail">Địa chỉ Email:</label>
-            <div class="input-with-icon">
-              <span class="input-icon">✉️</span>
-              <input type="email" id="loginEmail" class="form-input" placeholder="ten_ban@gmail.com" required autocomplete="email">
+          <div class="auth-field">
+            <label for="loginEmail" class="auth-label">Email</label>
+            <div class="auth-input-wrapper">
+              <span class="auth-input-icon">✉️</span>
+              <input type="email" id="loginEmail" class="auth-input" placeholder="email@gmail.com" required autocomplete="email">
             </div>
           </div>
-          <div class="form-group">
-            <label for="loginPassword">Mật khẩu:</label>
-            <div class="input-with-icon">
-              <span class="input-icon">🔒</span>
-              <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required autocomplete="current-password">
-              <button type="button" class="btn-toggle-pwd" data-target="loginPassword">👁️</button>
+          <div class="auth-field">
+            <label for="loginPassword" class="auth-label">Mật khẩu</label>
+            <div class="auth-input-wrapper">
+              <span class="auth-input-icon">🔒</span>
+              <input type="password" id="loginPassword" class="auth-input" placeholder="Nhập mật khẩu..." required autocomplete="current-password">
+              <button type="button" class="btn-toggle-pwd auth-pwd-toggle" data-target="loginPassword">👁️</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block auth-submit-btn" id="loginSubmitBtn">
+          <button type="submit" class="btn-auth-primary" id="loginSubmitBtn">
             <span>Đăng Nhập Ngay</span>
           </button>
           <div class="auth-switch-hint">
-            Chưa có tài khoản? <a href="#" id="linkSwitchToRegister">Tạo tài khoản mới</a>
+            Chưa có tài khoản? <a href="#" id="linkSwitchToRegister">Đăng ký mới</a>
           </div>
         </form>
 
-        <!-- Register Form (Chỉ cần Email & Mật khẩu siêu nhanh) -->
-        <form id="registerForm" class="auth-form hidden">
-          <div class="form-group">
-            <label for="regEmail">Địa chỉ Email:</label>
-            <div class="input-with-icon">
-              <span class="input-icon">✉️</span>
-              <input type="email" id="regEmail" class="form-input" placeholder="ten_ban@gmail.com" required autocomplete="email">
+        <!-- Register Form (Chỉ Email & Mật khẩu, ẩn mặc định) -->
+        <form id="registerForm" class="auth-form" style="display: none;">
+          <div class="auth-field">
+            <label for="regEmail" class="auth-label">Email đăng ký</label>
+            <div class="auth-input-wrapper">
+              <span class="auth-input-icon">✉️</span>
+              <input type="email" id="regEmail" class="auth-input" placeholder="email@gmail.com" required autocomplete="email">
             </div>
           </div>
-          <div class="form-group">
-            <label for="regPassword">Mật khẩu (tối thiểu 6 ký tự):</label>
-            <div class="input-with-icon">
-              <span class="input-icon">🔒</span>
-              <input type="password" id="regPassword" class="form-input" placeholder="••••••••" required minlength="6" autocomplete="new-password">
-              <button type="button" class="btn-toggle-pwd" data-target="regPassword">👁️</button>
+          <div class="auth-field">
+            <label for="regPassword" class="auth-label">Mật khẩu (tối thiểu 6 ký tự)</label>
+            <div class="auth-input-wrapper">
+              <span class="auth-input-icon">🔒</span>
+              <input type="password" id="regPassword" class="auth-input" placeholder="Tạo mật khẩu..." required minlength="6" autocomplete="new-password">
+              <button type="button" class="btn-toggle-pwd auth-pwd-toggle" data-target="regPassword">👁️</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block auth-submit-btn" id="registerSubmitBtn">
-            <span>Đăng Ký & Vào Học Ngay</span>
+          <button type="submit" class="btn-auth-primary" id="registerSubmitBtn">
+            <span>Đăng Ký & Vào Học</span>
           </button>
           <div class="auth-switch-hint">
-            Đã có tài khoản? <a href="#" id="linkSwitchToLogin">Đăng nhập tại đây</a>
+            Đã có tài khoản? <a href="#" id="linkSwitchToLogin">Đăng nhập ngay</a>
           </div>
         </form>
       </div>
@@ -2425,7 +2425,7 @@
 
 
   <!-- Scripts -->
-  <script src="data.js?v=3.3"></script>
-  <script src="app.js?v=3.3"></script>
+  <script src="data.js?v=3.5"></script>
+  <script src="app.js?v=3.5"></script>
 </body>
 </html>
