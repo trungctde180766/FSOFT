@@ -4,7 +4,7 @@
     { "source": "/api/auth/:action*", "destination": "/api/auth?action=:action*" },
     { "source": "/api/user/:action*", "destination": "/api/user?action=:action*" },
     { "source": "/api/admin/:action*", "destination": "/api/admin?action=:action*" },
-    { "source": "/api/ai/status", "destination": "/api/ai?status=true" },
+    { "source": "/api/ai/status", "destination": "/api/ai" },
     { "source": "/api/ai", "destination": "/api/ai" },
     { "source": "/api/run-code", "destination": "/api/run-code" }
   ],
