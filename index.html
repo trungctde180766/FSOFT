@@ -1900,6 +1900,21 @@
               <button type="submit" class="btn btn-outline" id="btnChangePassword">🔑 Cập Nhật Mật Khẩu</button>
             </form>
 
+            <!-- Admin Gateway Box (Chỉ hiển thị riêng cho duy nhất Quản Trị Viên) -->
+            <div class="profile-admin-box hidden" id="profileAdminGatewayBox" style="margin-top:2rem; padding:1.2rem; background:linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(168, 85, 247, 0.12)); border:1px solid rgba(239, 68, 68, 0.35); border-radius:12px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <div>
+                  <h4 style="margin:0 0 0.3rem 0; color:#f87171; display:flex; align-items:center; gap:0.5rem;">👑 Cổng Quản Trị Hệ Thống (Dành Riêng Cho Bạn)</h4>
+                  <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">
+                    Bảo mật tuyệt đối: Chỉ bạn mới xem được thông tin học viên, lượt thi và lịch sử đăng nhập.
+                  </p>
+                </div>
+                <button type="button" class="btn btn-danger btn-sm" id="btnGoToAdminPortal" style="white-space:nowrap; background:#ef4444; color:#fff; font-weight:700;">
+                  🛡️ Vào Bảng Quản Trị →
+                </button>
+              </div>
+            </div>
+
             <div class="profile-session-box" style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);">
               <h4>🚪 Quản Lý Phiên Học Tập</h4>
               <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">

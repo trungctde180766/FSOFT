@@ -228,25 +228,16 @@ async function getDatabase() {
   };
 }
 
-// Check if an email should be default admin
+// Check if an email should be default admin (Strict whitelist: ONLY configured ADMIN_EMAILS)
 async function checkIfAdmin(email) {
-  const adminEmails = (process.env.ADMIN_EMAILS || 'admin@apexcore.com,admin@gmail.com')
+  if (!email) return false;
+  const adminEmails = (process.env.ADMIN_EMAILS || 'thanhtrung9ctv@gmail.com,thanhtrung8ctv@gmail.com')
     .toLowerCase()
     .split(',')
-    .map(e => e.trim());
+    .map(e => e.trim())
+    .filter(Boolean);
 
-  if (adminEmails.includes(email.toLowerCase())) {
-    return true;
-  }
-
-  // If this is the very first user in the system, automatically grant admin
-  try {
-    const db = await getDatabase();
-    const count = await db.users.countDocuments({});
-    if (count === 0) return true;
-  } catch (_) {}
-
-  return false;
+  return adminEmails.includes(email.toLowerCase().trim());
 }
 
 module.exports = {

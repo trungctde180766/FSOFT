@@ -224,6 +224,14 @@
   }
 
   function switchTab(tabKey) {
+    if (tabKey === 'admin') {
+      const isAdmin = state.isLoggedIn && state.currentUser && state.currentUser.role === 'admin';
+      if (!isAdmin) {
+        showToast('⛔ Quyền riêng tư: Chỉ duy nhất Quản Trị Viên mới được truy cập Bảng Quản Trị!', 'error');
+        return;
+      }
+    }
+
     state.activeTab = tabKey;
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabKey));
     document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.id === `pane-${tabKey}`));
@@ -7125,6 +7133,17 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
 
     if (logoutBtn) logoutBtn.addEventListener('click', () => handleLogout(true));
     if (syncBtn) syncBtn.addEventListener('click', () => syncUserDataToCloud(true));
+
+    const adminPortalBtn = document.getElementById('btnGoToAdminPortal');
+    if (adminPortalBtn) {
+      adminPortalBtn.addEventListener('click', () => {
+        if (state.currentUser?.role === 'admin') {
+          switchTab('admin');
+        } else {
+          showToast('⛔ Chỉ duy nhất bạn (Quản trị viên) mới có quyền vào đây!', 'error');
+        }
+      });
+    }
   }
 
   function renderProfileView() {
@@ -7213,10 +7232,22 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
 
       if (syncDot) syncDot.classList.remove('offline');
       if (syncStatusText) syncStatusText.textContent = 'Đã kết nối tài khoản';
+
+      const adminBox = document.getElementById('profileAdminGatewayBox');
+      if (adminBox) {
+        if (u.role === 'admin') {
+          adminBox.classList.remove('hidden');
+        } else {
+          adminBox.classList.add('hidden');
+        }
+      }
     } else {
       if (guestBanner) guestBanner.style.display = 'flex';
       if (profileLayout) profileLayout.style.display = 'flex';
       if (heroTitle) heroTitle.textContent = 'Hồ Sơ Học Viên (Khách)';
+
+      const adminBox = document.getElementById('profileAdminGatewayBox');
+      if (adminBox) adminBox.classList.add('hidden');
 
       if (fullNameEl) fullNameEl.textContent = 'Tài Khoản Khách';
       if (emailEl) emailEl.textContent = 'Chưa đăng nhập (Dữ liệu cục bộ)';
@@ -7281,6 +7312,8 @@ Hãy viết nhận xét tổng kết ngắn (4-5 câu) và 2-3 điểm cần c�
 
   async function loadAdminDashboardData(showNotification = false) {
     if (!state.isLoggedIn || !state.authToken || state.currentUser?.role !== 'admin') {
+      showToast('⛔ Khu vực bảo mật: Chỉ duy nhất Admin mới được truy cập.', 'error');
+      switchTab('roadmap');
       return;
     }
 
