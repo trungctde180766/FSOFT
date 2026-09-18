@@ -1,13 +1,13 @@
 {
   "name": "apexcore-study-system",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "8-Week Entry Test & Audit Mastery System for Java Core, SQL, Web, Spring and English",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
     "build": "node -e \"console.log('ApexCore build completed successfully')\"",
-    "test": "node -c server.js public/app.js public/data.js api/_gemini.js api/run-code.js api/_auth.js api/_db.js api/auth.js api/user.js api/admin.js"
+    "test": "node -c server.js public/app.js public/data.js api/_gemini.js api/run-code.js api/_auth.js api/_db.js api/auth.js api/user.js api/admin.js api/ai.js"
   },
   "keywords": [
     "scjp",

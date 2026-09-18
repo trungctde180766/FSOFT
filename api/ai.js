@@ -1,17 +1,19 @@
-const { proxyGemini, getAiStatus, GEMINI_KEYS } = require('../_gemini');
+const { proxyGemini, getAiStatus, GEMINI_KEYS } = require('./_gemini');
 
 module.exports = async function handler(req, res) {
   // Setup CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') {
     return res.status(204).end();
   }
 
-  // Route: Check if client is requesting status via /api/ai/status
-  if (req.method === 'GET' || (req.url && req.url.endsWith('/status'))) {
+  // Route: Status check via GET /api/ai or /api/ai/status or query ?status=true
+  const isStatusReq = req.method === 'GET' || 
+                      (req.url && (req.url.includes('/status') || req.url.includes('status=true')));
+  if (isStatusReq) {
     const statusData = getAiStatus();
     return res.status(200).json(statusData);
   }
@@ -22,7 +24,11 @@ module.exports = async function handler(req, res) {
 
   if (GEMINI_KEYS.length === 0) {
     return res.status(503).json({
-      error: { message: 'AI proxy: Chưa cấu hình Gemini API Key. Vui lòng thêm biến môi trường GEMINI_API_KEYS trên Vercel.' }
+      error: {
+        code: 503,
+        message: 'AI proxy: Chưa cấu hình Gemini API Key. Vui lòng thêm biến môi trường GEMINI_API_KEYS trên Vercel hoặc file .env.',
+        status: 'UNAVAILABLE'
+      }
     });
   }
 
@@ -38,6 +44,12 @@ module.exports = async function handler(req, res) {
     return res.send(result.body);
   } catch (err) {
     console.error('AI Proxy Error:', err.message);
-    return res.status(500).json({ error: { message: err.message } });
+    return res.status(500).json({
+      error: {
+        code: 500,
+        message: err.message || 'Lỗi xử lý yêu cầu AI.',
+        status: 'INTERNAL'
+      }
+    });
   }
 };
