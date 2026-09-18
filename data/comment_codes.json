@@ -1,0 +1,397 @@
+[
+  {
+    "id": 1,
+    "vi": "Lấy danh sách các trận đấu",
+    "en": "Get list of matches"
+  },
+  {
+    "id": 2,
+    "vi": "Thực hiện xóa các trận đấu",
+    "en": "Delete matches"
+  },
+  {
+    "id": 3,
+    "vi": "Tìm kiếm các trận đấu theo ngày giờ",
+    "en": "Search matches by time"
+  },
+  {
+    "id": 4,
+    "vi": "Thực hiện thêm các trận đấu",
+    "en": "Add matches"
+  },
+  {
+    "id": 5,
+    "vi": "(Kiểm tra [var] có tồn tại hay không )",
+    "en": "Check if [var] exists"
+  },
+  {
+    "id": 6,
+    "vi": "return true if [var] exist or false if not exist (Trả về \"true\" nếu [var] tồn tại hoặc \"false\"nếu [var] không tồn tại",
+    "en": "Return \"True\" if [var] exists or false if [var] does not exist"
+  },
+  {
+    "id": 7,
+    "vi": "(Lấy số ngày nghỉ của một tháng)",
+    "en": "Get number of days off of a month"
+  },
+  {
+    "id": 8,
+    "vi": "(Lấy các tháng của năm)",
+    "en": "Get months of year"
+  },
+  {
+    "id": 9,
+    "vi": "(Lấy tất cả dữ liệu về ngày nghỉ của các tháng và các năm trong database)",
+    "en": "Get all days off of months and years from database"
+  },
+  {
+    "id": 10,
+    "vi": "Xóa tất cả ngày nghỉ của một tháng",
+    "en": "Delete all days off of a month"
+  },
+  {
+    "id": 11,
+    "vi": "(Trả về true nếu thành công hoặc false nếu thất bại",
+    "en": "Return \"true\" on success or \"false\" on failure"
+  },
+  {
+    "id": 12,
+    "vi": "(Đăng ký hoặc update ngày nghỉ của một tháng)",
+    "en": "Register or update days off of a month"
+  },
+  {
+    "id": 13,
+    "vi": "(Lấy danh sách ngày nghỉ của một tháng)",
+    "en": "Get list of days off of a month"
+  },
+  {
+    "id": 14,
+    "vi": "(Duyệt qua các ngày của tháng)",
+    "en": "Iterate days of the month"
+  },
+  {
+    "id": 15,
+    "vi": "(Kiểm tra nếu I bằng với  listDayOff.length - 1 thì không nối \",\", ngược lại thì nối \",\" )",
+    "en": "Check if I is equal to listDayOff.length minus 1, do not append \",\" else append \",\""
+  },
+  {
+    "id": 16,
+    "vi": "(Nếu ngày của tháng có dữ liệu bằng \"*\" thì tăng biến countDayOff lên 1 đơn vị)",
+    "en": "if day of month has data containing \"*\", increase countDayOff by 1"
+  },
+  {
+    "id": 17,
+    "vi": "(Export tất cả các tháng của năm hiện tại trên màn hình)",
+    "en": "Export data of all months of current year on screen"
+  },
+  {
+    "id": 18,
+    "vi": "(Export tất cả dữ liệu về ngày nghỉ trong database)",
+    "en": "Export all data of days off in database"
+  },
+  {
+    "id": 19,
+    "vi": "(Khai báo biến flag để lưu chỉ số của vị trí mà xảy ra sự thay đổi của \"year\" )",
+    "en": "Declare \"FLAG\" variables to save the index of location which occurs the change of year"
+  },
+  {
+    "id": 20,
+    "vi": "(Check nếu các object có cùng năm thì export ra cùng 1 sheet, ngược lại nếu khác năm thì export ra các sheet các nhau)",
+    "en": "Check if objects have same year, then export into the same sheet, else, export into different sheet"
+  },
+  {
+    "id": 21,
+    "vi": "Ham kiem tra du lieu co ton tai trong database hay khong",
+    "en": "check existion of data from database"
+  },
+  {
+    "id": 22,
+    "vi": "Kiem tra yeu cau update va delete tu client, neu co loi thi khong thuc hien",
+    "en": "Check requirements of updating and deleting from client, if errors appear, do not execute"
+  },
+  {
+    "id": 23,
+    "vi": "Kiem tra update chuyen trang, neu update bang click button next thi chuyen sang trang tiep theo",
+    "en": "Check update of swifting pages, if update by clicking button NEXT, forward to next page"
+  },
+  {
+    "id": 24,
+    "vi": "Ham lay danh sach tu table ABC theo cac dieu kien nhap vao",
+    "en": "Get list from table ABC by inputted conditions"
+  },
+  {
+    "id": 25,
+    "vi": "Ham update va delete record trong database, tra ve vi tri loi neu co",
+    "en": "Function of updating and deleting record in database"
+  },
+  {
+    "id": 26,
+    "vi": "Bạn không nhập space đâu chuổi vì nó không có ý nghĩa",
+    "en": "Do not input space at the beginning of string"
+  },
+  {
+    "id": 27,
+    "vi": "Tháng 2 không phải năm nhuận không có ngày 29, 30, 31",
+    "en": "If the current year is non-leap year, February does not contain the day 29, 30, 31"
+  },
+  {
+    "id": 28,
+    "vi": "Bạn vui lòng nhập định dạng giờ không lớn hơn 24",
+    "en": "Please input hour format without greater than 24"
+  },
+  {
+    "id": 29,
+    "vi": "Nếu trường thành phố và trường tên không rỗng thì tìm kiếm theo 2 điều kiện trên",
+    "en": "If fields of city and name are not null, search by 2 above conditions"
+  },
+  {
+    "id": 30,
+    "vi": "Nếu trường thành phố, năm và tên  rỗng thì hiện tất cả các danh sách từ bảng Trainer.",
+    "en": "If fields of city, year and name are null, show all lists from Trainer table"
+  },
+  {
+    "id": 31,
+    "vi": "Kiễm tra khi click nút xóa thì sẽ hiện lên bảng thông báo",
+    "en": "Check if clicking button DELETE, show on NOTICE"
+  },
+  {
+    "id": 32,
+    "vi": "Set giá trị cho biến bị lỗi ở class không tìm thấy",
+    "en": "Set values for undefined variables at invisible CLASS"
+  },
+  {
+    "id": 33,
+    "vi": "Định nghĩa form từ action",
+    "en": "Define Form from ACTION"
+  },
+  {
+    "id": 34,
+    "vi": "Đặt giá trị cho biến",
+    "en": "Assign values to variables"
+  },
+  {
+    "id": 35,
+    "vi": "Khởi tạo đối tượng connection",
+    "en": "Initialize connection object"
+  },
+  {
+    "id": 36,
+    "vi": "Câu truy vấn sql không thực hiện được",
+    "en": "SQL  statement can not be executed"
+  },
+  {
+    "id": 37,
+    "vi": "Lấy danh sách theo điều kiện gán",
+    "en": "Get list by assigning condition"
+  },
+  {
+    "id": 38,
+    "vi": "Set giá trị cho biến từ danh sách được lấy từ db",
+    "en": "Assign values to variabes from list in database"
+  },
+  {
+    "id": 39,
+    "vi": "Kiểm tra nêu dữ liệu lấy là là rỗng thì sẽ export hết tất cả danh sách, ngược lại thì sẽ export theo dữ liệu được lấy về",
+    "en": "Check if taken data is null, export all list, else, export by data"
+  },
+  {
+    "id": 40,
+    "vi": "Lấy dữ liệu về và kiểm tra nếu loại là C thì sẽ vào cập nhật và nếu là D thì sẽ là xóa, còn lại sẽ báo lỗi",
+    "en": "if value of ... is D, delete, else C, update"
+  },
+  {
+    "id": 41,
+    "vi": "Lấy dữ liệu của mảng đối tượng khi submit từ jsp lên form",
+    "en": "Get data of object classes when submitting from jsp into form"
+  },
+  {
+    "id": 42,
+    "vi": "Thực hiện lấy dữ liệu combobox theo các giá trị được lấy phía trước",
+    "en": "Get data of combobox by values taken before"
+  },
+  {
+    "id": 43,
+    "vi": "- Hàm kiểm tra 1 đối tượng có tồn tại ít nhát 1 thuộc tính rỗng",
+    "en": "Function of checking 1 object which exists at least 1 property"
+  },
+  {
+    "id": 44,
+    "vi": "Xử lý sự kiện khi người dùng click vào button XXX",
+    "en": "Process event when user clicks button XXX"
+  },
+  {
+    "id": 45,
+    "vi": "- Chuyển đổi biến A có kiểu dữ liệu  BBB  sang biến C có kiểu dữ liệu DDD",
+    "en": "Convert variable A with BBB data type to variable C with DDD data type"
+  },
+  {
+    "id": 46,
+    "vi": "Lấy ra đối tượng với tham số truyền vào",
+    "en": "Get objects with inputted parameter"
+  },
+  {
+    "id": 47,
+    "vi": "Tạo mới 1 mảng bằng cách cắt chuỗi với tham số truyền vào (split())",
+    "en": "Create 1 class by cutting string with inputted parameter"
+  },
+  {
+    "id": 48,
+    "vi": "-Export danh sách student theo kết quả search được khi người dùng button xxx",
+    "en": "Export student list by result of searching when user clicks button xxx"
+  },
+  {
+    "id": 49,
+    "vi": "-Hàm delete 1 đối tượng đang hiển thị trên màn hình  khi người dùng button xxx",
+    "en": "Function of deleting1 object which show on screen when  user click button xxx"
+  },
+  {
+    "id": 50,
+    "vi": "-Hàm thực hiện lọc theo yes/no khi người dùng checke/uncheck vào checkbox",
+    "en": "Function of filtering by yes/no when user chooses check/uncheck into checkbox"
+  },
+  {
+    "id": 51,
+    "vi": "Chuyển đến trang ABC khi người dùng click button xxx",
+    "en": "forward to ABC page when user clicks button xxx"
+  },
+  {
+    "id": 52,
+    "vi": "kiểm tra 1 dòng dữ liệu tồn tại trong cơ sở dữ liệu  thỏa mãn điều kiện trận đấu đó là trận đấu  gần nhất của 1 cặp thi đấu",
+    "en": "Check 1 data row which exists in database, satisfying match conditions"
+  },
+  {
+    "id": 53,
+    "vi": "Tìm những cặp đấu đã từng thi đấu  với nhau ít nhất 2 lần",
+    "en": "Search matches which have at least 2 times of competitions"
+  },
+  {
+    "id": 54,
+    "vi": "So sánh ngày thi đấu gần nhất với ngày  chuẩn bị chèn vào cơ sở dữ liệu",
+    "en": "Compare the nearest match date with the inserted date in database"
+  },
+  {
+    "id": 55,
+    "vi": "mã trận đấu nên theo định dạng sau  ( không bắt buộc)",
+    "en": "Match code should be in following format (un-required)"
+  },
+  {
+    "id": 56,
+    "vi": "Nếu A lớn hơn hoặc bằng B thì thực hiện update ngược lại  thì thông báo lỗi",
+    "en": "If A is greater than B,  update, else, report errors"
+  },
+  {
+    "id": 57,
+    "vi": "Nếu A thõa mãn các điều kiện validate thì sẽ xử lý add vào object ngược lại thì thông báo lỗi",
+    "en": "If A satisfies conditions of validation, add into object, else, report errors"
+  },
+  {
+    "id": 58,
+    "vi": "láy danh sách bảng theo Id abc",
+    "en": "get table list by id abc"
+  },
+  {
+    "id": 59,
+    "vi": "xóa bảng với điều kiện id= abc",
+    "en": "Delete table if id=abc"
+  },
+  {
+    "id": 60,
+    "vi": "commnet cho hàm override ở actionclass",
+    "en": "comment for override function at actionclass"
+  },
+  {
+    "id": 61,
+    "vi": "comment cho các hàm getter setter ở bean",
+    "en": "comment for getter setter function at bean"
+  },
+  {
+    "id": 62,
+    "vi": "đếm số record ở database",
+    "en": "Count number of record in database"
+  },
+  {
+    "id": 63,
+    "vi": "Tạo list A lấy từ database lên",
+    "en": "Create list A from database"
+  },
+  {
+    "id": 64,
+    "vi": "Lấy danh sách từ DB và đẩy vào danh sách",
+    "en": "Get data from database and show on list"
+  },
+  {
+    "id": 65,
+    "vi": "Kiểm tra dữ liệu đã tồn tại hay chưa ? Nếu có cho ra thông báo lỗi.",
+    "en": "Check if [var] exists or not? If existed, show error notice"
+  },
+  {
+    "id": 66,
+    "vi": "Tạo biến A lấy dữ liệu từ B",
+    "en": "Create variable with data from B"
+  },
+  {
+    "id": 67,
+    "vi": "Xử lý điều hướng cho action A",
+    "en": "Process navigation for action A"
+  },
+  {
+    "id": 68,
+    "vi": "Kiểm tra kết nối dữ liệu",
+    "en": "Function of checking data connection"
+  },
+  {
+    "id": 69,
+    "vi": "Hiển thị lớp theo mã trường",
+    "en": "Function of showing classes by school code"
+  },
+  {
+    "id": 70,
+    "vi": "Hàm kiểm tra tồn tại của trường bắt buộc nhập",
+    "en": "Function of checking existion of required inputting field"
+  },
+  {
+    "id": 71,
+    "vi": "Hàm kiểm tra tồn tại của trường bắt buộc nhập",
+    "en": "Check data by row on form"
+  },
+  {
+    "id": 72,
+    "vi": "Hiển thị lỗi nếu ngày bắt đầu lớn hơn ngày kết thúc",
+    "en": "Show error message if Start date is greater than End date"
+  },
+  {
+    "id": 73,
+    "vi": "Lấy dữ liệu trường id từ form",
+    "en": "Get data of ID field from form"
+  },
+  {
+    "id": 74,
+    "vi": "Lấy tất cả danh sách dữ liệu có trong cơ sở dữ liệu",
+    "en": "Get all data list from database"
+  },
+  {
+    "id": 75,
+    "vi": "lấy giá trị của phương thức X gán vào biến Y",
+    "en": "Set value of method X for variable Y"
+  },
+  {
+    "id": 76,
+    "vi": "Hiển thị message lỗi trên khu vực thông báo lỗi với nội dung:  Ngày sinh không hợp lệ. Vui lòng nhập ngày có format XYZ.",
+    "en": "Show error message on error message area with content: Invalid birthday, please input the date with XYZ format ."
+  },
+  {
+    "id": 77,
+    "vi": "Nếu A>B thì tiến hành update thông tin học sinh. Ngược lại hãy xử lí thêm mới thông tin học sinh.",
+    "en": "If A>B, update student information, else, add student information."
+  },
+  {
+    "id": 78,
+    "vi": "Đếm số record thõa mãn điều kiện abc. Nếu số record trả về lớn hơn Y thì hãy hiển thị thông tin xyz lên màn hình.",
+    "en": "Count records which satisfy abc condition. If number of returned records is greater than Y, show information xyz on screen."
+  },
+  {
+    "id": 79,
+    "vi": "Nếu giá trị nhập vào của item A là xxx thì hãy chuyển đổi thành yyy, sau đó đăng kí vào database với định dạng zzz.",
+    "en": "If inputted value of item A is xxx, convert to yyy, then register into database with zzz format."
+  }
+]

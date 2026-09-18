@@ -1,0 +1,17 @@
+# Large raw study materials (PDFs & Excel files not needed at web runtime)
+source/
+
+# Offline Python data-generation scripts
+*.py
+__pycache__/
+*.pyc
+
+# Local runners and scripts
+start_app.bat
+.pe_runner/
+.ai_token_usage.json
+
+# Environment and Git
+.git
+.gitignore
+.env*

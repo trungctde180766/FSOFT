@@ -1,0 +1,290 @@
+[
+  {
+    "id": "fc_j1_1",
+    "category": "Java Core: Ch1 Fundamentals",
+    "tag": "Primitives",
+    "question": "Trong Java, giá trị mặc định (default value) của biến cục bộ (local variable) là gì?",
+    "answer": "KHÔNG CÓ giá trị mặc định! Biến cục bộ trong phương thức BẮT BUỘC phải được khởi tạo (initialize) trước khi sử dụng, nếu không trình biên dịch sẽ báo lỗi: `variable x might not have been initialized`.",
+    "code": "public void test() {\n    int x;\n    // System.out.println(x); // COMPILE ERROR!\n    x = 10;\n    System.out.println(x); // OK: in ra 10\n}",
+    "trap": "Chỉ có instance variable (thuộc tính của object) và static variable mới có giá trị mặc định (0, 0.0, false, null)."
+  },
+  {
+    "id": "fc_j1_2",
+    "category": "Java Core: Ch1 Fundamentals",
+    "tag": "Primitives",
+    "question": "Kiểu `byte` trong Java có kích thước bao nhiêu bit và khoảng giá trị (range) là bao nhiêu?",
+    "answer": "Kích thước: 8-bit (1 byte), có dấu (signed 2's complement).\nKhoảng giá trị: từ -128 đến +127 (`-2^7` đến `2^7 - 1`).",
+    "code": "byte b1 = 127; // OK\n// byte b2 = 128; // COMPILE ERROR: possible loss of precision\nbyte b3 = (byte) 128; // OK: ép kiểu -> b3 = -128 (tràn số)",
+    "trap": "Giá trị 128 vượt quá giới hạn byte, nếu không ép kiểu tường minh sẽ bị Compile Error."
+  },
+  {
+    "id": "fc_j1_3",
+    "category": "Java Core: Ch1 Fundamentals",
+    "tag": "Arrays",
+    "question": "Khai báo mảng `int[] arr = new int[5];` thì các phần tử bên trong có giá trị mặc định là gì?",
+    "answer": "Dù mảng được tạo bên trong phương thức (local), các phần tử của mảng luôn được cấp phát trên Heap và tự động nhận giá trị mặc định của kiểu dữ liệu phần tử đó (đối với `int` là `0`, đối với boolean là `false`, đối với Object là `null`).",
+    "code": "int[] arr = new int[3];\nSystem.out.println(arr[0]); // In ra 0 (Hợp lệ, không lỗi compile)",
+    "trap": "Bản thân biến tham chiếu `arr` nếu là local thì phải gán mới dùng được, nhưng các phần tử `arr[i]` bên trong mảng luôn có default value."
+  },
+  {
+    "id": "fc_j1_4",
+    "category": "Java Core: Ch1 Fundamentals",
+    "tag": "Main Method",
+    "question": "Chữ ký hợp lệ của phương thức `main` để JVM có thể khởi chạy chương trình là gì?",
+    "answer": "Bắt buộc: `public static void main(String[] args)` (hoặc `String... args` từ Java 5).\nThứ tự `public static` hoặc `static public` đều hợp lệ. Tên mảng tham số có thể đặt tùy ý.",
+    "code": "static public void main(String... arguments) { // Hoàn toàn hợp lệ! }\n// private static void main(...) // Biên dịch được nhưng JVM không chạy được",
+    "trap": "Nếu thiếu `public` hoặc `static` hoặc kiểu trả về khác `void`, mã vẫn biên dịch bình thường nhưng khi chạy bằng lệnh `java` sẽ báo lỗi `Main method not found`."
+  },
+  {
+    "id": "fc_j2_1",
+    "category": "Java Core: Ch2 Declarations",
+    "tag": "Access Modifiers",
+    "question": "Modifier `protected` cho phép truy cập từ những phạm vi nào?",
+    "answer": "1. Trong cùng class.\n2. Bất kỳ class nào trong CÙNG PACKAGE (giống default).\n3. Các SUBCLASS (class con) ở KHÁC PACKAGE, NHƯNG chỉ truy cập được thông qua tính kế thừa (inheritance - qua tham chiếu của chính class con đó hoặc `super`), KHÔNG thể truy cập qua tham chiếu của class cha.",
+    "code": "// Package p1\npublic class Parent { protected int x = 10; }\n// Package p2\npublic class Child extends Parent {\n    void test() {\n        System.out.println(this.x); // OK via inheritance\n        Parent p = new Parent();\n        // System.out.println(p.x); // COMPILE ERROR!\n    }\n}",
+    "trap": "Bẫy kinh điển: Class con ở khác package truy cập `protected` thông qua `parentRef.x` sẽ bị lỗi biên dịch!"
+  },
+  {
+    "id": "fc_j2_2",
+    "category": "Java Core: Ch2 Declarations",
+    "tag": "Interface",
+    "question": "Các biến (variables) và phương thức (methods) khai báo trong Interface có modifier ngầm định là gì?",
+    "answer": "- Biến: LUÔN LUÔN ngầm định là `public static final` (hằng số). Không thể khai báo `private`, `protected`, hay thay đổi giá trị.\n- Phương thức (trước Java 8): LUÔN LUÔN ngầm định là `public abstract`.",
+    "code": "interface Printable {\n    int MAX = 100; // Ngầm định là: public static final int MAX = 100;\n    void print();  // Ngầm định là: public abstract void print();\n}",
+    "trap": "Class implement interface khi override phương thức BẮT BUỘC phải ghi rõ modifier `public`. Nếu quên `public` (để default), compiler sẽ báo lỗi: `attempting to assign weaker access privileges; was public`."
+  },
+  {
+    "id": "fc_j2_3",
+    "category": "Java Core: Ch2 Declarations",
+    "tag": "Class Rules",
+    "question": "Trong một file mã nguồn Java (.java), có thể có bao nhiêu `public class`?",
+    "answer": "Chỉ được phép có TỐI ĐA 1 `public class`, và tên file bắt buộc phải trùng khớp chính xác với tên của `public class` đó. Tuy nhiên, có thể có vô số các non-public (default) class trong cùng file.",
+    "code": "// File: Test.java\npublic class Test {} // Bắt buộc trùng tên file\nclass Helper1 {}     // Hợp lệ\nclass Helper2 {}     // Hợp lệ\n// public class Extra {} // COMPILE ERROR: class Extra is public, should be declared in Extra.java",
+    "trap": "Nếu file không có public class nào thì tên file có thể đặt tùy ý."
+  },
+  {
+    "id": "fc_j3_1",
+    "category": "Java Core: Ch3 Operators",
+    "tag": "Short-Circuit",
+    "question": "Toán tử short-circuit `&&` khác gì toán tử bitwise/logical `&`?",
+    "answer": "- `&&` (Short-circuit): Nếu vế trái đánh giá ra `false`, JVM sẽ BỎ QUA không thực thi vế phải (vì kết quả chắc chắn là `false`).\n- `&` (Non-short-circuit): BẮT BUỘC tính toán cả hai vế bất kể vế trái là gì.",
+    "code": "int x = 5;\nif (false && ++x > 5) {} \nSystem.out.println(x); // In ra 5 (vế phải không chạy)\n\nif (false & ++x > 5) {}\nSystem.out.println(x); // In ra 6 (vế phải VẪN CHẠY!)",
+    "trap": "Rất hay bị TestKing gài biểu thức tăng giảm (`++x`, `x--`) nằm ở vế phải của toán tử `&&` hoặc `||`."
+  },
+  {
+    "id": "fc_j3_2",
+    "category": "Java Core: Ch3 Operators",
+    "tag": "Increment",
+    "question": "Kết quả in ra của đoạn mã sau là gì?\n`int x = 1; x = x++; System.out.println(x);`",
+    "answer": "Kết quả in ra là `1`!\nGiải thích: Postfix `x++` lưu giá trị cũ của `x` (là 1) vào bộ đệm tạm thời, sau đó tăng `x` lên 2, nhưng cuối cùng phép gán `=` lại gán giá trị từ bộ đệm (1) đè lại vào `x`.",
+    "code": "int x = 1;\nx = x++;\nSystem.out.println(x); // In ra 1!",
+    "trap": "Đừng nhầm tưởng x sẽ bằng 2. Phép gán `=` sẽ ghi đè kết quả của phép tăng postfix."
+  },
+  {
+    "id": "fc_j3_3",
+    "category": "Java Core: Ch3 Operators",
+    "tag": "Casting & Promotion",
+    "question": "Biểu thức sau có biên dịch được không?\n`byte b1 = 10; byte b2 = 20; byte b3 = b1 + b2;`",
+    "answer": "COMPILE ERROR!\nGiải thích: Trong Java, mọi phép toán số học (+, -, *, /) với kiểu nhỏ hơn `int` (như byte, short, char) đều tự động được nâng kiểu (numeric promotion) lên kiểu `int`. Kết quả của `b1 + b2` là kiểu `int`, gán lại cho `byte` sẽ gây lỗi mất mát độ chính xác.",
+    "code": "byte b1 = 10, b2 = 20;\n// byte b3 = b1 + b2; // COMPILE ERROR: Type mismatch: cannot convert from int to byte\nbyte b3 = (byte)(b1 + b2); // OK: phải ép kiểu tường minh",
+    "trap": "Toán tử gán kết hợp (`b1 += b2`) lại tự động ép kiểu ngầm định `b1 = (byte)(b1 + b2)` nên biên dịch được!"
+  },
+  {
+    "id": "fc_j4_1",
+    "category": "Java Core: Ch4 Flow & Exceptions",
+    "tag": "Exceptions",
+    "question": "Khối `finally` có LUÔN LUÔN được thực thi không? Khi nào `finally` KHÔNG chạy?",
+    "answer": "Khối `finally` hầu như luôn luôn chạy (kể cả khi trong `try` hoặc `catch` có lệnh `return`).\n`finally` CHỈ KHÔNG chạy khi:\n1. Gọi `System.exit(0);` để tắt JVM.\n2. JVM bị crash (Fatal Error, OutOfMemoryError không thể phục hồi, mất điện phần cứng).",
+    "code": "public static int test() {\n    try {\n        return 1;\n    } finally {\n        return 2;\n    }\n}\n// test() sẽ trả về 2! Return trong finally ghi đè return trong try!",
+    "trap": "Bẫy return trong finally: nếu finally có return, nó sẽ nuốt luôn exception hoặc giá trị return ở try!"
+  },
+  {
+    "id": "fc_j4_2",
+    "category": "Java Core: Ch4 Flow & Exceptions",
+    "tag": "Switch",
+    "question": "Trong Java trước Java 7, câu lệnh `switch` hỗ trợ những kiểu dữ liệu nào?",
+    "answer": "Chỉ hỗ trợ kiểu nguyên tương thích với `int`:\n1. `byte` (và Byte wrapper)\n2. `short` (và Short wrapper)\n3. `char` (và Character wrapper)\n4. `int` (và Integer wrapper)\n5. `enum` (từ Java 5)\n*Từ Java 7 bổ sung `String`. Tuyệt đối KHÔNG hỗ trợ: `long`, `float`, `double`, `boolean`.",
+    "code": "long num = 10L;\n// switch (num) {} // COMPILE ERROR: Cannot switch on a value of type long.",
+    "trap": "TestKing rất hay cho biến kiểu `long`, `float` hoặc `boolean` vào biểu thức `switch` để gài thí sinh."
+  },
+  {
+    "id": "fc_j5_1",
+    "category": "Java Core: Ch5 OOP",
+    "tag": "Overriding vs Overloading",
+    "question": "Nêu 4 quy tắc bắt buộc khi Override một phương thức trong Java?",
+    "answer": "1. Tên phương thức và danh sách tham số (Method Signature) phải GIỐNG HỆT.\n2. Kiểu trả về phải GIỐNG HỆT hoặc là kiểu con (Covariant Return Type từ Java 5).\n3. Access modifier KHÔNG ĐƯỢC HẸP HƠN phương thức ở class cha (ví dụ cha là `protected` thì con chỉ có thể là `protected` hoặc `public`).\n4. KHÔNG ĐƯỢC ném (throw) Checked Exception mới hoặc rộng hơn so với phương thức cha.",
+    "code": "class Parent {\n    protected Number getVal() throws IOException { return 1; }\n}\nclass Child extends Parent {\n    public Integer getVal() { return 2; } // Hoàn toàn hợp lệ! (public rộng hơn, Integer là con Number, không ném exception)\n}",
+    "trap": "Nếu phương thức con ném thêm `Exception` (rộng hơn `IOException`), compiler sẽ báo lỗi ngay lập tức."
+  },
+  {
+    "id": "fc_j5_2",
+    "category": "Java Core: Ch5 OOP",
+    "tag": "Polymorphism",
+    "question": "Tính đa hình (Polymorphism) áp dụng cho biến thuộc tính (fields) hay phương thức (methods)?",
+    "answer": "CHỈ ÁP DỤNG CHO INSTANCE METHODS!\nThuộc tính (fields/variables) và static methods KHÔNG CÓ tính đa hình (bị ẩn - hidden, chứ không override). Biến nào được truy cập sẽ phụ thuộc hoàn toàn vào KIỂU CỦA THAM CHIẾU lúc biên dịch (Reference Type), chứ không phụ thuộc vào đối tượng thực tế lúc chạy.",
+    "code": "class Parent { int x = 10; }\nclass Child extends Parent { int x = 20; }\n\nParent p = new Child();\nSystem.out.println(p.x); // In ra 10! (Theo kiểu tham chiếu Parent, KHÔNG đa hình)",
+    "trap": "Bẫy cực kỳ phổ biến trong TestKing: `Parent p = new Child(); System.out.println(p.x);` luôn lấy biến của Parent."
+  },
+  {
+    "id": "fc_j5_3",
+    "category": "Java Core: Ch5 OOP",
+    "tag": "Constructors",
+    "question": "Khi nào trình biên dịch (Compiler) tự động tạo Default Constructor (constructor không tham số) cho một class?",
+    "answer": "CHỈ KHI lập trình viên KHÔNG TỰ VIẾT BẤT KỲ CONSTRUCTOR NÀO trong class!\nNếu đã viết bất kỳ constructor nào (kể cả có tham số), compiler sẽ KHÔNG tự tạo constructor rỗng nữa.",
+    "code": "class Parent {\n    Parent(int x) {} // Có constructor có tham số\n}\n// class Child extends Parent {} // COMPILE ERROR!\n// Lỗi: Implicit super constructor Parent() is undefined for default constructor.",
+    "trap": "Class con nếu không viết constructor thì constructor ngầm định của nó sẽ tự gọi `super()`. Nếu class cha không có constructor không tham số thì sẽ lỗi biên dịch."
+  },
+  {
+    "id": "fc_j6_1",
+    "category": "Java Core: Ch6 String & Wrapper",
+    "tag": "String Pool",
+    "question": "Đoạn mã sau tạo ra bao nhiêu đối tượng trên bộ nhớ?\n`String s = new String(\"Hello\");`",
+    "answer": "Tạo ra 1 hoặc 2 đối tượng:\n1. Literal `\"Hello\"` được tạo và lưu trong String Constant Pool (nếu trước đó pool chưa có chuỗi này).\n2. Từ khóa `new` luôn luôn tạo ra một đối tượng String mới tinh nằm trên Heap độc lập.\n(Nếu chuỗi \"Hello\" đã có sẵn trong String Pool thì chỉ tạo 1 object mới trên Heap).",
+    "code": "String s1 = \"Hello\"; // Tạo 1 object trong Pool\nString s2 = new String(\"Hello\"); // Tạo 1 object mới trên Heap\nSystem.out.println(s1 == s2);      // false (khác địa chỉ)\nSystem.out.println(s1.equals(s2)); // true (cùng nội dung)",
+    "trap": "Toán tử `==` so sánh địa chỉ tham chiếu bộ nhớ. Phương thức `equals()` của String so sánh nội dung các ký tự."
+  },
+  {
+    "id": "fc_j6_2",
+    "category": "Java Core: Ch6 String & Wrapper",
+    "tag": "Integer Cache",
+    "question": "Kết quả của đoạn code sau là gì?\n`Integer a = 100, b = 100; System.out.println(a == b);`\n`Integer c = 200, d = 200; System.out.println(c == d);`",
+    "answer": "In ra: `true` sau đó `false`!\nGiải thích: Java có cơ chế **Integer Cache** tự động lưu sẵn các đối tượng Integer có giá trị từ **-128 đến 127** khi autoboxing. Với 100, cả `a` và `b` đều trỏ vào cùng 1 object trong cache -> `a == b` là `true`. Với 200 (vượt quá 127), Java tạo 2 object mới riêng biệt trên Heap -> `c == d` là `false`.",
+    "code": "Integer a = 127, b = 127;\nSystem.out.println(a == b); // true\nInteger c = 128, d = 128;\nSystem.out.println(c == d); // false\nSystem.out.println(c.equals(d)); // true (luôn so sánh bằng equals)",
+    "trap": "Bẫy autoboxing so sánh `==` giữa các Wrapper object. Luôn dùng `.equals()` khi so sánh đối tượng."
+  },
+  {
+    "id": "fc_j7_1",
+    "category": "Java Core: Ch7 Collections",
+    "tag": "List vs Set vs Map",
+    "question": "Phân biệt List, Set, Map về: Cho phép trùng lặp (Duplicate) và Thứ tự (Ordering)?",
+    "answer": "- **List**: Cho phép trùng lặp (Duplicate: YES). Có thứ tự theo chỉ số chèn (Ordered by index: YES).\n- **Set**: KHÔNG cho phép trùng lặp (Duplicate: NO). HashSet không bảo toàn thứ tự, TreeSet sắp xếp theo giá trị, LinkedHashSet theo thứ tự chèn.\n- **Map**: Lưu theo Key-Value. Key KHÔNG được trùng lặp, Value được trùng lặp. Map KHÔNG kế thừa từ `Collection` interface.",
+    "code": "List<String> list = new ArrayList<>(); // Cho phép lặp\nSet<String> set = new HashSet<>();     // Loại bỏ phần tử trùng lặp\nMap<String, Integer> map = new HashMap<>(); // Key duy nhất",
+    "trap": "Map KHÔNG nằm trong Collection hierarchy (Map không implement Collection, không có phương thức add/iterator trực tiếp)."
+  },
+  {
+    "id": "fc_j7_2",
+    "category": "Java Core: Ch7 Collections",
+    "tag": "equals & hashCode",
+    "question": "Hợp đồng (Contract) giữa phương thức `equals()` và `hashCode()` quy định điều gì?",
+    "answer": "1. Nếu hai object `o1.equals(o2) == true` thì BẮT BUỘC `o1.hashCode() == o2.hashCode()`.\n2. Nếu hai object có `hashCode()` bằng nhau thì CHƯA CHẮC `equals()` đã bằng nhau (đây gọi là Hash Collision / Đụng độ hash).\n3. Nếu bạn override `equals()`, bạn BẮT BUỘC phải override `hashCode()`. Nếu không, HashMap/HashSet sẽ không tìm thấy object dù chúng bằng nhau theo equals.",
+    "code": "// Nếu quên override hashCode():\nPerson p1 = new Person(\"Nam\", 20);\nmap.put(p1, \"Developer\");\nPerson p2 = new Person(\"Nam\", 20); // equals == true nhưng hashCode khác nhau\nmap.get(p2); // Sẽ trả về null!",
+    "trap": "Rất nhiều câu hỏi phỏng vấn Audit và TestKing hỏi: Quên override hashCode() khi dùng HashMap làm Key thì hậu quả là gì?"
+  },
+  {
+    "id": "fc_j8_1",
+    "category": "Java Core: Ch8 Inner Classes",
+    "tag": "Method-Local Inner Class",
+    "question": "Một Method-Local Inner Class có thể truy cập những biến nào của phương thức chứa nó?",
+    "answer": "Chỉ có thể truy cập các biến cục bộ (local variables) được khai báo là `final` (hoặc effectively final từ Java 8 - biến không bị gán lại giá trị sau khi khởi tạo).\nLý do: Vòng đời của object Inner Class trên Heap có thể sống lâu hơn thời gian thực thi của phương thức trên Stack.",
+    "code": "void doSomething() {\n    int count = 10; // effectively final\n    class Inner {\n        void show() { System.out.println(count); }\n    }\n    // count = 20; // Nếu bỏ comment dòng này -> Inner class báo COMPILE ERROR ngay!\n}",
+    "trap": "Nếu biến bị thay đổi giá trị ở bất kỳ đâu trong method, nó mất tính effectively final và inner class không thể truy cập được nữa."
+  },
+  {
+    "id": "fc_j9_1",
+    "category": "Java Core: Ch9 Threads",
+    "tag": "Thread Execution",
+    "question": "Sự khác biệt giữa việc gọi `t.start()` và `t.run()` trên một Thread object là gì?",
+    "answer": "- `t.start()`: Khởi tạo một luồng thực thi (thread of execution) MỚI từ hệ điều hành, cấp phát Stack riêng, và sau đó JVM sẽ gọi phương thức `run()` trên luồng mới đó bất đồng bộ.\n- `t.run()`: Chỉ là một lời gọi phương thức thông thường, chạy đồng bộ tuần tự trên CHÍNH LUỒNG HIỆN TẠI (thường là main thread), hoàn toàn KHÔNG tạo luồng mới!",
+    "code": "Thread t = new Thread(() -> System.out.println(Thread.currentThread().getName()));\nt.run();   // In ra: main\nt.start(); // In ra: Thread-0 (luồng mới)",
+    "trap": "Nếu gọi `run()` trực tiếp thì chương trình vẫn chạy nhưng không hề có tính đa luồng (multithreading)."
+  },
+  {
+    "id": "fc_j9_2",
+    "category": "Java Core: Ch9 Threads",
+    "tag": "Synchronization",
+    "question": "Các phương thức `wait()`, `notify()`, `notifyAll()` thuộc class nào và phải được gọi ở đâu?",
+    "answer": "Các phương thức này thuộc class `Object` (chứ không phải `Thread`), vì chúng thao tác trên Lock/Monitor của từng đối tượng.\nBẮT BUỘC: Phải được gọi bên trong một khối đồng bộ `synchronized` đang giữ khóa của chính object đó. Nếu gọi bên ngoài khối synchronized, chương trình sẽ ném ngoại lệ `IllegalMonitorStateException` lúc runtime.",
+    "code": "Object lock = new Object();\nsynchronized(lock) {\n    lock.wait(); // Hợp lệ\n    lock.notify(); // Hợp lệ\n}\n// lock.wait(); // RUNTIME ERROR: IllegalMonitorStateException",
+    "trap": "Bẫy runtime exception kinh điển: Gọi wait() mà không có synchronized block."
+  },
+  {
+    "id": "fc_sql_1",
+    "category": "Database & SQL",
+    "tag": "JOINs",
+    "question": "Phân biệt INNER JOIN và LEFT JOIN trong SQL?",
+    "answer": "- **INNER JOIN**: Chỉ trả về các bản ghi có sự khớp nối (match) điều kiện ở CẢ HAI BẢNG. Các bản ghi không khớp ở một trong hai bảng sẽ bị loại bỏ hoàn toàn.\n- **LEFT JOIN (LEFT OUTER JOIN)**: Trả về TOÀN BỘ các bản ghi của bảng bên TRÁI, cộng với các bản ghi khớp từ bảng bên phải. Nếu bảng bên phải không có dữ liệu khớp, các cột của bảng phải sẽ được điền giá trị `NULL`.",
+    "code": "SELECT u.name, o.order_id\nFROM Users u\nLEFT JOIN Orders o ON u.id = o.user_id;\n-- Người dùng nào chưa mua hàng vẫn hiện tên, order_id là NULL",
+    "trap": "Câu hỏi Audit 1-1 số 1 về SQL. Cần nêu rõ trường hợp bản ghi bên phải trả về NULL."
+  },
+  {
+    "id": "fc_sql_2",
+    "category": "Database & SQL",
+    "tag": "GROUP BY & HAVING",
+    "question": "Mệnh đề `WHERE` khác mệnh đề `HAVING` ở điểm cốt lõi nào?",
+    "answer": "- `WHERE`: Lọc các dòng dữ liệu đơn lẻ TRƯỚC KHI gom nhóm (Grouping). `WHERE` KHÔNG ĐƯỢC chứa các hàm tổng hợp (Aggregate Functions như COUNT, SUM, AVG).\n- `HAVING`: Lọc các nhóm dữ liệu SAU KHI gom nhóm bởi `GROUP BY`. `HAVING` chuyên dùng với các hàm tổng hợp.",
+    "code": "SELECT department_id, COUNT(*)\nFROM Employees\nWHERE salary > 1000       -- Lọc lương trước khi gom nhóm\nGROUP BY department_id\nHAVING COUNT(*) > 5;     -- Lọc nhóm có trên 5 người",
+    "trap": "Viết `WHERE COUNT(*) > 5` sẽ bị lỗi cú pháp SQL ngay lập tức."
+  },
+  {
+    "id": "fc_sql_3",
+    "category": "Database & SQL",
+    "tag": "DML",
+    "question": "Phân biệt lệnh `DELETE` và `TRUNCATE` trong cơ sở dữ liệu?",
+    "answer": "- **DELETE**: Lệnh DML (Data Manipulation Language). Xóa từng dòng một, có thể dùng mệnh đề `WHERE`. Ghi nhật ký (Transaction Log) chi tiết cho từng dòng -> Chậm hơn. CÓ THỂ ROLLBACK được.\n- **TRUNCATE**: Lệnh DDL (Data Definition Language). Xóa toàn bộ dữ liệu bằng cách giải phóng data pages, reset lại Auto-increment identity về 1. Không dùng được `WHERE`. Cực nhanh, thường không thể rollback (hoặc hạn chế).",
+    "code": "DELETE FROM Employees WHERE dept_id = 1; -- Xóa có điều kiện\nTRUNCATE TABLE Logs; -- Xóa sạch bảng, reset id",
+    "trap": "TRUNCATE không thể thực thi nếu bảng đang bị khóa ngoại (Foreign Key) tham chiếu tới."
+  },
+  {
+    "id": "fc_web_1",
+    "category": "JavaWeb: JSP & Servlet",
+    "tag": "Servlet Lifecycle",
+    "question": "Trình bày 3 giai đoạn trong vòng đời (Lifecycle) của một Servlet?",
+    "answer": "1. **Khởi tạo (`init`)**: Được gọi DUY NHẤT 1 LẦN khi container nạp Servlet vào bộ nhớ (lần đầu có request hoặc khi server start nếu đặt `load-on-startup`).\n2. **Xử lý dịch vụ (`service`)**: Được gọi MỖI KHI có request đến. Servlet container tạo một thread mới và gọi `service(req, resp)`, sau đó điều phối sang `doGet()`, `doPost()`...\n3. **Hủy bỏ (`destroy`)**: Được gọi DUY NHẤT 1 LẦN khi container gỡ Servlet hoặc shutdown server để giải phóng tài nguyên.",
+    "code": "public class MyServlet extends HttpServlet {\n    public void init() { /* Chạy 1 lần */ }\n    protected void doGet(HttpServletRequest req, HttpServletResponse resp) { /* Chạy mỗi request */ }\n    public void destroy() { /* Chạy 1 lần */ }\n}",
+    "trap": "Servlet container chỉ tạo DUY NHẤT 1 instance (Singleton-like) của Servlet cho tất cả request, mỗi request là 1 thread riêng biệt -> Cần chú ý thread-safety với instance variables."
+  },
+  {
+    "id": "fc_web_2",
+    "category": "JavaWeb: JSP & Servlet",
+    "tag": "Forward vs Redirect",
+    "question": "Phân biệt `RequestDispatcher.forward()` và `HttpServletResponse.sendRedirect()`?",
+    "answer": "- **Forward (Chuyển tiếp)**: Xảy ra hoàn toàn ở phía SERVER. URL trên trình duyệt KHÔNG THAY ĐỔI. Chỉ mất 1 vòng request-response. Đối tượng `request` và `response` được GIỮ NGUYÊN (dữ liệu `request.setAttribute` vẫn tồn tại).\n- **Redirect (Chuyển hướng)**: Server gửi mã trạng thái HTTP 302 về BROWSER, trình duyệt tự động gửi request MỚI đến URL mới. URL trên trình duyệt BỊ THAY ĐỔI. Mất 2 vòng request-response. Đối tượng `request` cũ bị hủy bỏ hoàn toàn.",
+    "code": "// Forward:\nrequest.getRequestDispatcher(\"result.jsp\").forward(request, response);\n// Redirect:\nresponse.sendRedirect(\"home.jsp\");",
+    "trap": "Câu hỏi số 1 trong vòng phỏng vấn Audit phần JavaWeb!"
+  },
+  {
+    "id": "fc_fee_1",
+    "category": "Frontend Essentials",
+    "tag": "CSS",
+    "question": "Trình bày các thành phần của CSS Box Model từ trong ra ngoài?",
+    "answer": "Gồm 4 lớp đồng tâm:\n1. **Content**: Nội dung thực tế của phần tử (văn bản, hình ảnh).\n2. **Padding**: Khoảng đệm trong suốt bao quanh content, nằm giữa content và border (chịu ảnh hưởng bởi background-color).\n3. **Border**: Đường viền bao quanh padding và content.\n4. **Margin**: Khoảng cách bên ngoài, tạo khoảng trống giữa phần tử này với các phần tử xung quanh.",
+    "code": "/* Thuộc tính box-sizing: border-box giúp tính toán width bao gồm cả padding và border */\n* {\n    box-sizing: border-box;\n}",
+    "trap": "Nếu không dùng `box-sizing: border-box`, kích thước hiển thị thực tế = width + padding + border."
+  },
+  {
+    "id": "fc_fee_2",
+    "category": "Frontend Essentials",
+    "tag": "CSS",
+    "question": "Thuộc tính `display: none` khác gì `visibility: hidden`?",
+    "answer": "- `display: none`: Ẩn phần tử HOÀN TOÀN khỏi cây hiển thị. Phần tử KHÔNG CHIẾM BẤT KỲ KHOẢNG TRỐNG NÀO trên trang web (các phần tử xung quanh sẽ lấp đầy chỗ của nó).\n- `visibility: hidden`: Ẩn phần tử nhưng VẪN GIỮ NGUYÊN KHOẢNG TRỐNG (vị trí, kích thước layout) của phần tử đó trên màn hình (để lại một khoảng trống trắng).",
+    "code": ".hidden-item { display: none; }     /* Biến mất hoàn toàn, không tốn chỗ */\n.invisible-item { visibility: hidden; } /* Ẩn đi nhưng vẫn chiếm vị trí */",
+    "trap": "Một trong những câu hỏi kiểm tra căn bản kinh điển nhất của phần FEE Audit."
+  },
+  {
+    "id": "fc_fee_3",
+    "category": "Frontend Essentials",
+    "tag": "JavaScript",
+    "question": "Phân biệt từ khóa `var`, `let` và `const` trong JavaScript ES6?",
+    "answer": "- **var**: Function-scoped (hoặc global). Có hiện tượng Hoisting và được khởi tạo với `undefined`. Cho phép tái khai báo (re-declare) trong cùng scope.\n- **let**: Block-scoped `{}`. Có hoisting nhưng nằm trong Temporal Dead Zone (TDZ), truy cập trước khi gán sẽ bị ReferenceError. Không cho phép tái khai báo trong cùng block. Có thể gán lại giá trị.\n- **const**: Block-scoped. Bắt buộc phải khởi tạo giá trị khi khai báo. KHÔNG thể gán lại tham chiếu (re-assign).",
+    "code": "if (true) {\n    var a = 1;\n    let b = 2;\n}\nconsole.log(a); // In ra 1 (var lọt ra ngoài)\n// console.log(b); // ReferenceError: b is not defined",
+    "trap": "Với object được khai báo bằng `const obj = {}`, bạn vẫn có thể sửa thuộc tính `obj.name = 'test'` nhưng không thể gán `obj = {}` mới."
+  },
+  {
+    "id": "fc_spring_1",
+    "category": "Spring Framework",
+    "tag": "IoC & DI",
+    "question": "Inversion of Control (IoC) và Dependency Injection (DI) là gì?",
+    "answer": "- **IoC (Đảo ngược quyền điều khiển)**: Một nguyên lý thiết kế phần mềm, trong đó quyền kiểm soát vòng đời và khởi tạo các đối tượng được chuyển giao từ lập trình viên cho một Framework / Container (Spring IoC Container) quản lý.\n- **DI (Tiêm phụ thuộc)**: Một mẫu hiện thực hóa cụ thể của IoC. Thay vì class tự khởi tạo các đối tượng phụ thuộc bằng từ khóa `new` (`new OrderDAO()`), các phụ thuộc sẽ được container tự động \"bơm/tiêm\" vào thông qua Constructor, Setter hoặc Field.",
+    "code": "// Cách truyền thống (chặt chẽ, khó test):\nclass UserService { private UserDAO dao = new UserDAO(); }\n\n// Sử dụng Spring DI:\n@Service\nclass UserService {\n    private final UserDAO dao;\n    @Autowired\n    public UserService(UserDAO dao) { this.dao = dao; } // Constructor Injection\n}",
+    "trap": "Luôn nhớ: IoC là nguyên lý (Principle), còn DI là phương thức thực thi (Design Pattern)."
+  },
+  {
+    "id": "fc_spring_2",
+    "category": "Spring Framework",
+    "tag": "Annotations",
+    "question": "Phân biệt `@Component`, `@Service`, `@Repository` và `@Controller`?",
+    "answer": "Cả 4 đều là các Spring Stereotype Annotations đánh dấu class là một Spring Bean do Container quản lý.\n- `@Component`: Annotation gốc tổng quát nhất cho bất kỳ class Java nào.\n- `@Repository`: Đánh dấu lớp DAO / Persistence, có cơ chế tự động chuyển đổi các Exception cấp thấp của CSDL thành `DataAccessException` của Spring.\n- `@Service`: Đánh dấu lớp Business Logic nghiệp vụ.\n- `@Controller`: Đánh dấu lớp Web Controller điều phối view (Spring MVC).\n- `@RestController` = `@Controller` + `@ResponseBody` (trả về JSON/XML trực tiếp cho REST API).",
+    "code": "@RestController // Trả về JSON\n@RequestMapping(\"/api/users\")\npublic class UserController {\n    @Autowired private UserService userService;\n}",
+    "trap": "Về mặt kỹ thuật, `@Service` hay `@Repository` đều là meta-annotated với `@Component`, nhưng dùng đúng thể hiện kiến trúc sạch và tận dụng các tính năng đặc thù."
+  }
+]

@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexCore - 8-Week Entry Test & Audit Mastery System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3.3">
+</head>
+<body>
+  <!-- Background glow effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header & Top Navigation Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <!-- Brand Logo (compact) -->
+      <div class="brand-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="brand-title">ApexCore</span>
+      </div>
+
+      <!-- Progress bar mini -->
+      <div class="global-progress-badge" title="Tiến độ hoàn thành 56 ngày">
+        <div class="progress-bar-mini">
+          <div class="progress-fill-mini" id="headerProgressFill" style="width: 0%"></div>
+        </div>
+        <span class="progress-percent" id="headerProgressText">0/56</span>
+      </div>
+
+      <!-- XP Level Badge (compact) -->
+      <div class="xp-level-badge" id="xpLevelBadge" title="XP & Level">
+        <span class="xp-level-icon" id="xpLevelIcon">⭐</span>
+        <span class="xp-level-title" id="xpLevelTitle">Lv.1</span>
+        <div class="xp-bar-mini">
+          <div class="xp-fill-mini" id="xpFillMini" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pomodoro & Header Tools -->
+    <div class="header-right">
+      <!-- Pomodoro (compact: timer + controls only) -->
+      <div class="pomodoro-widget" id="pomodoroWidget">
+        <span class="pomo-timer" id="pomoTimer">45:00</span>
+        <div class="pomo-controls">
+          <button class="icon-btn" id="pomoToggleBtn" title="Bắt đầu / Tạm dừng Focus Timer">▶</button>
+          <button class="icon-btn" id="pomoResetBtn" title="Đặt lại Timer">↺</button>
+          <div class="pomo-presets-dropdown">
+            <button class="icon-btn" id="pomoPresetBtn" title="Chọn phiên học">⚙</button>
+            <div class="dropdown-menu" id="pomoMenu">
+              <button data-pomo="120" data-label="☕ Java Core (2h)">☕ Java Core (120m)</button>
+              <button data-pomo="45" data-label="📚 Tech/Web (45m)">📚 SQL/Web (45m)</button>
+              <button data-pomo="45" data-label="🎯 TestKing (45m)">🎯 TestKing (45m)</button>
+              <button data-pomo="30" data-label="🇬🇧 English (30m)">🇬🇧 English Drill (30m)</button>
+              <button data-pomo="25" data-label="🍅 Pomodoro (25m)">🍅 Pomodoro (25m)</button>
+              <button data-pomo="5" data-label="🌴 Nghỉ (5m)">🌴 Nghỉ ngắn (5m)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam Countdown (compact) -->
+      <div class="exam-countdown-widget" id="examCountdownWidget" title="Nhấn ✒️ để đặt ngày thi">
+        <span class="exam-icon">🎯</span>
+        <span class="exam-cd-days" id="examCountdownDays">-- ngày</span>
+        <button class="exam-cd-set-btn" id="examSetDateBtn">✏️</button>
+      </div>
+
+      <!-- Behavior Profiler (compact: icon + badge) -->
+      <button class="btn-behavior-profiler" id="btnOpenBehaviorProfiler" title="AI Bắt Bệnh Tâm Lý">
+        <span class="profiler-icon">🧠</span>
+        <span class="profiler-badge" id="headerProfileBadge">⚡ Ẩu</span>
+      </button>
+
+      <button class="theme-toggle-btn" id="themeToggleBtn" title="Đổi giao diện Sáng / Tối">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <button class="nav-tab active" data-tab="roadmap">
+        <span class="tab-icon">🗺️</span> Lộ Trình 8 Tuần
+        <span class="tab-badge" id="navRoadmapCount">56 Ngày</span>
+      </button>
+      <button class="nav-tab" data-tab="flashcards">
+        <span class="tab-icon">⚡</span> Flashcards Phản Xạ
+        <span class="tab-badge" id="navFlashcardCount">100+ Thẻ</span>
+      </button>
+      <button class="nav-tab" data-tab="quiz">
+        <span class="tab-icon">🎯</span> TestKing Quiz & Mock
+        <span class="tab-badge pulse-badge" id="navQuizBadge">Luyện Thi</span>
+      </button>
+      <button class="nav-tab" data-tab="audit">
+        <span class="tab-icon">🎤</span> Audit 1-1 Simulator
+        <span class="tab-badge" id="navAuditBadge">Ghi Âm</span>
+      </button>
+      <button class="nav-tab" data-tab="english">
+        <span class="tab-icon">🇬🇧</span> Luyện Dịch Comment
+        <span class="tab-badge" id="navEnglishBadge">79 Mẫu</span>
+      </button>
+      <button class="nav-tab" data-tab="errorbook">
+        <span class="tab-icon">📕</span> Sổ Lỗi & Tra Cứu
+        <span class="tab-badge" id="navTrapBadge">Bẫy Thi</span>
+      </button>
+      <button class="nav-tab" data-tab="pe-code">
+        <span class="tab-icon">💻</span> PE Code Chay
+        <span class="tab-badge pulse-badge" id="navPeBadge">10 Bài</span>
+      </button>
+      <button class="nav-tab" data-tab="speed-quiz">
+        <span class="tab-icon">⚡</span> Speed Quiz
+        <span class="tab-badge pulse-badge" id="navSpeedBadge">Phản Xạ</span>
+      </button>
+      <button class="nav-tab" data-tab="mock-interview">
+        <span class="tab-icon">🎭</span> Mock Interview
+        <span class="tab-badge" id="navInterviewBadge">AI</span>
+      </button>
+      <button class="nav-tab" data-tab="analytics">
+        <span class="tab-icon">📊</span> Analytics & Progress
+        <span class="tab-badge" id="navAnalyticsBadge">Live</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Application Content Area -->
+  <main class="main-content">
+    
+    <!-- ==================== TAB 1: ROADMAP & TRACKER ==================== -->
+    <section class="tab-pane active" id="pane-roadmap">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Kế Hoạch Chuẩn 8 Tuần (56 Ngày)</div>
+          <h2 class="hero-title">Lộ Trình Học Chi Tiết & Daily Checklist</h2>
+          <p class="hero-desc">
+            Trọng tâm số 1 là <strong>Java Core (Ch1-Ch9)</strong>, cày TestKing 2 vòng, kết hợp SQL, JSP/Servlet, FEE, Spring và English dịch comment mỗi ngày.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-val" id="completedDaysStat">0/56</div>
+            <div class="stat-lbl">Ngày hoàn thành</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="targetHoursStat">4.0h</div>
+            <div class="stat-lbl">Mục tiêu mỗi ngày</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="streakDaysStat">0</div>
+            <div class="stat-lbl">Chuỗi ngày (Streak)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roadmap Week Filter / View Switcher -->
+      <div class="roadmap-toolbar">
+        <div class="filter-group">
+          <span class="filter-label">Xem nhanh:</span>
+          <button class="filter-btn active" data-week="all">Tất cả tuần</button>
+          <button class="filter-btn" data-week="1">Tuần 1: Fundamentals</button>
+          <button class="filter-btn" data-week="2">Tuần 2: OOP & Flow</button>
+          <button class="filter-btn" data-week="3">Tuần 3: Ch6-9 Strings/Collections</button>
+          <button class="filter-btn" data-week="4">Tuần 4: SQL & Web</button>
+          <button class="filter-btn" data-week="5">Tuần 5: TestKing Marathon</button>
+          <button class="filter-btn" data-week="6">Tuần 6: FEE & Spring</button>
+          <button class="filter-btn" data-week="7">Tuần 7: Tốc độ cao</button>
+          <button class="filter-btn" data-week="8">Tuần 8: Final Mock</button>
+        </div>
+        <div class="toolbar-actions">
+          <button class="btn btn-outline" id="resetProgressBtn" title="Đặt lại toàn bộ tiến độ">Đặt lại tiến độ</button>
+        </div>
+      </div>
+
+      <!-- Roadmap Weeks Container -->
+      <div class="roadmap-weeks-list" id="roadmapWeeksContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: ACTIVE RECALL FLASHCARDS ==================== -->
+    <section class="tab-pane" id="pane-flashcards">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Active Recall & Spaced Repetition</div>
+          <h2 class="hero-title">Thẻ Ghi Nhớ Khái Niệm & Cạm Bẫy Phản Xạ</h2>
+          <p class="hero-desc">
+            Không học vẹt! Đọc câu hỏi, tự suy nghĩ trong đầu hoặc nói thành tiếng, sau đó lật thẻ để kiểm tra concept, cạm bẫy và mã ví dụ.
+          </p>
+        </div>
+        <div class="flashcard-stats-pills">
+          <span class="pill pill-red" id="fcHardCount">🔴 Chưa nhớ: 0</span>
+          <span class="pill pill-yellow" id="fcGoodCount">🟡 Tạm ổn: 0</span>
+          <span class="pill pill-green" id="fcMasteredCount">🟢 Đã thuộc: 0</span>
+          <span class="pill pill-blue" id="fcTotalCount">Tổng: 0 thẻ</span>
+        </div>
+      </div>
+
+      <!-- Flashcard Controls & Filters -->
+      <div class="flashcard-toolbar">
+        <div class="category-select-wrapper">
+          <label for="fcCategoryFilter">Chuyên đề:</label>
+          <select id="fcCategoryFilter" class="custom-select">
+            <option value="all">Tất cả chuyên đề (Tất cả thẻ)</option>
+            <!-- Injected by JS -->
+          </select>
+        </div>
+        <div class="fc-filter-actions">
+          <button class="btn btn-srs" id="fcSRSModeBtn" title="Chế độ SRS: Chỉ hiện thẻ cần ôn hôm nay">🔁 SRS Ôn Hôm Nay <span class="srs-due-badge" id="srsDueBadge">0</span></button>
+          <button class="btn btn-secondary" id="fcFilterWeakBtn">⚡ Chỉ ôn câu "Chưa nhớ"</button>
+          <button class="btn btn-outline" id="fcShuffleBtn">🔀 Xáo trộn</button>
+          <button class="btn btn-outline" id="fcResetMasteryBtn">↺ Reset độ nhớ</button>
+        </div>
+      </div>
+
+      <!-- 3D Flashcard Display Area -->
+      <div class="flashcard-arena">
+        <div class="flashcard-perspective">
+          <div class="flashcard-card" id="activeFlashcard">
+            <!-- Front of Card -->
+            <div class="card-face card-front">
+              <div class="card-header">
+                <span class="card-tag" id="fcFrontTag">Tag</span>
+                <span class="card-counter" id="fcIndexCounter">1 / 30</span>
+              </div>
+              <div class="card-body">
+                <div class="card-question-icon">❓</div>
+                <h3 class="card-question-text" id="fcQuestionText">Câu hỏi flashcard...</h3>
+                <p class="card-prompt-sub">Nhấn chuột vào thẻ hoặc bấm <strong>Phím Space</strong> để lật xem đáp án & cạm bẫy</p>
+              </div>
+              <div class="card-footer">
+                <span class="hint-pill">💡 Lật thẻ để xem code minh họa</span>
+              </div>
+            </div>
+
+            <!-- Back of Card -->
+            <div class="card-face card-back">
+              <div class="card-header">
+                <span class="card-tag card-tag-answer" id="fcBackTag">Đáp Án & Phân Tích</span>
+                <button class="icon-btn-text" id="fcAudioBtn" title="Đọc bằng giọng nói">🔊 Nghe</button>
+              </div>
+              <div class="card-body scrollable-back">
+                <div class="card-answer-text" id="fcAnswerText">Đáp án chi tiết...</div>
+                
+                <div class="card-code-block" id="fcCodeContainer" style="display: none;">
+                  <div class="code-header">
+                    <span>Mã ví dụ</span>
+                    <button class="copy-code-btn" id="fcCopyCodeBtn">Copy</button>
+                  </div>
+                  <pre><code id="fcCodeContent"></code></pre>
+                </div>
+
+                <div class="card-trap-box" id="fcTrapContainer" style="display: none;">
+                  <span class="trap-icon">⚠️</span>
+                  <div class="trap-content">
+                    <strong>Bẫy thường gặp:</strong>
+                    <span id="fcTrapText"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span class="flip-back-hint">Bấm vào đây để lật lại mặt trước</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating & Spaced Repetition Buttons -->
+        <div class="flashcard-rating-bar">
+          <button class="rate-btn rate-hard" id="fcRateHardBtn" title="Phím tắt: 1">
+            <span class="rate-emoji">🔴</span>
+            <span class="rate-name">Chưa nhớ</span>
+            <span class="rate-sub">Lặp lại sớm</span>
+          </button>
+          <button class="rate-btn rate-good" id="fcRateGoodBtn" title="Phím tắt: 2">
+            <span class="rate-emoji">🟡</span>
+            <span class="rate-name">Tạm ổn</span>
+            <span class="rate-sub">Cần ôn lại</span>
+          </button>
+          <button class="rate-btn rate-mastered" id="fcRateMasteredBtn" title="Phím tắt: 3">
+            <span class="rate-emoji">🟢</span>
+            <span class="rate-name">Đã thuộc</span>
+            <span class="rate-sub">Vững vàng</span>
+          </button>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flashcard-nav-controls">
+          <button class="btn btn-outline" id="fcPrevBtn">← Thẻ trước (Phím Mũi tên Trái)</button>
+          <span class="fc-pos-indicator" id="fcPositionIndicator">1 / 30</span>
+          <button class="btn btn-primary" id="fcNextBtn">Thẻ kế tiếp → (Phím Mũi tên Phải)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: QUIZ & TESTKING MOCK ==================== -->
+    <section class="tab-pane" id="pane-quiz">
+      <!-- Quiz Mode Switcher Header -->
+      <div class="quiz-header-container">
+        <div class="quiz-mode-selector">
+          <button class="mode-tab-btn active" id="quizPracticeModeBtn">
+            <span class="mode-icon">📖</span> Chế Độ Luyện Tập (Giải Thích Tức Thì)
+          </button>
+          <button class="mode-tab-btn" id="quizMockModeBtn">
+            <span class="mode-icon">⏱️</span> Chế Độ Thi Thử Tính Giờ (Chuẩn Entry Test)
+          </button>
+        </div>
+
+        <!-- Timer only visible in Mock Mode -->
+        <div class="mock-timer-widget" id="mockTimerWidget" style="display: none;">
+          <span class="timer-label">Thời gian còn lại:</span>
+          <span class="timer-clock" id="mockClock">30:00</span>
+          <button class="btn btn-sm btn-danger" id="mockSubmitBtn">Nộp Bài Thi</button>
+        </div>
+      </div>
+
+      <!-- Practice Mode Controls -->
+      <div class="quiz-controls-bar" id="practiceControlsBar">
+        <div class="filter-group">
+          <label for="quizChapterFilter">Chương / Mảng:</label>
+          <select id="quizChapterFilter" class="custom-select">
+            <option value="all">Tất cả câu hỏi (Tổng hợp)</option>
+            <option value="Java Core">☕ Chỉ Java Core</option>
+            <option value="Database & SQL">🗄 Chỉ SQL</option>
+            <option value="JavaWeb">🌐 Chỉ JSP/Servlet</option>
+            <option value="Spring">🌱 Chỉ Spring</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-outline" id="quizShuffleBtn">🔀 Đổi thứ tự câu</button>
+          <button class="btn btn-secondary" id="quizStartMockFromPractice">Bắt đầu đề thi 20 câu</button>
+        </div>
+      </div>
+
+      <!-- Quiz Questions Arena -->
+      <div class="quiz-arena" id="quizArena">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Mock Exam Result Modal / View -->
+      <div class="modal-overlay" id="mockResultModal" style="display: none;">
+        <div class="modal-card modal-lg">
+          <div class="modal-header">
+            <h3 class="modal-title">Kết Quả Bài Thi Thử Entry Test</h3>
+            <button class="modal-close-btn" id="closeResultModalBtn">&times;</button>
+          </div>
+          <div class="modal-body" id="mockResultBody">
+            <!-- Dynamic Result Content -->
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" id="reviewWrongBtn">Xem lại các câu sai</button>
+            <button class="btn btn-primary" id="retakeMockBtn">Làm lại đề mới</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: AUDIT 1-1 SIMULATOR ==================== -->
+    <section class="tab-pane" id="pane-audit">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Phòng Phỏng Vấn 1-1 Audit Giả Lập</div>
+          <h2 class="hero-title">Luyện Phản Xạ Trả Lời Vấn Đáp (60 - 90 Giây)</h2>
+          <p class="hero-desc">
+            Không chỉ biết làm trắc nghiệm, bạn phải diễn đạt trôi chảy bằng lời nói! Bấm <strong>Bắt Đầu Trả Lời & Ghi Âm</strong>, nói to giải thích concept, sau đó nghe lại giọng của mình để tự sửa lỗi lan man hoặc thiếu từ khóa.
+          </p>
+        </div>
+        <div class="audit-record-status" id="auditAudioSupportNotice">
+          <span class="mic-status-dot"></span> <span id="micStatusText">Microphone sẵn sàng ghi âm</span>
+        </div>
+      </div>
+
+      <div class="audit-layout">
+        <!-- Left: Question Picker & Question Card -->
+        <div class="audit-left">
+          <div class="audit-question-picker">
+            <label for="auditQuestionSelect">Chọn câu hỏi vấn đáp:</label>
+            <select id="auditQuestionSelect" class="custom-select">
+              <!-- Injected by JS -->
+            </select>
+            <button class="btn btn-outline" id="auditRandomBtn">🎲 Câu ngẫu nhiên</button>
+          </div>
+
+          <div class="audit-card">
+            <div class="audit-card-header">
+              <span class="audit-domain-tag" id="auditDomainTag">Java Core</span>
+              <span class="audit-target-time" id="auditTimeLimitTag">Thời gian: 90 giây</span>
+            </div>
+            
+            <div class="audit-question-text" id="auditQuestionDisplay">
+              Câu hỏi phỏng vấn...
+            </div>
+
+            <!-- Timer & Recording Studio Widget -->
+            <div class="audit-studio">
+              <div class="audit-timer-ring">
+                <svg class="ring-svg" width="120" height="120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                  <circle class="ring-progress" id="auditTimerRing" cx="60" cy="60" r="50"></circle>
+                </svg>
+                <div class="ring-text" id="auditCountdownText">90s</div>
+              </div>
+
+              <div class="audit-controls">
+                <button class="btn btn-lg btn-danger record-btn" id="auditRecordBtn">
+                  <span class="rec-dot"></span> Bắt Đầu Trả Lời & Ghi Âm
+                </button>
+                <button class="btn btn-lg btn-secondary" id="auditStopBtn" style="display: none;">
+                  ⏹ Dừng Ghi Âm & Kiểm Tra
+                </button>
+                <div class="recording-indicator" id="recordingIndicator" style="display: none;">
+                  <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+                  Đang ghi âm câu trả lời của bạn... Hãy nói to và tự tin!
+                </div>
+              </div>
+            </div>
+
+            <!-- Audio Player after recording -->
+            <div class="audit-playback-box" id="auditPlaybackBox" style="display: none;">
+              <h4 class="playback-title">🎧 Nghe lại câu trả lời vừa ghi âm của bạn:</h4>
+              <audio id="auditAudioPlayer" controls class="custom-audio-player"></audio>
+              <p class="playback-prompt">Tự đánh giá: Bạn có ngắc ngứ không? Có dùng đúng thuật ngữ (polymorphism, override, bucket, lifecycle)? Có lấy ví dụ code không?</p>
+
+              <!-- Voice AI Scoring Panel -->
+              <div class="voice-ai-panel">
+                <div class="voice-ai-header">
+                  <div class="voice-ai-title">🤖 AI Chấm Điểm Nội Dung Câu Trả Lời</div>
+                  <div class="voice-ai-actions">
+                    <button class="btn btn-sm btn-voice-listen" id="auditSpeechBtn">🎤 Đọc To Để AI Nghe</button>
+                    <button class="btn btn-sm btn-ai-score" id="auditAIScoreBtn" style="display:none">✨ AI Chấm Điểm</button>
+                    <button class="btn btn-sm btn-outline" id="auditManualInputBtn">✏️ Nhập Tay</button>
+                  </div>
+                </div>
+                <div id="speechTranscriptBox" style="display:none; margin-top:0.75rem">
+                  <div class="transcript-label">📝 Nội dung AI nghe được:</div>
+                  <div id="speechTranscriptText" class="transcript-text" contenteditable="true"></div>
+                  <div id="speechStatus" class="speech-status"></div>
+                </div>
+                <div id="auditManualInputBox" style="display:none; margin-top:0.75rem">
+                  <div class="transcript-label">✏️ Nhập nội dung câu trả lời để AI chấm:</div>
+                  <textarea id="auditManualText" class="quick-notes-textarea" style="min-height:80px" placeholder="Gõ tóm tắt câu trả lời vừa nói của bạn..."></textarea>
+                  <button class="btn btn-sm btn-primary" id="auditManualScoreBtn" style="margin-top:0.5rem">✨ AI Chấm Điểm</button>
+                </div>
+                <div id="auditAIScoreResult" style="display:none; margin-top:0.75rem">
+                  <!-- AI score result injected here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Self-Assessment Checklist & Model Answer -->
+        <div class="audit-right">
+          <!-- Self Evaluation Criteria -->
+          <div class="audit-checklist-card">
+            <h3 class="checklist-title">📋 Checklist Tự Đánh Giá Câu Trả Lời</h3>
+            <p class="checklist-sub">Tích chọn các tiêu chí bạn đã nêu được trong 60-90 giây vừa rồi:</p>
+            <div class="checklist-items" id="auditCriteriaList">
+              <!-- Injected by JS -->
+            </div>
+            <div class="self-score-badge" id="auditSelfScore">Điểm tự chấm: 0/4 tiêu chí</div>
+          </div>
+
+          <!-- Model Answer Accordion -->
+          <div class="audit-model-answer-card">
+            <div class="model-header" id="toggleModelAnswerBtn">
+              <span class="model-title">💡 Xem Câu Trả Lời Mẫu Chuẩn Audit (Model Answer)</span>
+              <span class="accordion-arrow" id="modelAnswerArrow">▼</span>
+            </div>
+            <div class="model-content" id="auditModelAnswerContent" style="display: none;">
+              <div class="key-points-box">
+                <h4>Ý chính bắt buộc phải có:</h4>
+                <ul id="auditKeyPointsList"></ul>
+              </div>
+              <div class="model-full-text">
+                <h4>Bài mẫu trả lời trôi chảy:</h4>
+                <div id="auditModelFullText"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TOP 50 SÁT THỦ AUDIT 1-1 BROWSER ==================== -->
+      <div class="audit-bank-container" style="margin-top: 2.5rem;">
+        <div class="audit-bank-header">
+          <div class="audit-bank-title-row" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+              <h3 class="audit-bank-title" style="margin:0; display:flex; align-items:center; gap:0.5rem;">
+                <span>📚</span> Cẩm Nang Top 50 Câu Hỏi Sát Thủ Khi Audit 1-1 FPT
+              </h3>
+              <span class="audit-count-badge" id="auditBankCountBadge">50 Câu Hỏi Chuẩn Senior</span>
+            </div>
+            <div class="audit-header-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <button class="btn btn-sm btn-outline" id="auditOpenCheatSheetBtn">⚡ Bí Kíp & Bẫy Kiến Trúc</button>
+              <button class="btn btn-sm btn-outline" id="auditExportBtn">📥 In Đề Cương / PDF</button>
+            </div>
+          </div>
+          <p class="audit-bank-desc" style="color:var(--text-muted); font-size:0.9rem; margin:0.5rem 0 0 0;">
+            Bộ 50 câu hỏi phân loại ứng viên được các Tech Lead và Giám khảo FSOFT sử dụng nhiều nhất. Tích hợp sẵn <strong>Ý chính bắt buộc (Key Points)</strong>, <strong>Câu trả lời mẫu chuẩn mực</strong> và <strong>Mẹo ghi điểm tuyệt đối (Senior Tip)</strong>.
+          </p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="audit-bank-toolbar" style="margin-top:1.25rem;">
+          <div class="audit-toolbar-top" style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; justify-content:space-between; width:100%;">
+            <div class="audit-view-modes" style="display:flex; gap:0.35rem; background:rgba(255,255,255,0.04); padding:0.25rem; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+              <button class="audit-mode-btn active" id="auditViewListBtn">📋 Danh Sách (50)</button>
+              <button class="audit-mode-btn" id="auditViewFlashcardBtn">🎴 Flashcard Phản Xạ 3s</button>
+            </div>
+            <div class="audit-mastery-summary" id="auditMasterySummary" style="font-size:0.85rem; color:var(--text-muted);">
+              Tiến độ thuộc: <span style="color:var(--accent-emerald); font-weight:700;" id="auditMasteryCount">0</span>/50 câu
+            </div>
+          </div>
+
+          <div class="audit-domain-filters" id="auditDomainFilters" style="margin-top:0.75rem;">
+            <button class="audit-filter-btn active" data-domain="all">Tất Cả (50)</button>
+            <button class="audit-filter-btn" data-domain="Java Core">Java Core</button>
+            <button class="audit-filter-btn" data-domain="Java 8+ Modern">Java 8+ Modern</button>
+            <button class="audit-filter-btn" data-domain="Database & SQL">Database & SQL</button>
+            <button class="audit-filter-btn" data-domain="JavaWeb">JavaWeb</button>
+            <button class="audit-filter-btn" data-domain="Spring Framework">Spring Framework</button>
+          </div>
+          <div class="audit-bank-search" style="margin-top:0.75rem;">
+            <input type="text" id="auditBankSearchInput" class="custom-input" placeholder="🔍 Tìm kiếm nhanh (ví dụ: HashMap, Deadlock, Transaction, Spring Bean, Stream, equals)..." />
+          </div>
+        </div>
+
+        <!-- Flashcard Interactive Container (Hidden in List Mode) -->
+        <div class="audit-flashcard-container" id="auditFlashcardContainer" style="display:none; margin-top:1.5rem;">
+          <div class="audit-flashcard-wrapper">
+            <div class="audit-fc-card" id="auditFcCard">
+              <div class="audit-fc-face audit-fc-front" id="auditFcFront">
+                <div class="audit-fc-header">
+                  <span class="audit-domain-tag" id="auditFcDomain">Java Core</span>
+                  <span class="audit-fc-number" id="auditFcNumber">Câu 1/50</span>
+                  <span class="audit-target-time" id="auditFcTime">⏱️ 90s</span>
+                </div>
+                <div class="audit-fc-body">
+                  <div class="audit-fc-question" id="auditFcQuestion">Đang tải câu hỏi...</div>
+                  <div class="audit-fc-prompt">💡 Hãy tự nhẩm 3-4 ý chính then chốt trong đầu, sau đó bấm vào thẻ để lật xem đáp án chuẩn!</div>
+                </div>
+                <div class="audit-fc-footer">
+                  <span class="audit-fc-flip-btn">🔄 Bấm vào thẻ để lật đáp án</span>
+                </div>
+              </div>
+              <div class="audit-fc-face audit-fc-back" id="auditFcBack">
+                <div class="audit-fc-header">
+                  <span class="audit-fc-badge-answer">Đáp Án Mẫu & Senior Tip</span>
+                  <span class="audit-fc-flip-btn-small">🔄 Lật lại câu hỏi</span>
+                </div>
+                <div class="audit-fc-body audit-fc-back-scroll">
+                  <div class="audit-fc-keypoints">
+                    <strong>🎯 Ý chính bắt buộc (Key Points):</strong>
+                    <ul id="auditFcKeyPoints"></ul>
+                  </div>
+                  <div class="audit-fc-model-answer" style="margin-top:0.75rem;">
+                    <strong>💬 Câu trả lời mẫu chuẩn Senior:</strong>
+                    <div id="auditFcModelAnswer" style="font-size:0.92rem; line-height:1.6; margin-top:0.35rem; color:#f1f5f9;"></div>
+                  </div>
+                  <div class="audit-tip-box" id="auditFcTipBox" style="margin-top:0.75rem;">
+                    <strong>🔥 Bí kíp phòng thi:</strong>
+                    <div id="auditFcSeniorTip" style="font-size:0.88rem; margin-top:0.25rem;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flashcard Controls -->
+          <div class="audit-fc-controls" style="margin-top:1.25rem; display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-outline" id="auditFcPrevBtn">◀ Câu Trước</button>
+            <button class="btn btn-outline" id="auditFcRandomBtn">🎲 Ngẫu Nhiên</button>
+            <button class="btn btn-outline" id="auditFcMarkReviewBtn" style="border-color:var(--accent-amber); color:var(--accent-amber);">⚠️ Cần Ôn Lại</button>
+            <button class="btn btn-outline" id="auditFcMarkMasteredBtn" style="border-color:var(--accent-emerald); color:var(--accent-emerald);">✅ Đã Thuộc Lòng</button>
+            <button class="btn btn-primary" id="auditFcNextBtn">Câu Tiếp ▶</button>
+            <button class="btn btn-accent" id="auditFcLoadSimulatorBtn">🎙️ Luyện Nói Ngay</button>
+          </div>
+        </div>
+
+        <!-- Questions Grid List -->
+        <div class="audit-bank-grid" id="auditBankGrid" style="margin-top:1.5rem;">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: ENGLISH COMMENT CODE DRILL ==================== -->
+    <section class="tab-pane" id="pane-english">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Dataset Fresher_CommentCode_v2.0</div>
+          <h2 class="hero-title">Luyện Dịch Comment Code Anh ⟷ Việt</h2>
+          <p class="hero-desc">
+            Trích xuất trực tiếp từ 79 câu chuẩn trong bộ tài liệu Fresher Comment Code. Mỗi ngày luyện 5 câu EN → VI và 5 câu VI → EN để đạt phản xạ dịch thuật chuẩn xác.
+          </p>
+        </div>
+        <div class="english-streak-stats">
+          <div class="streak-pill">
+            <span class="streak-fire">🔥</span>
+            <span class="streak-text" id="engDailyCount">Đã luyện hôm nay: 0/10 câu</span>
+          </div>
+          <button class="btn btn-outline" id="engDailyChallengeBtn">🎯 Thử thách 10 câu hôm nay</button>
+        </div>
+      </div>
+
+      <!-- Mode Selector & Search -->
+      <div class="english-toolbar">
+        <div class="eng-mode-toggle">
+          <button class="eng-mode-btn active" id="engModeEnToVi">Anh &rarr; Việt (EN &rarr; VI)</button>
+          <button class="eng-mode-btn" id="engModeViToEn">Việt &rarr; Anh (VI &rarr; EN)</button>
+        </div>
+        <!-- Live Session Score Board -->
+        <div class="eng-session-scoreboard">
+          <span class="eng-score-label">📊 Phiên này:</span>
+          <span id="engSessionScore"><span class="eng-score-correct">✓ 0 Đúng</span>&nbsp;&nbsp;<span class="eng-score-wrong">✕ 0 Sai</span>&nbsp;&nbsp;<span class="eng-score-pct">0% chính xác</span></span>
+        </div>
+        <div class="eng-search-box">
+          <input type="text" id="engSearchInput" class="custom-input" placeholder="Tìm kiếm comment theo từ khóa (matches, delete, database, ngày nghỉ...)">
+        </div>
+      </div>
+
+      <!-- Interactive English Drill Card -->
+      <div class="eng-card-arena">
+        <div class="eng-drill-card">
+          <div class="eng-card-top">
+            <span class="eng-stt-badge" id="engSttBadge">STT: #1 / 79</span>
+            <div class="eng-card-actions">
+              <button class="icon-btn" id="engTtsBtn" title="Phát âm tiếng Anh chuẩn (Text-To-Speech)">🔊 Nghe phát âm</button>
+              <button class="icon-btn" id="engRandomBtn" title="Đổi câu ngẫu nhiên">🎲 Đổi câu</button>
+            </div>
+          </div>
+
+          <div class="eng-prompt-section">
+            <div class="prompt-label" id="engPromptLabel">Câu gốc tiếng Anh:</div>
+            <div class="prompt-text" id="engPromptText">Get list of matches</div>
+          </div>
+
+          <!-- Typing & Self-Checking Area -->
+          <div class="eng-input-section">
+            <label for="engUserInput" class="input-label" id="engInputLabel">Gõ bản dịch tiếng Việt của bạn:</label>
+            <div class="input-wrapper">
+              <textarea id="engUserInput" class="eng-textarea" rows="2" placeholder="Nhập câu dịch của bạn ở đây rồi bấm 'Kiểm Tra' hoặc nhấn Enter..."></textarea>
+            </div>
+            <div class="eng-submit-actions">
+              <button class="btn btn-primary" id="engCheckBtn">Kiểm Tra Đáp Án</button>
+              <button class="btn btn-outline" id="engRevealBtn">Xem đáp án ngay</button>
+            </div>
+          </div>
+
+          <!-- Result & Comparison Section -->
+          <div class="eng-result-section" id="engResultSection" style="display: none;">
+            <div class="comparison-row">
+              <span class="row-label">Đáp án chuẩn:</span>
+              <span class="row-val correct-val" id="engOfficialAnswer"></span>
+            </div>
+            <div class="comparison-row" id="engUserComparisonRow">
+              <span class="row-label">Câu của bạn:</span>
+              <span class="row-val" id="engUserAnswerDisplay"></span>
+            </div>
+            <div class="eng-feedback-badge" id="engFeedbackBadge"></div>
+          </div>
+
+          <!-- Navigation controls -->
+          <div class="eng-card-nav">
+            <button class="btn btn-outline" id="engPrevBtn">← Câu trước</button>
+            <span class="eng-nav-counter" id="engNavCounter">1 / 79</span>
+            <button class="btn btn-primary" id="engNextBtn">Câu tiếp theo →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Reference Table of all 79 comments -->
+      <div class="eng-table-section">
+        <div class="table-header-row">
+          <div>
+            <h3 class="table-title">Tra cứu nhanh toàn bộ 79 câu Comment Code</h3>
+            <span class="eng-table-mode-label" id="engTableModeLabel">Chế độ: Anh &rarr; Việt | Cột đáp án bị ẩn</span>
+          </div>
+          <span class="table-count" id="engTableCount">Hiển thị 79/79 câu</span>
+        </div>
+        <p class="eng-table-hint">💡 <strong>Click vào ô bị mờ</strong> để xem đáp án từng câu. Click vào hàng để nhảy đến câu đó trong khu luyện tập phía trên.</p>
+        <div class="table-scroll-container">
+          <table class="data-table" id="engDataTable">
+            <thead>
+              <tr>
+                <th style="width: 60px;">STT</th>
+                <th id="engTableHeaderVi">Mô tả tiếng Việt</th>
+                <th id="engTableHeaderEn">English Comment</th>
+                <th style="width: 80px;">Nghe</th>
+              </tr>
+            </thead>
+            <tbody id="engTableBody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 6: ERROR BOOK & CHEAT SHEETS ==================== -->
+    <section class="tab-pane" id="pane-errorbook">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Vũ Khí Tối Thượng Trước Giờ Thi</div>
+          <h2 class="hero-title">Sổ Tay Bắt Lỗi (Error Book) & Bảng Tra Cứu Bẫy</h2>
+          <p class="hero-desc">
+            Ghi lại mọi lỗi bạn từng làm sai trong quá trình luyện đề. Trước khi vào phòng thi chỉ cần đọc lại sổ này là không bao giờ dính bẫy ngớ ngẩn!
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="addErrorNoteBtn">+ Thêm lỗi sai mới</button>
+          <button class="btn btn-outline" id="exportErrorsBtn">📥 Export JSON</button>
+          <button class="btn btn-outline" id="importErrorsBtn">📤 Import JSON</button>
+          <input type="file" id="importFileInput" accept=".json" style="display: none;">
+        </div>
+      </div>
+
+      <!-- Quick Subtabs: 1. Sổ lỗi của tôi | 2. Top bẫy kinh điển | 3. Bảng Modifiers | 4. Bảng Collections -->
+      <div class="cheat-subnav">
+        <button class="subtab-btn active" data-subtab="my-errors">📕 Sổ lỗi cá nhân (<span id="userErrorCount">0</span>)</button>
+        <button class="subtab-btn" data-subtab="classic-traps">⚠️ Top 8 Bẫy Kinh Điển</button>
+        <button class="subtab-btn" data-subtab="access-modifiers">🛡️ Ma Trận Access Modifiers</button>
+        <button class="subtab-btn" data-subtab="collections-matrix">📦 Ma Trận Collections Framework</button>
+      </div>
+
+      <!-- Subtab 1: User Personal Error Notebook -->
+      <div class="subtab-content active" id="subtab-my-errors">
+        <div class="errorbook-toolbar">
+          <input type="text" id="errorSearchInput" class="custom-input" placeholder="Tìm lỗi theo từ khóa, tag hoặc câu hỏi...">
+          <select id="errorTagFilter" class="custom-select">
+            <option value="all">Tất cả danh mục bẫy</option>
+            <option value="Syntax trap">1. Syntax trap</option>
+            <option value="Compile error">2. Compile error</option>
+            <option value="Runtime exception">3. Runtime exception</option>
+            <option value="OOP trap">4. OOP trap</option>
+            <option value="String trap">5. String trap</option>
+            <option value="Collection trap">6. Collection trap</option>
+            <option value="Thread trap">7. Thread trap</option>
+            <option value="Operator trap">8. Operator trap</option>
+            <option value="SQL trap">9. SQL trap</option>
+            <option value="Web trap">10. JavaWeb trap</option>
+          </select>
+        </div>
+
+        <div class="error-notes-grid" id="userErrorsContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Subtab 2: Top Classic Traps -->
+      <div class="subtab-content" id="subtab-classic-traps">
+        <div class="classic-traps-list" id="classicTrapsContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Subtab 3: Access Modifiers Matrix -->
+      <div class="subtab-content" id="subtab-access-modifiers">
+        <div class="matrix-card">
+          <h3 class="matrix-title">Ma Trận Quyền Truy Cập (Access Modifiers Matrix)</h3>
+          <p class="matrix-sub">Bảng tra cứu quy tắc phạm vi truy cập giữa class, package và subclass.</p>
+          <div class="table-responsive">
+            <table class="data-table matrix-table">
+              <thead>
+                <tr>
+                  <th>Modifier</th>
+                  <th>Cùng Class</th>
+                  <th>Cùng Package</th>
+                  <th>Class Con ở Khác Package</th>
+                  <th>Bên ngoài (World)</th>
+                </tr>
+              </thead>
+              <tbody id="modifiersTableBody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div class="matrix-note-box">
+            <strong>Lưu ý quan trọng cho bài thi:</strong> Modifier `protected` cho phép class con ở khác package truy cập, NHƯNG chỉ truy cập được qua tính kế thừa (`super.x` hoặc `this.x`), KHÔNG THỂ truy cập qua tham chiếu của class cha (`Parent p = new Parent(); p.x` sẽ bị lỗi biên dịch!).
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtab 4: Collections Framework Matrix -->
+      <div class="subtab-content" id="subtab-collections-matrix">
+        <div class="matrix-card">
+          <h3 class="matrix-title">Ma Trận Phân Biệt Collections Framework (List, Set, Map)</h3>
+          <p class="matrix-sub">Nắm vững các đặc tính Duplicate, Ordered, Sorted và Thread-safe.</p>
+          <div class="table-responsive">
+            <table class="data-table matrix-table">
+              <thead>
+                <tr>
+                  <th>Collection</th>
+                  <th>Interface</th>
+                  <th>Cho phép Trùng lặp?</th>
+                  <th>Bảo toàn Thứ tự?</th>
+                  <th>Được Sắp xếp (Sorted)?</th>
+                  <th>Thread-safe?</th>
+                  <th>Ghi chú hiệu năng</th>
+                </tr>
+              </thead>
+              <tbody id="collectionsTableBody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 7: DEDICATED FULL-PAGE LESSON HUB ==================== -->
+    <section class="tab-pane" id="pane-lesson">
+      <div class="lesson-page-container">
+        <!-- Top Navigation Bar for Lesson Page -->
+        <div class="lesson-page-header">
+          <div class="lesson-header-left">
+            <button class="btn-back-roadmap" id="backToRoadmapBtn">
+              <span style="font-size: 1.15rem; line-height: 1;">←</span> Quay Lại Lộ Trình
+            </button>
+            <div class="lesson-header-meta">
+              <span class="week-badge" id="lessonPageWeekBadge">Tuần 1</span>
+              <span class="lesson-priority-badge" id="lessonPagePriority">🔴 MUST KNOW</span>
+              <span class="lesson-meta-pill" id="lessonPageTime">⏱️ 3h 30m</span>
+              <span class="lesson-meta-pill" id="lessonPageDiff">⭐⭐</span>
+            </div>
+          </div>
+          <div class="lesson-header-right">
+            <div class="lesson-progress-row" style="min-width: 250px;">
+              <div class="lesson-progress-bar">
+                <div class="lesson-progress-fill" id="lessonPageProgressFill" style="width: 20%"></div>
+              </div>
+              <span class="lesson-progress-text" id="lessonPageProgressText">Tiến độ bài học: 0%</span>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="lesson-page-main-title" id="lessonPageTitle">Ngày 1: Language Fundamentals</h1>
+
+        <!-- Full-Page 2-Column Course Layout -->
+        <div class="lesson-page-layout">
+          <!-- Left Sticky Sidebar Outline -->
+          <aside class="lesson-page-sidebar">
+            <div class="sidebar-title">MỤC LỤC BÀI HỌC</div>
+            <nav class="lesson-nav-list" id="lessonPageNavList">
+              <!-- Rendered by JS -->
+            </nav>
+            <div class="lesson-sidebar-actions" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-sm btn-outline" id="lessonPageOpenFcBtn" style="width: 100%; margin-bottom: 0.5rem;">⚡ Học Flashcards</button>
+              <button class="btn btn-sm btn-outline" id="lessonPageOpenQuizBtn" style="width: 100%;">🎯 Luyện Quiz</button>
+            </div>
+          </aside>
+
+          <!-- Right Wide Learning Canvas -->
+          <div class="lesson-page-content" id="lessonPageContentBody">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Sticky Bottom Completion Footer -->
+        <div class="lesson-page-footer">
+          <button class="btn-back-roadmap" id="backToRoadmapFooterBtn">
+            <span style="font-size: 1.15rem; line-height: 1;">←</span> Quay Lại Lộ Trình
+          </button>
+          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" id="lessonPageMarkCompletedBtn">✓ Đạt Chuẩn & Hoàn Thành Ngày Này</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 7: PE CODE CHAY (LEETCODE ARENA) ==================== -->
+    <section class="tab-pane" id="pane-pe-code">
+      <!-- PE Header & Catalog Bar -->
+      <div class="pe-top-bar">
+        <div class="pe-top-left">
+          <div class="pe-brand-badge">⚡ Java 23 Practical Exam (PE) Lab</div>
+          <div class="pe-problem-selector-wrapper">
+            <label for="peProblemSelect" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">Chọn bài tập PE</label>
+            <select id="peProblemSelect" class="custom-select pe-select">
+              <!-- Rendered dynamically by JS -->
+            </select>
+          </div>
+          <div class="pe-tags-row" id="peProblemMetaTags">
+            <!-- Difficulty, Category, Day badges injected by JS -->
+          </div>
+        </div>
+        <div class="pe-top-actions">
+          <button type="button" class="btn btn-outline btn-sm" id="pePrevProblemBtn" title="Bài trước">◀ Bài trước</button>
+          <button type="button" class="btn btn-outline btn-sm" id="peNextProblemBtn" title="Bài kế tiếp">Bài kế ▶</button>
+          <button type="button" class="btn-ask-ai-pill" id="peAIReviewBtn" title="Nhờ AI Tutor review & chỉ lỗi code này">
+            <span class="ai-sparkle">✨</span> AI Chữa Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Main LeetCode Workspace Split-Screen -->
+      <div class="pe-workspace">
+        
+        <!-- Left Panel: Problem Statement, Examples, Constraints, Hints, Solution -->
+        <div class="pe-problem-pane">
+          <div class="pe-tabs-header">
+            <button type="button" class="pe-tab-btn active" data-tab="statement">📝 Đề bài &amp; Ví dụ</button>
+            <button type="button" class="pe-tab-btn" data-tab="hints">💡 Gợi ý (Hints)</button>
+            <button type="button" class="pe-tab-btn" data-tab="solution">🎯 Lời giải chuẩn</button>
+          </div>
+          
+          <div class="pe-tab-content active" id="peTabContentStatement">
+            <h2 class="pe-problem-title" id="peProblemTitle">Đang tải bài tập...</h2>
+            <div class="pe-markdown-body" id="peProblemDescription">...</div>
+            
+            <div class="pe-section-sub">
+              <h4 class="pe-sub-title">📋 Ví Dụ Mẫu (Examples):</h4>
+              <div id="peExamplesContainer" class="pe-examples-list"></div>
+            </div>
+
+            <div class="pe-section-sub">
+              <h4 class="pe-sub-title">🔒 Ràng Buộc &amp; Định Dạng (Constraints):</h4>
+              <div class="pe-constraints-box" id="peConstraintsBox"></div>
+            </div>
+          </div>
+
+          <div class="pe-tab-content" id="peTabContentHints" style="display:none">
+            <h4 class="pe-sub-title">💡 Gợi ý giải thuật &amp; tiếp cận từng bước:</h4>
+            <div id="peHintsContainer" class="pe-hints-list"></div>
+          </div>
+
+          <div class="pe-tab-content" id="peTabContentSolution" style="display:none">
+            <div class="pe-solution-banner">
+              <strong>⚠️ Lời khuyên vàng:</strong> Hãy tự "code chay" ít nhất 15 phút trước khi xem lời giải mẫu để rèn tư duy phản xạ!
+            </div>
+            <div id="peSolutionContainer" class="pe-solution-content"></div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Code Editor & Test Runner -->
+        <div class="pe-editor-pane">
+          <!-- Editor Top Bar -->
+          <div class="pe-editor-header">
+            <div class="pe-lang-badge">
+              <span class="lang-dot"></span> <strong>Java 23</strong> (HotSpot 64-Bit Local Engine)
+            </div>
+            <div class="pe-editor-actions">
+              <button type="button" class="pe-btn-icon" id="peFormatCodeBtn" title="Căn chỉnh thụt lề">🧹 Format</button>
+              <button type="button" class="pe-btn-icon" id="peResetCodeBtn" title="Đặt lại code ban đầu">🔄 Reset</button>
+              <button type="button" class="pe-btn-icon" id="peCopyCodeBtn" title="Sao chép code">📋 Copy</button>
+            </div>
+          </div>
+
+          <!-- AI Quick Action Bar -->
+          <div class="pe-ai-quick-bar">
+            <span class="ai-bar-label">🧠 AI Trợ Lý:</span>
+            <button class="ai-quick-btn" id="peHintStep1Btn" title="Gợi ý bước đầu tiên">🔍 Bắt đầu từ đâu?</button>
+            <button class="ai-quick-btn" id="peNextStepBtn" title="Gợi ý bước tiếp theo">⚡ Bước tiếp theo</button>
+            <button class="ai-quick-btn" id="peExplainApproachBtn" title="Giải thích cách tiếp cận">💡 Giải thích approach</button>
+            <button class="ai-quick-btn ai-quick-btn--generate" id="peWriteCodeBtn" title="AI viết code giúp bạn">🤖 Viết code giúp tôi</button>
+            <button class="ai-quick-btn ai-quick-btn--debug" id="peDebugCodeBtn" title="AI tìm lỗi code">🐛 Tìm lỗi</button>
+          </div>
+
+          <!-- AI Chat Panel (collapsible) -->
+          <div class="pe-ai-chat-panel" id="peAIChatPanel" style="display:none">
+            <div class="pe-ai-chat-header">
+              <span>🧠 AI Code Assistant</span>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <span class="pe-ai-thinking" id="peAIThinking" style="display:none">⏳ Đang suy nghĩ...</span>
+                <button class="pe-ai-close-btn" id="peAIChatCloseBtn">×</button>
+              </div>
+            </div>
+            <div class="pe-ai-chat-messages" id="peAIChatMessages">
+              <div class="pe-ai-msg pe-ai-msg--system">
+                👋 Chào! Tôi là AI Code Mentor. Hãy chọn một gợi ý phía trên hoặc hỏi tôi bất cứ điều gì về bài này!
+              </div>
+            </div>
+            <div class="pe-ai-chat-input-row">
+              <input type="text" class="pe-ai-chat-input" id="peAIChatInput"
+                placeholder="Hỏi AI: 'Tại sao code tôi sai?', 'Viết vòng lặp đúng không?'..." />
+              <button class="pe-ai-send-btn" id="peAISendBtn">➤</button>
+            </div>
+          </div>
+
+          <!-- Code Area with Line Numbers -->
+          <div class="pe-code-wrapper">
+            <div class="pe-line-numbers" id="peLineNumbers">1</div>
+            <textarea class="pe-code-textarea" id="peCodeInput" spellcheck="false"
+              placeholder="// Viết code Java chay tại đây..."></textarea>
+          </div>
+
+          <!-- Bottom Test Runner & Console -->
+          <div class="pe-runner-container">
+            <div class="pe-runner-header">
+              <div class="pe-test-tabs" id="peTestTabs">
+                <!-- Test 1, Test 2, Custom... -->
+              </div>
+              <div class="pe-run-buttons">
+                <button type="button" class="btn btn-outline btn-sm" id="peRunTestBtn">
+                  <span>▶️</span> Chạy Thử
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="peSubmitBtn">
+                  <span>🚀</span> Nộp Bài (Submit)
+                </button>
+              </div>
+            </div>
+
+            <!-- Test Case Detail / Input Box -->
+            <div class="pe-testcase-body" id="peTestCaseBody">
+              <!-- Active test case input / expected -->
+            </div>
+
+            <!-- Execution Result Banner & Diff -->
+            <div class="pe-result-panel" id="peResultPanel" style="display:none">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB: SPEED QUIZ (PHẢN XẠ) ==================== -->
+    <section class="tab-pane" id="pane-speed-quiz">
+      <div class="section-hero" style="padding:1.5rem 2rem 1rem">
+        <div class="hero-content">
+          <div class="hero-badge">⚡ Speed Quiz — Phản Xạ Tốc Độ</div>
+          <h2 class="hero-title" style="font-size:1.5rem">Speed Quiz & Sprint Mode</h2>
+          <p class="hero-desc">Rèn phản xạ cực nhanh. Mỗi câu chỉ có 10 giây — đừng suy nghĩ, hãy phản xạ!</p>
+        </div>
+      </div>
+
+      <!-- Mode selector -->
+      <div class="speed-mode-selector">
+        <button class="speed-mode-btn active" id="speedModeQuiz" data-mode="speed">⚡ Speed Mode (10s/câu)</button>
+        <button class="speed-mode-btn" id="speedModeSprint" data-mode="sprint">🏃 Sprint Mode (20 câu · 3 phút)</button>
+        <button class="speed-mode-btn" id="speedModeWeak" data-mode="weak">🎯 Weak Bank (câu sai nhiều nhất)</button>
+      </div>
+
+      <!-- Speed Quiz Arena -->
+      <div class="speed-quiz-arena" id="speedQuizArena">
+        <!-- Start Screen -->
+        <div class="speed-start-screen" id="speedStartScreen">
+          <div class="speed-mode-info" id="speedModeInfo">
+            <div class="speed-mode-icon">⚡</div>
+            <h3 id="speedModeTitle">Speed Mode</h3>
+            <p id="speedModeDesc">Mỗi câu 10 giây · Đúng ngay không cần suy nghĩ · Tính combo streak</p>
+            <div class="speed-best-row">
+              <span>🏆 Kỷ lục: </span><strong id="speedBestScore">--</strong>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="speedStartBtn">🚀 Bắt Đầu!</button>
+        </div>
+
+        <!-- Active Quiz -->
+        <div class="speed-active" id="speedActiveArea" style="display:none">
+          <div class="speed-hud">
+            <div class="speed-hud-left">
+              <div class="speed-timer-ring" id="speedTimerRing">
+                <svg viewBox="0 0 36 36" class="speed-ring-svg">
+                  <circle class="speed-ring-bg" cx="18" cy="18" r="16"/>
+                  <circle class="speed-ring-fill" id="speedRingFill" cx="18" cy="18" r="16"
+                    stroke-dasharray="100 100" stroke-dashoffset="0"/>
+                </svg>
+                <span class="speed-timer-num" id="speedTimerNum">10</span>
+              </div>
+            </div>
+            <div class="speed-hud-center">
+              <span class="speed-q-counter" id="speedQCounter">Câu 1/20</span>
+              <div class="speed-combo" id="speedComboDisplay" style="display:none">🔥 Combo x<span id="speedComboNum">0</span></div>
+            </div>
+            <div class="speed-hud-right">
+              <span class="speed-score-live">⭐ <span id="speedScoreLive">0</span></span>
+            </div>
+          </div>
+
+          <div class="speed-question-card" id="speedQuestionCard">
+            <div class="speed-q-text" id="speedQText">Loading...</div>
+            <div class="speed-options" id="speedOptions"></div>
+            <div class="speed-feedback" id="speedFeedback" style="display:none"></div>
+          </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="speed-result-screen" id="speedResultScreen" style="display:none">
+          <div class="speed-result-inner">
+            <div class="speed-result-emoji" id="speedResultEmoji">🏆</div>
+            <h2 class="speed-result-title" id="speedResultTitle">Kết Quả</h2>
+            <div class="speed-result-stats">
+              <div class="speed-stat-box">
+                <div class="speed-stat-val" id="speedFinalScore">--</div>
+                <div class="speed-stat-lbl">Đúng</div>
+              </div>
+              <div class="speed-stat-box">
+                <div class="speed-stat-val" id="speedFinalCombo">--</div>
+                <div class="speed-stat-lbl">Max Combo</div>
+              </div>
+              <div class="speed-stat-box">
+                <div class="speed-stat-val" id="speedFinalXP">--</div>
+                <div class="speed-stat-lbl">XP Earned</div>
+              </div>
+              <div class="speed-stat-box">
+                <div class="speed-stat-val" id="speedFinalTime">--</div>
+                <div class="speed-stat-lbl">Tốc độ TB</div>
+              </div>
+            </div>
+            <div class="speed-result-verdict" id="speedResultVerdict"></div>
+            <div class="speed-result-actions">
+              <button class="btn btn-primary" id="speedPlayAgainBtn">🔄 Chơi Lại</button>
+              <button class="btn btn-outline" id="speedViewWeakBtn">🎯 Ôn Câu Sai</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB: MOCK INTERVIEW ==================== -->
+    <section class="tab-pane" id="pane-mock-interview">
+      <div class="section-hero" style="padding:1.5rem 2rem 1rem">
+        <div class="hero-content">
+          <div class="hero-badge">🎭 AI Mock Interview</div>
+          <h2 class="hero-title" style="font-size:1.5rem">Phỏng Vấn Thử Với AI</h2>
+          <p class="hero-desc">AI đóng vai HRD / Tech Lead FPT. Hỏi ngẫu nhiên, chấm điểm thật, nhận xét trực tiếp.</p>
+        </div>
+      </div>
+
+      <div class="interview-workspace">
+        <!-- Left: Settings & History -->
+        <div class="interview-left">
+          <div class="interview-config-card">
+            <h3>⚙️ Cấu Hình Phỏng Vấn</h3>
+            <div class="interview-config-row">
+              <label>Vai trò AI:</label>
+              <select id="interviewerRole" class="custom-select">
+                <option value="hrd">👔 HRD FPT — Hỏi soft skills + overview Java</option>
+                <option value="tech">💻 Tech Lead — Deep dive OOP, Collections, Exception</option>
+                <option value="senior">🚀 Senior Dev — Code review, architecture thinking</option>
+                <option value="tough">😤 Giám Khảo Khắt Khe — Hỏi bẫy, phản biện liên tục</option>
+              </select>
+            </div>
+            <div class="interview-config-row">
+              <label>Chủ đề focus:</label>
+              <select id="interviewTopic" class="custom-select">
+                <option value="all">🎲 Ngẫu nhiên tất cả</option>
+                <option value="oop">🏗️ OOP & Inheritance</option>
+                <option value="collections">📦 Collections & Generics</option>
+                <option value="exception">⚠️ Exception Handling</option>
+                <option value="string">📝 String & StringBuilder</option>
+                <option value="threading">🔄 Multithreading cơ bản</option>
+              </select>
+            </div>
+            <div class="interview-config-row">
+              <label>Số câu hỏi:</label>
+              <select id="interviewQuestions" class="custom-select">
+                <option value="5">5 câu (15 phút)</option>
+                <option value="10" selected>10 câu (30 phút)</option>
+                <option value="15">15 câu (45 phút)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="startInterviewBtn" style="width:100%;margin-top:1rem">
+              🎬 Bắt Đầu Phỏng Vấn
+            </button>
+          </div>
+
+          <div class="interview-history-card" id="interviewHistoryCard">
+            <h4>📋 Lịch Sử Phỏng Vấn</h4>
+            <div id="interviewHistoryList">
+              <div style="color:var(--text-muted);font-size:0.82rem;text-align:center;padding:1rem">Chưa có lịch sử</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interview Chat -->
+        <div class="interview-right">
+          <div class="interview-chat-area" id="interviewChatArea">
+            <div class="interview-welcome" id="interviewWelcome">
+              <div class="interview-welcome-icon">🎭</div>
+              <h3>Sẵn Sàng Phỏng Vấn?</h3>
+              <p>Chọn cấu hình bên trái và nhấn "Bắt Đầu". AI sẽ hỏi như một buổi phỏng vấn thực tế!</p>
+              <div class="interview-tips">
+                <div class="tip-item">💡 Trả lời bằng cách gõ hoặc dùng nút ghi âm</div>
+                <div class="tip-item">📊 AI chấm điểm từng câu sau khi bạn trả lời</div>
+                <div class="tip-item">🎯 Câu trả lời càng cụ thể, điểm càng cao</div>
+              </div>
+            </div>
+            <div class="interview-messages" id="interviewMessages" style="display:none"></div>
+          </div>
+
+          <div class="interview-input-area" id="interviewInputArea" style="display:none">
+            <div class="interview-voice-row">
+              <button class="btn-voice-listen" id="interviewSpeechBtn" style="font-size:0.82rem;padding:0.4rem 0.8rem">🎤 Ghi Âm</button>
+              <div id="interviewSpeechStatus" style="font-size:0.75rem;color:#94a3b8"></div>
+            </div>
+            <div class="interview-text-row">
+              <textarea id="interviewAnswerInput" class="interview-textarea"
+                placeholder="Gõ câu trả lời của bạn tại đây... (hoặc dùng ghi âm ở trên)" rows="3"></textarea>
+              <button class="btn btn-primary" id="interviewSubmitBtn">Gửi Câu Trả Lời ➤</button>
+            </div>
+            <div class="interview-progress-bar">
+              <div class="interview-q-label" id="interviewQLabel">Câu 1 / 10</div>
+              <div class="interview-bar-track">
+                <div class="interview-bar-fill" id="interviewBarFill" style="width:0%"></div>
+              </div>
+              <button class="btn btn-sm btn-outline" id="endInterviewBtn">🏁 Kết Thúc</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Score Modal -->
+      <div class="interview-final-result" id="interviewFinalResult" style="display:none">
+        <div class="final-result-card">
+          <h2>🎉 Kết Quả Phỏng Vấn</h2>
+          <div class="final-score-big" id="interviewFinalScore">--/100</div>
+          <div id="interviewFinalFeedback"></div>
+          <button class="btn btn-primary" id="interviewRestartBtn">🔄 Phỏng Vấn Lại</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Add / Edit Personal Error Note -->
+  <div class="modal-overlay" id="addErrorModal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="errorModalTitle">Ghi Chép Lỗi Sai Vào Error Book</h3>
+        <button class="modal-close-btn" id="closeErrorModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="errorTitleInput">Tiêu đề lỗi / Tên bẫy:</label>
+          <input type="text" id="errorTitleInput" class="custom-input" placeholder="Ví dụ: Nhầm == với equals() khi so sánh String pool">
+        </div>
+        <div class="form-group">
+          <label for="errorCategorySelect">Phân loại lỗi:</label>
+          <select id="errorCategorySelect" class="custom-select">
+            <option value="Syntax trap">1. Syntax trap</option>
+            <option value="Compile error">2. Compile error</option>
+            <option value="Runtime exception">3. Runtime exception</option>
+            <option value="OOP trap">4. OOP trap</option>
+            <option value="String trap">5. String trap</option>
+            <option value="Collection trap">6. Collection trap</option>
+            <option value="Thread trap">7. Thread trap</option>
+            <option value="Operator trap">8. Operator trap</option>
+            <option value="SQL trap">9. SQL trap</option>
+            <option value="Web trap">10. JavaWeb trap</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="errorDescInput">Vì sao mình bị sai? (Nguyên nhân & Concept):</label>
+          <textarea id="errorDescInput" class="custom-input" rows="3" placeholder="Tưởng rằng new String() vẫn trỏ vào String Pool..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="errorCodeInput">Đoạn code bẫy (Nếu có):</label>
+          <textarea id="errorCodeInput" class="custom-input font-code" rows="4" placeholder="String s1 = new String(&quot;a&quot;); ..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="errorFixInput">Quy tắc sửa / Cách phòng tránh:</label>
+          <input type="text" id="errorFixInput" class="custom-input" placeholder="Luôn dùng .equals() để so sánh nội dung chuỗi.">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="cancelErrorBtn">Hủy</button>
+        <button class="btn btn-primary" id="saveErrorBtn">Lưu Vào Sổ Lỗi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== AI TUTOR FLOATING WIDGET ==================== -->
+  <!-- Floating Trigger Button -->
+  <button class="ai-tutor-fab" id="aiTutorFab" title="Hỏi AI Tutor Java">
+    <span class="ai-fab-icon">🤖</span>
+    <span class="ai-fab-label">AI Tutor</span>
+    <span class="ai-fab-ping"></span>
+  </button>
+
+  <!-- Chat Panel (slides in from right) -->
+  <div class="ai-tutor-panel" id="aiTutorPanel">
+    <!-- Resize Handle on the left edge (Drag to resize) -->
+    <div class="ai-resize-handle" id="aiResizeHandle" title="Kéo để phóng to / thu nhỏ chiều rộng (Nhấp đúp để đặt lại)">
+      <div class="ai-resize-bar"></div>
+    </div>
+
+    <!-- Panel Header -->
+    <div class="ai-panel-header">
+      <div class="ai-header-left">
+        <div class="ai-avatar">🤖</div>
+        <div class="ai-header-info">
+          <div class="ai-header-name">Java AI Tutor</div>
+          <div class="ai-header-status" id="aiStatusDot">
+            <span class="status-dot online"></span>
+            <span id="aiModelStatusLabel">Gemini · Sẵn sàng</span>
+            <span class="ai-token-counter-pill" id="aiHeaderTokenBadge" title="Xem chi tiết token của 5 API Key">
+              💎 <span id="aiHeaderTokenNum">0</span> tokens
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="ai-header-actions">
+        <button class="ai-icon-btn" id="aiExpandBtn" title="Phóng to / Thu nhỏ chiều rộng">🗖</button>
+        <button class="ai-icon-btn" id="aiMinimizeBtn" title="Thu nhỏ">➖</button>
+        <button class="ai-icon-btn" id="aiClearBtn" title="Xóa lịch sử chat">🗑</button>
+        <button class="ai-icon-btn" id="aiSettingsBtn" title="Cài đặt Model & Quota Token">⚙</button>
+        <button class="ai-icon-btn" id="aiClosePanelBtn" title="Đóng">✕</button>
+      </div>
+    </div>
+
+    <!-- Server-managed Keys Notice (replaces manual API key entry) -->
+    <div class="ai-setup-banner ai-connected-banner" id="aiSetupBanner">
+      <div class="setup-icon">🔑</div>
+      <div class="setup-text">
+        <strong style="color:#34d399">✓ AI Tutor sẵn sàng</strong>
+        <p>5 Gemini API key đang được quản lý tự động bởi server.<br>Tự động chuyển key khi bị rate-limit.</p>
+      </div>
+    </div>
+
+    <!-- Context Badge (shows current lesson topic) -->
+    <div class="ai-context-badge" id="aiContextBadge" style="display:none">
+      <span class="context-icon">📚</span>
+      <span id="aiContextLabel">Đang học: Ngày 1 - Language Fundamentals</span>
+      <button class="ai-icon-btn-xs" id="aiClearContextBtn" title="Bỏ ngữ cảnh bài học">✕</button>
+    </div>
+
+    <!-- Suggested Quick Questions -->
+    <div class="ai-quick-questions" id="aiQuickQuestions">
+      <div class="quick-q-label">💡 Câu hỏi gợi ý:</div>
+      <div class="quick-q-chips" id="aiQuickChips">
+        <button class="quick-chip" data-q="Giải thích khái niệm này bằng ví dụ code thực tế">📝 Ví dụ code</button>
+        <button class="quick-chip" data-q="Đây có phải bẫy thi phổ biến không? Giải thích tại sao">⚠️ Bẫy thi</button>
+        <button class="quick-chip" data-q="So sánh với khái niệm tương tự khác trong Java">🔄 So sánh</button>
+        <button class="quick-chip" data-q="Câu hỏi dạng trắc nghiệm nào hay xuất hiện về chủ đề này trong TestKing?">🎯 TestKing</button>
+        <button class="quick-chip" data-q="Tóm tắt 5 điểm cần nhớ quan trọng nhất">📌 Tóm tắt</button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Area -->
+    <div class="ai-messages-area" id="aiMessagesArea">
+      <!-- Welcome message injected by JS -->
+    </div>
+
+    <!-- Typing indicator -->
+    <div class="ai-typing-indicator" id="aiTypingIndicator" style="display:none">
+      <div class="ai-avatar-sm">🤖</div>
+      <div class="typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="typing-label">AI đang suy nghĩ...</span>
+    </div>
+
+    <!-- Input Area -->
+    <div class="ai-input-area">
+      <textarea class="ai-chat-input" id="aiChatInput" rows="2"
+        placeholder="Hỏi về Java, SQL, bẫy thi, hoặc bất cứ điều gì trong lộ trình 8 tuần..."
+        disabled></textarea>
+      <button class="ai-send-btn" id="aiSendBtn" disabled title="Gửi (Ctrl+Enter)">
+        <span class="send-icon">➤</span>
+      </button>
+    </div>
+    <div class="ai-input-hint">Ctrl+Enter để gửi · AI có ngữ cảnh bài học hiện tại</div>
+
+    <!-- Settings & Token Quota Panel (overlay inside chat) -->
+    <div class="ai-settings-panel" id="aiSettingsPanel" style="display:none">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-shrink: 0;">
+        <h4 style="margin:0; font-size:1.05rem; display:flex; align-items:center; gap:0.4rem; color: #f8fafc;">
+          <span>⚙</span> Quota &amp; Thanh Token 5 API Key
+        </h4>
+        <button class="ai-icon-btn-xs" id="aiSettingsCloseXBtn" title="Đóng">✕</button>
+      </div>
+
+      <p class="settings-note" style="margin-bottom:0.75rem; flex-shrink: 0;">
+        🔐 5 Gemini API key trong <code>.env</code> được <strong>server.js</strong> tự động xoay vòng Round-Robin và hạ nhiệt khi chạm limit. Key an toàn tuyệt đối.
+      </p>
+
+      <!-- Overall Summary Bar -->
+      <div class="ai-token-summary-grid">
+        <div class="summary-stat-box">
+          <span class="stat-box-title">TỔNG TOKEN ĐÃ DÙNG</span>
+          <span class="stat-box-num text-cyan" id="statGrandTokens">0 tokens</span>
+        </div>
+        <div class="summary-stat-box">
+          <span class="stat-box-title">REQUEST HÔM NAY</span>
+          <span class="stat-box-num text-emerald" id="statGrandRequests">0 / 7,500</span>
+        </div>
+        <div class="summary-stat-box">
+          <span class="stat-box-title">KEY KHẢ DỤNG</span>
+          <span class="stat-box-num text-purple" id="statActiveKeys">5 / 5 sẵn sàng</span>
+        </div>
+      </div>
+
+      <!-- Model Selector -->
+      <div class="settings-model-group" style="margin: 0.85rem 0; flex-shrink: 0;">
+        <label class="settings-label">Model AI ưu tiên:</label>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <select id="aiModelSelect" class="custom-select" style="flex:1;">
+            <option value="gemini-3.6-flash">Gemini 3.6 Flash ⚡ (Khuyến nghị - Nhanh &amp; Mạnh nhất)</option>
+            <option value="gemini-3.5-flash">Gemini 3.5 Flash 🔥 (Mạnh - Cân bằng)</option>
+            <option value="gemini-flash-latest">Gemini Flash Latest 🔄 (Luôn mới nhất)</option>
+            <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash Lite 🪶 (Nhẹ - Nhanh nhất)</option>
+          </select>
+          <button class="btn btn-primary btn-sm" id="aiSaveSettingsBtn">Lưu Model</button>
+        </div>
+      </div>
+
+      <!-- Realtime 5 Key Quota Breakdown List -->
+      <div class="ai-keys-token-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+          <strong style="font-size: 0.82rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px;">
+            📊 Thanh Token &amp; Quota từng Key:
+          </strong>
+          <button type="button" class="btn-refresh-tokens" id="aiRefreshTokenBtn" title="Làm mới trạng thái">
+            🔄 Cập nhật ngay
+          </button>
+        </div>
+        <div id="aiKeyTokenCardsList" class="ai-key-cards-list">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <div style="margin-top: 0.75rem; text-align: center; flex-shrink: 0;">
+        <button class="btn btn-outline btn-sm" id="aiCloseSettingsBtn" style="width: 100%;">Đóng Cài Đặt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BEHAVIORAL & COGNITIVE PROFILER MODAL ==================== -->
+  <div class="profiler-modal-overlay" id="behaviorProfilerModal" style="display: none;">
+    <div class="profiler-modal">
+      <div class="profiler-modal-header">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <span style="font-size: 1.5rem;">🧠</span>
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #f8fafc;">
+              BẮT BỆNH CÁ TÍNH LÀM BÀI &amp; THÓI QUEN HỌC TẬP
+            </h3>
+            <span style="font-size: 0.78rem; color: #94a3b8;">
+              AI Cognitive Profiler · Bóc tách cơ chế "Làm rất nhanh nhưng tự tin sai"
+            </span>
+          </div>
+        </div>
+        <button class="icon-btn" id="btnCloseProfilerModal" title="Đóng">✕</button>
+      </div>
+
+      <div class="profiler-modal-body">
+        <!-- Hero Archetype Card -->
+        <div class="profiler-hero-card">
+          <div class="profiler-hero-badge">
+            <span>🎭</span> Archetype Cá Tính Hiện Tại
+          </div>
+          <div class="profiler-archetype-title" id="profilerArchetypeTitle">
+            ⚡ Chiến Thần Tốc Độ: Tự Tin Nhưng Ăn Bẫy
+          </div>
+          <p class="profiler-archetype-quote" id="profilerArchetypeQuote">
+            "Lướt đề 2 giây là bấm chọn vì thấy từ khóa quen mắt. Tự tin 100% nhưng kết quả 0/10 vì ăn trọn bẫy TestKing!"
+          </p>
+
+          <!-- Dunning-Kruger Bar Comparison -->
+          <div class="dunning-kruger-box">
+            <div class="dk-bar-row">
+              <span class="dk-bar-label">Độ Tự Tin Làm Bài:</span>
+              <div class="dk-bar-track">
+                <div class="dk-bar-fill-confidence" id="barConfidenceFill" style="width: 85%;"></div>
+              </div>
+              <span class="dk-bar-val text-pink" id="barConfidenceVal">85%</span>
+            </div>
+            <div class="dk-bar-row">
+              <span class="dk-bar-label">Độ Chuẩn Xác Thực Tế:</span>
+              <div class="dk-bar-track">
+                <div class="dk-bar-fill-accuracy" id="barAccuracyFill" style="width: 30%;"></div>
+              </div>
+              <span class="dk-bar-val text-emerald" id="barAccuracyVal">30%</span>
+            </div>
+            <div class="dk-alert-pill" id="dkAlertPill">
+              <span>🚨</span>
+              <div>
+                <strong>Ảo tưởng quen thuộc (Overconfidence Gap: +55%):</strong> Bạn có xu hướng nhận diện từ khóa bề mặt (Surface Familiarity) rồi chọn ngay thay vì suy luận ngữ nghĩa máy ảo JVM!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Metrics Grid -->
+        <div class="profiler-metrics-grid">
+          <div class="profiler-metric-box">
+            <div class="profiler-metric-label">⏱️ Tốc Độ Trung Bình</div>
+            <div class="profiler-metric-num text-cyan" id="metricAvgSpeed">3.8s</div>
+            <div class="profiler-metric-sub" id="metricSpeedDesc">⚡ Rất nhanh (Chuẩn: 15-25s/câu)</div>
+          </div>
+          <div class="profiler-metric-box">
+            <div class="profiler-metric-label">🚨 Tỷ Lệ Tự Tin Ảo</div>
+            <div class="profiler-metric-num text-rose" id="metricFastFailRate">75%</div>
+            <div class="profiler-metric-sub">Tỷ lệ bài nộp &lt;8s/câu mà bị dưới 70%</div>
+          </div>
+          <div class="profiler-metric-box">
+            <div class="profiler-metric-label">🪤 Tần Suất Sập Bẫy</div>
+            <div class="profiler-metric-num text-amber" id="metricTrapRate">80%</div>
+            <div class="profiler-metric-sub">Hay chết ở: Toán tử, Local var, Ép kiểu</div>
+          </div>
+          <div class="profiler-metric-box">
+            <div class="profiler-metric-label">🔄 Cay Cú Thi Lại</div>
+            <div class="profiler-metric-num text-purple" id="metricRageRetakes">3 lần</div>
+            <div class="profiler-metric-sub">Bấm thi lại &lt;10s mà chưa đọc giải thích</div>
+          </div>
+        </div>
+
+        <!-- Telemetry Log Terminal -->
+        <div class="profiler-telemetry-box">
+          <div class="telemetry-header">
+            <span class="telemetry-title">
+              <span>📜</span> Nhật Ký Hành Vi Real-time (Live Telemetry Logs)
+            </span>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-outline btn-xs" id="btnClearBehaviorLogs" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">
+                🧹 Xóa Logs
+              </button>
+            </div>
+          </div>
+          <div class="telemetry-logs-list" id="telemetryLogsList">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- AI Diagnosis Section -->
+        <div class="profiler-diagnosis-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div>
+              <h4 style="margin: 0 0 0.2rem; font-size: 1.05rem; font-weight: 800; color: #f8fafc; display: flex; align-items: center; gap: 0.4rem;">
+                <span>🤖</span> Bác Sĩ Tâm Lý AI (Gemini Cognitive Diagnostic)
+              </h4>
+              <p style="margin: 0; font-size: 0.8rem; color: #cbd5e1;">
+                Bóc mẽ tâm lý tại sao bạn tự tin nhưng sai và kê toa "kỷ luật thép" để khắc phục ngay.
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary" id="btnRunAIDiagnosis" style="box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4); font-weight: 700;">
+              ✨ Nhờ Gemini Bắt Bệnh &amp; Kê Toa
+            </button>
+          </div>
+
+          <div class="diagnosis-output-box" id="diagnosisOutputBox" style="display: none;">
+            <!-- AI report rendered here -->
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 0.85rem 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+        <span style="font-size: 0.78rem; color: #64748b;">Dữ liệu telemetry được lưu tự động trên trình duyệt.</span>
+        <button class="btn btn-secondary btn-sm" id="btnCloseProfilerFooterBtn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- ==================== TAB 9: ANALYTICS & PROGRESS ==================== -->
+    <section class="tab-pane" id="pane-analytics">
+      <div class="section-hero">
+        <div class="hero-content">
+          <div class="hero-badge">Live Analytics</div>
+          <h2 class="hero-title">📊 Dashboard Tiến Bộ & Chẩn Đoán Yếu</h2>
+          <p class="hero-desc">Theo dõi điểm mock qua thời gian, heatmap chương yếu, XP streak và dự đoán khả năng pass.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card" style="cursor:pointer" onclick="document.getElementById('analyticsRefreshBtn').click()">
+            <div class="stat-val" id="analyticsTotalXP">0</div>
+            <div class="stat-lbl">Tổng XP</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="analyticsBestScore">--%</div>
+            <div class="stat-lbl">Mock Tốt Nhất</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="analyticsAvgScore">--%</div>
+            <div class="stat-lbl">TB Mock</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="analyticsPassPredict">--</div>
+            <div class="stat-lbl">Dự Đoán Pass</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analytics-content">
+        <!-- Row 1: Score Chart + Exam Countdown -->
+        <div class="analytics-row">
+          <div class="analytics-card chart-card">
+            <div class="analytics-card-header">
+              <h3>📈 Điểm Mock Test Qua Thời Gian</h3>
+              <button class="btn btn-sm btn-outline" id="analyticsRefreshBtn">🔄 Làm Mới</button>
+            </div>
+            <canvas id="scoreProgressChart" height="200"></canvas>
+            <div id="chartEmptyMsg" style="text-align:center;padding:3rem;color:#64748b;display:none">
+              📊 Chưa có dữ liệu mock test nào. Hãy làm vài bài TestKing Mock!
+            </div>
+          </div>
+
+          <div class="analytics-card countdown-big-card">
+            <div class="analytics-card-header">
+              <h3>⏰ Đếm Ngược Ngày Thi</h3>
+            </div>
+            <div class="countdown-big-display">
+              <div class="countdown-circle" id="countdownCircleDisplay">
+                <span class="cd-days-big" id="cdDaysBig">--</span>
+                <span class="cd-label-big">ngày nữa</span>
+              </div>
+              <div class="countdown-details">
+                <div class="cd-detail-row">
+                  <span>📅 Ngày thi:</span>
+                  <strong id="cdExamDateDisplay">Chưa đặt</strong>
+                </div>
+                <div class="cd-detail-row">
+                  <span>📚 Cần học:</span>
+                  <strong id="cdDaysLeftTask">--</strong>
+                </div>
+                <div class="cd-detail-row">
+                  <span>🎯 Hôm nay:</span>
+                  <strong id="cdTodayTask">--</strong>
+                </div>
+                <input type="date" id="examDateInput" class="exam-date-input-field" placeholder="Chọn ngày thi">
+                <button class="btn btn-primary" id="examSaveDateBtn">💾 Lưu Ngày Thi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Chapter Heatmap -->
+        <div class="analytics-card heatmap-card">
+          <div class="analytics-card-header">
+            <h3>🗺️ Chapter Mastery Heatmap</h3>
+            <span class="heatmap-legend">
+              <span style="color:#ef4444">■ Yếu (&lt;50%)</span>
+              <span style="color:#f59e0b">■ TB (50-79%)</span>
+              <span style="color:#22c55e">■ Mạnh (≥80%)</span>
+            </span>
+          </div>
+          <div class="chapter-heatmap" id="chapterHeatmap">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Row 3: Gamification & Badges -->
+        <div class="analytics-row">
+          <div class="analytics-card xp-card">
+            <div class="analytics-card-header">
+              <h3>🏆 XP & Level Progress</h3>
+            </div>
+            <div class="xp-full-display">
+              <div class="xp-level-ring" id="xpLevelRing">
+                <span class="xp-ring-icon" id="xpRingIcon">⭐</span>
+                <span class="xp-ring-level" id="xpRingLevel">Lv.1</span>
+              </div>
+              <div class="xp-progress-detail">
+                <div class="xp-level-name" id="xpLevelName">Rookie</div>
+                <div class="xp-full-bar">
+                  <div class="xp-full-fill" id="xpFullFill" style="width:0%"></div>
+                </div>
+                <div class="xp-to-next" id="xpToNext">0 XP → Level 2: 100 XP</div>
+              </div>
+            </div>
+            <div class="xp-sources">
+              <div class="xp-source-row"><span>✅ Hoàn Thành Ngày Học</span><span>+10 XP</span></div>
+              <div class="xp-source-row"><span>🎯 Quiz Đúng</span><span>+2 XP</span></div>
+              <div class="xp-source-row"><span>🔥 Streak +7 Ngày</span><span>+50 XP</span></div>
+              <div class="xp-source-row"><span>📝 Mock Test Pass</span><span>+30 XP</span></div>
+              <div class="xp-source-row"><span>🔁 SRS Ôn Xong</span><span>+5 XP/thẻ</span></div>
+            </div>
+          </div>
+
+          <div class="analytics-card badges-card">
+            <div class="analytics-card-header">
+              <h3>🏅 Huy Hiệu Thành Tích</h3>
+            </div>
+            <div class="badges-grid" id="badgesGrid">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4: Quick Notes / Daily Challenge -->
+        <div class="analytics-row">
+          <div class="analytics-card notes-card">
+            <div class="analytics-card-header">
+              <h3>📓 Quick Notes & Cheat Sheet</h3>
+              <button class="btn btn-sm btn-primary" id="aiSummarizeNotesBtn">✨ AI Tóm Tắt</button>
+            </div>
+            <textarea id="quickNotesArea" class="quick-notes-textarea" placeholder="Ghi chú nhanh cho ngày hôm nay... (tự động lưu)"></textarea>
+            <div id="notesSummaryBox" style="display:none" class="notes-summary-output"></div>
+          </div>
+
+          <div class="analytics-card daily-challenge-card">
+            <div class="analytics-card-header">
+              <h3>🔥 Daily Challenge</h3>
+              <button class="btn btn-sm btn-outline" id="refreshChallengeBtn">🔄 Mới</button>
+            </div>
+            <div id="dailyChallengeContent">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5: AI Study Planner -->
+        <div class="analytics-card ai-planner-card">
+          <div class="analytics-card-header">
+            <h3>🧠 AI Study Planner Thích Ứng</h3>
+            <button class="btn btn-sm btn-primary" id="aiGeneratePlanBtn">✨ AI Lập Kế Hoạch Ngày Mai</button>
+          </div>
+          <div class="ai-planner-context">
+            <div class="planner-stat-row" id="plannerStatRow">
+              <span class="planner-stat-pill" id="plannerStatDone">0 ngày hoàn thành</span>
+              <span class="planner-stat-pill" id="plannerStatMock">0 mock đã làm</span>
+              <span class="planner-stat-pill" id="plannerStatSRS">0 thẻ SRS đến hạn</span>
+              <span class="planner-stat-pill" id="plannerStatWeakChapter">Chương yếu: --</span>
+            </div>
+          </div>
+          <div id="aiPlannerOutput" class="ai-planner-output">
+            <div class="planner-placeholder">
+              <span>📊 Nhấn “AI Lập Kế Hoạch” để AI phân tích tiến độ và tạo kế hoạch ngày mai tối ưu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ==================== SENIOR CHEAT SHEET MODAL ==================== -->
+  <div class="modal-overlay" id="seniorCheatSheetModal" style="display: none;">
+    <div class="modal-card modal-xl">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1.4rem;">⚡</span>
+          <div>
+            <h3 class="modal-title" style="margin:0;">Cẩm Nang Kiến Trúc & Bẫy Sát Thủ Audit FPT (Senior Cheat Sheet)</h3>
+            <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Tổng hợp kiến thức cốt lõi chuyên sâu, bảng ma trận bẫy và 10 điều răn Clean Code FSOFT</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeCheatSheetModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" style="max-height:75vh; overflow-y:auto; padding:1.25rem 1.75rem;">
+        <div class="cheatsheet-tabs" style="display:flex; gap:0.5rem; flex-wrap:wrap; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:1.25rem;">
+          <button class="cheatsheet-tab-btn active" data-target="cs-jvm">1. JVM Memory & GC</button>
+          <button class="cheatsheet-tab-btn" data-target="cs-oop">2. OOP & Overriding Matrix</button>
+          <button class="cheatsheet-tab-btn" data-target="cs-hash">3. Collections & Hashing</button>
+          <button class="cheatsheet-tab-btn" data-target="cs-db">4. SQL Indexing & Isolation</button>
+          <button class="cheatsheet-tab-btn" data-target="cs-spring">5. Spring Core & @Transactional</button>
+          <button class="cheatsheet-tab-btn" data-target="cs-cleancode">6. 10 Điều Răn Clean Code</button>
+        </div>
+
+        <div class="cheatsheet-content-container">
+          <!-- Section 1: JVM Memory -->
+          <div class="cs-section active" id="cs-jvm">
+            <h4 style="color:var(--accent-amber); display:flex; align-items:center; gap:0.5rem; margin-top:0;">
+              <span>🧠</span> Kiến Trúc Bộ Nhớ JVM & Cơ Chế Thu Gom Rác (Garbage Collection)
+            </h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:0.75rem;">
+              <div class="cs-card">
+                <h5 style="color:#38bdf8; margin:0 0 0.5rem 0;">Stack Memory vs Heap Memory</h5>
+                <ul style="font-size:0.85rem; color:#cbd5e1; padding-left:1.2rem; line-height:1.5;">
+                  <li><strong>Stack (Mỗi Thread 1 Stack riêng):</strong> Lưu trữ Stack Frame chứa các biến nguyên thủy cục bộ (primitive local variables) và con trỏ tham chiếu (reference pointer) tới Heap. Quản lý LIFO tự động thu hồi khi method return. Không cần GC. Tràn bộ nhớ: <code>StackOverflowError</code> (thường do đệ quy vô hạn).</li>
+                  <li><strong>Heap (Chia sẻ chung cho toàn bộ JVM):</strong> Nơi cấp phát tất cả Object và Mảng (Arrays). Được dọn dẹp bởi Garbage Collector (GC). Tràn bộ nhớ: <code>OutOfMemoryError: Java heap space</code>.</li>
+                </ul>
+              </div>
+              <div class="cs-card">
+                <h5 style="color:#a78bfa; margin:0 0 0.5rem 0;">Phân Vùng Heap & Thế Hệ Đối Tượng</h5>
+                <ul style="font-size:0.85rem; color:#cbd5e1; padding-left:1.2rem; line-height:1.5;">
+                  <li><strong>Young Generation:</strong> Gồm Eden Space và 2 Survivor Spaces (S0, S1). Đối tượng mới sinh ra nằm ở Eden. Minor GC dọn dẹp liên tục, copy object sống sót qua lại giữa S0 và S1.</li>
+                  <li><strong>Old Generation (Tenured):</strong> Chứa các object sống sót qua số chu kỳ nhất định (mặc định <code>MaxTenuringThreshold = 15</code>). Khi Old Gen đầy sẽ kích hoạt Major GC / Full GC (gây Stop-The-World).</li>
+                  <li><strong>Metaspace (từ Java 8 thay thế PermGen):</strong> Lưu Class metadata, bytecode, static fields. Nằm trên bộ nhớ Native OS thay vì Heap, co giãn tự động theo RAM máy chủ.</li>
+                </ul>
+              </div>
+              <div class="cs-card" style="grid-column: 1 / -1;">
+                <h5 style="color:#34d399; margin:0 0 0.5rem 0;">String Constant Pool & Hàm .intern()</h5>
+                <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.5; margin:0;">
+                  <code>String s1 = "Java";</code> tạo đối tượng trong String Constant Pool (nằm trong Heap từ Java 7+). <code>String s2 = new String("Java");</code> bắt buộc tạo 1 object mới toanh ngoài Heap thông thường. Khi gọi <code>s2.intern()</code>, JVM sẽ tìm xem chuỗi "Java" đã có trong Pool chưa: nếu có, trả về tham chiếu từ Pool; nếu chưa, thêm vào Pool. Do đó <code>s1 == s2.intern()</code> trả về <strong>true</strong>!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: OOP & Overriding Matrix -->
+          <div class="cs-section" id="cs-oop" style="display:none;">
+            <h4 style="color:var(--accent-amber); margin-top:0;">🧩 4 Quy Tắc Sắt Về Ghi Đè Phương Thức (Method Overriding)</h4>
+            <div style="overflow-x:auto; margin-top:0.75rem;">
+              <table class="cs-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                <thead>
+                  <tr style="background:rgba(255,255,255,0.06); text-align:left;">
+                    <th style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);">Thành phần</th>
+                    <th style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);">Quy tắc lớp con (Child Class)</th>
+                    <th style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);">Lỗi vi phạm thường gặp</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);"><strong>Access Modifier</strong></td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#34d399;">Phải rộng hơn hoặc bằng lớp cha: <code>public &gt; protected &gt; default &gt; private</code></td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#f43f5e;">Cha là <code>protected</code>, con ghi đè là <code>default</code> $\to$ Compile Error: "cannot reduce visibility".</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);"><strong>Return Type</strong></td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#34d399;">Phải cùng kiểu hoặc là kiểu dẫn xuất con (Covariant Return Type từ Java 5).</td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#f43f5e;">Cha trả về <code>Number</code>, con trả về <code>Integer</code> (HỢP LỆ). Nhưng cha trả về <code>void</code>, con trả về <code>int</code> $\to$ Lỗi.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);"><strong>Checked Exceptions</strong></td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#34d399;">Chỉ được throws cùng loại hoặc là Exception con, hoặc không throws gì cả.</td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#f43f5e;">Cha throws <code>IOException</code>, con throws <code>Exception</code> $\to$ Compile Error (không được ném checked exception rộng hơn cha).</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle);"><strong>static / final / private</strong></td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#34d399;"><code>final</code> không cho override. <code>static</code> không thể override (chỉ là Method Hiding). <code>private</code> không kế thừa.</td>
+                    <td style="padding:0.6rem 0.75rem; border:1px solid var(--border-subtle); color:#f43f5e;">Gọi static method qua object reference <code>Parent p = new Child(); p.staticMethod();</code> $\to$ vẫn chạy hàm của Parent!</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 3: Collections & Hashing -->
+          <div class="cs-section" id="cs-hash" style="display:none;">
+            <h4 style="color:var(--accent-amber); margin-top:0;">📦 Bản Chất Cơ Chế Hoạt Động Của HashMap & Hợp Đồng HashCode / Equals</h4>
+            <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;">
+              <div class="cs-card" style="margin-bottom:0.75rem;">
+                <h5 style="color:#38bdf8; margin:0 0 0.35rem 0;">Cấu Trúc Node & Công Thức Tính Vị Trí Bucket</h5>
+                <p style="margin:0;">
+                  Bản chất <code>HashMap</code> là một mảng các Node: <code>Node&lt;K,V&gt;[] table</code>. Khi gọi <code>put(key, value)</code>:
+                  <br>1. Tính hash từ key: <code>h = key.hashCode() ^ (h &gt;&gt;&gt; 16)</code> (phép XOR dịch phải 16 bit giúp tán đều bit cao xuống bit thấp, chống đụng độ).
+                  <br>2. Tính index mảng: <code>index = (n - 1) &amp; hash</code> (trong đó $n$ là dung lượng mảng, luôn là lũy thừa của 2: 16, 32, 64...). Phép bitwise AND này tương đương với <code>hash % n</code> nhưng chạy ở tốc độ vi xử lý phần cứng.
+                </p>
+              </div>
+              <div class="cs-card" style="margin-bottom:0.75rem;">
+                <h5 style="color:#f43f5e; margin:0 0 0.35rem 0;">Xử Lý Xung Đột (Collision Resolution) & Cây Đỏ Đen (Java 8+)</h5>
+                <p style="margin:0;">
+                  Nếu 2 key khác nhau rơi vào cùng một index (xung đột hash), chúng được nối tiếp dưới dạng <strong>LinkedList</strong> (Separate Chaining). Từ Java 8:
+                  <br>• Khi 1 bucket có <strong>$\ge 8$ phần tử</strong> và tổng dung lượng bảng <strong>$\ge 64$</strong>, danh sách liên kết sẽ tự động chuyển hóa thành <strong>Red-Black Tree</strong> (Cây Đỏ Đen), giảm độ phức tạp tìm kiếm từ $O(n)$ xuống còn $O(\log n)$.
+                  <br>• Khi số phần tử trong bucket giảm xuống $\le 6$, cây sẽ thoái hóa ngược lại thành LinkedList (Untreeify).
+                </p>
+              </div>
+              <div class="cs-card">
+                <h5 style="color:#34d399; margin:0 0 0.35rem 0;">Hợp Đồng Bất Di Bất Dịch: equals() và hashCode()</h5>
+                <p style="margin:0;">
+                  Nếu 2 object <code>a.equals(b) == true</code> $\implies$ <code>a.hashCode() == b.hashCode()</code> <strong>BẮT BUỘC</strong> phải bằng nhau! Ngược lại, 2 object có cùng hashCode thì CHƯA CHẮC đã equals (đây chính là va chạm hash). Nếu bạn override <code>equals</code> mà quên override <code>hashCode</code>, bạn sẽ làm hỏng hoàn toàn <code>HashSet</code> và <code>HashMap</code> vì chúng không thể tìm thấy phần tử dù dữ liệu giống hệt nhau!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: SQL Indexing & Isolation -->
+          <div class="cs-section" id="cs-db" style="display:none;">
+            <h4 style="color:var(--accent-amber); margin-top:0;">🗄️ SQL Indexing B+Tree & 4 Cấp Độ Cô Lập Giao Dịch (Transaction Isolation)</h4>
+            <div style="overflow-x:auto; margin-top:0.75rem;">
+              <table class="cs-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                <thead>
+                  <tr style="background:rgba(255,255,255,0.06); text-align:left;">
+                    <th style="padding:0.6rem; border:1px solid var(--border-subtle);">Isolation Level</th>
+                    <th style="padding:0.6rem; border:1px solid var(--border-subtle);">Dirty Read</th>
+                    <th style="padding:0.6rem; border:1px solid var(--border-subtle);">Non-Repeatable Read</th>
+                    <th style="padding:0.6rem; border:1px solid var(--border-subtle);">Phantom Read</th>
+                    <th style="padding:0.6rem; border:1px solid var(--border-subtle);">Đặc điểm & Ghi chú</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);"><strong>Read Uncommitted</strong></td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ (Đọc dữ liệu rác chưa commit)</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);">Cấp thấp nhất, gần như không dùng trong thực tế.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);"><strong>Read Committed</strong></td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ (Đọc lại thấy dữ liệu đã UPDATE)</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ (Thấy dòng mới INSERT)</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);">Mặc định của Oracle, SQL Server, PostgreSQL.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);"><strong>Repeatable Read</strong></td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#f43f5e;">BỊ (MySQL InnoDB dùng MVCC chặn được)</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);">Mặc định của MySQL InnoDB.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);"><strong>Serializable</strong></td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle); color:#34d399;">KHÔNG</td>
+                    <td style="padding:0.6rem; border:1px solid var(--border-subtle);">An toàn tuyệt đối nhưng khóa bảng/dòng làm sụt giảm thông lượng (Throughput).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cs-card" style="margin-top:1rem;">
+              <h5 style="color:#38bdf8; margin:0 0 0.35rem 0;">B+Tree Index: Clustered vs Non-Clustered</h5>
+              <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.5; margin:0;">
+                • <strong>Clustered Index (Chỉ mục cụm):</strong> Các nút lá (Leaf nodes) chứa trực tiếp toàn bộ dòng dữ liệu thực tế (Physical Data). Mỗi bảng chỉ có duy nhất 1 Clustered Index (thường là Primary Key).
+                <br>• <strong>Non-Clustered Index (Chỉ mục thứ cấp):</strong> Các nút lá chỉ chứa giá trị của cột được đánh index và con trỏ trỏ tới Clustered Key tương ứng. Nếu câu query chọn các cột không nằm trong index, DB phải làm thao tác <strong>Bookmark Lookup (Key Lookup)</strong> về Clustered Index để lấy nốt dữ liệu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 5: Spring Core & @Transactional -->
+          <div class="cs-section" id="cs-spring" style="display:none;">
+            <h4 style="color:var(--accent-amber); margin-top:0;">🍃 Vòng Đời Spring Bean & 2 Cái Bẫy Sát Thủ Của @Transactional</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:0.75rem;">
+              <div class="cs-card">
+                <h5 style="color:#34d399; margin:0 0 0.5rem 0;">Chu Kỳ Vòng Đời Của Spring Bean</h5>
+                <ol style="font-size:0.82rem; color:#cbd5e1; padding-left:1.2rem; line-height:1.6; margin:0;">
+                  <li>Khởi tạo Instance (Constructor invocation).</li>
+                  <li>Inject dependencies (Setter / Field Injection qua <code>@Autowired</code>).</li>
+                  <li>Gọi các Aware Interfaces (<code>BeanNameAware</code>, <code>BeanFactoryAware</code>, <code>ApplicationContextAware</code>).</li>
+                  <li><code>BeanPostProcessor.postProcessBeforeInitialization()</code></li>
+                  <li>Khởi tạo nội bộ: <code>@PostConstruct</code> $\to$ <code>InitializingBean.afterPropertiesSet()</code> $\to$ custom <code>init-method</code>.</li>
+                  <li><code>BeanPostProcessor.postProcessAfterInitialization()</code> (Tạo CGLIB/JDK Dynamic Proxies cho AOP, Transaction, Security).</li>
+                  <li>Sẵn sàng phục vụ (Bean in Ready state).</li>
+                  <li>Hủy: <code>@PreDestroy</code> $\to$ <code>DisposableBean.destroy()</code> $\to$ custom <code>destroy-method</code>.</li>
+                </ol>
+              </div>
+              <div class="cs-card">
+                <h5 style="color:#f43f5e; margin:0 0 0.5rem 0;">2 Bẫy Chết Người Với @Transactional</h5>
+                <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.5;">
+                  <p style="margin:0 0 0.5rem 0;">
+                    <strong>Bẫy 1 - Self-Invocation (Gọi nội bộ trong cùng Class):</strong> Spring Transaction hoạt động dựa trên Proxy pattern bọc ngoài Bean. Nếu hàm A (không có <code>@Transactional</code>) gọi trực tiếp hàm B (có <code>@Transactional</code>) trong cùng class qua <code>this.methodB()</code>, cuộc gọi sẽ không đi qua Spring Proxy $\implies$ <strong>Transaction KHÔNG ĐƯỢC KÍCH HOẠT!</strong>
+                  </p>
+                  <p style="margin:0;">
+                    <strong>Bẫy 2 - Default Rollback Rule:</strong> Mặc định Spring Transaction chỉ rollback với <strong>Unchecked Exception</strong> (con của <code>RuntimeException</code> hoặc <code>Error</code>). Nếu phương thức ném ra <strong>Checked Exception</strong> (như <code>IOException</code>, <code>SQLException</code>, <code>Exception</code>), Spring mặc định <strong>COMMIT GIAO DỊCH</strong>! Muốn an toàn bắt buộc phải ghi: <code>@Transactional(rollbackFor = Exception.class)</code>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: Clean Code -->
+          <div class="cs-section" id="cs-cleancode" style="display:none;">
+            <h4 style="color:var(--accent-amber); margin-top:0;">📜 10 Điều Răn Clean Code & Comment Code FSOFT (Trích Dataset Fresher v2.0)</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:0.75rem; font-size:0.85rem; color:#cbd5e1; margin-top:0.75rem;">
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">1. Đặt tên phương thức có ý nghĩa (Self-explanatory):</strong> Luôn bắt đầu bằng động từ, theo chuẩn camelCase, ví dụ: <code>calculateOvertimePay()</code>, <code>findActiveUsersByDepartment()</code> thay vì <code>doCalc()</code> hay <code>data()</code>.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">2. Không bao giờ nuốt ngoại lệ (Do not swallow exceptions):</strong> Tuyệt đối cấm viết <code>catch(Exception e) {}</code> rỗng. Phải log ít nhất ở mức WARN/ERROR kèm stack trace hoặc bọc ném ra Custom Business Exception.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">3. Luôn giải phóng tài nguyên qua try-with-resources:</strong> Mọi đối tượng mở I/O (Connection, Statement, ResultSet, InputStream, Scanner) phải dùng <code>try(...)</code> để JVM tự động gọi <code>close()</code>, triệt tiêu rò rỉ bộ nhớ (Connection leak).
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">4. Trục xuất Magic Numbers & Magic Strings:</strong> Mọi giá trị hằng số dùng trong kiểm tra nghiệp vụ phải được khai báo dạng <code>public static final int MAX_LOGIN_ATTEMPTS = 5;</code> hoặc enum.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">5. Tuân thủ định dạng Javadoc:</strong> Mọi class và public method phải có Javadoc mô tả mục đích, tham số <code>@param</code>, giá trị trả về <code>@return</code> và ngoại lệ có thể ném <code>@throws</code>.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">6. Tránh lồng ghép If-Else quá sâu (Arrow Anti-pattern):</strong> Áp dụng kỹ thuật <strong>Guard Clauses</strong> (Kiểm tra điều kiện lỗi và return sớm ngay đầu hàm) để giữ code thẳng và phẳng.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">7. Ưu tiên Composition hơn Inheritance:</strong> Chỉ kế thừa khi thực sự có quan hệ "IS-A" chặt chẽ; ngược lại hãy dùng "HAS-A" (DI) để hệ thống linh hoạt và dễ unit test.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">8. Tránh trả về null cho Collections:</strong> Luôn trả về <code>Collections.emptyList()</code> thay vì <code>null</code> để người gọi không bị dính <code>NullPointerException</code>.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">9. Immutability cho DTO & Entity Keys:</strong> Khai báo các field không đổi dạng <code>final</code>, cân nhắc sử dụng Java Record (Java 14+) hoặc Lombok <code>@Value</code> để đảm bảo an toàn đa luồng.
+              </div>
+              <div class="cs-card">
+                <strong style="color:#38bdf8;">10. Mỗi phương thức chỉ làm đúng một việc (SRP):</strong> Độ dài phương thức lý tưởng dưới 25 dòng code; nếu vượt quá hãy tách thành các private helper methods có tên tường minh.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="closeCheatSheetModalFooterBtn">Đã Hiểu & Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== AUDIT EXPORT / PRINT MODAL ==================== -->
+  <div class="modal-overlay" id="auditExportModal" style="display: none;">
+    <div class="modal-card modal-xl">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1.4rem;">📥</span>
+          <div>
+            <h3 class="modal-title" style="margin:0;">Đề Cương Ôn Tập Top 50 Câu Hỏi Sát Thủ Audit 1-1</h3>
+            <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Xuất file in trực tiếp (Print to PDF) hoặc sao chép toàn bộ Markdown để học offline</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeAuditExportModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" style="max-height:75vh; overflow-y:auto; padding:1.25rem 1.75rem;">
+        <div class="export-actions-bar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border-subtle);">
+          <div style="display:flex; gap:0.5rem; align-items:center;">
+            <label style="font-size:0.85rem; color:var(--text-muted);">Lọc xuất:</label>
+            <select id="exportDomainFilter" class="custom-select" style="font-size:0.85rem; padding:0.35rem 0.75rem;">
+              <option value="all">Toàn bộ 50 câu hỏi</option>
+              <option value="Java Core">Chuyên mục: Java Core (12 câu)</option>
+              <option value="Java 8+ Modern">Chuyên mục: Java 8+ Modern (8 câu)</option>
+              <option value="Database & SQL">Chuyên mục: Database & SQL (10 câu)</option>
+              <option value="JavaWeb">Chuyên mục: JavaWeb (10 câu)</option>
+              <option value="Spring Framework">Chuyên mục: Spring Framework (10 câu)</option>
+            </select>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-sm btn-outline" id="copyAuditMarkdownBtn">📋 Sao Chép Markdown</button>
+            <button class="btn btn-sm btn-primary" id="printAuditGuideBtn">🖨️ In / Xuất PDF (Ctrl+P)</button>
+          </div>
+        </div>
+
+        <!-- Printable Document Output Container -->
+        <div class="audit-printable-document" id="auditPrintableDocument">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="closeAuditExportModalFooterBtn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+
+  <!-- Scripts -->
+  <script src="data.js?v=3.3"></script>
+  <script src="app.js?v=3.3"></script>
+</body>
+</html>

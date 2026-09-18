@@ -1,0 +1,448 @@
+[
+  [
+    "STT",
+    "Description",
+    "English"
+  ],
+  [
+    "1",
+    "Lấy danh sách các trận đấu",
+    "Get list of matches"
+  ],
+  [
+    "2",
+    "Thực hiện xóa các trận đấu",
+    "Delete matches"
+  ],
+  [
+    "3",
+    "Tìm kiếm các trận đấu theo ngày giờ",
+    "Search matches by time"
+  ],
+  [
+    "4",
+    "Thực hiện thêm các trận đấu",
+    "Add matches"
+  ],
+  [
+    "5",
+    "(Kiểm tra [var] có tồn tại hay không )",
+    "Check if [var] exists"
+  ],
+  [
+    "6",
+    "return true if [var] exist or false if not exist (Trả về \"true\" nếu [var] tồn tại hoặc \"false\"nếu [var] không tồn tại\n\n",
+    "Return \"True\" if [var] exists or false if [var] does not exist "
+  ],
+  [
+    "7",
+    "(Lấy số ngày nghỉ của một tháng)",
+    "Get number of days off of a month ",
+    ""
+  ],
+  [
+    "8",
+    "(Lấy các tháng của năm)",
+    "Get months of year ",
+    ""
+  ],
+  [
+    "9",
+    " (Lấy tất cả dữ liệu về ngày nghỉ của các tháng và các năm trong database)",
+    "Get all days off of months and years from database",
+    ""
+  ],
+  [
+    "10",
+    "Xóa tất cả ngày nghỉ của một tháng",
+    "Delete all days off of a month ",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  [
+    "11",
+    "(Trả về true nếu thành công hoặc false nếu thất bại",
+    "Return \"true\" on success or \"false\" on failure ",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  [
+    "12",
+    "(Đăng ký hoặc update ngày nghỉ của một tháng)",
+    "Register or update days off of a month ",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  [
+    "13",
+    " (Lấy danh sách ngày nghỉ của một tháng)",
+    "Get list of days off of a month",
+    ""
+  ],
+  [
+    "14",
+    "(Duyệt qua các ngày của tháng)",
+    "Iterate days of the month",
+    ""
+  ],
+  [
+    "15",
+    " (Kiểm tra nếu I bằng với  listDayOff.length - 1 thì không nối \",\", ngược lại thì nối \",\" )",
+    "Check if I is equal to listDayOff.length minus 1, do not append \",\" else append \",\"",
+    ""
+  ],
+  [
+    "16",
+    "(Nếu ngày của tháng có dữ liệu bằng \"*\" thì tăng biến countDayOff lên 1 đơn vị)",
+    "if day of month has data containing \"*\", increase countDayOff by 1 ",
+    ""
+  ],
+  [
+    "17",
+    "(Export tất cả các tháng của năm hiện tại trên màn hình)",
+    "Export data of all months of current year on screen ",
+    ""
+  ],
+  [
+    "18",
+    " (Export tất cả dữ liệu về ngày nghỉ trong database)",
+    "Export all data of days off in database",
+    ""
+  ],
+  [
+    "19",
+    "(Khai báo biến flag để lưu chỉ số của vị trí mà xảy ra sự thay đổi của \"year\" )",
+    "Declare \"FLAG\" variables to save the index of location which occurs the change of year ",
+    ""
+  ],
+  [
+    "20",
+    "(Check nếu các object có cùng năm thì export ra cùng 1 sheet, ngược lại nếu khác năm thì export ra các sheet các nhau)",
+    "Check if objects have same year, then export into the same sheet, else, export into different sheet ",
+    ""
+  ],
+  [
+    "21",
+    "Ham kiem tra du lieu co ton tai trong database hay khong",
+    " check existion of data from database",
+    ""
+  ],
+  [
+    "22",
+    "Kiem tra yeu cau update va delete tu client, neu co loi thi khong thuc hien",
+    "Check requirements of updating and deleting from client, if errors appear, do not execute",
+    ""
+  ],
+  [
+    "23",
+    "Kiem tra update chuyen trang, neu update bang click button next thi chuyen sang trang tiep theo",
+    "Check update of swifting pages, if update by clicking button NEXT, forward to next page"
+  ],
+  [
+    "24",
+    "Ham lay danh sach tu table ABC theo cac dieu kien nhap vao",
+    "Get list from table ABC by inputted conditions"
+  ],
+  [
+    "25",
+    "Ham update va delete record trong database, tra ve vi tri loi neu co",
+    "Function of updating and deleting record in database "
+  ],
+  [
+    "26",
+    "Bạn không nhập space đâu chuổi vì nó không có ý nghĩa",
+    "Do not input space at the beginning of string"
+  ],
+  [
+    "27",
+    "Tháng 2 không phải năm nhuận không có ngày 29, 30, 31",
+    "If the current year is non-leap year, February does not contain the day 29, 30, 31"
+  ],
+  [
+    "28",
+    "Tháng 2  năm nhuận không có ngày  30, 31",
+    ""
+  ],
+  [
+    "30",
+    "Bạn vui lòng nhập định dạng giờ không lớn hơn 24",
+    "Please input hour format without greater than 24"
+  ],
+  [
+    "31",
+    "Nếu trường thành phố và trường tên không rỗng thì tìm kiếm theo 2 điều kiện trên",
+    "If fields of city and name are not null, search by 2 above conditions"
+  ],
+  [
+    "32",
+    "Nếu trường thành phố, năm và tên  rỗng thì hiện tất cả các danh sách từ bảng Trainer.",
+    "If fields of city, year and name are null, show all lists from Trainer table"
+  ],
+  [
+    "33",
+    "Kiễm tra khi click nút xóa thì sẽ hiện lên bảng thông báo",
+    "Check if clicking button DELETE, show on NOTICE"
+  ],
+  [
+    "34",
+    "Set giá trị cho biến bị lỗi ở class không tìm thấy",
+    "Set values for undefined variables at invisible CLASS"
+  ],
+  [
+    "35",
+    "Định nghĩa form từ action",
+    "Define Form from ACTION"
+  ],
+  [
+    "36",
+    "Đặt giá trị cho biến ",
+    "Assign values to variables"
+  ],
+  [
+    "37",
+    "Khởi tạo đối tượng connection",
+    "Initialize connection object"
+  ],
+  [
+    "38",
+    "Câu truy vấn sql không thực hiện được",
+    "SQL  statement can not be executed"
+  ],
+  [
+    "39",
+    "Lấy danh sách theo điều kiện gán ",
+    "Get list by assigning condition"
+  ],
+  [
+    "40",
+    "Set giá trị cho biến từ danh sách được lấy từ db",
+    "Assign values to variabes from list in database"
+  ],
+  [
+    "41",
+    "Kiểm tra nêu dữ liệu lấy là là rỗng thì sẽ export hết tất cả danh sách, ngược lại thì sẽ export theo dữ liệu được lấy về",
+    "Check if taken data is null, export all list, else, export by data"
+  ],
+  [
+    "42",
+    "Lấy dữ liệu về và kiểm tra nếu loại là C thì sẽ vào cập nhật và nếu là D thì sẽ là xóa, còn lại sẽ báo lỗi",
+    "if value of ... is D, delete, else C, update"
+  ],
+  [
+    "43",
+    "Bấm cập nhật nếu có loại là D thì sẽ hiển thị popup để xác nhận có muốn thực hiện hay không",
+    ""
+  ],
+  [
+    "44",
+    "Lấy dữ liệu của mảng đối tượng khi submit từ jsp lên form",
+    "Get data of object classes when submitting from jsp into form"
+  ],
+  [
+    "45",
+    "Thực hiện lấy dữ liệu combobox theo các giá trị được lấy phía trước",
+    "Get data of combobox by values taken before"
+  ],
+  [
+    "46",
+    "- Hàm kiểm tra 1 đối tượng có tồn tại ít nhát 1 thuộc tính rỗng",
+    "Function of checking 1 object which exists at least 1 property"
+  ],
+  [
+    "47",
+    " Xử lý sự kiện khi người dùng click vào button XXX",
+    "Process event when user clicks button XXX"
+  ],
+  [
+    "48",
+    "- Chuyển đổi biến A có kiểu dữ liệu  BBB  sang biến C có kiểu dữ liệu DDD",
+    "Convert variable A with BBB data type to variable C with DDD data type"
+  ],
+  [
+    "49",
+    "Lấy ra đối tượng với tham số truyền vào",
+    "Get objects with inputted parameter"
+  ],
+  [
+    "50",
+    "Tạo mới 1 mảng bằng cách cắt chuỗi với tham số truyền vào (split())",
+    "Create 1 class by cutting string with inputted parameter"
+  ],
+  [
+    "51",
+    "-Export danh sách student theo kết quả search được khi người dùng button xxx",
+    "Export student list by result of searching when user clicks button xxx"
+  ],
+  [
+    "52",
+    "-Hàm delete 1 đối tượng đang hiển thị trên màn hình  khi người dùng button xxx",
+    "Function of deleting1 object which show on screen when  user click button xxx"
+  ],
+  [
+    "53",
+    "-Hàm thực hiện lọc theo yes/no khi người dùng checke/uncheck vào checkbox",
+    "Function of filtering by yes/no when user chooses check/uncheck into checkbox"
+  ],
+  [
+    "54",
+    "Chuyển đến trang ABC khi người dùng click button xxx",
+    "forward to ABC page when user clicks button xxx"
+  ],
+  [
+    "55",
+    "kiểm tra 1 dòng dữ liệu tồn tại trong cơ sở dữ liệu \nthỏa mãn điều kiện trận đấu đó là trận đấu\n gần nhất của 1 cặp thi đấu",
+    "Check 1 data row which exists in database, satisfying match conditions "
+  ],
+  [
+    "56",
+    "Tìm những cặp đấu đã từng thi đấu\n với nhau ít nhất 2 lần",
+    "Search matches which have at least 2 times of competitions"
+  ],
+  [
+    "57",
+    "So sánh ngày thi đấu gần nhất với ngày\n chuẩn bị chèn vào cơ sở dữ liệu",
+    "Compare the nearest match date with the inserted date in database "
+  ],
+  [
+    "58",
+    "mã trận đấu nên theo định dạng sau \n( không bắt buộc)",
+    "Match code should be in following format (un-required)"
+  ],
+  [
+    "59",
+    "Nếu A lớn hơn hoặc bằng B thì thực hiện update ngược lại  thì thông báo lỗi ",
+    "If A is greater than B,  update, else, report errors"
+  ],
+  [
+    "60",
+    "Nếu A thõa mãn các điều kiện validate thì sẽ xử lý add vào object ngược lại thì thông báo lỗi",
+    "If A satisfies conditions of validation, add into object, else, report errors"
+  ],
+  [
+    "61",
+    "láy danh sách bảng theo Id abc",
+    "get table list by id abc"
+  ],
+  [
+    "62",
+    "xóa bảng với điều kiện id= abc",
+    "Delete table if id=abc"
+  ],
+  [
+    "63",
+    "commnet cho hàm override ở actionclass",
+    "comment for override function at actionclass"
+  ],
+  [
+    "64",
+    "comment cho các hàm getter setter ở bean",
+    "comment for getter setter function at bean"
+  ],
+  [
+    "65",
+    "đếm số record ở database",
+    "Count number of record in database"
+  ],
+  [
+    "66",
+    "Tạo list A lấy từ database lên ",
+    "Create list A from database"
+  ],
+  [
+    "67",
+    "Lấy danh sách từ DB và đẩy vào danh sách",
+    "Get data from database and show on list"
+  ],
+  [
+    "68",
+    "Kiểm tra dữ liệu đã tồn tại hay chưa ? Nếu có cho ra thông báo lỗi.",
+    "Check if [var] exists or not? If existed, show error notice"
+  ],
+  [
+    "69",
+    "Tạo biến A lấy dữ liệu từ B",
+    "Create variable with data from B"
+  ],
+  [
+    "70",
+    "Xử lý điều hướng cho action A",
+    "Process navigation for action A"
+  ],
+  [
+    "71",
+    "Kiểm tra kết nối dữ liệu",
+    "Function of checking data connection"
+  ],
+  [
+    "72",
+    " Hiển thị lớp theo mã trường",
+    "Function of showing classes by school code"
+  ],
+  [
+    "73",
+    "Hàm kiểm tra tồn tại của trường bắt buộc nhập",
+    "Function of checking existion of required inputting field"
+  ],
+  [
+    "74",
+    "Hàm kiểm tra tồn tại của trường bắt buộc nhập",
+    "Check data by row on form"
+  ],
+  [
+    "75",
+    "Hiển thị lỗi nếu ngày bắt đầu lớn hơn ngày kết thúc",
+    "Show error message if Start date is greater than End date"
+  ],
+  [
+    "76",
+    "Lấy dữ liệu trường id từ form",
+    "Get data of ID field from form"
+  ],
+  [
+    "77",
+    "Lấy tất cả danh sách dữ liệu có trong cơ sở dữ liệu",
+    "Get all data list from database"
+  ],
+  [
+    "NOTE:",
+    "",
+    ""
+  ],
+  [
+    "1",
+    "lấy giá trị của phương thức X gán vào biến Y",
+    "Set value of method X for variable Y"
+  ],
+  [
+    "2",
+    "Hiển thị message lỗi trên khu vực thông báo lỗi với nội dung:  Ngày sinh không hợp lệ. Vui lòng nhập ngày có format XYZ.",
+    "Show error message on error message area with content: Invalid birthday, please input the date with XYZ format ."
+  ],
+  [
+    "3",
+    "Nếu A>B thì tiến hành update thông tin học sinh. Ngược lại hãy xử lí thêm mới thông tin học sinh.",
+    "If A>B, update student information, else, add student information."
+  ],
+  [
+    "4",
+    "Đếm số record thõa mãn điều kiện abc. Nếu số record trả về lớn hơn Y thì hãy hiển thị thông tin xyz lên màn hình. ",
+    "Count records which satisfy abc condition. If number of returned records is greater than Y, show information xyz on screen."
+  ],
+  [
+    "5",
+    "Nếu giá trị nhập vào của item A là xxx thì hãy chuyển đổi thành yyy, sau đó đăng kí vào database với định dạng zzz.",
+    "If inputted value of item A is xxx, convert to yyy, then register into database with zzz format."
+  ]
+]

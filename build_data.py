@@ -1,0 +1,477 @@
+import json
+import os
+
+os.makedirs('data', exist_ok=True)
+
+# 1. Complete 8-Week Roadmap (56 Days)
+roadmap_weeks = [
+    {
+        "week": 1,
+        "title": "TUẦN 1: Java Fundamentals + Syntax & Declarations",
+        "badge": "Java Core Foundation",
+        "color": "#3b82f6",
+        "goal": "Xây nền tảng cực chắc về Primitive, Scope, Modifiers, Operators để từ tuần 2 bắt đầu cày đề.",
+        "days": [
+            {
+                "day": 1,
+                "title": "Chapter 1: Language Fundamentals (Phần 1)",
+                "topics": ["Java Keywords & Identifiers", "Primitive types & byte/short/int/long/float/double/char/boolean ranges", "Literals (hex, octal, float suffix)", "Variable declarations & scopes", "Array declarations & initialization", "Default values of primitives vs object references", "main() method signature & command-line arguments"],
+                "tasks": ["Đọc kỹ Ch01.pdf", "Tự gõ code test: local variable uninitialized có compile được không?", "Tự test array default values (int[] a = new int[5])", "Làm 10 câu trắc nghiệm Ch1"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 2,
+                "title": "Chapter 1: Language Fundamentals (Phần 2) + TestKing",
+                "topics": ["Primitive vs Reference types", "Variable Initialization rules (Instance vs Static vs Local)", "Type Casting & implicit promotion", "Scope of variables (block, method, instance)"],
+                "tasks": ["Làm 20-30 câu TestKing về Primitive & Array", "Ghi chú vào Error Notebook: Vì sao local variable không có giá trị mặc định?", "Luyện 5 câu dịch Anh-Việt"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 3,
+                "title": "Chapter 2: Declarations & Access Control (Phần 1)",
+                "topics": ["Access Modifiers: public, protected, default (package-private), private", "Class declaration rules (public vs default class trong 1 file)", "Package statements & import rules"],
+                "tasks": ["Vẽ và điền bảng Access Modifiers Matrix cho Class/Package/Subclass/World", "Code thử kế thừa protected ở khác package để hiểu rõ protected"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 4,
+                "title": "Chapter 2: Declarations & Access Control (Phần 2)",
+                "topics": ["Non-access modifiers: static, final, abstract, strictfp, native", "Interface declaration: constants (public static final ngầm định), methods (public abstract ngầm định)", "Abstract class vs Interface rules"],
+                "tasks": ["Kiểm tra các bẫy: final abstract method có hợp lệ không?", "Interface variable có thể là private được không?", "Làm 25 câu TestKing Ch2"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 5,
+                "title": "Chapter 3: Operators & Assignments",
+                "topics": ["Operator Precedence & Associativity", "Prefix vs Postfix (++x vs x++)", "Short-circuit operators (&&, ||) vs Bitwise (&, |)", "Bitwise shift: <<, >> (signed), >>> (unsigned)", "Ternary operator ? :", "instanceof operator", "== vs equals() cơ bản"],
+                "tasks": ["Tính tay các biểu thức phức tạp: int x = 5; int y = x++ + ++x;", "Hiểu rõ vì sao (1 > 2 && ++x > 0) không làm tăng x", "Làm 30 câu TestKing Ch3"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 6,
+                "title": "Luyện đề TestKing Chapter 1-3",
+                "topics": ["Tổng hợp bẫy cú pháp Ch1, Ch2, Ch3", "Tư duy đọc code truy tìm Compile Error"],
+                "tasks": ["Làm 40-50 câu TestKing Ch1-3 không nhìn đáp án", "Chấm điểm và phân tích câu sai vào Error Book", "Luyện 5 câu dịch Comment Code"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 7,
+                "title": "REVIEW DAY 1: Tổng kết & Lập Top 20 Lỗi Tuần 1",
+                "topics": ["Ôn tập toàn diện Ch1, Ch2, Ch3", "Truy tìm lỗ hổng kiến thức"],
+                "tasks": ["Làm lại 20 câu Ch1, 20 câu Ch2, 20 câu Ch3", "Lập danh sách TOP 20 lỗi hay mắc", "Đánh giá tiến độ tuần 1"],
+                "targetHours": {"java": 2.5, "other": 0.5, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 2,
+        "title": "TUẦN 2: Flow Control, Exceptions & OOP Core",
+        "badge": "Crucial Week",
+        "color": "#8b5cf6",
+        "goal": "Nắm chắc luồng điều khiển, try-catch-finally bẫy kinh điển và 4 trụ cột OOP, Overloading vs Overriding.",
+        "days": [
+            {
+                "day": 8,
+                "title": "Chapter 4: Flow Control (if, switch, loops)",
+                "topics": ["if / else (bẫy else treo)", "switch statement: kiểu dữ liệu hợp lệ (byte, short, char, int), bẫy fall-through khi thiếu break", "for, while, do-while loops", "break & continue có label vs không label"],
+                "tasks": ["Code tracing từng bước i, condition, statement", "Làm bài tập switch case thiếu break"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 9,
+                "title": "Chapter 4: Exceptions & Assertions",
+                "topics": ["Exception hierarchy: Throwable -> Error vs Exception (Checked vs Unchecked)", "try, catch, finally block execution order", "Bẫy: return trong try vs return trong finally", "throw vs throws", "Assertion syntax & ea flag"],
+                "tasks": ["Tự viết code: try { return 1; } finally { return 2; } xem trả về gì!", "Phân biệt catch (ChildException) trước hay ParentException trước"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 10,
+                "title": "Chapter 5: OOP - Encapsulation & Inheritance",
+                "topics": ["Encapsulation (getter/setter, data hiding)", "IS-A (kế thừa extends/implements) vs HAS-A (composition)", "Constructor rules: default constructor, super() và this() gọi ở dòng đầu tiên", "Constructor chaining"],
+                "tasks": ["Thử nghiệm: Class cha không có default constructor thì class con khai báo thế nào?", "Làm 20 câu Ch5 TestKing"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 11,
+                "title": "Chapter 5: OOP - Polymorphism, Overloading vs Overriding",
+                "topics": ["Polymorphism: Compile-time type vs Runtime object type", "Method Overloading: compile-time resolution, method signature (tên + tham số)", "Method Overriding rules: cùng tên, cùng tham số, return type tương thích, access modifier không được hẹp hơn, không được throw checked exception mới/rộng hơn"],
+                "tasks": ["Lập bảng so sánh chi tiết Overloading vs Overriding", "Tự vẽ sơ đồ polymorphic dispatch"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 12,
+                "title": "Chapter 5: OOP - Advanced Concepts",
+                "topics": ["Variable Shadowing & Method Hiding (static method)", "Casting objects: Upcasting vs Downcasting", "ClassCastException at runtime vs Compile error"],
+                "tasks": ["Phân biệt: override method vs hide static method", "Thực hành các câu hỏi casting đối tượng"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 13,
+                "title": "Tổng hợp & Luyện đề Chapter 1-5",
+                "topics": ["Tổng hợp kiến thức nền tảng từ Ch1 đến Ch5"],
+                "tasks": ["Làm 50 câu TestKing tổng hợp Ch1-5", "Ghi lại mọi bẫy OOP vào Error Notebook", "Luyện 5 câu Comment Code"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 14,
+                "title": "Mini Mock Test #1 (20 câu Java Core)",
+                "topics": ["Kiểm tra đánh giá mốc 2 tuần"],
+                "tasks": ["Làm bài thi thử 20 câu Java Core (30 phút)", "Đánh giá điểm: <12 học lại, 12-15 ổn, 16-17 khá, 18+ tốt", "Rà soát các câu sai"],
+                "targetHours": {"java": 2.5, "other": 0.5, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 3,
+        "title": "TUẦN 3: String, Collections, Inner Classes & Threads",
+        "badge": "High Value Topics",
+        "color": "#06b6d4",
+        "goal": "Làm chủ String Pool, Collections Framework (List/Set/Map), Inner classes và Multi-threading.",
+        "days": [
+            {
+                "day": 15,
+                "title": "Chapter 6: String, StringBuffer, Immutability",
+                "topics": ["String immutability & String Constant Pool", "String s = new String(\"abc\") tạo bao nhiêu objects?", "== (tham chiếu) vs equals() (nội dung)", "StringBuffer & StringBuilder (mutable, thread-safety)", "String methods: concat, substring, replace, trim, length"],
+                "tasks": ["Viết code test các trường hợp String Pool với toán tử +", "Làm 20 câu String trong TestKing"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 16,
+                "title": "Chapter 6: Wrapper Classes & Math",
+                "topics": ["Wrapper classes: Integer, Double, Boolean...", "Autoboxing & Unboxing", "Integer Cache (-128 đến 127): Integer a = 100, b = 100 -> a == b?", "Math class methods: abs, ceil, floor, round, random"],
+                "tasks": ["Test bẫy Integer Cache", "Làm 20 câu Wrapper & Math"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 17,
+                "title": "Chapter 7: Collections Framework (Phần 1)",
+                "topics": ["Collection hierarchy: Collection vs Collections (utility)", "List interface: ArrayList, LinkedList, Vector", "Set interface: HashSet, LinkedHashSet, TreeSet", "Duplicate, Ordered, Sorted matrix"],
+                "tasks": ["Lập bảng ma trận so sánh List và Set", "Thực hành TreeSet và quy tắc phần tử phải implement Comparable"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 18,
+                "title": "Chapter 7: Collections Framework (Phần 2) & equals/hashCode",
+                "topics": ["Map interface: HashMap, Hashtable, TreeMap, LinkedHashMap (Map KHÔNG kế thừa Collection)", "equals() & hashCode() contract: tại sao phải override cả 2?", "Garbage Collection: System.gc(), finalize(), khi nào object eligible for GC?"],
+                "tasks": ["Vẽ cơ chế hoạt động của HashMap (bucket, hash, equals, collision)", "Làm 30 câu TestKing Ch7"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 19,
+                "title": "Chapter 8: Inner Classes",
+                "topics": ["Regular Inner Class (non-static)", "Method-Local Inner Class (truy cập biến local final/effectively final)", "Anonymous Inner Class", "Static Nested Class"],
+                "tasks": ["Cú pháp khởi tạo: Outer.Inner in = new Outer().new Inner();", "Làm 20 câu TestKing Inner classes"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 20,
+                "title": "Chapter 9: Threads & Concurrency",
+                "topics": ["Thread vs Runnable: start() vs run()", "Thread lifecycle: New, Runnable, Running, Blocked/Waiting, Terminated", "Thread methods: sleep(), yield(), join()", "Synchronization & Locks: synchronized method vs block", "Inter-thread communication: wait(), notify(), notifyAll() (phải gọi trong synchronized block)"],
+                "tasks": ["Tự viết ví dụ synchronized tránh race condition", "Làm 25 câu TestKing Threads"],
+                "targetHours": {"java": 2.0, "other": 0.75, "testking": 0.75, "english": 0.5}
+            },
+            {
+                "day": 21,
+                "title": "Java Core Mock Exam #1",
+                "topics": ["Đánh giá toàn bộ 9 chương Java Core"],
+                "tasks": ["Làm đề thi thử 30 câu Java Core", "Thống kê tỷ lệ đúng theo từng Chapter (1-9) để tìm điểm yếu", "Ôn tập lại các câu sai"],
+                "targetHours": {"java": 2.5, "other": 0.5, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 4,
+        "title": "TUẦN 4: SQL + JSP/Servlet + Củng cố Java",
+        "badge": "Entry Test Alignment",
+        "color": "#10b981",
+        "goal": "Làm chủ SQL queries (JOINs, Subquery, GROUP BY) và luồng ứng dụng JavaWeb JSP/Servlet.",
+        "days": [
+            {
+                "day": 22,
+                "title": "SQL: DDL, DML & Basic Queries",
+                "topics": ["SELECT, WHERE, ORDER BY (ASC/DESC)", "Operators: LIKE, BETWEEN, IN, IS NULL", "INSERT, UPDATE, DELETE vs TRUNCATE", "Primary Key vs Foreign Key constraints"],
+                "tasks": ["Luyện viết 15 câu query cơ bản", "Lập bảng phân biệt DELETE vs TRUNCATE vs DROP"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 23,
+                "title": "SQL: Aggregation & GROUP BY / HAVING",
+                "topics": ["Aggregate functions: COUNT(*), COUNT(col), SUM, AVG, MIN, MAX", "GROUP BY clause", "WHERE vs HAVING (WHERE lọc trước khi gom nhóm, HAVING lọc sau khi gom nhóm)"],
+                "tasks": ["Luyện viết 10 câu query GROUP BY kèm HAVING", "Tập trả lời phỏng vấn: WHERE khác HAVING điểm nào?"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 24,
+                "title": "SQL: JOINs & Subqueries + Interview Prep",
+                "topics": ["INNER JOIN vs LEFT JOIN vs RIGHT JOIN vs FULL OUTER JOIN", "Subquery (Single row, Multi row with IN/EXISTS/ANY/ALL)", "UNION vs UNION ALL"],
+                "tasks": ["Luyện 10 câu query JOIN phức tạp", "Luyện 7 câu SQL phỏng vấn trong roadmap (INNER vs LEFT, DELETE vs TRUNCATE...)"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 25,
+                "title": "JavaWeb: Servlet Architecture & Lifecycle",
+                "topics": ["Servlet Lifecycle: init(), service() -> doGet()/doPost(), destroy()", "HttpServletRequest & HttpServletResponse", "Web container / Tomcat role", "web.xml configuration vs @WebServlet annotation"],
+                "tasks": ["Vẽ sơ đồ vòng đời Servlet", "Hiểu rõ container tạo duy nhất 1 instance Servlet cho nhiều thread requests"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 26,
+                "title": "JavaWeb: Scopes, Session & Cookies",
+                "topics": ["4 Scopes: page, request, session, application (ServletContext)", "Session Tracking: HttpSession (setAttribute, getAttribute)", "Cookies vs Session", "URL Rewriting"],
+                "tasks": ["Lập bảng so sánh 4 phạm vi lưu trữ (Scopes)", "Giải thích cơ chế Cookie session JSESSIONID"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 27,
+                "title": "JavaWeb: JSP, JSTL, Filter & RequestDispatcher",
+                "topics": ["RequestDispatcher.forward() vs HttpServletResponse.sendRedirect()", "JSP syntax: scriptlet, expression, directive", "EL (Expression Language) & JSTL core tags (c:if, c:forEach)", "Filter lifecycle (doFilter, chain.doFilter) & Listener"],
+                "tasks": ["Lập bảng so sánh chi tiết Forward vs Redirect (URL thay đổi không? request giữ nguyên không?)", "Vẽ sơ đồ flow Browser -> Servlet -> DAO -> DB -> JSP -> Browser"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 28,
+                "title": "Full Mock Entry Test #1 (Java + SQL + Web)",
+                "topics": ["Thi thử format chuẩn Entry Test"],
+                "tasks": ["Làm đề thi thử 25 câu: 15 Java Core, 5 SQL, 5 JavaWeb", "Bấm giờ 40 phút", "Đánh giá điểm từng phần và lưu kết quả"],
+                "targetHours": {"java": 1.5, "other": 1.0, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 5,
+        "title": "TUẦN 5: Cày Đề TestKing Toàn Diện + Error Notebook",
+        "badge": "High Intensity",
+        "color": "#f59e0b",
+        "goal": "Quét sạch 294 câu TestKing lần 1, phát hiện mọi lỗ hổng và hoàn thiện sổ tay bắt lỗi.",
+        "days": [
+            {
+                "day": 29,
+                "title": "TestKing Marathon Part 1 (Câu 1 - 40)",
+                "topics": ["Language Fundamentals, Operators, Arrays", "Quy trình: Làm câu -> Chọn đáp án -> Tự giải thích -> Kiểm tra -> Nếu sai viết ví dụ phản chứng"],
+                "tasks": ["Hoàn thành 40 câu TestKing đầu tiên", "Ghi chú ít nhất 5 bẫy vào Error Notebook"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 30,
+                "title": "TestKing Marathon Part 2 (Câu 41 - 80)",
+                "topics": ["Declarations, Access modifiers, Abstract classes, Interfaces"],
+                "tasks": ["Hoàn thành 40 câu TestKing tiếp theo", "Review lại bảng Access modifiers"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 31,
+                "title": "Chuẩn hóa Java Error Notebook",
+                "topics": ["Phân loại 8 mục: 1. Syntax trap, 2. Compile error, 3. Runtime exception, 4. OOP trap, 5. String trap, 6. Collection trap, 7. Thread trap, 8. Operator trap"],
+                "tasks": ["Tổng hợp và biên tập lại toàn bộ lỗi sai từ đầu tới giờ", "Làm 20 câu TestKing review"],
+                "targetHours": {"java": 1.5, "other": 0.5, "testking": 1.5, "english": 0.5}
+            },
+            {
+                "day": 32,
+                "title": "TestKing Marathon Part 3 (Câu 81 - 130)",
+                "topics": ["Flow control, Loops, Exceptions try-catch-finally"],
+                "tasks": ["Hoàn thành 50 câu TestKing", "Luyện tập code tracing các bài loop phức tạp"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 33,
+                "title": "TestKing Marathon Part 4 (Câu 131 - 180)",
+                "topics": ["OOP, Inheritance, Polymorphism, Overriding"],
+                "tasks": ["Hoàn thành 50 câu TestKing", "Chú ý bẫy covariant return types và static method hiding"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 34,
+                "title": "TestKing Marathon Part 5 (Câu 181 - 240)",
+                "topics": ["String, Wrapper, Math, Collections, Generics"],
+                "tasks": ["Hoàn thành 60 câu TestKing", "Ghi chú các câu về equals/hashCode và TreeSet ordering"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 35,
+                "title": "TestKing Marathon Part 6 (Câu 241 - 294) + Mock Mid-term",
+                "topics": ["Inner Classes & Threads, Hoàn tất vòng 1 TestKing 294 câu"],
+                "tasks": ["Hoàn thành 54 câu cuối cùng", "Làm đề thi thử 20 câu tổng hợp (Java/SQL/Web)"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 6,
+        "title": "TUẦN 6: FEE + Spring Core & Audit 1-1 Prep",
+        "badge": "Audit Focus",
+        "color": "#ec4899",
+        "goal": "Chuẩn bị hoàn hảo cho buổi phỏng vấn Audit 1-1: Frontend Essentials, Spring Framework và phản xạ trả lời câu hỏi kỹ thuật.",
+        "days": [
+            {
+                "day": 36,
+                "title": "Frontend Essentials: HTML5 & CSS3",
+                "topics": ["HTML Semantic tags (form, input, table, div, span)", "CSS Box Model (content, padding, border, margin)", "display: block, inline, inline-block, flex, none", "display: none vs visibility: hidden", "CSS positioning: static, relative, absolute, fixed"],
+                "tasks": ["Luyện trả lời câu hỏi Audit: Box Model là gì? display:none khác visibility:hidden thế nào?", "Code giao diện form đăng nhập đơn giản"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 37,
+                "title": "Frontend Essentials: JavaScript Core",
+                "topics": ["var vs let vs const (hoisting, block scope)", "Data types, primitive vs object", "DOM manipulation & Event Handling (addEventListener, event bubbling)", "AJAX & Fetch API basics, JSON parse/stringify", "Closure concept cơ bản"],
+                "tasks": ["Luyện trả lời phỏng vấn: JS chạy ở đâu? DOM là gì? AJAX dùng làm gì? let khác var thế nào?"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 38,
+                "title": "Frontend Essentials: jQuery & Bootstrap",
+                "topics": ["jQuery: $ selector, event methods (.click(), .change()), DOM traversal, .val(), .ajax()", "Bootstrap: Grid system (container, row, col-12, col-md-6), responsive breakpoints, components (modal, table, form)"],
+                "tasks": ["Hiểu nguyên lý lưới 12 cột Bootstrap", "Làm 10 câu flashcard FEE"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 39,
+                "title": "Spring Framework: IoC, DI & Bean Lifecycle",
+                "topics": ["Inversion of Control (IoC) & Dependency Injection (DI) là gì?", "Spring ApplicationContext & BeanFactory", "Spring Bean Scopes (singleton, prototype)", "@Component, @Service, @Repository, @Controller, @RestController", "@Autowired (field, setter, constructor injection)"],
+                "tasks": ["Tập giải thích IoC/DI bằng lời kèm ví dụ thực tế", "Vì sao Constructor Injection được khuyến nghị hơn Field Injection?"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 40,
+                "title": "Spring MVC & Spring Boot Basics",
+                "topics": ["Spring MVC Flow: DispatcherServlet -> HandlerMapping -> Controller -> ViewResolver", "@RequestMapping, @GetMapping, @PostMapping", "@PathVariable vs @RequestParam vs @RequestBody", "Spring Boot: Starter dependencies, auto-configuration, application.properties"],
+                "tasks": ["Vẽ luồng xử lý request trong Spring MVC", "Luyện tập trả lời các câu hỏi Audit về Spring"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 41,
+                "title": "Bổ sung Java 8-17 Features (OCA/OCP Alignment)",
+                "topics": ["Java 8: Lambda expressions, Functional Interfaces (@FunctionalInterface), Stream API (filter, map, collect), Optional class", "Interface default & static methods", "Java 11: var keyword (local-variable type inference)", "Java 17: Record classes, Sealed classes cơ bản"],
+                "tasks": ["Viết ví dụ Stream API tính tổng hoặc lọc danh sách", "Làm 15 câu trắc nghiệm Java 8"],
+                "targetHours": {"java": 1.5, "other": 1.0, "testking": 0.75, "english": 0.75}
+            },
+            {
+                "day": 42,
+                "title": "Audit 1-1 Simulation Session #1",
+                "topics": ["Mô phỏng phỏng vấn vấn đáp 1-1 với 10 câu hỏi cốt lõi"],
+                "tasks": ["Sử dụng tính năng Ghi âm trong Audit Simulator để tự nói thành tiếng (60-90 giây/câu)", "Nghe lại ghi âm và rà soát thuật ngữ tiếng Anh/tiếng Việt"],
+                "targetHours": {"java": 1.0, "other": 2.0, "testking": 0.5, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 7,
+        "title": "TUẦN 7: Luyện Đề Tốc Độ Cao & Mock Test Lặp Lại",
+        "badge": "Exam Simulation",
+        "color": "#ef4444",
+        "goal": "Làm TestKing vòng 2 với độ chính xác >90%, phản xạ nhận diện câu gài dưới 45 giây.",
+        "days": [
+            {
+                "day": 43,
+                "title": "TestKing Lần 2 - Đợt 1 (50 câu)",
+                "topics": ["Tốc độ & phản xạ: mục tiêu < 60s/câu, không nhìn đáp án"],
+                "tasks": ["Làm 50 câu TestKing", "Đánh dấu các câu làm sai hoặc mất quá nhiều thời gian"],
+                "targetHours": {"java": 0.5, "other": 0.5, "testking": 2.5, "english": 0.5}
+            },
+            {
+                "day": 44,
+                "title": "TestKing Lần 2 - Đợt 2 (50 câu)",
+                "topics": ["Tập trung vào câu hỏi Exception & Flow control"],
+                "tasks": ["Làm 50 câu TestKing", "Soát lại bảng Exception Hierarchy"],
+                "targetHours": {"java": 0.5, "other": 0.5, "testking": 2.5, "english": 0.5}
+            },
+            {
+                "day": 45,
+                "title": "TestKing Lần 2 - Đợt 3 (50 câu)",
+                "topics": ["Tập trung vào câu hỏi OOP Polymorphism & Inheritance"],
+                "tasks": ["Làm 50 câu TestKing", "Củng cố quy tắc method overriding"],
+                "targetHours": {"java": 0.5, "other": 0.5, "testking": 2.5, "english": 0.5}
+            },
+            {
+                "day": 46,
+                "title": "TestKing Lần 2 - Đợt 4 (50 câu)",
+                "topics": ["Tập trung vào Collections, Threads & Inner classes"],
+                "tasks": ["Làm 50 câu TestKing", "Kiểm tra độ nhớ về wait/notify monitor locks"],
+                "targetHours": {"java": 0.5, "other": 0.5, "testking": 2.5, "english": 0.5}
+            },
+            {
+                "day": 47,
+                "title": "Diệt Cỏ Câu Sai (Nhóm sai >= 2 lần)",
+                "topics": ["Lọc toàn bộ những câu đã sai ở vòng 1 hoặc vòng 2"],
+                "tasks": ["Làm lại từng câu sai kèm giải thích tại sao đáp án đó đúng", "Cam kết không sai lại lần 3"],
+                "targetHours": {"java": 1.0, "other": 0.5, "testking": 2.0, "english": 0.5}
+            },
+            {
+                "day": 48,
+                "title": "Full Mock Entry Test #2 (Nghiêm ngặt)",
+                "topics": ["Đề thi tổng hợp đầy đủ như thi thật"],
+                "tasks": ["Bấm giờ đúng 45 phút cho 30 câu (Java + SQL + Web)", "Không tra cứu, không AI", "Tính điểm và phân tích lỗ hổng"],
+                "targetHours": {"java": 1.5, "other": 1.0, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 49,
+                "title": "Audit 1-1 Simulation Session #2",
+                "topics": ["Phỏng vấn thử lần 2 với các câu hỏi khó"],
+                "tasks": ["Ghi âm câu trả lời cho các chủ đề: HashMap hashing, Servlet lifecycle, Spring IoC, SQL JOINs vs Subquery", "Nghe lại và sửa lỗi nói lan man"],
+                "targetHours": {"java": 1.0, "other": 1.5, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    },
+    {
+        "week": 8,
+        "title": "TUẦN 8: Final Review & Sẵn Sàng Chinh Phục",
+        "badge": "Victory Week",
+        "color": "#14b8a6",
+        "goal": "Không nhồi nhét kiến thức mới. Rà soát Error Book, luyện flashcards phản xạ nhanh và giữ tâm lý tự tin vững vàng.",
+        "days": [
+            {
+                "day": 50,
+                "title": "Rà soát Java Core Ch1, Ch2, Ch3",
+                "topics": ["Primitives, Modifiers, Operators traps"],
+                "tasks": ["Đọc lại toàn bộ thẻ Flashcards Ch1-3", "Làm nhanh 20 câu trắc nghiệm phản xạ"],
+                "targetHours": {"java": 2.0, "other": 0.5, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 51,
+                "title": "Rà soát Java Core Ch4, Ch5",
+                "topics": ["Flow control, Exceptions bẫy return finally, OOP rules"],
+                "tasks": ["Đọc lại flashcards Ch4-5", "Làm nhanh 20 câu trắc nghiệm"],
+                "targetHours": {"java": 2.0, "other": 0.5, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 52,
+                "title": "Rà soát Java Core Ch6, Ch7",
+                "topics": ["String Pool, equals vs ==, Collections, Map"],
+                "tasks": ["Đọc lại flashcards Ch6-7", "Làm nhanh 20 câu trắc nghiệm"],
+                "targetHours": {"java": 2.0, "other": 0.5, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 53,
+                "title": "Rà soát Java Core Ch8, Ch9",
+                "topics": ["Inner classes, Thread states, synchronized"],
+                "tasks": ["Đọc lại flashcards Ch8-9", "Làm nhanh 20 câu trắc nghiệm"],
+                "targetHours": {"java": 2.0, "other": 0.5, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 54,
+                "title": "Rà soát SQL & JavaWeb",
+                "topics": ["SQL JOINs, GROUP BY/HAVING, Servlet lifecycle, Scopes, Forward vs Redirect"],
+                "tasks": ["Luyện 15 câu SQL + 15 câu Web", "Rà soát bảng so sánh"],
+                "targetHours": {"java": 0.5, "other": 2.0, "testking": 1.0, "english": 0.5}
+            },
+            {
+                "day": 55,
+                "title": "Rà soát FEE, Spring & English Comment Code",
+                "topics": ["Box model, JS let/const, Spring IoC/DI, 79 câu Comment Code"],
+                "tasks": ["Chạy qua toàn bộ 79 câu Comment Code Anh-Việt", "Tập nói lại 5 câu trả lời Spring Audit"],
+                "targetHours": {"java": 0.5, "other": 2.0, "testking": 0.5, "english": 1.0}
+            },
+            {
+                "day": 56,
+                "title": "GRAND FINALE: Full Mock Exam & Tự Tin Đi Thi",
+                "topics": ["Tổng kết lộ trình 8 tuần"],
+                "tasks": ["Làm bài Final Mock Exam (30 câu đầy đủ mọi mảng)", "Đọc lại Error Book lần cuối", "Nghỉ ngơi, ngủ sớm, chuẩn bị tinh thần chiến thắng!"],
+                "targetHours": {"java": 1.0, "other": 1.0, "testking": 1.0, "english": 0.5}
+            }
+        ]
+    }
+]
+
+with open('data/roadmap.json', 'w', encoding='utf-8') as f:
+    json.dump(roadmap_weeks, f, ensure_ascii=False, indent=2)
+
+print('Wrote data/roadmap.json successfully!')

@@ -1,0 +1,413 @@
+[
+  {
+    "id": "pe_01_reverse_words",
+    "title": "PE 01: Đảo Ngược Từng Từ Trong Câu (Reverse Words)",
+    "difficulty": "Easy",
+    "category": "Strings & Chars",
+    "dayRef": 1,
+    "description": "Cho một chuỗi ký tự `s` chứa các từ được phân tách bởi một hoặc nhiều khoảng trắng.\n\nHãy viết hàm đảo ngược thứ tự các từ trong chuỗi và chuẩn hóa khoảng trắng:\n- Giữa hai từ bất kỳ chỉ có đúng một dấu cách đơn `' '`.\n- Không chứa khoảng trắng thừa ở đầu chuỗi (leading) và cuối chuỗi (trailing).\n\n*Đây là bài thi PE kinh điển kiểm tra khả năng xử lý chuỗi cơ bản trong Java không dùng regex phức tạp.*",
+    "inputFormat": "Một chuỗi ký tự `s` (chuỗi không rỗng).",
+    "outputFormat": "Chuỗi kết quả sau khi đảo ngược thứ tự các từ và loại bỏ khoảng trắng thừa.",
+    "constraints": "1 <= s.length() <= 10^4\ns chỉ chứa chữ cái tiếng Anh (hoa và thường), chữ số và khoảng trắng `' '`.\nCó ít nhất một từ trong `s`.",
+    "examples": [
+      {
+        "input": "\"the sky is blue\"",
+        "output": "\"blue is sky the\"",
+        "explanation": "Thứ tự 4 từ bị đảo ngược hoàn toàn, giữa các từ phân cách bởi 1 dấu cách."
+      },
+      {
+        "input": "\"  hello world  \"",
+        "output": "\"world hello\"",
+        "explanation": "Khoảng trắng thừa ở đầu và cuối chuỗi đã được loại bỏ sạch sẽ."
+      },
+      {
+        "input": "\"a good   example\"",
+        "output": "\"example good a\"",
+        "explanation": "Nhiều khoảng trắng liên tiếp giữa các từ được thu gọn thành đúng 1 dấu cách."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public String reverseWords(String s) {\n        // Viết code chay của bạn ở đây\n        \n        return \"\";\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            Solution sol = new Solution();\n            System.out.print(sol.reverseWords(s));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "the sky is blue", "expectedOutput": "blue is sky the", "isHidden": false },
+      { "id": 2, "input": "  hello world  ", "expectedOutput": "world hello", "isHidden": false },
+      { "id": 3, "input": "a good   example", "expectedOutput": "example good a", "isHidden": false },
+      { "id": 4, "input": "Java", "expectedOutput": "Java", "isHidden": true },
+      { "id": 5, "input": "   FPT   Software   Entry   Test   ", "expectedOutput": "Test Entry Software FPT", "isHidden": true }
+    ],
+    "hints": [
+      "Bước 1: Sử dụng phương thức s.trim() để bỏ khoảng trắng thừa 2 đầu.",
+      "Bước 2: Có thể dùng s.split(\"\\\\s+\") để tách các từ dựa trên 1 hoặc nhiều dấu cách.",
+      "Bước 3: Dùng StringBuilder ghép các từ từ cuối mảng về đầu mảng kèm dấu cách."
+    ],
+    "solution": "public class Solution {\n    public String reverseWords(String s) {\n        String[] words = s.trim().split(\"\\\\s+\");\n        StringBuilder sb = new StringBuilder();\n        for (int i = words.length - 1; i >= 0; i--) {\n            sb.append(words[i]);\n            if (i > 0) sb.append(\" \");\n        }\n        return sb.toString();\n    }\n}"
+  },
+  {
+    "id": "pe_02_valid_identifier",
+    "title": "PE 02: Kiểm Tra Định Danh Hợp Lệ (Valid Java Identifier)",
+    "difficulty": "Easy",
+    "category": "Java Core Syntax",
+    "dayRef": 1,
+    "description": "Trong Java, một định danh (tên biến, tên hàm, tên class) phải tuân thủ nghiêm ngặt 4 quy tắc cú pháp:\n1. Ký tự đầu tiên **bắt buộc** phải là chữ cái (`a-z`, `A-Z`), dấu gạch dưới (`_`), hoặc ký tự dollar (`$`). Tuyệt đối **không được** bắt đầu bằng chữ số.\n2. Các ký tự tiếp theo có thể là chữ cái, chữ số (`0-9`), `_`, hoặc `$`. Không được chứa ký tự đặc biệt như `-`, `@`, `#`, khoảng trắng, v.v.\n3. Định danh **không được trùng** với 49 Reserved Keywords của Java hoặc 3 Literals (`true`, `false`, `null`).\n\nHãy viết hàm `boolean isValidIdentifier(String s)` trả về `true` nếu chuỗi là định danh Java hợp lệ, ngược lại trả về `false`.",
+    "inputFormat": "Một chuỗi `s` chứa định danh cần kiểm tra.",
+    "outputFormat": "In ra `true` hoặc `false`.",
+    "constraints": "1 <= s.length() <= 100\ns không chứa khoảng trắng ở đầu hoặc cuối.",
+    "examples": [
+      {
+        "input": "myVariable_1$",
+        "output": "true",
+        "explanation": "Bắt đầu bằng chữ cái, các ký tự sau là chữ, số, _, $ hợp lệ."
+      },
+      {
+        "input": "2cool",
+        "output": "false",
+        "explanation": "Bắt đầu bằng chữ số 2 nên vi phạm quy tắc định danh."
+      },
+      {
+        "input": "volatile",
+        "output": "false",
+        "explanation": "'volatile' là từ khóa dự lưu (reserved keyword) của Java nên không được dùng làm identifier."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public boolean isValidIdentifier(String s) {\n        // Viết code kiểm tra định danh hợp lệ\n        \n        return false;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            Solution sol = new Solution();\n            System.out.print(sol.isValidIdentifier(s));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "myVariable_1$", "expectedOutput": "true", "isHidden": false },
+      { "id": 2, "input": "2cool", "expectedOutput": "false", "isHidden": false },
+      { "id": 3, "input": "volatile", "expectedOutput": "false", "isHidden": false },
+      { "id": 4, "input": "_privateVar", "expectedOutput": "true", "isHidden": true },
+      { "id": 5, "input": "$totalAmount", "expectedOutput": "true", "isHidden": true },
+      { "id": 6, "input": "null", "expectedOutput": "false", "isHidden": true },
+      { "id": 7, "input": "my-name", "expectedOutput": "false", "isHidden": true }
+    ],
+    "hints": [
+      "Có thể dùng hàm có sẵn Character.isJavaIdentifierStart(c) cho ký tự đầu và Character.isJavaIdentifierPart(c) cho các ký tự sau.",
+      "Tạo một tập Set<String> chứa các từ khóa cấm: abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, do, double, else, enum, extends, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while, true, false, null."
+    ],
+    "solution": "import java.util.*;\n\npublic class Solution {\n    private static final Set<String> KEYWORDS = new HashSet<>(Arrays.asList(\n        \"abstract\", \"assert\", \"boolean\", \"break\", \"byte\", \"case\", \"catch\", \"char\", \"class\", \"const\",\n        \"continue\", \"default\", \"do\", \"double\", \"else\", \"enum\", \"extends\", \"final\", \"finally\", \"float\",\n        \"for\", \"goto\", \"if\", \"implements\", \"import\", \"instanceof\", \"int\", \"interface\", \"long\", \"native\",\n        \"new\", \"package\", \"private\", \"protected\", \"public\", \"return\", \"short\", \"static\", \"strictfp\", \"super\",\n        \"switch\", \"synchronized\", \"this\", \"throw\", \"throws\", \"transient\", \"try\", \"void\", \"volatile\", \"while\",\n        \"true\", \"false\", \"null\"\n    ));\n\n    public boolean isValidIdentifier(String s) {\n        if (s == null || s.isEmpty() || KEYWORDS.contains(s)) return false;\n        if (!Character.isJavaIdentifierStart(s.charAt(0))) return false;\n        for (int i = 1; i < s.length(); i++) {\n            if (!Character.isJavaIdentifierPart(s.charAt(i))) return false;\n        }\n        return true;\n    }\n}"
+  },
+  {
+    "id": "pe_03_remove_duplicates",
+    "title": "PE 03: Xóa Phần Tử Trùng Lặp Trong Mảng (Remove Duplicates)",
+    "difficulty": "Easy",
+    "category": "Arrays & Pointers",
+    "dayRef": 2,
+    "description": "Cho một mảng số nguyên `nums` **đã được sắp xếp tăng dần**.\n\nHãy xóa các phần tử trùng lặp **ngay tại chỗ (in-place)** sao cho mỗi phần tử duy nhất chỉ xuất hiện đúng một lần, giữ nguyên thứ tự tương đối ban đầu của các phần tử.\n\nTrả về số lượng phần tử duy nhất `k`. Đồng thời, `k` phần tử đầu tiên của `nums` phải chứa các phần tử duy nhất này.\n\n**Ràng buộc vàng:** Không được cấp phát thêm mảng phụ! Độ phức tạp không gian bắt buộc là $O(1)$ extra memory.",
+    "inputFormat": "Chuỗi các số nguyên cách nhau bởi dấu cách (ví dụ: `1 1 2 2 3`).",
+    "outputFormat": "Dãy các số duy nhất cách nhau bởi dấu cách.",
+    "constraints": "1 <= nums.length <= 3 * 10^4\n-100 <= nums[i] <= 100\nnums được sắp xếp theo thứ tự không giảm.",
+    "examples": [
+      {
+        "input": "1 1 2",
+        "output": "1 2",
+        "explanation": "Có 2 phần tử duy nhất là 1 và 2."
+      },
+      {
+        "input": "0 0 1 1 1 2 2 3 3 4",
+        "output": "0 1 2 3 4",
+        "explanation": "Có 5 phần tử duy nhất từ 0 đến 4."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public int removeDuplicates(int[] nums) {\n        // Viết thuật toán 2 con trỏ O(1) bộ nhớ\n        \n        return 0;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine().trim();\n            if (line.isEmpty()) return;\n            String[] parts = line.split(\"\\\\s+\");\n            int[] nums = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) nums[i] = Integer.parseInt(parts[i]);\n            \n            Solution sol = new Solution();\n            int k = sol.removeDuplicates(nums);\n            StringBuilder sb = new StringBuilder();\n            for (int i = 0; i < k; i++) {\n                sb.append(nums[i]);\n                if (i < k - 1) sb.append(\" \");\n            }\n            System.out.print(sb.toString());\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "1 1 2", "expectedOutput": "1 2", "isHidden": false },
+      { "id": 2, "input": "0 0 1 1 1 2 2 3 3 4", "expectedOutput": "0 1 2 3 4", "isHidden": false },
+      { "id": 3, "input": "1 2 3 4 5", "expectedOutput": "1 2 3 4 5", "isHidden": false },
+      { "id": 4, "input": "7", "expectedOutput": "7", "isHidden": true },
+      { "id": 5, "input": "2 2 2 2 2 2", "expectedOutput": "2", "isHidden": true }
+    ],
+    "hints": [
+      "Dùng kỹ thuật 2 con trỏ (Two Pointers): một con trỏ 'insertIndex = 1' theo dõi vị trí điền số duy nhất tiếp theo.",
+      "Duyệt con trỏ thứ hai 'i' từ 1 đến hết mảng: nếu nums[i] != nums[i-1], gán nums[insertIndex] = nums[i] rồi tăng insertIndex."
+    ],
+    "solution": "public class Solution {\n    public int removeDuplicates(int[] nums) {\n        if (nums == null || nums.length == 0) return 0;\n        int insertIndex = 1;\n        for (int i = 1; i < nums.length; i++) {\n            if (nums[i] != nums[i - 1]) {\n                nums[insertIndex] = nums[i];\n                insertIndex++;\n            }\n        }\n        return insertIndex;\n    }\n}"
+  },
+  {
+    "id": "pe_04_two_sum",
+    "title": "PE 04: Cặp Số Có Tổng Bằng Target (Two Sum)",
+    "difficulty": "Easy",
+    "category": "Arrays & Hash Table",
+    "dayRef": 2,
+    "description": "Cho một mảng số nguyên `nums` và một số nguyên `target`.\n\nHãy tìm **chỉ số (index)** của hai số sao cho tổng của chúng bằng `target`.\n\n- Giả định mỗi đầu vào luôn có duy nhất một đáp án hợp lệ.\n- Bạn không được sử dụng cùng một phần tử 2 lần.\n- Trả về 2 chỉ số theo thứ tự tăng dần, cách nhau bởi dấu cách: `i j`.",
+    "inputFormat": "Dòng 1: Danh sách các số nguyên cách nhau bởi dấu cách.\nDòng 2: Số nguyên `target`.",
+    "outputFormat": "Hai chỉ số `i j` cách nhau bởi dấu cách.",
+    "constraints": "2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9",
+    "examples": [
+      {
+        "input": "2 7 11 15\n9",
+        "output": "0 1",
+        "explanation": "Vì nums[0] + nums[1] = 2 + 7 = 9 nên kết quả là 0 1."
+      },
+      {
+        "input": "3 2 4\n6",
+        "output": "1 2",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6 nên kết quả là 1 2."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        // Hãy tối ưu với HashMap O(N) thời gian\n        \n        return new int[]{};\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line1 = sc.nextLine().trim();\n            int target = Integer.parseInt(sc.nextLine().trim());\n            String[] parts = line1.split(\"\\\\s+\");\n            int[] nums = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) nums[i] = Integer.parseInt(parts[i]);\n            \n            Solution sol = new Solution();\n            int[] res = sol.twoSum(nums, target);\n            if (res != null && res.length == 2) {\n                System.out.print(res[0] + \" \" + res[1]);\n            }\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "2 7 11 15\n9", "expectedOutput": "0 1", "isHidden": false },
+      { "id": 2, "input": "3 2 4\n6", "expectedOutput": "1 2", "isHidden": false },
+      { "id": 3, "input": "3 3\n6", "expectedOutput": "0 1", "isHidden": false },
+      { "id": 4, "input": "-1 -2 -3 -4 -5\n-8", "expectedOutput": "2 4", "isHidden": true }
+    ],
+    "hints": [
+      "Cách thô sơ O(N^2) dùng 2 vòng for lồng nhau sẽ chạy chậm khi N = 10,000.",
+      "Cách tối ưu O(N): Dùng `HashMap<Integer, Integer>` lưu cặp (giá trị phần tử -> chỉ số).",
+      "Khi duyệt qua nums[i], kiểm tra xem `target - nums[i]` đã có trong map chưa. Nếu có, ta đã tìm thấy cặp số!"
+    ],
+    "solution": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<>();\n        for (int i = 0; i < nums.length; i++) {\n            int complement = target - nums[i];\n            if (map.containsKey(complement)) {\n                return new int[] { map.get(complement), i };\n            }\n            map.put(nums[i], i);\n        }\n        return new int[] {};\n    }\n}"
+  },
+  {
+    "id": "pe_05_valid_parentheses",
+    "title": "PE 05: Kiểm Tra Đóng Mở Ngoặc Hợp Lệ (Valid Parentheses)",
+    "difficulty": "Medium",
+    "category": "Stack & Syntax",
+    "dayRef": 3,
+    "description": "Cho một chuỗi `s` chỉ chứa các ký tự ngoặc: `'('`, `')'`, `'{'`, `'}'`, `'['` và `']'`.\n\nHãy xác định xem chuỗi đầu vào có hợp lệ hay không:\n- Mọi ngoặc mở phải được đóng bằng ngoặc cùng loại.\n- Mọi ngoặc mở phải được đóng theo đúng thứ tự (LIFO - Last In First Out).\n- Mỗi ngoặc đóng phải có ngoặc mở tương ứng trước nó.\n\n*Bài này mô phỏng cơ chế kiểm tra khối lệnh scope `{}` của trình biên dịch javac.*",
+    "inputFormat": "Một chuỗi `s` chứa các dấu ngoặc.",
+    "outputFormat": "In ra `true` nếu chuỗi ngoặc hợp lệ, ngược lại `false`.",
+    "constraints": "1 <= s.length() <= 10^4\ns chỉ bao gồm các ký tự '()[]{}'.",
+    "examples": [
+      {
+        "input": "()",
+        "output": "true",
+        "explanation": "Cặp ngoặc đơn mở và đóng đúng loại."
+      },
+      {
+        "input": "()[]{}",
+        "output": "true",
+        "explanation": "Ba cặp ngoặc mở và đóng liên tiếp hợp lệ."
+      },
+      {
+        "input": "(]",
+        "output": "false",
+        "explanation": "Mở ngoặc tròn nhưng đóng ngoặc vuông -> Không hợp lệ."
+      },
+      {
+        "input": "([)]",
+        "output": "false",
+        "explanation": "Đóng ngoặc sai thứ tự lồng nhau."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public boolean isValid(String s) {\n        // Dùng Stack để kiểm tra ngoặc lồng nhau\n        \n        return false;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine().trim();\n            Solution sol = new Solution();\n            System.out.print(sol.isValid(s));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "()", "expectedOutput": "true", "isHidden": false },
+      { "id": 2, "input": "()[]{}", "expectedOutput": "true", "isHidden": false },
+      { "id": 3, "input": "(]", "expectedOutput": "false", "isHidden": false },
+      { "id": 4, "input": "([)]", "expectedOutput": "false", "isHidden": false },
+      { "id": 5, "input": "{[]}", "expectedOutput": "true", "isHidden": false },
+      { "id": 6, "input": "]", "expectedOutput": "false", "isHidden": true },
+      { "id": 7, "input": "{((([[[{}]]])))}", "expectedOutput": "true", "isHidden": true }
+    ],
+    "hints": [
+      "Dùng cấu trúc dữ liệu `Stack<Character>` hoặc `ArrayDeque<Character>`.",
+      "Gặp ngoặc mở `(`, `[`, `{`: Đẩy ngoặc đóng tương ứng `)`, `]`, `}` vào stack.",
+      "Gặp ngoặc đóng: So sánh với phần tử trên đỉnh stack (nếu stack rỗng hoặc đỉnh stack khác ký tự hiện tại -> return false).",
+      "Cuối chuỗi: Kiểm tra `stack.isEmpty()`."
+    ],
+    "solution": "import java.util.ArrayDeque;\nimport java.util.Deque;\n\npublic class Solution {\n    public boolean isValid(String s) {\n        Deque<Character> stack = new ArrayDeque<>();\n        for (char c : s.toCharArray()) {\n            if (c == '(') stack.push(')');\n            else if (c == '{') stack.push('}');\n            else if (c == '[') stack.push(']');\n            else if (stack.isEmpty() || stack.pop() != c) return false;\n        }\n        return stack.isEmpty();\n    }\n}"
+  },
+  {
+    "id": "pe_06_student_oop",
+    "title": "PE 06: Quản Lý Sinh Viên & Xếp Loại Học Lực (Student OOP)",
+    "difficulty": "Medium",
+    "category": "OOP & Encapsulation",
+    "dayRef": 4,
+    "description": "Đây là dạng bài tập lập trình hướng đối tượng kinh điển trong các đề thi PE FPT.\n\nCho danh sách các sinh viên gồm: Mã SV (String), Họ Tên (String), Điểm GPA hệ 10 (double).\n\nHãy hoàn thiện lớp `Student` và hàm xử lý:\n1. Thuộc tính `id`, `name`, `gpa` phải được đóng gói `private` (Encapsulation).\n2. Phương thức `getRank()` xếp loại:\n   - `GPA >= 8.0`: `\"XUAT SAC\"`\n   - `6.5 <= GPA < 8.0`: `\"KHA\"`\n   - `5.0 <= GPA < 6.5`: `\"TRUNG BINH\"`\n   - `GPA < 5.0`: `\"YEU\"`\n3. Sắp xếp danh sách sinh viên theo **GPA giảm dần**. Nếu hai sinh viên có cùng GPA thì sắp xếp theo **id tăng dần theo thứ tự từ điển**.",
+    "inputFormat": "Dòng 1: Số nguyên N (số lượng sinh viên).\nN dòng tiếp theo, mỗi dòng gồm: `ID|Name|GPA`.",
+    "outputFormat": "N dòng sau khi sắp xếp, mỗi dòng in: `ID - Name - GPA - Rank`.",
+    "constraints": "1 <= N <= 100\n0.0 <= GPA <= 10.0",
+    "examples": [
+      {
+        "input": "3\nSV01|Nguyen Van An|7.5\nSV02|Tran Thi Binh|9.0\nSV03|Le Van Cuong|7.5",
+        "output": "SV02 - Tran Thi Binh - 9.0 - XUAT SAC\nSV01 - Nguyen Van An - 7.5 - KHA\nSV03 - Le Van Cuong - 7.5 - KHA",
+        "explanation": "SV02 có GPA 9.0 cao nhất đứng đầu. SV01 và SV03 cùng 7.5 nhưng ID SV01 đứng trước SV03 theo từ điển."
+      }
+    ],
+    "starterCode": "import java.util.*;\n\nclass Student implements Comparable<Student> {\n    private String id;\n    private String name;\n    private double gpa;\n\n    public Student(String id, String name, double gpa) {\n        this.id = id;\n        this.name = name;\n        this.gpa = gpa;\n    }\n\n    public String getRank() {\n        // Xếp loại học lực\n        return \"\";\n    }\n\n    @Override\n    public int compareTo(Student o) {\n        // Sắp xếp GPA giảm dần, ID tăng dần\n        return 0;\n    }\n\n    @Override\n    public String toString() {\n        return id + \" - \" + name + \" - \" + gpa + \" - \" + getRank();\n    }\n}\n\npublic class Solution {\n    public List<Student> sortStudents(List<Student> list) {\n        Collections.sort(list);\n        return list;\n    }\n}",
+    "driverCode": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (!sc.hasNextLine()) return;\n        int n = Integer.parseInt(sc.nextLine().trim());\n        List<Student> list = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            String[] parts = sc.nextLine().trim().split(\"\\\\|\");\n            if (parts.length >= 3) {\n                list.add(new Student(parts[0], parts[1], Double.parseDouble(parts[2])));\n            }\n        }\n        Solution sol = new Solution();\n        List<Student> res = sol.sortStudents(list);\n        for (int i = 0; i < res.size(); i++) {\n            System.out.print(res.get(i).toString());\n            if (i < res.size() - 1) System.out.println();\n        }\n    }\n}",
+    "testCases": [
+      {
+        "id": 1,
+        "input": "3\nSV01|Nguyen Van An|7.5\nSV02|Tran Thi Binh|9.0\nSV03|Le Van Cuong|7.5",
+        "expectedOutput": "SV02 - Tran Thi Binh - 9.0 - XUAT SAC\nSV01 - Nguyen Van An - 7.5 - KHA\nSV03 - Le Van Cuong - 7.5 - KHA",
+        "isHidden": false
+      },
+      {
+        "id": 2,
+        "input": "2\nSV10|Pham Dung|4.5\nSV05|Hoang Em|5.5",
+        "expectedOutput": "SV05 - Hoang Em - 5.5 - TRUNG BINH\nSV10 - Pham Dung - 4.5 - YEU",
+        "isHidden": false
+      }
+    ],
+    "hints": [
+      "Để sắp xếp giảm dần theo GPA, so sánh: Double.compare(o.gpa, this.gpa).",
+      "Nếu GPA bằng nhau: dùng this.id.compareTo(o.id) để sắp ID tăng dần."
+    ],
+    "solution": "import java.util.*;\n\nclass Student implements Comparable<Student> {\n    private String id;\n    private String name;\n    private double gpa;\n\n    public Student(String id, String name, double gpa) {\n        this.id = id;\n        this.name = name;\n        this.gpa = gpa;\n    }\n\n    public String getRank() {\n        if (gpa >= 8.0) return \"XUAT SAC\";\n        if (gpa >= 6.5) return \"KHA\";\n        if (gpa >= 5.0) return \"TRUNG BINH\";\n        return \"YEU\";\n    }\n\n    @Override\n    public int compareTo(Student o) {\n        if (Double.compare(this.gpa, o.gpa) != 0) {\n            return Double.compare(o.gpa, this.gpa); // giảm dần\n        }\n        return this.id.compareTo(o.id); // tăng dần\n    }\n\n    @Override\n    public String toString() {\n        return id + \" - \" + name + \" - \" + gpa + \" - \" + getRank();\n    }\n}\n\npublic class Solution {\n    public List<Student> sortStudents(List<Student> list) {\n        Collections.sort(list);\n        return list;\n    }\n}"
+  },
+  {
+    "id": "pe_07_top_frequent",
+    "title": "PE 07: Phần Tử Xuất Hiện Nhiều Nhất (Most Frequent Element)",
+    "difficulty": "Medium",
+    "category": "Collections & Map",
+    "dayRef": 9,
+    "description": "Cho một mảng số nguyên `nums`.\n\nHãy tìm phần tử có tần suất xuất hiện nhiều nhất trong mảng.\n- Nếu có nhiều phần tử có cùng tần suất lớn nhất, hãy trả về phần tử có **giá trị nhỏ nhất** trong số chúng.\n\n*Bài này kiểm tra kỹ năng sử dụng HashMap đếm tần suất và xử lý tie-breaker.*",
+    "inputFormat": "Danh sách các số nguyên cách nhau bởi dấu cách.",
+    "outputFormat": "Một số nguyên duy nhất là phần tử xuất hiện nhiều nhất.",
+    "constraints": "1 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
+    "examples": [
+      {
+        "input": "1 3 2 1 4 1",
+        "output": "1",
+        "explanation": "Số 1 xuất hiện 3 lần, nhiều nhất mảng."
+      },
+      {
+        "input": "4 4 2 2 3",
+        "output": "2",
+        "explanation": "Số 4 và số 2 đều xuất hiện 2 lần. Số 2 nhỏ hơn nên được chọn."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public int mostFrequent(int[] nums) {\n        // Dùng Map để đếm tần suất\n        \n        return 0;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String line = sc.nextLine().trim();\n            if (line.isEmpty()) return;\n            String[] parts = line.split(\"\\\\s+\");\n            int[] nums = new int[parts.length];\n            for (int i = 0; i < parts.length; i++) nums[i] = Integer.parseInt(parts[i]);\n            Solution sol = new Solution();\n            System.out.print(sol.mostFrequent(nums));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "1 3 2 1 4 1", "expectedOutput": "1", "isHidden": false },
+      { "id": 2, "input": "4 4 2 2 3", "expectedOutput": "2", "isHidden": false },
+      { "id": 3, "input": "99", "expectedOutput": "99", "isHidden": false },
+      { "id": 4, "input": "5 5 5 1 1 1 2 2 2", "expectedOutput": "1", "isHidden": true }
+    ],
+    "hints": [
+      "Dùng `Map<Integer, Integer> countMap = new HashMap<>()`.",
+      "Duyệt map để tìm `maxFreq`. Khi `freq > maxFreq` hoặc `freq == maxFreq && key < bestKey`, cập nhật `bestKey`."
+    ],
+    "solution": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class Solution {\n    public int mostFrequent(int[] nums) {\n        Map<Integer, Integer> map = new HashMap<>();\n        for (int n : nums) {\n            map.put(n, map.getOrDefault(n, 0) + 1);\n        }\n        int maxCount = -1;\n        int result = nums[0];\n        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {\n            int key = entry.getKey();\n            int count = entry.getValue();\n            if (count > maxCount || (count == maxCount && key < result)) {\n                maxCount = count;\n                result = key;\n            }\n        }\n        return result;\n    }\n}"
+  },
+  {
+    "id": "pe_08_age_validator",
+    "title": "PE 08: Ngoại Lệ Tự Định Nghĩa (Custom Exception Validator)",
+    "difficulty": "Easy",
+    "category": "Exception Handling",
+    "dayRef": 12,
+    "description": "Trong đề thi Java Core & Audit, bạn thường được yêu cầu tự định nghĩa một `Custom Exception` kế thừa từ `Exception` (Checked Exception).\n\nYêu cầu:\n1. Định nghĩa lớp ngoại lệ `InvalidAgeException extends Exception` nhận vào thông điệp lỗi `message`.\n2. Phương thức `validateAge(int age)`:\n   - Nếu `age < 18`: ném ra `InvalidAgeException` với thông điệp: `\"UNDER_AGE: Nguoi dung chua du 18 tuoi\"`.\n   - Nếu `age > 65`: ném ra `InvalidAgeException` với thông điệp: `\"OVER_AGE: Nguoi dung vuot qua do tuoi lao dong\"`.\n   - Nếu `18 <= age <= 65`: in ra: `\"VALID_AGE: Tuoi \" + age + \" hop le\"`.\n3. Khi gọi `validateAge`, bắt ngoại lệ trong khối `try-catch` và in ra thông điệp ngoại lệ `e.getMessage()`.",
+    "inputFormat": "Một số nguyên biểu thị tuổi.",
+    "outputFormat": "Thông điệp hợp lệ hoặc thông điệp ngoại lệ tương ứng.",
+    "constraints": "-100 <= age <= 200",
+    "examples": [
+      {
+        "input": "20",
+        "output": "VALID_AGE: Tuoi 20 hop le",
+        "explanation": "20 nằm trong khoảng [18, 65] nên hợp lệ."
+      },
+      {
+        "input": "15",
+        "output": "UNDER_AGE: Nguoi dung chua du 18 tuoi",
+        "explanation": "15 < 18 nên ném ra InvalidAgeException."
+      },
+      {
+        "input": "70",
+        "output": "OVER_AGE: Nguoi dung vuot qua do tuoi lao dong",
+        "explanation": "70 > 65 nên ném ra InvalidAgeException."
+      }
+    ],
+    "starterCode": "class InvalidAgeException extends Exception {\n    public InvalidAgeException(String message) {\n        super(message);\n    }\n}\n\npublic class Solution {\n    public String checkAge(int age) {\n        // Dùng try-catch gọi validateAge\n        try {\n            validateAge(age);\n            return \"VALID_AGE: Tuoi \" + age + \" hop le\";\n        } catch (InvalidAgeException e) {\n            return e.getMessage();\n        }\n    }\n\n    private void validateAge(int age) throws InvalidAgeException {\n        // Viết logic kiểm tra tuổi ở đây\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int age = sc.nextInt();\n            Solution sol = new Solution();\n            System.out.print(sol.checkAge(age));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "20", "expectedOutput": "VALID_AGE: Tuoi 20 hop le", "isHidden": false },
+      { "id": 2, "input": "15", "expectedOutput": "UNDER_AGE: Nguoi dung chua du 18 tuoi", "isHidden": false },
+      { "id": 3, "input": "70", "expectedOutput": "OVER_AGE: Nguoi dung vuot qua do tuoi lao dong", "isHidden": false },
+      { "id": 4, "input": "18", "expectedOutput": "VALID_AGE: Tuoi 18 hop le", "isHidden": true },
+      { "id": 5, "input": "65", "expectedOutput": "VALID_AGE: Tuoi 65 hop le", "isHidden": true }
+    ],
+    "hints": [
+      "Khai báo throws InvalidAgeException trên chữ ký hàm validateAge.",
+      "Dùng từ khóa `throw new InvalidAgeException(...)` khi phạm quy tắc."
+    ],
+    "solution": "class InvalidAgeException extends Exception {\n    public InvalidAgeException(String message) {\n        super(message);\n    }\n}\n\npublic class Solution {\n    public String checkAge(int age) {\n        try {\n            validateAge(age);\n            return \"VALID_AGE: Tuoi \" + age + \" hop le\";\n        } catch (InvalidAgeException e) {\n            return e.getMessage();\n        }\n    }\n\n    private void validateAge(int age) throws InvalidAgeException {\n        if (age < 18) {\n            throw new InvalidAgeException(\"UNDER_AGE: Nguoi dung chua du 18 tuoi\");\n        }\n        if (age > 65) {\n            throw new InvalidAgeException(\"OVER_AGE: Nguoi dung vuot qua do tuoi lao dong\");\n        }\n    }\n}"
+  },
+  {
+    "id": "pe_09_valid_palindrome",
+    "title": "PE 09: Chuỗi Đối Xứng Bỏ Qua Ký Tự Đặc Biệt (Valid Palindrome)",
+    "difficulty": "Easy",
+    "category": "Strings & Two Pointers",
+    "dayRef": 6,
+    "description": "Một chuỗi là **Palindrome (đối xứng)** nếu sau khi chuyển tất cả chữ hoa thành chữ thường và loại bỏ tất cả các ký tự không phải chữ và số (alphanumeric), chuỗi đọc từ trái sang phải giống hệt như đọc từ phải sang trái.\n\nCho một chuỗi `s`, trả về `true` nếu nó là palindrome, ngược lại trả về `false`.",
+    "inputFormat": "Một chuỗi `s`.",
+    "outputFormat": "In ra `true` hoặc `false`.",
+    "constraints": "1 <= s.length() <= 2 * 10^5\ns bao gồm các ký tự ASCII in được.",
+    "examples": [
+      {
+        "input": "\"A man, a plan, a canal: Panama\"",
+        "output": "true",
+        "explanation": "Sau khi làm sạch: \"amanaplanacanalpanama\" là chuỗi đối xứng."
+      },
+      {
+        "input": "\"race a car\"",
+        "output": "false",
+        "explanation": "Sau khi làm sạch: \"raceacar\" không phải chuỗi đối xứng."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public boolean isPalindrome(String s) {\n        // Hai con trỏ duyệt từ 2 đầu O(N) thời gian, O(1) bộ nhớ\n        \n        return false;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine();\n            Solution sol = new Solution();\n            System.out.print(sol.isPalindrome(s));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "A man, a plan, a canal: Panama", "expectedOutput": "true", "isHidden": false },
+      { "id": 2, "input": "race a car", "expectedOutput": "false", "isHidden": false },
+      { "id": 3, "input": " ", "expectedOutput": "true", "isHidden": false },
+      { "id": 4, "input": "0P", "expectedOutput": "false", "isHidden": true },
+      { "id": 5, "input": "Was it a car or a cat I saw?", "expectedOutput": "true", "isHidden": true }
+    ],
+    "hints": [
+      "Dùng `left = 0`, `right = s.length() - 1`.",
+      "Bỏ qua ký tự không hợp lệ bằng `Character.isLetterOrDigit(...)`.",
+      "So sánh ký tự không phân biệt hoa thường bằng `Character.toLowerCase(...)`."
+    ],
+    "solution": "public class Solution {\n    public boolean isPalindrome(String s) {\n        int left = 0, right = s.length() - 1;\n        while (left < right) {\n            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) left++;\n            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) right--;\n            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {\n                return false;\n            }\n            left++;\n            right--;\n        }\n        return true;\n    }\n}"
+  },
+  {
+    "id": "pe_10_fibonacci_dp",
+    "title": "PE 10: Dãy Số Fibonacci Tối Ưu Bộ Nhớ (Fibonacci Number)",
+    "difficulty": "Easy",
+    "category": "Dynamic Programming",
+    "dayRef": 5,
+    "description": "Dãy số Fibonacci thường được định nghĩa như sau:\n- $F(0) = 0$\n- $F(1) = 1$\n- $F(n) = F(n - 1) + F(n - 2)$ với $n \\ge 2$.\n\nCho số nguyên $n$, hãy tính $F(n)$.\n\n**Thử thách:** Thuật toán đệ quy $O(2^N)$ sẽ bị Time Out khi $n$ lớn. Hãy viết thuật toán đạt độ phức tạp thời gian $O(N)$ và bộ nhớ $O(1)$!",
+    "inputFormat": "Một số nguyên `n`.",
+    "outputFormat": "Giá trị số Fibonacci thứ `n`.",
+    "constraints": "0 <= n <= 30",
+    "examples": [
+      {
+        "input": "2",
+        "output": "1",
+        "explanation": "F(2) = F(1) + F(0) = 1 + 0 = 1."
+      },
+      {
+        "input": "3",
+        "output": "2",
+        "explanation": "F(3) = F(2) + F(1) = 1 + 1 = 2."
+      },
+      {
+        "input": "4",
+        "output": "3",
+        "explanation": "F(4) = F(3) + F(2) = 2 + 1 = 3."
+      }
+    ],
+    "starterCode": "public class Solution {\n    public int fib(int n) {\n        // Quy hoạch động O(N) thời gian, O(1) bộ nhớ\n        \n        return 0;\n    }\n}",
+    "driverCode": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            Solution sol = new Solution();\n            System.out.print(sol.fib(n));\n        }\n    }\n}",
+    "testCases": [
+      { "id": 1, "input": "2", "expectedOutput": "1", "isHidden": false },
+      { "id": 2, "input": "3", "expectedOutput": "2", "isHidden": false },
+      { "id": 3, "input": "4", "expectedOutput": "3", "isHidden": false },
+      { "id": 4, "input": "0", "expectedOutput": "0", "isHidden": true },
+      { "id": 5, "input": "1", "expectedOutput": "1", "isHidden": true },
+      { "id": 6, "input": "10", "expectedOutput": "55", "isHidden": true },
+      { "id": 7, "input": "30", "expectedOutput": "832040", "isHidden": true }
+    ],
+    "hints": [
+      "Nếu n <= 1, return n.",
+      "Dùng 2 biến a = 0, b = 1. Lặp từ 2 đến n: c = a + b; a = b; b = c; return b."
+    ],
+    "solution": "public class Solution {\n    public int fib(int n) {\n        if (n <= 1) return n;\n        int a = 0, b = 1;\n        for (int i = 2; i <= n; i++) {\n            int c = a + b;\n            a = b;\n            b = c;\n        }\n        return b;\n    }\n}"
+  }
+]

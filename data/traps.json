@@ -1,0 +1,189 @@
+{
+  "classicTraps": [
+    {
+      "id": "trap_1",
+      "title": "Bẫy 1: Local Variable không có giá trị mặc định",
+      "category": "Syntax & Compilation",
+      "description": "Biến cục bộ (local variable) khai báo trong phương thức không được JVM gán giá trị mặc định. Nếu sử dụng biến khi chưa khởi tạo, chương trình sẽ gặp Compile Error ngay lập tức.",
+      "badCode": "public void test() {\n    int x;\n    System.out.println(x); // COMPILE ERROR!\n}",
+      "goodCode": "public void test() {\n    int x = 0; // Khởi tạo rõ ràng\n    System.out.println(x); // OK: 0\n}",
+      "rule": "Chỉ có instance variables và static variables mới có default values (0, false, null)."
+    },
+    {
+      "id": "trap_2",
+      "title": "Bẫy 2: Phép cộng kiểu byte tự động bị nâng lên int",
+      "category": "Operators & Casting",
+      "description": "Các phép toán số học (+, -, *, /) trên các kiểu số nguyên nhỏ hơn int (byte, short, char) luôn trả về kiểu int.",
+      "badCode": "byte a = 10, b = 20;\n// byte c = a + b; // COMPILE ERROR: cannot convert from int to byte",
+      "goodCode": "byte a = 10, b = 20;\nbyte c = (byte)(a + b); // Ép kiểu tường minh\n// Hoặc: a += b; (Toán tử kết hợp tự động ép kiểu)",
+      "rule": "Biểu thức `a + b` có kiểu int. Muốn gán lại cho byte phải ép kiểu `(byte)(a + b)`."
+    },
+    {
+      "id": "trap_3",
+      "title": "Bẫy 3: Postfix x = x++ không làm tăng giá trị của x",
+      "category": "Operators",
+      "description": "Toán tử postfix `x++` trả về giá trị cũ trước khi tăng, sau đó phép gán `=` lại đè giá trị cũ này lên x.",
+      "badCode": "int x = 5;\nx = x++;\nSystem.out.println(x); // Kết quả vẫn là 5!",
+      "goodCode": "int x = 5;\nx++; // Hoặc: x = ++x;\nSystem.out.println(x); // In ra 6",
+      "rule": "Không bao giờ gán kết quả của phép toán postfix tăng/giảm lại chính biến đó."
+    },
+    {
+      "id": "trap_4",
+      "title": "Bẫy 4: Lệnh return trong finally nuốt chửng kết quả của try",
+      "category": "Flow Control & Exceptions",
+      "description": "Khối finally luôn luôn chạy trước khi phương thức kết thúc. Nếu trong finally có lệnh return, nó sẽ ghi đè lên giá trị return hoặc exception ném ra ở try/catch.",
+      "badCode": "public int getNumber() {\n    try {\n        return 10;\n    } finally {\n        return 20;\n    }\n} // Luôn trả về 20!",
+      "goodCode": "// Tránh viết lệnh return hoặc throw trong khối finally",
+      "rule": "Finally chỉ nên dùng để đóng kết nối tài nguyên (close file, database connection), không viết return."
+    },
+    {
+      "id": "trap_5",
+      "title": "Bẫy 5: Thuộc tính (fields) không có tính đa hình",
+      "category": "Object Orientation",
+      "description": "Tính đa hình (Polymorphism) chỉ áp dụng cho instance method. Truy cập thuộc tính hoàn toàn phụ thuộc vào kiểu tham chiếu lúc compile.",
+      "badCode": "class Parent { int x = 10; }\nclass Child extends Parent { int x = 20; }\n\nParent p = new Child();\nSystem.out.println(p.x); // In ra 10! (Lấy thuộc tính của Parent)",
+      "goodCode": "// Muốn đa hình thuộc tính, hãy dùng getter method:\nclass Parent { int getX() { return 10; } }\nclass Child extends Parent { int getX() { return 20; } }\n\nParent p = new Child();\nSystem.out.println(p.getX()); // In ra 20 (Đa hình)",
+      "rule": "Biến nào được gọi phụ thuộc vào Reference Type, phương thức nào được gọi phụ thuộc vào Runtime Object Type."
+    },
+    {
+      "id": "trap_6",
+      "title": "Bẫy 6: Integer Cache autoboxing -128 đến 127",
+      "category": "String & Wrappers",
+      "description": "Java cache các đối tượng Integer từ -128 đến 127. Ngoài khoảng này, phép so sánh `==` sẽ trả về false dù cùng giá trị.",
+      "badCode": "Integer a = 150, b = 150;\nSystem.out.println(a == b); // In ra false!",
+      "goodCode": "Integer a = 150, b = 150;\nSystem.out.println(a.equals(b)); // In ra true",
+      "rule": "Luôn luôn dùng phương thức `.equals()` khi so sánh các đối tượng Wrapper."
+    },
+    {
+      "id": "trap_7",
+      "title": "Bẫy 7: Interface variables luôn là public static final",
+      "category": "Declarations",
+      "description": "Biến trong interface mặc định là hằng số `public static final`. Không thể khai báo private hoặc gán lại giá trị.",
+      "badCode": "interface Config {\n    // private int TIMEOUT = 5000; // COMPILE ERROR!\n    int TIMEOUT = 5000;\n}\nclass App {\n    void test() {\n        // Config.TIMEOUT = 10000; // COMPILE ERROR: cannot assign a value to final variable\n    }\n}",
+      "goodCode": "interface Config {\n    int TIMEOUT = 5000; // public static final ngầm định\n}",
+      "rule": "Biến trong interface luôn là hằng số."
+    },
+    {
+      "id": "trap_8",
+      "title": "Bẫy 8: Quên default constructor của class cha",
+      "category": "Constructors",
+      "description": "Nếu class cha chỉ có constructor có tham số, class con không thể kế thừa nếu không gọi tường minh `super(params)` ở dòng đầu tiên.",
+      "badCode": "class Parent {\n    Parent(String name) {}\n}\n// class Child extends Parent {} // COMPILE ERROR: Implicit super constructor Parent() is undefined",
+      "goodCode": "class Child extends Parent {\n    Child() {\n        super(\"Default\"); // Gọi tường minh constructor của cha\n    }\n}",
+      "rule": "Constructor ngầm định của class con luôn gọi `super()`. Nếu cha không có constructor không tham số thì phải tự viết constructor con và gọi `super(...)`."
+    }
+  ],
+  "accessModifiersMatrix": [
+    {
+      "modifier": "public",
+      "sameClass": "Có",
+      "samePackage": "Có",
+      "subclassDifferentPackage": "Có",
+      "world": "Có"
+    },
+    {
+      "modifier": "protected",
+      "sameClass": "Có",
+      "samePackage": "Có",
+      "subclassDifferentPackage": "Có (chỉ qua kế thừa)",
+      "world": "Không"
+    },
+    {
+      "modifier": "default (không ghi)",
+      "sameClass": "Có",
+      "samePackage": "Có",
+      "subclassDifferentPackage": "Không",
+      "world": "Không"
+    },
+    {
+      "modifier": "private",
+      "sameClass": "Có",
+      "samePackage": "Không",
+      "subclassDifferentPackage": "Không",
+      "world": "Không"
+    }
+  ],
+  "collectionsMatrix": [
+    {
+      "name": "ArrayList",
+      "type": "List",
+      "duplicates": "Có",
+      "ordered": "Có (theo index)",
+      "sorted": "Không",
+      "threadSafe": "Không",
+      "notes": "Truy xuất ngẫu nhiên O(1), thêm/xóa ở giữa O(N)"
+    },
+    {
+      "name": "LinkedList",
+      "type": "List/Deque",
+      "duplicates": "Có",
+      "ordered": "Có (theo index)",
+      "sorted": "Không",
+      "threadSafe": "Không",
+      "notes": "Thêm/xóa O(1) nếu đã có con trỏ, truy xuất O(N)"
+    },
+    {
+      "name": "Vector",
+      "type": "List",
+      "duplicates": "Có",
+      "ordered": "Có",
+      "sorted": "Không",
+      "threadSafe": "CÓ (synchronized)",
+      "notes": "Legacy collection, hiệu năng thấp hơn ArrayList"
+    },
+    {
+      "name": "HashSet",
+      "type": "Set",
+      "duplicates": "KHÔNG",
+      "ordered": "KHÔNG",
+      "sorted": "Không",
+      "threadSafe": "Không",
+      "notes": "Dựa trên HashMap, O(1) cho add/contains/remove"
+    },
+    {
+      "name": "LinkedHashSet",
+      "type": "Set",
+      "duplicates": "KHÔNG",
+      "ordered": "CÓ (theo thứ tự chèn)",
+      "sorted": "Không",
+      "threadSafe": "Không",
+      "notes": "Duy trì doubly-linked list nối qua các phần tử"
+    },
+    {
+      "name": "TreeSet",
+      "type": "Set",
+      "duplicates": "KHÔNG",
+      "ordered": "CÓ (theo thứ tự sắp xếp)",
+      "sorted": "CÓ (Comparable/Comparator)",
+      "threadSafe": "Không",
+      "notes": "Dựa trên Red-Black Tree, O(log N)"
+    },
+    {
+      "name": "HashMap",
+      "type": "Map",
+      "duplicates": "Key: Không / Val: Có",
+      "ordered": "KHÔNG",
+      "sorted": "Không",
+      "threadSafe": "Không",
+      "notes": "Cho phép 1 key null và nhiều value null"
+    },
+    {
+      "name": "Hashtable",
+      "type": "Map",
+      "duplicates": "Key: Không / Val: Có",
+      "ordered": "KHÔNG",
+      "sorted": "Không",
+      "threadSafe": "CÓ (synchronized)",
+      "notes": "KHÔNG cho phép bất kỳ key hay value null nào"
+    },
+    {
+      "name": "TreeMap",
+      "type": "Map",
+      "duplicates": "Key: Không / Val: Có",
+      "ordered": "CÓ (Key sắp xếp)",
+      "sorted": "CÓ (Key Comparable)",
+      "threadSafe": "Không",
+      "notes": "O(log N) cho các thao tác"
+    }
+  ]
+}

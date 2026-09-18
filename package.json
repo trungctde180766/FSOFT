@@ -1,0 +1,28 @@
+{
+  "name": "apexcore-study-system",
+  "version": "1.0.0",
+  "description": "8-Week Entry Test & Audit Mastery System for Java Core, SQL, Web, Spring and English",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('ApexCore build completed successfully')\"",
+    "test": "node -c server.js app.js data.js api/_gemini.js api/run-code.js"
+  },
+  "keywords": [
+    "scjp",
+    "testking",
+    "java-core",
+    "sql",
+    "spring",
+    "audit",
+    "flashcards",
+    "gemini-ai",
+    "practical-exam"
+  ],
+  "author": "ApexCore",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
