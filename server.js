@@ -310,8 +310,10 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  const urlPath = req.url.split('?')[0];
+
   // ── POST /api/ai — Gemini proxy ────────────────────────────────────────────
-  if (req.method === 'POST' && req.url === '/api/ai') {
+  if (req.method === 'POST' && (urlPath === '/api/ai' || urlPath === '/api/ai/')) {
     if (GEMINI_KEYS.length === 0) {
       res.writeHead(503, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify({
@@ -335,8 +337,8 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // ── GET /api/ai/status — comprehensive key health & token stats ──────────
-  if (req.method === 'GET' && req.url === '/api/ai/status') {
+  // ── GET /api/ai/status or GET /api/ai — comprehensive key health & token stats ──
+  if (req.method === 'GET' && (urlPath === '/api/ai/status' || urlPath === '/api/ai' || urlPath === '/api/ai/')) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify(getAiStatus()));
   }
